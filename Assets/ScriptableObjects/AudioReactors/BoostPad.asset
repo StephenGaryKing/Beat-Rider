@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47eeb50eeac901d4397c8150469cd724, type: 3}
+  m_Name: BoostPad
+  m_EditorClassIdentifier: 
+  m_AndPitch: 0
+  m_shouldReactToPitch: 1
+  m_pitch: 100
+  m_pitchLeniency: 0
+  m_lessThanPitch: 1
+  m_equalToPitch: 1
+  m_moreThanPitch: 0
+  m_AndDB: 0
+  m_shouldReactToDb: 0
+  m_db: 0
+  m_dbLeniency: 0
+  m_lessThanDb: 0
+  m_equalToDb: 0
+  m_moreThanDb: 0
+  m_AndBeatDensity: 1
+  m_shouldReactToBeatDensity: 0
+  m_density: 2
+  m_densityLeniency: 0
+  m_lessThanDensity: 1
+  m_equalToDensity: 1
+  m_moreThanDensity: 0
+  m_AndFlux: 0
+  m_shouldReactToFlux: 0
+  m_flux: 0
+  m_fluxLeniency: 0
+  m_lessThanFlux: 0
+  m_equalToFlux: 0
+  m_moreThanFlux: 0
+  m_AndThresh: 0
+  m_shouldReactToThresh: 0
+  m_thresh: 0
+  m_threshLeniency: 0
+  m_lessThanThresh: 0
+  m_equalToThresh: 0
+  m_moreThanThresh: 0
+  m_shouldAlwaysReact: 0
