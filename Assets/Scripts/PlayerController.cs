@@ -97,9 +97,17 @@ namespace BeatRider
                 }
                 else
                 {
-                    FindObjectOfType<SongController>().KillPlayer();
-                }
+                    FindObjectOfType<SongController>().StopSong();
+					//post score
+					Invoke("ResetValues", 5);
+				}
 			}
+		}
+
+		void ResetValues()
+		{
+			m_targetFOV = m_minFOV;
+			_scoreBoardLogic.m_score = 0;
 		}
 	}
 }

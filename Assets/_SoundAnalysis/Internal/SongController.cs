@@ -8,8 +8,6 @@ using System.Numerics;
 using DSPLib;
 using System.IO;
 using UnityEngine.UI;
-//using SFB;
-using BeatRider; // this is temp
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -65,19 +63,10 @@ namespace MusicalGameplayMechanics
 		public Slider m_spectralAnalisisSlider;
 		float m_spectralAnalisisSliderValue;
 		public Slider m_volumeSlider;
-		public Slider m_playbackSpeedSlider;
 		public Transform m_saveIcon;
 		public Transform m_loadIcon;
-
-        //temp vars
-        public MenuNavigation m_tempSongControllerMenuNav;
-        public GameController m_tempGameController;
-        public GameObject m_tempFreeFlowMenu;
-        public GameObject m_tempMainMenu;
-        public GameObject m_tempSongControllerMenu;
-        public GameObject m_tempStoryModeMenu;
-        public ScoreBoardLogic m_tempScoreboardLogic;
-        public PlayerController m_tempPlayer;
+		public MenuTransition m_StoryModeMenuTransition;
+		public MenuTransition m_FreeFlowMenuTransition;
 
 		int m_numChannels;									// Amount of channels in the current song
 		int m_numTotalSamples;								// Total amount of samples in this song
@@ -99,8 +88,6 @@ namespace MusicalGameplayMechanics
 			_audioSource = GetComponent<AudioSource>();
 			if (m_volumeSlider)
 				m_volumeSlider.value = _audioSource.volume;					// initialize the volume slider
-			if (m_playbackSpeedSlider)
-				m_playbackSpeedSlider.value = _audioSource.pitch;           // initialize the playback speed slider
 		}
 
 		void Update()
@@ -156,15 +143,6 @@ namespace MusicalGameplayMechanics
 		public void ChangeVolume()
 		{
 			_audioSource.volume = m_volumeSlider.value;				// Adjust the volume of the song based on the volume slider (this does not affect the spectral analysis data)
-		}
-
-		/// <summary>
-		/// Change the pitch of the AudioSource based on the playback speed slider's value
-		/// </summary>
-		public void ChangePlaybackSpeed()
-		{
-			float val = m_playbackSpeedSlider.value - 1;
-			_audioSource.pitch = (val / 4) + 1;						// Adjust the speed (pitch) of the song based on the playback speed slider
 		}
 
 		/// <summary>
@@ -252,36 +230,26 @@ namespace MusicalGameplayMechanics
 
             //remove after POC
             // end song
-            KillPlayer();
+            EndSong();
 		}
 
-        public void TempResetEverything()
-        {
-            m_tempPlayer.m_targetFOV = m_tempPlayer.m_minFOV;
-            m_tempScoreboardLogic.ResetScores();
-        }
+		void EndSong()
+		{
+			//handle Menus
+			m_FreeFlowMenuTransition.PlayInTransitions();
+			m_FreeFlowMenuTransition.PlayOutTransitions();
+		}
 
-        public void KillPlayer()
-        {
-            StopSong();
-            m_tempSongControllerMenuNav.ExitSong();
-            m_tempGameController.ReturnToGame();
-            m_tempFreeFlowMenu.SetActive(false);
-            m_tempMainMenu.SetActive(true);
-            m_tempSongControllerMenu.SetActive(false);
-            Invoke("TempResetEverything", 5);
-        }
-
-        /// <summary>
-        /// Find the index of the sample at the specified time.
-        /// </summary>
-        /// <param name="curTime"> 
-        /// Time in seconds from the start of the song.
-        /// </param>
-        /// <returns>
-        /// Index of the sample.
-        /// </returns>
-        public int GetIndexFromTime(float curTime)
+		/// <summary>
+		/// Find the index of the sample at the specified time.
+		/// </summary>
+		/// <param name="curTime"> 
+		/// Time in seconds from the start of the song.
+		/// </param>
+		/// <returns>
+		/// Index of the sample.
+		/// </returns>
+		public int GetIndexFromTime(float curTime)
 		{
 			float lengthPerSample = m_clipLength / (float)m_numTotalSamples;
 
@@ -301,30 +269,6 @@ namespace MusicalGameplayMechanics
 		{
 			return ((1f / m_sampleRate) * index);
 		}
-
-        /*
-		/// <summary>
-		/// Open a sound file using the StandAloneFileBrowser
-		/// </summary>
-		public void OpenSoundFile()
-		{
-			m_preProcessedMusicalityAnalyzer = new MusicalityAnalyzer();					// Musicality analyzer is used for finding musical aspects of the song such as tempo (BPM), pitch and beat density
-
-			m_songIsBeingPlayed = false;
-			_audioSource.Stop();
-
-			var extensions = new[] {
-				new ExtensionFilter("Audio Files", "mp3", "wav")
-			};
-			String[] paths = StandaloneFileBrowser.OpenFilePanel("Select your song...", "", extensions, false);     // Find the location of a sound file
-
-			if (paths.Length > 0)
-			{
-				Debug.Log("the sound file is at " + paths[0]);
-				StartCoroutine(LoadFile(paths[0]));
-			}
-		}
-        */
 
 		/// <summary>
 		/// Open a sound file using my ingame method
