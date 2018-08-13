@@ -29,14 +29,16 @@ namespace MusicalGameplayMechanics
 		[SerializeField] bool m_logarithmicScale = false;			// Logarithmicly scale the spectrum to account for higher frequencies being quieter
 		[SerializeField] float m_barMovementSmoothing = 0.1f;		// Smoothing to apply to the bars' vertical movement
 		[SerializeField] float m_barAppearanceSmoothing = 0.1f;		// Smoothing to apply to the spectrum as a whole
-		[SerializeField] GraphType m_graphType;						// Type of graph to draw
+		[SerializeField] GraphType m_graphType;                     // Type of graph to draw
 
+		Renderer m_barMaterial;
 		int amountOfIndexesToKeep = 0;
 		List<Transform> m_bars = new List<Transform>();
 
 		// Use this for initialization
 		void Start()
 		{
+			m_barMaterial = GetComponent<Renderer>();
 			Destroy(GetComponent<Renderer>());
 
 			const int spectrumSize = (1024 / 2) - 1;	// Spectrum size as an array index
@@ -74,6 +76,7 @@ namespace MusicalGameplayMechanics
 						obj.transform.localPosition = Vector3.up / 2;
 						obj.transform.localRotation = Quaternion.identity;
 						obj.transform.localScale = Vector3.one;
+						obj.GetComponent<Renderer>().material = m_barMaterial.material;
 						m_bars.Add(middleMan.transform);
 					}
 					break;
@@ -88,6 +91,7 @@ namespace MusicalGameplayMechanics
 						obj.transform.localRotation = Quaternion.identity;
 						obj.transform.localScale = new Vector3(1 / (float)m_numberOfBars, 0.001f, 1);
 						obj.transform.name = "bar " + i;
+						obj.GetComponent<Renderer>().material = m_barMaterial.material;
 						m_bars.Add(obj.transform);
 					}
 					break;
@@ -107,6 +111,7 @@ namespace MusicalGameplayMechanics
 						obj.transform.localPosition = Vector3.up / 2;
 						obj.transform.localRotation = Quaternion.identity;
 						obj.transform.localScale = Vector3.one;
+						obj.GetComponent<Renderer>().material = m_barMaterial.material;
 						m_bars.Add(middleMan.transform);
 					}
 					break;
