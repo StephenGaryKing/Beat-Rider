@@ -23,20 +23,37 @@ public class CutsceneManager : MonoBehaviour {
 		StartCoroutine(StartCutscene(cutscene));
 	}
 
+	public void StopCutscene(Cutscene cutscene)
+	{
+		m_speachBubbleNumber = 9999;
+	}
+
 	public IEnumerator StartCutscene(Cutscene cs)
 	{
-		m_songController.OpenSoundFileByName(cs.m_songToPlay);
-		m_conversationBox.transform.parent.parent.gameObject.SetActive(true);
+		if (cs.m_songToPlay != "")
+			m_songController.OpenSoundFileByName(cs.m_songToPlay);
+			m_conversationBox.transform.parent.parent.gameObject.SetActive(true);
 		while (m_speachBubbleNumber < cs.m_conversation.Length)
 		{
 			m_nameBox.text = cs.m_conversation[m_speachBubbleNumber].Name + ":";
 			m_conversationBox.text = cs.m_conversation[m_speachBubbleNumber].Content;
-			yield return new WaitForSeconds(cs.m_conversation[m_speachBubbleNumber].waitTime);
-			m_speachBubbleNumber++;
+			if (cs.m_conversation[m_speachBubbleNumber].waitTime == 0)
+				yield return null;
+			else
+			{
+				Debug.Log(cs.m_conversation[m_speachBubbleNumber].waitTime);
+				yield return new WaitForSecondsRealtime(cs.m_conversation[m_speachBubbleNumber].waitTime);
+				m_speachBubbleNumber++;
+				Debug.Log("going to next spech bubble");
+			}
 		}
-		while (m_songController.m_bgThread != null)
-			yield return null;
-		m_songController.PlayAudio();
+		if (cs.m_songToPlay != "")
+		{
+			while (m_songController.m_bgThread != null)
+				yield return null;
+			m_songController.PlayAudio();
+		}
 		m_conversationBox.transform.parent.parent.gameObject.SetActive(false);
+		Time.timeScale = 1;
 	}
 }
