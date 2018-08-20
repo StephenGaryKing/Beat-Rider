@@ -4,11 +4,18 @@ using UnityEngine;
 using DG.Tweening;
 
 [System.Serializable]
-public struct Transition
+public struct AnimateObject
 {
-	public GameObject ObjectToAnimate;
+	public GameObject Obj;
 	public Vector3 TargetPosition;
 	public float Time;
+}
+
+[System.Serializable]
+public struct Transition
+{
+	public GameObject ObjectToToggleEnabled;
+	public AnimateObject ObjectToAnimate;
 }
 
 public class MenuTransition : MonoBehaviour {
@@ -34,21 +41,21 @@ public class MenuTransition : MonoBehaviour {
 		List<Tweener> tweeners = new List<Tweener>();
 
 		foreach (Transition tran in m_outTransitions)
-			if (tran.ObjectToAnimate)
-				tweeners.Add(tran.ObjectToAnimate.transform.DOLocalMove(tran.TargetPosition, tran.Time));
+			if (tran.ObjectToAnimate.Obj)
+				tweeners.Add(tran.ObjectToAnimate.Obj.transform.DOLocalMove(tran.ObjectToAnimate.TargetPosition, tran.ObjectToAnimate.Time));
 
 			foreach (var tween in tweeners)
 				yield return tween.WaitForCompletion();
 
 		foreach (Transition tran in m_outTransitions)
-			if (tran.ObjectToAnimate)
-				tran.ObjectToAnimate.SetActive(false);
+			if (tran.ObjectToToggleEnabled)
+				tran.ObjectToToggleEnabled.SetActive(false);
 
 		tweeners.Clear();
 
 		foreach (Transition tran in m_outTransitions)
-			if (tran.ObjectToAnimate)
-				tran.ObjectToAnimate.transform.position -= tran.TargetPosition;
+			if (tran.ObjectToAnimate.Obj)
+				tran.ObjectToAnimate.Obj.transform.position -= tran.ObjectToAnimate.TargetPosition;
 
 		Debug.Log("Finished Out Transition");
 		yield return null;
@@ -65,10 +72,10 @@ public class MenuTransition : MonoBehaviour {
 
 		foreach (Transition tran in m_inTransitions)
 		{
-			if (tran.ObjectToAnimate)
+			if (tran.ObjectToAnimate.Obj)
 			{
-				tran.ObjectToAnimate.SetActive(true);
-				tran.ObjectToAnimate.transform.DOLocalMove(tran.TargetPosition, tran.Time);
+				tran.ObjectToToggleEnabled.SetActive(true);
+				tran.ObjectToAnimate.Obj.transform.DOLocalMove(tran.ObjectToAnimate.TargetPosition, tran.ObjectToAnimate.Time);
 			}
 		}
 
