@@ -76,10 +76,10 @@ public class MenuTransition : MonoBehaviour {
 
 		foreach (Transition tran in m_inTransitions)
 		{
+			if (tran.ObjectToToggleEnabled)
+				tran.ObjectToToggleEnabled.SetActive(true);
 			if (tran.ObjectToAnimate.Obj)
 			{
-                if(tran.ObjectToToggleEnabled)
-				    tran.ObjectToToggleEnabled.SetActive(true);
 				tran.ObjectToAnimate.Obj.transform.DOLocalMove(tran.ObjectToAnimate.TargetPosition, tran.ObjectToAnimate.Time);
 				tran.ObjectToAnimate.Obj.transform.DOScale(tran.ObjectToAnimate.TargetScale, tran.ObjectToAnimate.Time);
 			}

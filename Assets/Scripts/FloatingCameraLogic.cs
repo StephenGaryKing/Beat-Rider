@@ -66,6 +66,11 @@ namespace BeatRider
 			//fix vector if it is NAN
 			if (float.IsNaN(m_shake.x))
 				m_shake = Vector3.zero;
+
+			Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, m_target.m_targetFOV, 0.1f);
+			m_target.m_FOVAmount = (m_target.m_targetFOV - m_target.m_minFOV) / (m_target.m_maxFOV - m_target.m_minFOV);
+			Vector3 camPos = Vector3.Lerp(Camera.main.transform.position, m_target.m_startingCameraPos + Camera.main.transform.forward * (m_target.m_FOVAmount * m_target.m_maxZoomAmount), 0.1f);
+			Camera.main.transform.position = camPos;
 		}
 
 		public IEnumerator Shake(float mag, float freq, float waitTime, float relaxTime)

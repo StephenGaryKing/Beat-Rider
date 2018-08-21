@@ -16,7 +16,7 @@ namespace BeatRider
 		[SerializeField] float m_tiltSpeed = 0.2f;
 		[SerializeField] float m_ambientSpeedDegradation = 0.1f;
 
-		[SerializeField] float m_maxZoomAmount = 10;
+		public float m_maxZoomAmount = 10;
 		[SerializeField] float m_FOVSmoothing = 0.1f;
 		public float m_minFOV = 50;
 		public float m_maxFOV = 100;
@@ -27,7 +27,7 @@ namespace BeatRider
 
 		float m_amountToMove = 0;
 		float m_halfTrackWidth;
-		Vector3 m_startingCameraPos;
+		[HideInInspector]public Vector3 m_startingCameraPos;
 		FloatingCameraLogic m_floatingCamera;
 
 		ScoreBoardLogic _scoreBoardLogic;
@@ -63,11 +63,6 @@ namespace BeatRider
 				_rigidBody.velocity = Vector3.zero;
 				_rigidBody.AddForce(Vector3.left * m_bounceAmount, ForceMode.Impulse);
 			}
-
-			Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, m_targetFOV, 0.1f);
-			m_FOVAmount = (m_targetFOV - m_minFOV) / (m_maxFOV - m_minFOV);
-			Vector3 camPos = Vector3.Lerp(Camera.main.transform.position, m_startingCameraPos + Camera.main.transform.forward * (m_FOVAmount * m_maxZoomAmount), 0.1f);
-			Camera.main.transform.position = camPos;
 
 			if (m_targetFOV > m_minFOV)
 				m_targetFOV -= m_ambientSpeedDegradation;
