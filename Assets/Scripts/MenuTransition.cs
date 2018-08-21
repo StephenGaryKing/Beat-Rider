@@ -57,10 +57,6 @@ public class MenuTransition : MonoBehaviour {
 
 		tweeners.Clear();
 
-		foreach (Transition tran in m_outTransitions)
-			if (tran.ObjectToAnimate.Obj)
-				tran.ObjectToAnimate.Obj.transform.position -= tran.ObjectToAnimate.TargetPosition;
-
 		Debug.Log("Finished Out Transition");
 		yield return null;
 	}
