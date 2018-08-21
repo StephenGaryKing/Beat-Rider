@@ -8,6 +8,7 @@ public struct AnimateObject
 {
 	public GameObject Obj;
 	public Vector3 TargetPosition;
+	public Vector3 TargetScale;
 	public float Time;
 }
 
@@ -42,7 +43,10 @@ public class MenuTransition : MonoBehaviour {
 
 		foreach (Transition tran in m_outTransitions)
 			if (tran.ObjectToAnimate.Obj)
+			{
 				tweeners.Add(tran.ObjectToAnimate.Obj.transform.DOLocalMove(tran.ObjectToAnimate.TargetPosition, tran.ObjectToAnimate.Time));
+				tweeners.Add(tran.ObjectToAnimate.Obj.transform.DOScale(tran.ObjectToAnimate.TargetScale, tran.ObjectToAnimate.Time));
+			}
 
 			foreach (var tween in tweeners)
 				yield return tween.WaitForCompletion();
@@ -74,8 +78,10 @@ public class MenuTransition : MonoBehaviour {
 		{
 			if (tran.ObjectToAnimate.Obj)
 			{
-				tran.ObjectToToggleEnabled.SetActive(true);
+                if(tran.ObjectToToggleEnabled)
+				    tran.ObjectToToggleEnabled.SetActive(true);
 				tran.ObjectToAnimate.Obj.transform.DOLocalMove(tran.ObjectToAnimate.TargetPosition, tran.ObjectToAnimate.Time);
+				tran.ObjectToAnimate.Obj.transform.DOScale(tran.ObjectToAnimate.TargetScale, tran.ObjectToAnimate.Time);
 			}
 		}
 
