@@ -1,8 +1,10 @@
-﻿Shader "Custom/RGB"
+﻿Shader "Oldschool/ShadowMask"
 {
 	Properties
 	{
 		_MainTex ("Texture", 2D) = "white" {}
+		_ShadowMask("Base (RGB)", 2D) = "white" {}
+		_Amount("Amount", Range(0, 1)) = 1.0
 	}
 	SubShader
 	{
@@ -34,6 +36,9 @@
 
 			sampler2D _MainTex;
 			float4 _MainTex_ST;
+			sampler2D _ShadowMask;
+			float4 _ShadowMask_ST;
+			half _Amount;
 			
 			v2f vert (appdata v)
 			{
@@ -46,21 +51,15 @@
 			
 			fixed4 frag (v2f i) : SV_Target
 			{
+				//samples are halved and combined to keep from over exposing the image
+
 				// sample the texture
-				fixed4 col = tex2D(_MainTex, i.uv);
-				float num = col.r;
-				num = max(num, col.g);
-				num = max(num, col.b);
-
-				num -= 0.01;
-				col -= num;
-				col *= 100;
-				col.r = step(0, col.r);
-				col.g = step(0, col.g);
-				col.b = step(0, col.b);
-
-				// apply fog
-				UNITY_APPLY_FOG(i.fogCoord, col);
+				fixed4 col = tex2D(_MainTex, i.uv) / max(1,(2 * _Amount));
+				float2 samplePos;
+				// sample the shadow mask with tiling
+				samplePos.x = i.uv.x * _ShadowMask_ST.x;
+				samplePos.y = i.uv.y * _ShadowMask_ST.y;
+				col += tex2D(_ShadowMask, samplePos) * (0.5 * _Amount);
 				return col;
 			}
 			ENDCG

@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: RGBPost
-  m_Shader: {fileID: 4800000, guid: 711472de5eac10947bb7d24e7a06bc19, type: 3}
+  m_Name: ShadowMask
+  m_Shader: {fileID: 4800000, guid: ac99c6b22d441c24eb600afb8d204e14, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -54,7 +54,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _ShadowMask:
+        m_Texture: {fileID: 2800000, guid: 85fa105eb6a7cad40b0a92632f96e91b, type: 3}
+        m_Scale: {x: 100, y: 100}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _Amount: 1
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -66,6 +71,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _PixelateAmount: 0.0031
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1

@@ -21,8 +21,11 @@ public class PostProcess : MonoBehaviour {
 			// loop though all post shaders
 			for (int i = 1; i < m_mats.Count - 1; i++)
 			{
-				ApplyVariables(i, source);
-				Graphics.Blit(m_tempBuffer, m_tempBuffer, m_mats[i]);
+				if (m_mats[i])
+				{
+					ApplyVariables(i, source);
+					Graphics.Blit(m_tempBuffer, m_tempBuffer, m_mats[i]);
+				}
 			}
 
 			// apply the final post shader to the screen
@@ -31,9 +34,12 @@ public class PostProcess : MonoBehaviour {
 		}
 		else if (m_mats.Count == 1)
 		{
-			// only use 1 post shader
-			ApplyVariables(0, source);
-			Graphics.Blit(source, destination, m_mats[0]);
+			if (m_mats[0])
+			{
+				// only use 1 post shader
+				ApplyVariables(0, source);
+				Graphics.Blit(source, destination, m_mats[0]);
+			}
 		}
 		// don't apply any post effects
 		else
