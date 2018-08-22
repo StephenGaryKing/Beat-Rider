@@ -332,6 +332,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1133017576106246
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4417154739303176}
+  m_Layer: 0
+  m_Name: Buttons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1133617331211402
 GameObject:
   m_ObjectHideFlags: 1
@@ -661,7 +676,6 @@ GameObject:
   - component: {fileID: 222658537758573396}
   - component: {fileID: 114262420829307852}
   - component: {fileID: 114615328179020528}
-  - component: {fileID: 114033019597002810}
   - component: {fileID: 114246414431748934}
   - component: {fileID: 114373651373455942}
   m_Layer: 5
@@ -2079,6 +2093,22 @@ Transform:
   m_Father: {fileID: 224276465037179478}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4417154739303176
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1133017576106246}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 224260371362236278}
+  - {fileID: 224384191122157706}
+  - {fileID: 224554724880727282}
+  m_Father: {fileID: 4976303416514730}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4622516497134330
 Transform:
   m_ObjectHideFlags: 1
@@ -2122,9 +2152,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224719823441248082}
-  - {fileID: 224260371362236278}
-  - {fileID: 224384191122157706}
-  - {fileID: 224554724880727282}
+  - {fileID: 4417154739303176}
   - {fileID: 224188317174399790}
   m_Father: {fileID: 224276465037179478}
   m_RootOrder: 0
@@ -2403,17 +2431,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114033019597002810
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1368492804209654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114038398646440042
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2474,9 +2491,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1129883893299610}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 69ab34897e65ec248bf1c01542651a0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_outTransitions:
+  - ObjectToToggleEnabled: {fileID: 1046695809125164}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 0, y: 0, z: 0}
+      Time: 0
+  m_inTransitions:
+  - ObjectToToggleEnabled: {fileID: 1335838881600170}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 0, y: 0, z: 0}
+      Time: 0
 --- !u!114 &114061294730410034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3943,13 +3974,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_outTransitions:
-  - ObjectToToggleEnabled: {fileID: 0}
+  - ObjectToToggleEnabled: {fileID: 1335838881600170}
     ObjectToAnimate:
       Obj: {fileID: 0}
       TargetPosition: {x: 0, y: 0, z: 0}
       TargetScale: {x: 0, y: 0, z: 0}
       Time: 0
-  - ObjectToToggleEnabled: {fileID: 0}
+  - ObjectToToggleEnabled: {fileID: 1127417069668052}
     ObjectToAnimate:
       Obj: {fileID: 0}
       TargetPosition: {x: 0, y: 0, z: 0}
@@ -4271,9 +4302,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1855895625338168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 69ab34897e65ec248bf1c01542651a0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_outTransitions:
+  - ObjectToToggleEnabled: {fileID: 1046695809125164}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 0, y: 0, z: 0}
+      Time: 0
+  m_inTransitions:
+  - ObjectToToggleEnabled: {fileID: 1216227965818114}
+    ObjectToAnimate:
+      Obj: {fileID: 1700796967613066}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 1, y: 1, z: 1}
+      Time: 0.4
 --- !u!114 &114421799465363122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4313,8 +4358,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114072041793074370}
-        m_MethodName: ChangeCanvas
+      - m_Target: {fileID: 114755471933849122}
+        m_MethodName: PlayTransitions
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5252,18 +5297,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 114373651373455942}
-        m_MethodName: PlayInTransitions
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 114373651373455942}
-        m_MethodName: PlayOutTransitions
+        m_MethodName: PlayTransitions
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5767,8 +5801,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114072041793074370}
-        m_MethodName: ChangeCanvas
+      - m_Target: {fileID: 114416469651705206}
+        m_MethodName: PlayTransitions
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6090,9 +6124,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1451808311404508}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 69ab34897e65ec248bf1c01542651a0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_outTransitions:
+  - ObjectToToggleEnabled: {fileID: 1335838881600170}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 0, y: 0, z: 0}
+      Time: 0
+  m_inTransitions:
+  - ObjectToToggleEnabled: {fileID: 1046695809125164}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 0, y: 0, z: 0}
+      Time: 0
 --- !u!114 &114759090757281160
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6212,7 +6260,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114040341921572944}
-        m_MethodName: ChangeCanvas
+        m_MethodName: PlayTransitions
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6742,9 +6790,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 1385327081459940}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 69ab34897e65ec248bf1c01542651a0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_outTransitions:
+  - ObjectToToggleEnabled: {fileID: 1216227965818114}
+    ObjectToAnimate:
+      Obj: {fileID: 1700796967613066}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 2, y: 2, z: 1}
+      Time: 0
+  m_inTransitions:
+  - ObjectToToggleEnabled: {fileID: 1046695809125164}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 0, y: 0, z: 0}
+      Time: 0
+  - ObjectToToggleEnabled: {fileID: 0}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 0, y: 0, z: 0}
+      Time: 0
 --- !u!114 &114896909376811410
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7222,7 +7290,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114879669501082702}
-        m_MethodName: ChangeCanvas
+        m_MethodName: PlayTransitions
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8193,7 +8261,7 @@ RectTransform:
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 4976303416514730}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8317,13 +8385,13 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1460560328768416}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 224376176633913786}
-  m_Father: {fileID: 4976303416514730}
-  m_RootOrder: 1
+  m_Father: {fileID: 4417154739303176}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8606,8 +8674,8 @@ RectTransform:
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 224617945351353446}
-  m_Father: {fileID: 4976303416514730}
-  m_RootOrder: 2
+  m_Father: {fileID: 4417154739303176}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8962,8 +9030,8 @@ RectTransform:
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 224800565536314770}
-  m_Father: {fileID: 4976303416514730}
-  m_RootOrder: 3
+  m_Father: {fileID: 4417154739303176}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
