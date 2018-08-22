@@ -42,4 +42,8 @@ public class GameController : MonoBehaviour {
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
     }
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }

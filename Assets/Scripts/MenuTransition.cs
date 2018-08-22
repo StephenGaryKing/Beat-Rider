@@ -44,13 +44,16 @@ public class MenuTransition : MonoBehaviour {
 		foreach (Transition tran in m_outTransitions)
 			if (tran.ObjectToAnimate.Obj)
 			{
-				if (tran.ObjectToAnimate.Time == 0)
-					tran.ObjectToAnimate.Obj.transform.position = tran.ObjectToAnimate.TargetPosition;
-				else
-				{
-					tweeners.Add(tran.ObjectToAnimate.Obj.transform.DOLocalMove(tran.ObjectToAnimate.TargetPosition, tran.ObjectToAnimate.Time));
-					tweeners.Add(tran.ObjectToAnimate.Obj.transform.DOScale(tran.ObjectToAnimate.TargetScale, tran.ObjectToAnimate.Time));
-				}
+                if (tran.ObjectToAnimate.Time == 0)
+                {
+                    tran.ObjectToAnimate.Obj.transform.localPosition = tran.ObjectToAnimate.TargetPosition;
+                    tran.ObjectToAnimate.Obj.transform.localScale = tran.ObjectToAnimate.TargetScale;
+                }
+                else
+                {
+                    tweeners.Add(tran.ObjectToAnimate.Obj.transform.DOLocalMove(tran.ObjectToAnimate.TargetPosition, tran.ObjectToAnimate.Time));
+                    tweeners.Add(tran.ObjectToAnimate.Obj.transform.DOScale(tran.ObjectToAnimate.TargetScale, tran.ObjectToAnimate.Time));
+                }
 			}
 
 			foreach (var tween in tweeners)
@@ -81,13 +84,16 @@ public class MenuTransition : MonoBehaviour {
 				tran.ObjectToToggleEnabled.SetActive(true);
 			if (tran.ObjectToAnimate.Obj)
 			{
-				if (tran.ObjectToAnimate.Time == 0)
-					tran.ObjectToAnimate.Obj.transform.position = tran.ObjectToAnimate.TargetPosition;
-				else
-				{
-					tran.ObjectToAnimate.Obj.transform.DOLocalMove(tran.ObjectToAnimate.TargetPosition, tran.ObjectToAnimate.Time);
-					tran.ObjectToAnimate.Obj.transform.DOScale(tran.ObjectToAnimate.TargetScale, tran.ObjectToAnimate.Time);
-				}
+                if (tran.ObjectToAnimate.Time == 0)
+                {
+                    tran.ObjectToAnimate.Obj.transform.localPosition = tran.ObjectToAnimate.TargetPosition;
+                    tran.ObjectToAnimate.Obj.transform.localScale = tran.ObjectToAnimate.TargetScale;
+                }
+                else
+                {
+                    tran.ObjectToAnimate.Obj.transform.DOLocalMove(tran.ObjectToAnimate.TargetPosition, tran.ObjectToAnimate.Time);
+                    tran.ObjectToAnimate.Obj.transform.DOScale(tran.ObjectToAnimate.TargetScale, tran.ObjectToAnimate.Time);
+                }
 			}
 		}
 
