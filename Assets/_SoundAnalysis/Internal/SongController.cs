@@ -162,8 +162,8 @@ namespace MusicalGameplayMechanics
 		public void StopSong()
 		{
             _audioSource.Stop();
-            Invoke("TempResetEverything", 5);
-        }
+			Invoke("ResetValues", 6);
+		}
 
 		/// <summary>
 		/// Update all the event listeners with beats and access to the spectrum
@@ -487,6 +487,12 @@ namespace MusicalGameplayMechanics
 				// Catch exceptions here since the background thread won't always surface the exception to the main thread
 				Debug.Log(e.ToString());
 			}
+		}
+
+		public void ResetValues()
+		{
+			FindObjectOfType<BeatRider.PlayerController>().ResetSpeed();
+			FindObjectOfType<BeatRider.ScoreBoardLogic>().ResetScores();
 		}
 	}
 }

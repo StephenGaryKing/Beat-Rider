@@ -93,16 +93,13 @@ namespace BeatRider
                 else
                 {
                     FindObjectOfType<SongController>().StopSong();
-					//post score
-					Invoke("ResetValues", 5);
 				}
 			}
 		}
 
-		void ResetValues()
+		public void ResetSpeed()
 		{
 			m_targetFOV = m_minFOV;
-			_scoreBoardLogic.m_score = 0;
 		}
 	}
 }
