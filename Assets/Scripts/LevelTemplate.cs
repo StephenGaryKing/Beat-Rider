@@ -35,7 +35,7 @@ namespace BeatRider
 		public LevelType m_levelGenerationType;
 		public float m_spawnHeightOffset;
 		public float m_trackWidth;
-		public float m_unitSize;
+		public float m_unitSize = 1;
 		public int m_numOfSceneryLayers;
 		public List<SceneryElement> m_sceneryElements = new List<SceneryElement>();
 		public List<TrackElement> m_trackElements = new List<TrackElement>();
