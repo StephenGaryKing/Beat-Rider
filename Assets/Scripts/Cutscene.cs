@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// used in cutscenes to display text on the screen
+/// </summary>
 [System.Serializable]
 public struct SpeachBubble
 {
@@ -14,6 +17,6 @@ public struct SpeachBubble
 
 public class Cutscene : ScriptableObject {
 
-	public SpeachBubble[] m_conversation;
-	public string m_songToPlay;
+	public SpeachBubble[] m_conversation;	// a conversation with n elements
+	public string m_songToPlay;				// the song to play (if any) after the cutscene is over
 }

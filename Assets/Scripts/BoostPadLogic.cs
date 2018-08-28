@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class BoostPadLogic : MonoBehaviour {
 
+	// this value is used when the player hits the boost pad
 	public float m_boostAmount = 10;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

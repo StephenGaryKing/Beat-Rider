@@ -4,27 +4,42 @@ using UnityEngine;
 
 namespace BeatRider
 {
+	/// <summary>
+	/// Used for weighted slelection based on the roulett wheel algorithm
+	/// </summary>
 	class RouletteWheel
 	{
-		List<KeyValuePair<SceneryElement, Vector2>> m_wheel = new List<KeyValuePair<SceneryElement, Vector2>>();
-		float m_sumOfWheel;
+		List<KeyValuePair<SceneryElement, Vector2>> m_wheel = new List<KeyValuePair<SceneryElement, Vector2>>();	// The "wheel" to spin
+		float m_sumOfWheel;																							// used to find distribution of the wheel
 
+		/// <summary>
+		/// Add a list of elements to the wheel
+		/// </summary>
+		/// <param name="elements">List of elements to add to the wheel</param>
 		public void Init(List<SceneryElement> elements)
 		{
 			foreach (var el in elements)
 				AddToWheel(el);
 		}
 
+		/// <summary>
+		/// add an element to the wheel
+		/// </summary>
+		/// <param name="el">element to add</param>
 		public void AddToWheel(SceneryElement el)
 		{
+			// set the start and end values to look for on this element of the wheel (the final sum of wheel / this range will give the percentage chance to spawn)
 			Vector2 val = new Vector2(m_sumOfWheel, m_sumOfWheel += el.spawnChanceWeight);
 			m_wheel.Add(new KeyValuePair<SceneryElement, Vector2>(el, val));
+			// add a bit to stop overlap
 			m_sumOfWheel++;
 		}
 
 		public SceneryElement Spin()
 		{
+			// perform roulett wheel selection, correcting for the addition beyond true sum of wheel
 			float ran = Random.Range(0, m_sumOfWheel-1);
+			// find where the wheel landed
 			foreach(var slice in m_wheel)
 			{
 				if (slice.Value.x <= ran && slice.Value.y >= ran)
@@ -36,6 +51,9 @@ namespace BeatRider
 		}
 	}
 
+	/// <summary>
+	/// Generator for the level, uses a tamplate to create a level
+	/// </summary>
 	public class LevelGenerator : MonoBehaviour
 	{
 		[Tooltip("A scriptable object that determines the layout of a level")]
@@ -63,6 +81,7 @@ namespace BeatRider
 			// if the level is a grid
 			if (m_levelTemplate.m_levelGenerationType == LevelType.GRID)
 			{
+				// find the correct number of elements of each type
 				m_numberOfTrackElements = (int)Mathf.Max((transform.position.z / (halfTrackWidth * 2)) + 2, 0);
 				m_numberOfSceneryElements = (int)Mathf.Max(((transform.position.z / unitSize) + 2 * m_levelTemplate.m_numOfSceneryLayers) * 2, 0);
 
@@ -77,7 +96,6 @@ namespace BeatRider
 						Gizmos.DrawWireCube(depth + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.right * halfTrackWidth - Vector3.right * unitSize / 2 + Vector3.right * unitSize * i, new Vector3(unitSize, 0, unitSize));
 						Gizmos.DrawWireCube(depth + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.left * halfTrackWidth - Vector3.left * unitSize / 2 + Vector3.left * unitSize * i, new Vector3(unitSize, 0, unitSize));
 
-
 						depth.z -= m_levelTemplate.m_unitSize;
 					}
 					depth = transform.position;
@@ -91,6 +109,7 @@ namespace BeatRider
 					}
 
 				}
+				// draw the rough number of track pieces and scenery elemts to be spawned at any one point in time
 				GizmosUtils.DrawText(GUI.skin, m_numberOfSceneryElements.ToString(), transform.position + Vector3.forward * unitSize / 2 + Vector3.up * 50, Color.red, 20, 0.5f);
 				GizmosUtils.DrawText(GUI.skin, m_numberOfTrackElements.ToString(), transform.position + Vector3.forward * unitSize / 2 + Vector3.up * 100, Color.green, 20, 0.5f);
 			}
@@ -114,6 +133,7 @@ namespace BeatRider
 
 					depth.z -= halfTrackWidth * 2;
 				}
+				// draw the rough number of track pieces and scenery elemts to be spawned at any one point in time
 				GizmosUtils.DrawText(GUI.skin, m_numberOfSceneryElements.ToString(), transform.position + Vector3.forward * unitSize / 2 + Vector3.up * 50, Color.red, 20, 0.5f);
 				GizmosUtils.DrawText(GUI.skin, m_numberOfTrackElements.ToString(), transform.position + Vector3.forward * halfTrackWidth + Vector3.up * 100, Color.green, 20, 0.5f);
 			}
@@ -122,9 +142,11 @@ namespace BeatRider
 		// Use this for initialization
 		void Start()
 		{
+			// find the speed of the ingame elements based on the distance to cover and the time to take
 			float sceneSpeed = transform.position.z / m_levelTemplate.m_travelTime;
 			float unitSize = m_levelTemplate.m_unitSize;
 
+			// correct the spawning interval
 			switch (m_levelTemplate.m_levelGenerationType)
 			{
 				case (LevelType.GRID):
@@ -135,19 +157,25 @@ namespace BeatRider
 					break;
 			}
 
+			// create a container for scenery elements
 			m_activeSceneryContainer = new GameObject("Active Scenery");
 			m_inactiveSceneryContainer = new GameObject("Inactive Scenery");
 
+			// find the correct number of elements of each type
 			m_numberOfTrackElements = (int)Mathf.Max((transform.position.z / unitSize) + 2, 0);
 			m_numberOfSceneryElements = Mathf.Max((m_numberOfTrackElements * m_levelTemplate.m_numOfSceneryLayers) * 2, 0);
 
 			m_PickupSpawner = FindObjectOfType<PickupSpawner>();
+			// create a pool of objects
 			CreatePool();
 
 			for (int i = 0; i < m_numberOfSceneryElements / (m_levelTemplate.m_numOfSceneryLayers * 2); i ++)
 				CreateLayerOfLevel(i);
 		}
 
+		/// <summary>
+		/// Creates a pool of obects to be used in level generation. Stops constant Instantiation
+		/// </summary>
 		void CreatePool()
 		{
 			//add the values together then pick a random value via roulette wheels selection
@@ -155,6 +183,7 @@ namespace BeatRider
 			wheel.Init(m_levelTemplate.m_sceneryElements);
 
 			float elementsMultiplier = 0;
+			// Give some wiggle room for spawning objects
 			switch (m_levelTemplate.m_levelGenerationType)
 			{
 				case (LevelType.GRID) :
@@ -180,6 +209,10 @@ namespace BeatRider
 			}
 		}
 
+		/// <summary>
+		/// remove a layer of the level to be used later
+		/// </summary>
+		/// <param name="container"></param>
 		public void RemoveLayerOfLevel(Transform container)
 		{
 			// Unpack container and add parts back to the pool
@@ -194,6 +227,10 @@ namespace BeatRider
 			Destroy(container.parent.gameObject);
 		}
 
+		/// <summary>
+		/// create a layer of the level from the pooled objects
+		/// </summary>
+		/// <param name="layerNum">Layer to create the materials at</param>
 		void CreateLayerOfLevel(int layerNum)
 		{
 			// Make a layer of the level using the objects in the pools
@@ -214,7 +251,8 @@ namespace BeatRider
 
 					//}
 					//for each scenery layer, create a piece of scenery
-
+					if (m_inactiveSceneryElements.Count == 0)
+						Debug.LogError("Pool of scenery objects is empty! Tell Steve ASAP!");
 					for (int i = 1; i <= m_levelTemplate.m_numOfSceneryLayers; i ++)
 					{
 						int ran;
@@ -253,6 +291,8 @@ namespace BeatRider
 					//}
 					//for each scenery layer, create a piece of scenery
 
+					if (m_inactiveSceneryElements.Count == 0)
+						Debug.LogError("Pool of scenery objects is empty! Tell Steve ASAP!");
 					for (int i = 1; i <= m_levelTemplate.m_numOfSceneryLayers; i++)
 					{
 						int ran;
@@ -283,6 +323,7 @@ namespace BeatRider
 					break;
 			}
 
+			// add the lane movement component to the lane and set its variables (moving one object is cheeper than mooving all individualy)
 			LaneMovement lm = sceneryContainer.AddComponent<LaneMovement>();
 			const float dieAtZ = -100;
 			//do some math to find the speed the scene must move
@@ -294,6 +335,7 @@ namespace BeatRider
 		private void FixedUpdate()
 		{
 			m_timer += Time.deltaTime;
+			// spawn a layer of the level
 			if (m_timer >= m_spawnInterval)
 			{
 				m_timer = 0;

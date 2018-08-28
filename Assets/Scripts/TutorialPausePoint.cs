@@ -27,7 +27,7 @@ public class TutorialPausePoint : MonoBehaviour {
 		{
 			if (Input.GetKeyDown(key))
 			{
-				m_cutsceneManager.StopCutscene(m_cutsceneToShow);
+				m_cutsceneManager.StopCutscene();
 				Time.timeScale = 1;
 			}
 		}

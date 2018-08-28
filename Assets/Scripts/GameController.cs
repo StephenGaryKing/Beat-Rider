@@ -5,18 +5,12 @@ using MusicalGameplayMechanics;
 
 public class GameController : MonoBehaviour {
 
-    public SongController songcontroller;
 
-    [SerializeField] GameObject pauseMenu;
-    
+    public SongController songcontroller;		// used when pausing the song
+    [SerializeField] GameObject pauseMenu;		// displayed when the game is paused
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
 	void Update () {
+		// Pause the game
         if(Input.GetKeyDown(KeyCode.Escape) && songcontroller.m_paused == false)
         {
             songcontroller.Pause();
@@ -26,6 +20,7 @@ public class GameController : MonoBehaviour {
                 pauseMenu.SetActive(true);
             }
         }
+		// Play the game from a paused state
         else if (Input.GetKeyDown(KeyCode.Escape) && songcontroller.m_paused == true)
         {
             songcontroller.UnPause();
@@ -36,12 +31,19 @@ public class GameController : MonoBehaviour {
         }
     }
 
-    public void ReturnToGame()
+	/// <summary>
+	/// Un-pause the game
+	/// </summary>
+	public void ReturnToGame()
     {
         songcontroller.UnPause();
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
     }
+
+	/// <summary>
+	/// Exit the game or stop running if in editor
+	/// </summary>
     public void ExitGame()
     {
 #if UNITY_STANDALONE
