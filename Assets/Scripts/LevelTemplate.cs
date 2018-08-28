@@ -11,32 +11,34 @@ namespace BeatRider
 	}
 
 	[System.Serializable]
-	public struct SceneryElement
+	public class SceneryElement
 	{
+		public GameObject m_prefab;
 		public float spawnChanceWeight;
-		public Vector2 randomScaleVariance;
-		[Header("Info")]
-		public float spawnChancePercentage;
+		public Vector2 randomScaleVariance = Vector2.one;
+		//[Header("Info")]
+		//public float spawnChancePercentage;
 	}
 
 	[System.Serializable]
-	public struct TrackElement
+	public class TrackElement
 	{
+		public GameObject m_prefab;
 		public float spawnChanceWeight;
-		[Header("Info")]
-		public float spawnChancePercentage;
+		//[Header("Info")]
+		//public float spawnChancePercentage;
 	}
 
 	[CreateAssetMenu(fileName = "LevelTemplate", menuName = "Beat Rider/LevelTemplate", order = 1)]
 	public class LevelTemplate : ScriptableObject
 	{
 		public LevelType m_levelGenerationType;
-		public float m_unitSize;
+		public float m_spawnHeightOffset;
+		public float m_trackWidth;
+		public float m_unitSize = 1;
 		public int m_numOfSceneryLayers;
 		public List<SceneryElement> m_sceneryElements = new List<SceneryElement>();
 		public List<TrackElement> m_trackElements = new List<TrackElement>();
-		[Tooltip("Bumber of units in front of the player to spawn the level")]
-		public int m_unitsAwayToSpawn = 10;
 		[Tooltip("The time taken for the level to reach the player in seconds")]
 		public float m_travelTime = 2;
 	}
