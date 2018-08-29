@@ -42,6 +42,7 @@ public class MultiWindowNavigation : MonoBehaviour {
 			GameObject newTitle = Instantiate(m_templateTitle, transform);
 			newTitle.transform.localPosition = m_templateTitle.transform.localPosition;
 			newTitle.name = item.Title;
+			newTitle.GetComponentInChildren<Text>().text = "";
 			if (item.TitleImage)
 				newTitle.GetComponentInChildren<Image>().sprite = item.TitleImage;
 			else

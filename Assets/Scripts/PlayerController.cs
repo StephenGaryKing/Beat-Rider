@@ -80,7 +80,10 @@ namespace BeatRider
 
 			if (other.CompareTag("Boost"))
 				if (m_targetFOV < m_maxFOV)
+				{
 					m_targetFOV += other.GetComponent<BoostPadLogic>().m_boostAmount;
+					other.GetComponent<ParticleCreationLogic>().SpawnParticle();
+				}
 
 			if (other.CompareTag("Obstacle"))
 			{

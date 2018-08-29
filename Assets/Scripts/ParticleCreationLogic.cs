@@ -22,7 +22,7 @@ public class ParticleCreationLogic : MonoBehaviour {
 		}
 	}
 
-	void SpawnParticle()
+	public void SpawnParticle()
 	{
 		GameObject go = Instantiate(m_particlePrefab);
 		go.transform.position = transform.position;
