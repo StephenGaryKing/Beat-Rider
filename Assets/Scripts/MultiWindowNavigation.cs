@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public struct WindowItem
 {
 	public string Title;
+	public Sprite TitleImage;
 	public string FileLocationToLoad;
 }
 
@@ -41,7 +42,10 @@ public class MultiWindowNavigation : MonoBehaviour {
 			GameObject newTitle = Instantiate(m_templateTitle, transform);
 			newTitle.transform.localPosition = m_templateTitle.transform.localPosition;
 			newTitle.name = item.Title;
-			newTitle.GetComponentInChildren<Text>().text = item.Title;
+			if (item.TitleImage)
+				newTitle.GetComponentInChildren<Image>().sprite = item.TitleImage;
+			else
+				newTitle.GetComponentInChildren<Text>().text = item.Title;
 			newTitle.SetActive(true);
 			m_titles.Add(newTitle);
 		}
@@ -91,8 +95,4 @@ public class MultiWindowNavigation : MonoBehaviour {
 		UpdateWindows();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
