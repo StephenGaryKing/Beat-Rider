@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4526556360156806}
-  - component: {fileID: 95801113778502478}
   m_Layer: 0
   m_Name: SPEEDBOOST_V3
   m_TagString: Untagged
@@ -89,6 +88,7 @@ GameObject:
   - component: {fileID: 65088822765635918}
   - component: {fileID: 114024258980069986}
   - component: {fileID: 114114869609366032}
+  - component: {fileID: 114472926491505760}
   m_Layer: 0
   m_Name: BoostPad
   m_TagString: Boost
@@ -372,23 +372,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0492439, y: 1.2267369, z: 6.529647}
   m_Center: {x: 0, y: -0.03163153, z: 0}
---- !u!95 &95801113778502478
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1329343010672584}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 290a984cc88351249b40d46cb3761cba, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114024258980069986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -422,3 +405,17 @@ MonoBehaviour:
   m_maxEmission: 2
   m_minEmission: 0.3
   m_invertLight: 1
+--- !u!114 &114472926491505760
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1581168358196022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c87e339819812d4183a99400d04f206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_particlePrefab: {fileID: 1565115138656346, guid: f539b9d45ac49c543a2b9365636aee41,
+    type: 2}
+  m_createOnDeath: 0
