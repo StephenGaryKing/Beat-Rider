@@ -12,9 +12,10 @@ public class SceneryModifier : MonoBehaviour {
 	List<GameObject> m_snappedGameObjects = new List<GameObject>();
 
 	// Use this for initialization
-	void Start()
+	void Awake()
 	{
-		m_percentageOfSnapPointsToUse = (m_percentageOfSnapPointsToUse > 1) ? 1 : m_percentageOfSnapPointsToUse;
+		if (m_percentageOfSnapPointsToUse > 1)
+			m_percentageOfSnapPointsToUse = 1;
 	}
 
 	public void CreatePool()
@@ -50,6 +51,7 @@ public class SceneryModifier : MonoBehaviour {
 			int ranPoint = Random.Range(0, snappablePoints.Count - 1);
 			// pick a random object
 			int ranObj = Random.Range(0, snappableObjects.Count - 1);
+
 			// put the object there
 			snappableObjects[ranObj].transform.localScale = snappablePoints[ranPoint].localScale;
 			snappableObjects[ranObj].transform.localPosition = snappablePoints[ranPoint].localPosition;
