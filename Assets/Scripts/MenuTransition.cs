@@ -37,8 +37,6 @@ public class MenuTransition : MonoBehaviour {
 
 	IEnumerator OutTransition()
 	{
-		Debug.Log("Started Out Transition");
-
 		List<Tweener> tweeners = new List<Tweener>();
 
 		foreach (Transition tran in m_outTransitions)
@@ -64,8 +62,6 @@ public class MenuTransition : MonoBehaviour {
 				tran.ObjectToToggleEnabled.SetActive(false);
 
 		tweeners.Clear();
-
-		Debug.Log("Finished Out Transition");
 		yield return null;
 	}
 
@@ -76,8 +72,6 @@ public class MenuTransition : MonoBehaviour {
 
 	IEnumerator InTransition()
 	{
-		Debug.Log("Started In Transition");
-
 		foreach (Transition tran in m_inTransitions)
 		{
 			if (tran.ObjectToToggleEnabled)
@@ -96,8 +90,6 @@ public class MenuTransition : MonoBehaviour {
                 }
 			}
 		}
-
-		Debug.Log("Finished In Transition");
 		yield return null;
 	}
 }

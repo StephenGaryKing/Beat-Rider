@@ -205,6 +205,12 @@ namespace BeatRider
 				go.transform.parent = m_inactiveSceneryContainer.transform;
 				go.transform.localScale = Vector3.one * m_levelTemplate.m_unitSize * Random.Range(element.randomScaleVariance.x, element.randomScaleVariance.y);
 				go.transform.position = Vector3.zero;
+				SceneryModifier[] sm = go.GetComponents<SceneryModifier>();
+				if (sm.Length != 0)
+				{
+					foreach (var mod in sm)
+						mod.CreatePool();
+				}
 				m_inactiveSceneryElements.Add(go);
 			}
 		}
@@ -265,6 +271,15 @@ namespace BeatRider
 						m_inactiveSceneryElements.Remove(go);
 						go.transform.position = transform.position + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.back * (layerNum * unitSize) + Vector3.right * halfTrackWidth - Vector3.right * unitSize / 2 + Vector3.right * unitSize * i;
 						go.transform.parent = sceneryContainer.transform;
+						SceneryModifier[] smR = go.GetComponents<SceneryModifier>();
+						if (smR.Length != 0)
+						{
+							foreach (var mod in smR)
+							{
+								mod.ResetScenery();
+								mod.ModifyScenery();
+							}
+						}
 						go.SetActive(true);
 
 						// left side
@@ -274,6 +289,15 @@ namespace BeatRider
 						m_inactiveSceneryElements.Remove(go);
 						go.transform.position = transform.position + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.back * (layerNum * unitSize) + Vector3.left * halfTrackWidth - Vector3.left * unitSize / 2 + Vector3.left * unitSize * i;
 						go.transform.parent = sceneryContainer.transform;
+						SceneryModifier[] smL = go.GetComponents<SceneryModifier>();
+						if (smL.Length != 0)
+						{
+							foreach (var mod in smL)
+							{
+								mod.ResetScenery();
+								mod.ModifyScenery();
+							}
+						}
 						go.SetActive(true);
 					}
 
@@ -305,6 +329,15 @@ namespace BeatRider
 						m_inactiveSceneryElements.Remove(go);
 						go.transform.position = transform.position + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.back * (layerNum * unitSize) + Vector3.right * halfTrackWidth - Vector3.right * Random.Range(0, unitSize);
 						go.transform.parent = sceneryContainer.transform;
+						SceneryModifier[] smR = go.GetComponents<SceneryModifier>();
+						if (smR.Length != 0)
+						{
+							foreach (var mod in smR)
+							{
+								mod.ResetScenery();
+								mod.ModifyScenery();
+							}
+						}
 						go.SetActive(true);
 
 						// left side
@@ -314,6 +347,15 @@ namespace BeatRider
 						m_inactiveSceneryElements.Remove(go);
 						go.transform.position = transform.position + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.back * (layerNum * unitSize) + Vector3.left * halfTrackWidth - Vector3.left * Random.Range(0, unitSize);
 						go.transform.parent = sceneryContainer.transform;
+						SceneryModifier[] smL = go.GetComponents<SceneryModifier>();
+						if (smL.Length != 0)
+						{
+							foreach (var mod in smL)
+							{
+								mod.ResetScenery();
+								mod.ModifyScenery();
+							}
+						}
 						go.SetActive(true);
 					}
 
