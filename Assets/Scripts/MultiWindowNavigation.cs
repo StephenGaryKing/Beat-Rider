@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 [System.Serializable]
 public struct WindowItem
@@ -18,6 +19,7 @@ public class MultiWindowNavigation : MonoBehaviour {
 
 	public float m_offsetDistance;
 	public Vector3 m_offsetScale;
+	public float m_animationSpeed = 0.5f;
 
 	public List<WindowItem> m_menuItems = new List<WindowItem>();
 
@@ -31,7 +33,7 @@ public class MultiWindowNavigation : MonoBehaviour {
 		m_templateMenuItem.SetActive(false);
 		m_templateTitle.SetActive(false);
 		PopulateTitles();
-		UpdateWindows();
+		SnapUpdateWindows();
 	}
 
 	public void PopulateTitles()
@@ -57,29 +59,74 @@ public class MultiWindowNavigation : MonoBehaviour {
 
 	}
 
+	void SnapUpdateWindows()
+	{
+		// find the titles to move
+		GameObject[] titles = new GameObject[5];
+		int index = 0;
+		int titleSize = m_titles.Count;
+		for (int i = m_currentWindow - 2; i <= m_currentWindow + 2; i++)
+		{
+			int realI = i;
+			if (realI < 0)
+				realI = titleSize + realI;
+			else if (realI >= titleSize)
+				realI = realI - titleSize;
+			titles[index] = m_titles[realI];
+			index++;
+		}
+
+		// position and scale the appropriate titles
+		titles[0].transform.localPosition = m_templateTitle.transform.localPosition + Vector3.left * m_offsetDistance * 1.5f;
+		titles[0].transform.localScale = Vector3.zero;
+
+		titles[1].transform.localPosition = m_templateTitle.transform.localPosition + Vector3.left * m_offsetDistance;
+		titles[1].transform.localScale = m_offsetScale;
+
+		titles[2].transform.localPosition = m_templateTitle.transform.localPosition;
+		titles[2].transform.localScale = m_templateTitle.transform.localScale;
+
+
+		titles[3].transform.localPosition = m_templateTitle.transform.localPosition + Vector3.right * m_offsetDistance;
+		titles[3].transform.localScale = m_offsetScale;
+
+		titles[4].transform.localPosition = m_templateTitle.transform.localPosition + Vector3.right * m_offsetDistance * 1.5f;
+		titles[4].transform.localScale = Vector3.zero;
+	}
+
 	void UpdateWindows()
 	{
-		// disable all the titles
-		foreach (var title in m_titles)
-			title.SetActive(false);
+		// find the titles to move
+		GameObject[] titles = new GameObject[5];
+		int index = 0;
+		int titleSize = m_titles.Count;
+		for (int i = m_currentWindow - 2; i <= m_currentWindow + 2; i ++)
+		{
+			int realI = i;
+			if (realI < 0)
+				realI = titleSize + realI;
+			else if (realI >= titleSize)
+				realI = realI - titleSize;
+			titles[index] = m_titles[realI];
+			index++;
+		}
 
-		// position and enable the appropriate titles
-		GameObject[] titles = new GameObject[3];
-		titles[0] = m_titles[(m_currentWindow == 0) ? m_titles.Count - 1 : m_currentWindow - 1];
-		titles[1] = m_titles[m_currentWindow];
-		titles[2] = m_titles[(m_currentWindow == m_titles.Count - 1) ? 0 : m_currentWindow + 1];
+		// position and scale the appropriate titles
+		titles[0].transform.DOLocalMove(m_templateTitle.transform.localPosition + Vector3.left * m_offsetDistance * 1.5f, m_animationSpeed);
+		titles[0].transform.DOScale(Vector3.zero, m_animationSpeed);
 
-		// position and scale
-		titles[0].transform.localPosition = m_templateTitle.transform.localPosition + Vector3.left * m_offsetDistance;
-		titles[0].transform.localScale = m_offsetScale;
-		titles[1].transform.localPosition = m_templateTitle.transform.localPosition;
-		titles[1].transform.localScale = m_templateTitle.transform.localScale;
-		titles[2].transform.localPosition = m_templateTitle.transform.localPosition + Vector3.right * m_offsetDistance;
-		titles[2].transform.localScale = m_offsetScale;
+		titles[1].transform.DOLocalMove(m_templateTitle.transform.localPosition + Vector3.left * m_offsetDistance, m_animationSpeed);
+		titles[1].transform.DOScale(m_offsetScale, m_animationSpeed);
 
-		// enable this title and each one on either side
-		foreach (GameObject title in titles)
-			title.SetActive(true);
+		titles[2].transform.DOLocalMove(m_templateTitle.transform.localPosition, m_animationSpeed);
+		titles[2].transform.DOScale(m_templateTitle.transform.localScale, m_animationSpeed);
+
+
+		titles[3].transform.DOLocalMove(m_templateTitle.transform.localPosition + Vector3.right * m_offsetDistance, m_animationSpeed);
+		titles[3].transform.DOScale(m_offsetScale, m_animationSpeed);
+
+		titles[4].transform.DOLocalMove(m_templateTitle.transform.localPosition + Vector3.right * m_offsetDistance * 1.5f, m_animationSpeed);
+		titles[4].transform.DOScale(Vector3.zero, m_animationSpeed);
 	}
 
 	public void GotoNextWindow()
