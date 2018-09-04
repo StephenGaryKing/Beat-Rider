@@ -162,7 +162,6 @@ namespace MusicalGameplayMechanics
 		public void StopSong()
 		{
             _audioSource.Stop();
-			Invoke("ResetValues", 6);
 		}
 
 		/// <summary>
@@ -228,7 +227,6 @@ namespace MusicalGameplayMechanics
 				yield return new WaitForFixedUpdate();
 			}
 
-            //remove after POC
             // end song
             EndSong();
 		}
@@ -238,6 +236,7 @@ namespace MusicalGameplayMechanics
 			//handle Menus
 			m_FreeFlowMenuTransition.PlayInTransitions();
 			m_FreeFlowMenuTransition.PlayOutTransitions();
+			Invoke("ResetValues", 6);		// should probs remove all the notes and stuff, the reset scores. stops the six second wait time.
 		}
 
 		/// <summary>
