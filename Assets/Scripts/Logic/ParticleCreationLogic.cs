@@ -5,22 +5,6 @@ using UnityEngine;
 public class ParticleCreationLogic : MonoBehaviour {
 
 	public GameObject m_particlePrefab;
-	public bool m_createOnDeath = true;
-
-	bool m_quitting = false;
-
-	private void OnApplicationQuit()
-	{
-		m_quitting = true;
-	}
-	private void OnDestroy()
-	{
-		if (!m_quitting)
-		{
-			if (m_createOnDeath)
-				SpawnParticle();
-		}
-	}
 
 	public void SpawnParticle()
 	{

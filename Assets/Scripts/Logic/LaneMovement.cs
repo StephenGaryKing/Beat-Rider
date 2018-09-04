@@ -9,7 +9,7 @@ namespace BeatRider
 	{
 		public float m_unitsToMovePerSecond = 1;	// How fast to move
 		public float m_zValueToDie;					// z depth to die at
-		public LevelGenerator m_levelGen;			// level generator, used to return to pool when killed
+		public LevelGenerator m_levelGen;           // level generator, used to return to pool when killed
 
 		private void FixedUpdate()
 		{
@@ -22,11 +22,11 @@ namespace BeatRider
 				if (transform.position.z + m_levelGen.transform.position.z < m_zValueToDie)
 					m_levelGen.RemoveLayerOfLevel(transform);
 			}
-			// if created without a level generator, just destroy it
+			// if created without a level generator, just disable it
 			else
 			{
 				if (transform.position.z < m_zValueToDie)
-					Destroy(gameObject);
+					gameObject.SetActive(false);
 			}
 		}
 	}

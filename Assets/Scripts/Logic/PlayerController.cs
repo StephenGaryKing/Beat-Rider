@@ -75,7 +75,8 @@ namespace BeatRider
 			if (other.CompareTag("Note"))
 			{
 				_scoreBoardLogic.m_score += Mathf.RoundToInt(1 + (m_maxScoreMultiplier * m_FOVAmount));
-				Destroy(other.gameObject);
+				other.gameObject.SetActive(false);
+				other.GetComponent<ParticleCreationLogic>().SpawnParticle();
 			}
 
 			if (other.CompareTag("Boost"))

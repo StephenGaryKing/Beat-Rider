@@ -39,7 +39,6 @@ namespace BeatRider
 		{
 			// find the percentage of the current arrow through the list of arrows
 			float percentThroughList = (i + 1) / (float)m_arrows.Length;
-			Debug.Log("speed : " + speedPercent + " [] list : " + percentThroughList);
 
 			if (percentThroughList <= speedPercent)
 				m_arrows[(m_invertLight) ? m_arrows.Length - 1 - i : i].material.SetColor("_EmissionColor", m_arrowColour * ((m_invertLight) ? m_minEmission : m_maxEmission));

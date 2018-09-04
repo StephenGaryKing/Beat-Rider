@@ -225,7 +225,7 @@ namespace BeatRider
 			while (container.childCount > 0)
 			{
 				Transform child = container.GetChild(container.childCount - 1);
-				child.parent = null;
+				child.parent = m_inactiveSceneryContainer.transform;
 				child.gameObject.SetActive(false);
 				child.position = Vector3.zero;
 				m_inactiveSceneryElements.Add(child.gameObject);

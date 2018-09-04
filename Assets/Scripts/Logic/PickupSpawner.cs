@@ -10,6 +10,7 @@ namespace BeatRider
 
 		[SerializeField] int m_secondsToLookAhead = 0;
 
+		List<GameObject>[] m_objectLists;
 		int m_previousSpawnPosition = 1;
 
 		public override void Start()
@@ -32,6 +33,24 @@ namespace BeatRider
 			}
 			else
 				base.Start();
+			CreatePool();
+		}
+
+		void CreatePool()
+		{
+			GameObject m_pooler = new GameObject("Pooler");
+			m_pooler.transform.parent = transform;
+			m_objectLists = new List<GameObject>[m_prefabsToSpawn.Count];
+			for(int i = 0; i < m_prefabsToSpawn.Count; i ++)
+			{
+				m_objectLists[i] = new List<GameObject>();
+				for (int j = 0; j < 50; j++)
+				{
+					GameObject go = Instantiate(m_prefabsToSpawn[i].prefab, m_pooler.transform);
+					go.SetActive(false);
+					m_objectLists[i].Add(go);
+				}
+			}
 		}
 
 		public override void SpawnObject(List<SavedPass> passes, int index)
@@ -68,7 +87,15 @@ namespace BeatRider
 					{
 						if (val < m_prefabsToSpawn[i].realChanceToSpawn)
 						{
-							Instantiate(m_prefabsToSpawn[i].prefab, pos + transform.position, Quaternion.identity);
+							int j = 0;
+							Debug.Log(j);
+							while (m_objectLists[i][j].activeInHierarchy)
+								j++;
+
+							m_objectLists[i][j].transform.position = pos + transform.position;
+							m_objectLists[i][j].transform.rotation = Quaternion.identity;
+							m_objectLists[i][j].gameObject.SetActive(true);
+
 							i = m_prefabsToSpawn.Count;
 						}
 					}
