@@ -77,6 +77,7 @@ namespace MusicalGameplayMechanics
 						obj.transform.localRotation = Quaternion.identity;
 						obj.transform.localScale = Vector3.one;
 						obj.GetComponent<Renderer>().material = m_barMaterial.material;
+						Destroy(obj.GetComponent<Collider>());
 						m_bars.Add(middleMan.transform);
 					}
 					break;
@@ -92,6 +93,7 @@ namespace MusicalGameplayMechanics
 						obj.transform.localScale = new Vector3(1 / (float)m_numberOfBars, 0.001f, 1);
 						obj.transform.name = "bar " + i;
 						obj.GetComponent<Renderer>().material = m_barMaterial.material;
+						Destroy(obj.GetComponent<Collider>());
 						m_bars.Add(obj.transform);
 					}
 					break;
@@ -112,6 +114,7 @@ namespace MusicalGameplayMechanics
 						obj.transform.localRotation = Quaternion.identity;
 						obj.transform.localScale = Vector3.one;
 						obj.GetComponent<Renderer>().material = m_barMaterial.material;
+						Destroy(obj.GetComponent<Collider>());
 						m_bars.Add(middleMan.transform);
 					}
 					break;
