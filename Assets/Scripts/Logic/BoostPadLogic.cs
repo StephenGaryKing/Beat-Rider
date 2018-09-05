@@ -45,5 +45,11 @@ namespace BeatRider
 			else
 				m_arrows[(m_invertLight) ? m_arrows.Length - 1 - i : i].material.SetColor("_EmissionColor", m_arrowColour * ((m_invertLight) ? m_maxEmission : m_minEmission));
 		}
+
+		void OnTriggerEnter(Collider other)
+		{
+			if (other.CompareTag("Obstacle"))
+				gameObject.SetActive(false);
+		}
 	}
 }

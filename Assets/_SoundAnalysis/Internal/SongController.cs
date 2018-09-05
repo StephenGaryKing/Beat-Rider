@@ -87,7 +87,8 @@ namespace MusicalGameplayMechanics
 				m_playSongButton.interactable = false;						// Since no song is loaded the play song button should not be accessable
 			_audioSource = GetComponent<AudioSource>();
 			if (m_volumeSlider)
-				m_volumeSlider.value = _audioSource.volume;					// initialize the volume slider
+				m_volumeSlider.value = _audioSource.volume;                 // initialize the volume slider
+			_audioSource.minDistance = 0.3f;
 		}
 
 		void Update()

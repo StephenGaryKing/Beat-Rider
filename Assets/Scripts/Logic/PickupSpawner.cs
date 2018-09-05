@@ -88,7 +88,6 @@ namespace BeatRider
 						if (val < m_prefabsToSpawn[i].realChanceToSpawn)
 						{
 							int j = 0;
-							Debug.Log(j);
 							while (m_objectLists[i][j].activeInHierarchy)
 								j++;
 
