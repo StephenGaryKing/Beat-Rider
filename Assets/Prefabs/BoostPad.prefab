@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 114024258980069986}
   - component: {fileID: 114114869609366032}
   - component: {fileID: 114472926491505760}
+  - component: {fileID: 54626689444600836}
   m_Layer: 0
   m_Name: BoostPad
   m_TagString: Boost
@@ -360,6 +361,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1460191265275460}
   m_Mesh: {fileID: 4300004, guid: 290a984cc88351249b40d46cb3761cba, type: 3}
+--- !u!54 &54626689444600836
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1581168358196022}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &65088822765635918
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -418,4 +434,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_particlePrefab: {fileID: 1565115138656346, guid: f539b9d45ac49c543a2b9365636aee41,
     type: 2}
-  m_createOnDeath: 0
