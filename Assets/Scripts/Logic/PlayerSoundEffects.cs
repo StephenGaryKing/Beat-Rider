@@ -6,6 +6,7 @@ using UnityEngine;
 public struct Sound
 {
 	public AudioClip soundToPlay;
+	[Range(0, 1)]
 	public float volume;
 }
 
