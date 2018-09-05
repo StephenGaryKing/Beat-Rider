@@ -490,7 +490,7 @@ namespace MusicalGameplayMechanics
 
 		public void ResetValues()
 		{
-			FindObjectOfType<BeatRider.PlayerController>().ResetSpeed();
+			FindObjectOfType<BeatRider.PlayerCollision>().ResetSpeed();
 			FindObjectOfType<BeatRider.ScoreBoardLogic>().ResetScores();
 		}
 	}

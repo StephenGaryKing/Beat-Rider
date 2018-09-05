@@ -6,7 +6,7 @@ namespace BeatRider
 {
 	public class FloatingCameraLogic : MonoBehaviour {
 
-		public PlayerController m_target;							// The player (used for reacting to speed)
+		PlayerCollision m_target;							// The player (used for reacting to speed)
 		public float m_movementSmoothing = 0.1f;					// How smooth the camera should move
 		public Vector3 m_movementMask = new Vector3(1, 1, 0);		// Mask to deny/multiply movement on cirtain axis'
 
@@ -26,6 +26,7 @@ namespace BeatRider
 		private void Start()
 		{
 			// set default/starting positions for values
+			m_target = FindObjectOfType<PlayerCollision>();
 			m_defaultMag = m_shakeMagnitude;
 			m_defaultFreq = m_shakeFrequency;
 			m_offset = transform.position - m_target.transform.position;

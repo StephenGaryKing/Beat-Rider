@@ -5,7 +5,7 @@ using MusicalGameplayMechanics;
 
 namespace BeatRider
 {
-	[RequireComponent(typeof(Rigidbody))]
+	[RequireComponent(typeof(Rigidbody), typeof(PlayerCollision))]
 	public class PlayerController : MonoBehaviour
 	{
 
@@ -14,31 +14,14 @@ namespace BeatRider
 		[SerializeField] float m_bounceAmount = 8;
 		[SerializeField] float m_tiltAmount = 0.3f;
 		[SerializeField] float m_tiltSpeed = 0.2f;
-		[SerializeField] float m_ambientSpeedDegradation = 0.1f;
-
-		public float m_maxZoomAmount = 10;
-		[SerializeField] float m_FOVSmoothing = 0.1f;
-		public float m_minFOV = 50;
-		public float m_maxFOV = 100;
-		[HideInInspector] public float m_targetFOV;
-		[HideInInspector] public float m_FOVAmount;
-
-		[SerializeField] float m_maxScoreMultiplier = 30;
 
 		float m_amountToMove = 0;
 		float m_halfTrackWidth;
-		[HideInInspector]public Vector3 m_startingCameraPos;
-		FloatingCameraLogic m_floatingCamera;
 
-		ScoreBoardLogic _scoreBoardLogic;
 		Rigidbody _rigidBody;
 		// Use this for initialization
 		void Start()
 		{
-			m_floatingCamera = FindObjectOfType<FloatingCameraLogic>();
-			_scoreBoardLogic = FindObjectOfType<ScoreBoardLogic>();
-			m_startingCameraPos = Camera.main.transform.position;
-			m_targetFOV = m_minFOV;
 			m_halfTrackWidth = m_trackWidth / 2;
 			_rigidBody = GetComponent<Rigidbody>();
 		}
@@ -64,46 +47,7 @@ namespace BeatRider
 				_rigidBody.AddForce(Vector3.left * m_bounceAmount, ForceMode.Impulse);
 			}
 
-			if (m_targetFOV > m_minFOV)
-				m_targetFOV -= m_ambientSpeedDegradation;
-
 			_rigidBody.MoveRotation(Quaternion.Slerp(transform.rotation, Quaternion.Euler(Vector3.forward * (m_tiltAmount * -m_amountToMove)), m_tiltSpeed));
-		}
-
-		void OnTriggerEnter(Collider other)
-		{
-			if (other.CompareTag("Note"))
-			{
-				_scoreBoardLogic.m_score += Mathf.RoundToInt(1 + (m_maxScoreMultiplier * m_FOVAmount));
-				other.gameObject.SetActive(false);
-				other.GetComponent<ParticleCreationLogic>().SpawnParticle();
-			}
-
-			if (other.CompareTag("Boost"))
-				if (m_targetFOV < m_maxFOV)
-				{
-					m_targetFOV += other.GetComponent<BoostPadLogic>().m_boostAmount;
-					other.GetComponent<ParticleCreationLogic>().SpawnParticle();
-				}
-
-			if (other.CompareTag("Obstacle"))
-			{
-                if (m_targetFOV > m_minFOV)
-                {
-                    m_targetFOV = m_minFOV;
-                    ObstacleLogic ol = other.GetComponent<ObstacleLogic>();
-                    m_floatingCamera.StartCoroutine(m_floatingCamera.Shake(ol.m_shakeMagnitude, ol.m_shakeFrequency, ol.m_waitTime, ol.m_relaxTime));
-                }
-                else
-                {
-                    FindObjectOfType<SongController>().StopSong();
-				}
-			}
-		}
-
-		public void ResetSpeed()
-		{
-			m_targetFOV = m_minFOV;
 		}
 	}
 }

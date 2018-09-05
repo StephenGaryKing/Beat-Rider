@@ -16,11 +16,11 @@ namespace BeatRider
 
 		float m_maxVal;
 		Color m_arrowColour;
-		PlayerController m_player;
+		PlayerCollision m_player;
 
 		private void Start()
 		{
-			m_player = FindObjectOfType<PlayerController>();
+			m_player = FindObjectOfType<PlayerCollision>();
 			if (m_arrows.Length != 0)
 				m_arrowColour = m_arrows[0].material.GetColor("_EmissionColor");
 			m_maxVal = m_player.m_maxFOV - m_player.m_minFOV;
