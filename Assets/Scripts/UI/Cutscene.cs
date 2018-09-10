@@ -8,6 +8,7 @@ using UnityEngine;
 [System.Serializable]
 public struct SpeachBubble
 {
+	public Sprite Image;
 	public string Name;
 	public string Content;
 	public float waitTime;
