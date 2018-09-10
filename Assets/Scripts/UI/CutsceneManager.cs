@@ -9,6 +9,7 @@ using MusicalGameplayMechanics;
 /// </summary>
 public class CutsceneManager : MonoBehaviour {
 
+	public Image m_imageBox;
 	public Text m_nameBox;				// text box for the name of whoever is talking
 	public Text m_conversationBox;		// text box for the substance of what someone is saying
 
@@ -51,6 +52,7 @@ public class CutsceneManager : MonoBehaviour {
 		// while the conversation is still going
 		while (m_speachBubbleNumber < cs.m_conversation.Length)
 		{
+			m_imageBox.sprite = cs.m_conversation[m_speachBubbleNumber].Image;
 			m_nameBox.text = cs.m_conversation[m_speachBubbleNumber].Name + ":";
 			m_conversationBox.text = cs.m_conversation[m_speachBubbleNumber].Content;
 			// if no wait time is specified, wait till an external force continues the conversation
