@@ -8,6 +8,7 @@ using System.Numerics;
 using DSPLib;
 using System.IO;
 using UnityEngine.UI;
+using BeatRider;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -80,8 +81,13 @@ namespace MusicalGameplayMechanics
 		public List<Pass> m_passes;                         // The passes to better analyze specific sections of the spectrum
 		MusicalityAnalyzer m_preProcessedMusicalityAnalyzer;                // Class used to analyse the BPM, Pitch Variance and Beat Density of the spectrums of a song prior to playing it
 
+		//beat rider
+		[HideInInspector] public Cutscene m_cutsceneToPlayAtEnd;
+		CutsceneManager m_cutsceneManager;
+
 		void Start()
 		{
+			m_cutsceneManager = FindObjectOfType<CutsceneManager>();
 			m_preProcessedMusicalityAnalyzer = new MusicalityAnalyzer();
 			if (m_playSongButton)
 				m_playSongButton.interactable = false;						// Since no song is loaded the play song button should not be accessable
@@ -162,6 +168,7 @@ namespace MusicalGameplayMechanics
 
 		public void StopSong()
 		{
+			m_cutsceneToPlayAtEnd = null;
             _audioSource.Stop();
 		}
 
@@ -234,9 +241,17 @@ namespace MusicalGameplayMechanics
 
 		void EndSong()
 		{
-			//handle Menus
-			m_FreeFlowMenuTransition.PlayInTransitions();
-			m_FreeFlowMenuTransition.PlayOutTransitions();
+			if (m_cutsceneToPlayAtEnd)
+			{
+				ResetValues();
+				m_cutsceneManager.PlayCutscene(m_cutsceneToPlayAtEnd);
+			}
+			else
+			{
+				//handle Menus
+				m_FreeFlowMenuTransition.PlayInTransitions();
+				m_FreeFlowMenuTransition.PlayOutTransitions();
+			}
 			Invoke("ResetValues", 6);		// should probs remove all the notes and stuff, the reset scores. stops the six second wait time.
 		}
 
@@ -276,6 +291,19 @@ namespace MusicalGameplayMechanics
 		public void OpenSoundFile(string filePath)
 		{
 			StartCoroutine(LoadFile(filePath));
+		}
+
+		/// <summary>
+		/// Open a sound file using a clip
+		/// </summary>
+		public void OpenSoundFile(AudioClip clip)
+		{
+			if (clip != null)
+			{
+				_audioSource.clip = clip;
+				_audioSource.clip.name = clip.name;     // Isolate its name;
+				GetData();
+			}
 		}
 
 		public void OpenSoundFileByName(string filePath)
@@ -337,6 +365,7 @@ namespace MusicalGameplayMechanics
 
 		IEnumerator LoadFile(string fileName)
 		{
+			m_cutsceneToPlayAtEnd = null;
 			if (fileName != null)
 			{
 				using (var www = new WWW("file:///" + fileName))

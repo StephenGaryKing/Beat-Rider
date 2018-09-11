@@ -22,9 +22,11 @@ namespace BeatRider
 		SoundManager m_soundManager;
 		SongController m_songController;    // used to play the specified song after the cutscene is over (if any)
 		int m_speachBubbleNumber = 0;       // the current line to write
+		LevelGenerator m_levelgen;
 
 		private void Start()
 		{
+			m_levelgen = FindObjectOfType<LevelGenerator>();
 			m_soundManager = FindObjectOfType<SoundManager>();
 			m_songController = FindObjectOfType<SongController>();
 		}
@@ -78,8 +80,8 @@ namespace BeatRider
 		public IEnumerator StartCutscene(Cutscene cs)
 		{
 			// if there is a song to be loaded, do it at the start
-			if (cs.m_songToPlay != "")
-				m_songController.OpenSoundFileByName(cs.m_songToPlay);
+			if (cs.m_levelToPlay.m_song)
+				m_songController.OpenSoundFile(cs.m_levelToPlay.m_song);
 
 			// make the conversation visible
 			m_conversationBox.transform.parent.parent.gameObject.SetActive(true);
@@ -105,13 +107,17 @@ namespace BeatRider
 				}
 			}
 			// if there is a song to play
-			if (cs.m_songToPlay != "")
+			if (cs.m_levelToPlay.m_song)
 			{
 				// if the song is not loading or analysing still
 				while (m_songController.m_bgThread != null)
 					yield return null;
 				// play it
 				m_songController.PlayAudio();
+				// change the level gen
+				m_levelgen.m_levelTemplate = cs.m_levelToPlay.m_levelTemplate;
+				// update cutscene
+				m_songController.m_cutsceneToPlayAtEnd = cs.m_levelToPlay.m_endCutscene;
 			}
 			// hide the conversation
 			m_conversationBox.transform.parent.parent.gameObject.SetActive(false);

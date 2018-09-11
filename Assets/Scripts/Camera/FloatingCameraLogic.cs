@@ -32,6 +32,11 @@ namespace BeatRider
 			m_offset = transform.position - m_target.transform.position;
 		}
 
+		public void SnapFOV()
+		{
+			Camera.main.fieldOfView = m_target.m_targetFOV;
+		}
+
 		void FixedUpdate() {
 			//follow Movement
 			Vector3 newPos = Vector3.Lerp(transform.position, m_target.transform.position + m_offset, m_movementSmoothing);

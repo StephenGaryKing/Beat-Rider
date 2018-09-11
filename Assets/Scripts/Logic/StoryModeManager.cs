@@ -10,7 +10,6 @@ namespace BeatRider
 		public List<Cutscene> m_cutscenes;
 		CutsceneManager m_cutsceneManager;
 
-
 		private void Start()
 		{
 			m_cutsceneManager = FindObjectOfType<CutsceneManager>();
