@@ -2,18 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StoryModeManager : MonoBehaviour {
-
-	public List<Cutscene> m_cutscenes;
-	CutsceneManager m_cutsceneManager;
-
-
-	private void Start()
+namespace BeatRider
+{
+	public class StoryModeManager : MonoBehaviour
 	{
-		m_cutsceneManager = FindObjectOfType<CutsceneManager>();
-	}
-	public void LoadCutscene(int cutsceneNumber)
-	{
-		m_cutsceneManager.PlayCutscene(m_cutscenes[cutsceneNumber]);
+
+		public List<Cutscene> m_cutscenes;
+		CutsceneManager m_cutsceneManager;
+
+
+		private void Start()
+		{
+			m_cutsceneManager = FindObjectOfType<CutsceneManager>();
+		}
+		public void LoadCutscene(int cutsceneNumber)
+		{
+			m_cutsceneManager.PlayCutscene(m_cutscenes[cutsceneNumber]);
+		}
 	}
 }

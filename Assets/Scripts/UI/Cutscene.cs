@@ -9,6 +9,7 @@ using UnityEngine;
 public struct SpeachBubble
 {
 	public Sprite Image;
+	public Sound Audio;
 	public string Name;
 	public string Content;
 	public float waitTime;
@@ -18,6 +19,7 @@ public struct SpeachBubble
 
 public class Cutscene : ScriptableObject {
 
+	public string m_cameraTagToUse;			// camera to use for the cutscene
 	public SpeachBubble[] m_conversation;	// a conversation with n elements
 	public string m_songToPlay;				// the song to play (if any) after the cutscene is over
 }

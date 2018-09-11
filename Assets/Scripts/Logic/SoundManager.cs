@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour {
 
-	public void PlaySound(Sound sound)
+	public AudioSource PlaySound(Sound sound)
 	{
 		if (sound.soundToPlay != null)
 		{
@@ -13,6 +13,8 @@ public class SoundManager : MonoBehaviour {
 			source.volume = sound.volume;
 			source.Play();
 			Destroy(source, sound.soundToPlay.length);
+			return source;
 		}
+		return null;
 	}
 }
