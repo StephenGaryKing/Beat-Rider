@@ -92,7 +92,6 @@ GameObject:
   - component: {fileID: 54895856213857972}
   - component: {fileID: 114584951406598992}
   - component: {fileID: 114880165130541552}
-  - component: {fileID: 114602459102582604}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -327,8 +326,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1409542549337808}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.066338, y: -0.1129, z: -0.00032732}
+  m_LocalRotation: {x: -0.0101192305, y: 0, z: 0.005799838, w: 0.999932}
+  m_LocalPosition: {x: -0.066338, y: 0.010885991, z: -0.00032732}
   m_LocalScale: {x: 0.23087758, y: 0.23087756, z: 0.23087756}
   m_Children:
   - {fileID: 4241619110110646}
@@ -995,8 +994,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.3420591, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: -0.31}
+  m_Size: {x: 1.6381205, y: 1, z: 1}
+  m_Center: {x: -0.05551642, y: 0, z: -0.31}
 --- !u!114 &114445130782112852
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1023,8 +1022,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_trackWidth: 7
-  m_moveSpeed: 200
-  m_bounceAmount: 8
+  m_moveSpeed: 300
+  m_bounceAmount: 15
   m_tiltAmount: 0.1
   m_tiltSpeed: 0.2
 --- !u!114 &114584951406598992
@@ -1040,34 +1039,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_boost:
     soundToPlay: {fileID: 8300000, guid: 15b16b59a53bb9443b58b9834b8e1943, type: 3}
-    volume: 5
+    volume: 1
   m_pickupNote:
-    soundToPlay: {fileID: 0}
-    volume: 0
+    soundToPlay: {fileID: 8300000, guid: 14652ebf3908ddb4e9030a2a2c138641, type: 3}
+    volume: 0.2
   m_hitObstical:
-    soundToPlay: {fileID: 0}
-    volume: 0
-  m_soundManager: {fileID: 0}
---- !u!114 &114602459102582604
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1394093755142130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8fd0f4237da11647b2f6fd5003581b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_boost:
-    soundToPlay: {fileID: 8300000, guid: 15b16b59a53bb9443b58b9834b8e1943, type: 3}
-    volume: 5
-  m_pickupNote:
-    soundToPlay: {fileID: 0}
-    volume: 0
-  m_hitObstical:
-    soundToPlay: {fileID: 0}
-    volume: 0
+    soundToPlay: {fileID: 8300000, guid: 7328c159409409849bf0cf659cc168ae, type: 3}
+    volume: 0.557
   m_soundManager: {fileID: 0}
 --- !u!114 &114880165130541552
 MonoBehaviour:
@@ -1085,10 +1063,10 @@ MonoBehaviour:
   m_FOVSmoothing: 0.1
   m_minFOV: 50
   m_maxFOV: 110
-  m_targetFOV: 0
+  m_targetFOV: 50
   m_FOVAmount: 0
   m_ambientSpeedDegradation: 0.1
-  m_startingCameraPos: {x: 0, y: 0, z: 0}
+  m_startingCameraPos: {x: 0, y: 4.84, z: -8.12}
 --- !u!198 &198565438631906102
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -1149,7 +1127,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 313382884
+  randomSeed: 2140392322
   InitialModule:
     serializedVersion: 3
     enabled: 1
