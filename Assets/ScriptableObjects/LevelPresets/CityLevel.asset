@@ -17,8 +17,11 @@ MonoBehaviour:
   m_unitSize: 149.98
   m_numOfSceneryLayers: 1
   m_sceneryElements:
-  - m_prefab: {fileID: 1870490480915604, guid: 8645cba24a0ee7844812d36131005ba8, type: 2}
+  - m_prefab: {fileID: 1403617704442294, guid: 07340dd0ab4f5fa4a8b21cd441d062be, type: 2}
+    spawnChanceWeight: 100
+    randomScaleVariance: {x: 1, y: 1}
+  - m_prefab: {fileID: 1956783810855892, guid: 25603f29c37ebf347aa4b6764f0691c0, type: 2}
     spawnChanceWeight: 100
     randomScaleVariance: {x: 1, y: 1}
   m_trackElements: []
-  m_travelTime: 20
+  m_travelTime: 9
