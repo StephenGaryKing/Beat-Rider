@@ -42,6 +42,7 @@ namespace BeatRider
 		public void ResetSpeed()
 		{
 			m_targetFOV = m_minFOV;
+			m_floatingCamera.SnapFOV();
 		}
 
 		void OnTriggerEnter(Collider other)

@@ -57,7 +57,7 @@ namespace BeatRider
 	public class LevelGenerator : MonoBehaviour
 	{
 		[Tooltip("A scriptable object that determines the layout of a level")]
-		[SerializeField] LevelTemplate m_levelTemplate;
+		public LevelTemplate m_levelTemplate;
 
 		List<GameObject> m_activeSceneryElements = new List<GameObject>();
 		List<GameObject> m_inactiveSceneryElements = new List<GameObject>();

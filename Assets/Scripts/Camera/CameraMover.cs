@@ -17,19 +17,23 @@ namespace BeatRider
 
 		FloatingCameraLogic m_floatingCam;				//the floating camera script. used when disabling ingame cinematics
 
-		private void Start()
+		public void Start()
 		{
 			m_floatingCam = FindObjectOfType<FloatingCameraLogic>();
 		}
 
-		public void MoveToPos()
+		public Tweener MoveToPos()
 		{
 			// set the cinematics of the camera
 			if (m_floatingCam)
 				m_floatingCam.enabled = m_cinematicMovementEnabled;
+			else
+				Debug.LogError("floating cam not found");
 			// use the tweening library to move the camera to the desired position with the desired rotation
-			Camera.main.transform.DOMove(m_targetTransform.position, m_time);
+			Tweener tween = Camera.main.transform.DOMove(m_targetTransform.position, m_time);
 			Camera.main.transform.DORotateQuaternion(m_targetTransform.rotation, m_time);
+
+			return tween;
 		}
 	}
 }

@@ -21,10 +21,20 @@ public struct Transition
 
 public class MenuTransition : MonoBehaviour {
 
-	public Transition[] m_outTransitions;
+    public Transition[] m_outTransitions;
 	public Transition[] m_inTransitions;
 
-	public void PlayTransitions()
+    Canvas canvas;
+
+    private void Start() {
+        Transform t = transform;
+        while (t != null && canvas == null) {
+            canvas = t.GetComponent<Canvas>();
+            t = t.parent;
+        }
+    }
+
+    public void PlayTransitions()
 	{
 		StartCoroutine(InTransition());
 		StartCoroutine(OutTransition());
@@ -42,14 +52,16 @@ public class MenuTransition : MonoBehaviour {
 		foreach (Transition tran in m_outTransitions)
 			if (tran.ObjectToAnimate.Obj)
 			{
+                Vector3 localPos = GetLocalPos(tran.ObjectToAnimate.TargetPosition);
+                //Vector3 localPos = tran.ObjectToAnimate.TargetPosition;
                 if (tran.ObjectToAnimate.Time == 0)
                 {
-                    tran.ObjectToAnimate.Obj.transform.localPosition = tran.ObjectToAnimate.TargetPosition;
+                    tran.ObjectToAnimate.Obj.transform.localPosition = localPos;
                     tran.ObjectToAnimate.Obj.transform.localScale = tran.ObjectToAnimate.TargetScale;
                 }
                 else
                 {
-                    tweeners.Add(tran.ObjectToAnimate.Obj.transform.DOLocalMove(tran.ObjectToAnimate.TargetPosition, tran.ObjectToAnimate.Time));
+                    tweeners.Add(tran.ObjectToAnimate.Obj.transform.DOLocalMove(localPos, tran.ObjectToAnimate.Time));
                     tweeners.Add(tran.ObjectToAnimate.Obj.transform.DOScale(tran.ObjectToAnimate.TargetScale, tran.ObjectToAnimate.Time));
                 }
 			}
@@ -65,7 +77,7 @@ public class MenuTransition : MonoBehaviour {
 		yield return null;
 	}
 
-	public void PlayInTransitions()
+    public void PlayInTransitions()
 	{
 		StartCoroutine(InTransition());
 	}
@@ -78,18 +90,28 @@ public class MenuTransition : MonoBehaviour {
 				tran.ObjectToToggleEnabled.SetActive(true);
 			if (tran.ObjectToAnimate.Obj)
 			{
+                Vector3 localPos = GetLocalPos(tran.ObjectToAnimate.TargetPosition);
                 if (tran.ObjectToAnimate.Time == 0)
                 {
-                    tran.ObjectToAnimate.Obj.transform.localPosition = tran.ObjectToAnimate.TargetPosition;
+                    tran.ObjectToAnimate.Obj.transform.localPosition = localPos;
                     tran.ObjectToAnimate.Obj.transform.localScale = tran.ObjectToAnimate.TargetScale;
                 }
                 else
                 {
-                    tran.ObjectToAnimate.Obj.transform.DOLocalMove(tran.ObjectToAnimate.TargetPosition, tran.ObjectToAnimate.Time);
+                    tran.ObjectToAnimate.Obj.transform.DOLocalMove(localPos, tran.ObjectToAnimate.Time);
                     tran.ObjectToAnimate.Obj.transform.DOScale(tran.ObjectToAnimate.TargetScale, tran.ObjectToAnimate.Time);
                 }
 			}
 		}
 		yield return null;
 	}
+
+    Vector3 GetLocalPos(Vector3 anchorPos) {
+        RectTransform rectTransform = transform as RectTransform;
+        RectTransform canvasRect = canvas.transform as RectTransform;
+
+        anchorPos.x += canvasRect.rect.width * (rectTransform.anchorMin.x - 0.5f);
+        anchorPos.y += canvasRect.rect.height * (rectTransform.anchorMin.y - 0.5f);
+        return anchorPos;
+    }
 }
