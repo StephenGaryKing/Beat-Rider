@@ -410,7 +410,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4097048781171380
 Transform:
   m_ObjectHideFlags: 1
@@ -1617,6 +1617,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_unitsToMovePerSecond: 50
+  m_zValueToDie: 0
+  m_levelGen: {fileID: 0}
 --- !u!114 &114044118201781800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1657,6 +1659,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_unitsToMovePerSecond: 50
+  m_zValueToDie: 0
+  m_levelGen: {fileID: 0}
 --- !u!114 &114146624240733874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1669,6 +1673,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_unitsToMovePerSecond: 50
+  m_zValueToDie: 0
+  m_levelGen: {fileID: 0}
 --- !u!114 &114168809197629688
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1693,9 +1699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c87e339819812d4183a99400d04f206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_particlePrefab: {fileID: 1846376067620342, guid: cf81456b8fc18e14aa5d92a2d98a4f25,
-    type: 2}
-  m_createOnDeath: 1
+  m_particlePrefab: {fileID: 0}
 --- !u!114 &114212447892968746
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1707,9 +1711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c87e339819812d4183a99400d04f206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_particlePrefab: {fileID: 1846376067620342, guid: cf81456b8fc18e14aa5d92a2d98a4f25,
-    type: 2}
-  m_createOnDeath: 1
+  m_particlePrefab: {fileID: 0}
 --- !u!114 &114236341307268600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1734,9 +1736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c87e339819812d4183a99400d04f206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_particlePrefab: {fileID: 1846376067620342, guid: cf81456b8fc18e14aa5d92a2d98a4f25,
-    type: 2}
-  m_createOnDeath: 1
+  m_particlePrefab: {fileID: 0}
 --- !u!114 &114342094132068212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1749,6 +1749,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_unitsToMovePerSecond: 50
+  m_zValueToDie: 0
+  m_levelGen: {fileID: 0}
 --- !u!114 &114357468915828962
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1776,6 +1778,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_unitsToMovePerSecond: 50
+  m_zValueToDie: 0
+  m_levelGen: {fileID: 0}
 --- !u!114 &114438735268829800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1788,6 +1792,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_unitsToMovePerSecond: 50
+  m_zValueToDie: 0
+  m_levelGen: {fileID: 0}
 --- !u!114 &114456113319183474
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1815,6 +1821,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_unitsToMovePerSecond: 50
+  m_zValueToDie: 0
+  m_levelGen: {fileID: 0}
 --- !u!114 &114475831185842548
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1827,6 +1835,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_unitsToMovePerSecond: 50
+  m_zValueToDie: 0
+  m_levelGen: {fileID: 0}
 --- !u!114 &114489756585630478
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1839,6 +1849,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_unitsToMovePerSecond: 50
+  m_zValueToDie: 0
+  m_levelGen: {fileID: 0}
 --- !u!114 &114588397476669264
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1851,6 +1863,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_boostAmount: 20
+  m_arrows: []
+  m_maxEmission: 0
+  m_minEmission: 0
+  m_invertLight: 0
 --- !u!114 &114610594267815220
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1862,9 +1878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c87e339819812d4183a99400d04f206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_particlePrefab: {fileID: 1846376067620342, guid: cf81456b8fc18e14aa5d92a2d98a4f25,
-    type: 2}
-  m_createOnDeath: 1
+  m_particlePrefab: {fileID: 0}
 --- !u!114 &114630707762515778
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1877,6 +1891,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_unitsToMovePerSecond: 50
+  m_zValueToDie: 0
+  m_levelGen: {fileID: 0}
 --- !u!114 &114726508290596792
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1888,9 +1904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c87e339819812d4183a99400d04f206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_particlePrefab: {fileID: 1846376067620342, guid: cf81456b8fc18e14aa5d92a2d98a4f25,
-    type: 2}
-  m_createOnDeath: 1
+  m_particlePrefab: {fileID: 0}
 --- !u!114 &114742766964666574
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1931,6 +1945,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_unitsToMovePerSecond: 50
+  m_zValueToDie: 0
+  m_levelGen: {fileID: 0}
 --- !u!114 &114761234946483508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1943,6 +1959,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_unitsToMovePerSecond: 50
+  m_zValueToDie: 0
+  m_levelGen: {fileID: 0}
 --- !u!114 &114765580002959760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1955,6 +1973,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_unitsToMovePerSecond: 50
+  m_zValueToDie: 0
+  m_levelGen: {fileID: 0}
 --- !u!114 &114801229344774520
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1967,6 +1987,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_unitsToMovePerSecond: 50
+  m_zValueToDie: 0
+  m_levelGen: {fileID: 0}
 --- !u!114 &114841068459040832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1979,6 +2001,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_unitsToMovePerSecond: 50
+  m_zValueToDie: 0
+  m_levelGen: {fileID: 0}
 --- !u!114 &114860266271198502
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1991,6 +2015,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_unitsToMovePerSecond: 50
+  m_zValueToDie: 0
+  m_levelGen: {fileID: 0}
 --- !u!114 &114904074107892926
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2003,6 +2029,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_boostAmount: 20
+  m_arrows: []
+  m_maxEmission: 0
+  m_minEmission: 0
+  m_invertLight: 0
 --- !u!114 &114922546471827536
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2015,6 +2045,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_boostAmount: 20
+  m_arrows: []
+  m_maxEmission: 0
+  m_minEmission: 0
+  m_invertLight: 0
 --- !u!114 &114927806846164808
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2042,3 +2076,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_unitsToMovePerSecond: 50
+  m_zValueToDie: 0
+  m_levelGen: {fileID: 0}
