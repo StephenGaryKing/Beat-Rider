@@ -3,19 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
-
+using BeatRider;
+using System.IO;
+/*
 [System.Serializable]
-public struct WindowItem
+public class WindowItem
 {
 	public string Title;
 	public Sprite TitleImage;
-	public string FileLocationToLoad;
+	public CustomisationButton TemplateMenuItem;
+	[HideInInspector] public GameObject TitleGameObject;
+	[HideInInspector] public List<GameObject> MenuItemGameObjects = new List<GameObject>();
 }
 
 public class MultiWindowNavigation : MonoBehaviour {
 
 	public GameObject m_templateTitle;
-	public GameObject m_templateMenuItem;
 
 	public float m_offsetDistance;
 	public Vector3 m_offsetScale;
@@ -23,14 +26,12 @@ public class MultiWindowNavigation : MonoBehaviour {
 
 	public List<WindowItem> m_menuItems = new List<WindowItem>();
 
-	List<GameObject> m_titles = new List<GameObject>();
-	List<GameObject> m_items = new List<GameObject>();
 	int m_currentWindow = 0;
+
 
 	// Use this for initialization
 	void Start()
 	{
-		m_templateMenuItem.SetActive(false);
 		m_templateTitle.SetActive(false);
 		PopulateTitles();
 		SnapUpdateWindows();
@@ -38,25 +39,32 @@ public class MultiWindowNavigation : MonoBehaviour {
 
 	public void PopulateTitles()
 	{
-		m_titles.Clear();
-		foreach (var item in m_menuItems)
+		for (int i = 0; i < m_menuItems.Count; i ++)
 		{
 			GameObject newTitle = Instantiate(m_templateTitle, transform);
 			newTitle.transform.localPosition = m_templateTitle.transform.localPosition;
-			newTitle.name = item.Title;
+			newTitle.name = m_menuItems[i].Title;
 			newTitle.GetComponentInChildren<Text>().text = "";
-			if (item.TitleImage)
-				newTitle.GetComponentInChildren<Image>().sprite = item.TitleImage;
+			if (m_menuItems[i].TitleImage)
+				newTitle.GetComponentInChildren<Image>().sprite = m_menuItems[i].TitleImage;
 			else
-				newTitle.GetComponentInChildren<Text>().text = item.Title;
+				newTitle.GetComponentInChildren<Text>().text = m_menuItems[i].Title;
 			newTitle.SetActive(true);
-			m_titles.Add(newTitle);
+			m_menuItems[i].TitleGameObject = newTitle;
+			//m_titles.Add(newTitle);
+			PopulateInfo(m_menuItems[i]);
+			if (m_menuItems[i].TemplateMenuItem)
+				m_menuItems[i].TemplateMenuItem.gameObject.SetActive(false);
 		}
 	}
 
-	public void PopulateInfo(WindowItem item)
+	public void PopulateInfo (WindowItem item)
 	{
-
+		if (item.TemplateMenuItem)
+		{
+			// create buttons
+			GameObject newMenuItem = Instantiate(item.TemplateMenuItem, );
+		}
 	}
 
 	void SnapUpdateWindows()
@@ -75,6 +83,8 @@ public class MultiWindowNavigation : MonoBehaviour {
 			titles[index] = m_titles[realI];
 			index++;
 		}
+
+		PopulateInfo(m_menuItems[m_currentWindow]);
 
 		// position and scale the appropriate titles
 		titles[0].transform.localPosition = m_templateTitle.transform.localPosition + Vector3.left * m_offsetDistance * 1.5f;
@@ -111,6 +121,8 @@ public class MultiWindowNavigation : MonoBehaviour {
 			index++;
 		}
 
+		PopulateInfo(m_menuItems[m_currentWindow]);
+
 		// position and scale the appropriate titles
 		titles[0].transform.DOLocalMove(m_templateTitle.transform.localPosition + Vector3.left * m_offsetDistance * 1.5f, m_animationSpeed);
 		titles[0].transform.DOScale(Vector3.zero, m_animationSpeed);
@@ -144,3 +156,4 @@ public class MultiWindowNavigation : MonoBehaviour {
 	}
 	
 }
+*/

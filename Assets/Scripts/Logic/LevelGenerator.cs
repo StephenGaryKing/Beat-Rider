@@ -46,7 +46,7 @@ namespace BeatRider
 					return slice.Key;
 			}
 
-			Debug.LogError("Roulette Wheel failed when selecting an item. Tell Steve ASAP");
+			Debug.LogError("Roulette Wheel failed when selecting an item. Tell Steve ASAP\n" + "Item Number Was " + ran);
 			return m_wheel[0].Key;
 		}
 	}
