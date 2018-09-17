@@ -13,5 +13,5 @@ public enum Rarity
 public class Unlockable : ScriptableObject {
 
 	public Rarity m_rarity;
-	public Image m_icon;
+	public Sprite m_icon;
 }

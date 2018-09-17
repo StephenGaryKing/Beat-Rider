@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 using BeatRider;
 using System.IO;
-/*
+
 [System.Serializable]
 public class WindowItem
 {
@@ -16,7 +16,7 @@ public class WindowItem
 	[HideInInspector] public List<GameObject> MenuItemGameObjects = new List<GameObject>();
 }
 
-public class MultiWindowNavigation : MonoBehaviour {
+public class CustomisationWindowNavigation : MonoBehaviour {
 
 	public GameObject m_templateTitle;
 
@@ -26,12 +26,14 @@ public class MultiWindowNavigation : MonoBehaviour {
 
 	public List<WindowItem> m_menuItems = new List<WindowItem>();
 
+	UnlockableManager m_unlockableManager;
 	int m_currentWindow = 0;
 
 
 	// Use this for initialization
 	void Start()
 	{
+		m_unlockableManager = FindObjectOfType<UnlockableManager>();
 		m_templateTitle.SetActive(false);
 		PopulateTitles();
 		SnapUpdateWindows();
@@ -51,7 +53,6 @@ public class MultiWindowNavigation : MonoBehaviour {
 				newTitle.GetComponentInChildren<Text>().text = m_menuItems[i].Title;
 			newTitle.SetActive(true);
 			m_menuItems[i].TitleGameObject = newTitle;
-			//m_titles.Add(newTitle);
 			PopulateInfo(m_menuItems[i]);
 			if (m_menuItems[i].TemplateMenuItem)
 				m_menuItems[i].TemplateMenuItem.gameObject.SetActive(false);
@@ -63,7 +64,41 @@ public class MultiWindowNavigation : MonoBehaviour {
 		if (item.TemplateMenuItem)
 		{
 			// create buttons
-			GameObject newMenuItem = Instantiate(item.TemplateMenuItem, );
+			switch (item.TemplateMenuItem.m_partToCustomise)
+			{
+				case (PartToCustomise.Colour):
+					foreach (var index in m_unlockableManager.m_unlockedColours)
+					{
+						GameObject newButton = Instantiate(item.TemplateMenuItem.gameObject, item.TemplateMenuItem.transform.parent);
+						newButton.GetComponent<CustomisationButton>().SetUnlockable(m_unlockableManager.m_unlockableColours[index]);
+						item.MenuItemGameObjects.Add(newButton);
+					}
+					break;
+				case (PartToCustomise.Highlight):
+					foreach (var index in m_unlockableManager.m_unlockedHighlights)
+					{
+						GameObject newButton = Instantiate(item.TemplateMenuItem.gameObject, item.TemplateMenuItem.transform.parent);
+						newButton.GetComponent<CustomisationButton>().m_unlockable = m_unlockableManager.m_unlockableHighlights[index];
+						item.MenuItemGameObjects.Add(newButton);
+					}
+					break;
+				case (PartToCustomise.Ship):
+					foreach (var index in m_unlockableManager.m_unlockedShips)
+					{
+						GameObject newButton = Instantiate(item.TemplateMenuItem.gameObject, item.TemplateMenuItem.transform.parent);
+						newButton.GetComponent<CustomisationButton>().m_unlockable = m_unlockableManager.m_unlockableShips[index];
+						item.MenuItemGameObjects.Add(newButton);
+					}
+					break;
+				case (PartToCustomise.Trail):
+					foreach (var index in m_unlockableManager.m_unlockedTrails)
+					{
+						GameObject newButton = Instantiate(item.TemplateMenuItem.gameObject, item.TemplateMenuItem.transform.parent);
+						newButton.GetComponent<CustomisationButton>().m_unlockable = m_unlockableManager.m_unlockableTrails[index];
+						item.MenuItemGameObjects.Add(newButton);
+					}
+					break;
+			}
 		}
 	}
 
@@ -72,7 +107,7 @@ public class MultiWindowNavigation : MonoBehaviour {
 		// find the titles to move
 		GameObject[] titles = new GameObject[5];
 		int index = 0;
-		int titleSize = m_titles.Count;
+		int titleSize = m_menuItems.Count;
 		for (int i = m_currentWindow - 2; i <= m_currentWindow + 2; i++)
 		{
 			int realI = i;
@@ -80,11 +115,18 @@ public class MultiWindowNavigation : MonoBehaviour {
 				realI = titleSize + realI;
 			else if (realI >= titleSize)
 				realI = realI - titleSize;
-			titles[index] = m_titles[realI];
+			titles[index] = m_menuItems[realI].TitleGameObject;
 			index++;
 		}
 
-		PopulateInfo(m_menuItems[m_currentWindow]);
+		// hide buttons
+		foreach (var item in m_menuItems)
+			foreach (var btn in item.MenuItemGameObjects)
+				btn.SetActive(false);
+
+		// show buttons
+		foreach (var btn in m_menuItems[m_currentWindow].MenuItemGameObjects)
+			btn.SetActive(true);
 
 		// position and scale the appropriate titles
 		titles[0].transform.localPosition = m_templateTitle.transform.localPosition + Vector3.left * m_offsetDistance * 1.5f;
@@ -109,7 +151,7 @@ public class MultiWindowNavigation : MonoBehaviour {
 		// find the titles to move
 		GameObject[] titles = new GameObject[5];
 		int index = 0;
-		int titleSize = m_titles.Count;
+		int titleSize = m_menuItems.Count;
 		for (int i = m_currentWindow - 2; i <= m_currentWindow + 2; i ++)
 		{
 			int realI = i;
@@ -117,11 +159,18 @@ public class MultiWindowNavigation : MonoBehaviour {
 				realI = titleSize + realI;
 			else if (realI >= titleSize)
 				realI = realI - titleSize;
-			titles[index] = m_titles[realI];
+			titles[index] = m_menuItems[realI].TitleGameObject;
 			index++;
 		}
 
-		PopulateInfo(m_menuItems[m_currentWindow]);
+		// hide buttons
+		foreach (var item in m_menuItems)
+			foreach (var btn in item.MenuItemGameObjects)
+				btn.SetActive(false);
+
+		// show buttons
+		foreach (var btn in m_menuItems[m_currentWindow].MenuItemGameObjects)
+			btn.SetActive(true);
 
 		// position and scale the appropriate titles
 		titles[0].transform.DOLocalMove(m_templateTitle.transform.localPosition + Vector3.left * m_offsetDistance * 1.5f, m_animationSpeed);
@@ -144,16 +193,15 @@ public class MultiWindowNavigation : MonoBehaviour {
 	public void GotoNextWindow()
 	{
 		m_currentWindow++;
-		m_currentWindow = (m_currentWindow >= m_titles.Count) ? 0 : m_currentWindow;
+		m_currentWindow = (m_currentWindow >= m_menuItems.Count) ? 0 : m_currentWindow;
 		UpdateWindows();
 	}
 
 	public void GotoPreviousWindow()
 	{
 		m_currentWindow--;
-		m_currentWindow = (m_currentWindow < 0) ? m_titles.Count - 1 : m_currentWindow;
+		m_currentWindow = (m_currentWindow < 0) ? m_menuItems.Count - 1 : m_currentWindow;
 		UpdateWindows();
 	}
 	
 }
-*/

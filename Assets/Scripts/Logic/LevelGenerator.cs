@@ -32,7 +32,7 @@ namespace BeatRider
 			Vector2 val = new Vector2(m_sumOfWheel, m_sumOfWheel += el.spawnChanceWeight);
 			m_wheel.Add(new KeyValuePair<SceneryElement, Vector2>(el, val));
 			// add a bit to stop overlap
-			m_sumOfWheel++;
+			//m_sumOfWheel++;
 		}
 
 		public SceneryElement Spin()
