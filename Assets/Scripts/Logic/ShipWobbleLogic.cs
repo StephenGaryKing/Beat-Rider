@@ -6,8 +6,6 @@ namespace BeatRider
 {
 	public class ShipWobbleLogic : MonoBehaviour
 	{
-
-		public PlayerController m_playerController;
 		public float m_frequency = 1;
 		public float m_amplitude = 1;
 		float m_height = 0;
@@ -19,8 +17,10 @@ namespace BeatRider
 			Vector3 pos = transform.localPosition;
 			pos.y = m_height;
 			transform.localPosition = pos;
-			transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(Vector3.right * (m_height * 100 + 0.2f) ), 0.05f);
-			transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(Vector3.forward * m_zRot), 0.02f);
+
+			transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(transform.right * (m_height * 100 + 0.2f) ), 0.05f);
+			transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(transform.forward * m_zRot), 0.02f);
+
 			if (Random.Range(0, 100) < 10)
 				m_zRot = Random.Range(-10, 10);
 		}

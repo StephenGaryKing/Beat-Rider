@@ -5,7 +5,7 @@ using MusicalGameplayMechanics;
 
 namespace BeatRider
 {
-	public class PickupSpawner : ObjectSpawner
+	public class ObjectSpawner : Spawner
 	{
 
 		[SerializeField] int m_secondsToLookAhead = 0;
