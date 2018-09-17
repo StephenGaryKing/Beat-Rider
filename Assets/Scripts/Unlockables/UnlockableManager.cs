@@ -20,7 +20,7 @@ namespace BeatRider
 
 		public void Start()
 		{
-			//LoadUnlockables();
+			LoadUnlockables();
 		}
 
 		public void UnlockColour(UnlockableColour colour)

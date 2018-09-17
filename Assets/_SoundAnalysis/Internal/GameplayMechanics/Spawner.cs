@@ -25,7 +25,7 @@ namespace MusicalGameplayMechanics
 	/// <summary>
 	/// Base class for spawning objects based on sound
 	/// </summary>
-	public class ObjectSpawner : MonoBehaviour
+	public class Spawner : MonoBehaviour
 	{
 		protected SongController _songController;
 		public List<SpawnableObject> m_prefabsToSpawn;

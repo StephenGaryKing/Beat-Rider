@@ -65,7 +65,7 @@ namespace BeatRider
 		GameObject m_activeSceneryContainer;
 		GameObject m_inactiveSceneryContainer;
 
-		PickupSpawner m_PickupSpawner;
+		ObjectSpawner m_PickupSpawner;
 		int m_numberOfSceneryElements;
 		int m_numberOfTrackElements;
 		float m_spawnInterval = 0;
@@ -165,7 +165,7 @@ namespace BeatRider
 			m_numberOfTrackElements = (int)Mathf.Max((transform.position.z / unitSize) + 2, 0);
 			m_numberOfSceneryElements = Mathf.Max((m_numberOfTrackElements * m_levelTemplate.m_numOfSceneryLayers) * 2, 0);
 
-			m_PickupSpawner = FindObjectOfType<PickupSpawner>();
+			m_PickupSpawner = FindObjectOfType<ObjectSpawner>();
 			// create a pool of objects
 			CreatePool();
 
