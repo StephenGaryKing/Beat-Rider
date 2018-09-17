@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98c2dbea8b6767a4ea3d8fb903a452f9, type: 3}
+  m_Name: Level One City
+  m_EditorClassIdentifier: 
+  m_cameraTagToUse: Cutscene Cam
+  m_conversation:
+  - Image: {fileID: 21300000, guid: 4069384878f853746bc2f2a427c22602, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 27754ba30ee36304e85dc78a2d184f58, type: 3}
+      volume: 0.662
+    Name: '--------'
+    Content: "One more assignment. With the payout, you\u2019ll be set for life."
+    waitTime: 6
+  - Image: {fileID: 21300000, guid: a7b057ef30380ef4f988e826ac412bd2, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 17da9180729afec4099bad94f01d9a91, type: 3}
+      volume: 0.711
+    Name: Beat Rider
+    Content: I'm listening...
+    waitTime: 2
+  - Image: {fileID: 21300000, guid: d3a619e3fdbe28340923170335f33b5e, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 27754ba30ee36304e85dc78a2d184f58, type: 3}
+      volume: 0.668
+    Name: Shade Corp. Executive
+    Content: 'This last run will be easy for a courier of your caliber. Pickup location
+      is at the far edge of the city. '
+    waitTime: 5
+  - Image: {fileID: 21300000, guid: d3a619e3fdbe28340923170335f33b5e, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 1ff0ab019e7d99b4e9a5d3df496e8d60, type: 3}
+      volume: 0.649
+    Name: Shade Corp. Executive
+    Content: "We\u2019ll contact you again when you arrive."
+    waitTime: 3
+  - Image: {fileID: 21300000, guid: a7b057ef30380ef4f988e826ac412bd2, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: fd65cf68236bae940a394320990e0be0, type: 3}
+      volume: 0.662
+    Name: Beat Rider
+    Content: The payout better be worthwhile. I should be signing off instead.
+    waitTime: 5
+  - Image: {fileID: 21300000, guid: d3a619e3fdbe28340923170335f33b5e, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 1ff0ab019e7d99b4e9a5d3df496e8d60, type: 3}
+      volume: 0.625
+    Name: Shade Corp. Executive
+    Content: Safe travels, Beat Rider...
+    waitTime: 2
+  - Image: {fileID: 21300000, guid: 4069384878f853746bc2f2a427c22602, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: efcbaa609925fb64eb7d79e3c0c3508b, type: 3}
+      volume: 0.662
+    Name: END CALL
+    Content: CALL HAS BEEN TERMINATED
+    waitTime: 2
+  m_levelToPlay: {fileID: 11400000, guid: 55df3b5b567c8f744bd228abbc537d5b, type: 2}

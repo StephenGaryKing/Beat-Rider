@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98c2dbea8b6767a4ea3d8fb903a452f9, type: 3}
+  m_Name: End level One
+  m_EditorClassIdentifier: 
+  m_cameraTagToUse: Cutscene Cam
+  m_conversation:
+  - Image: {fileID: 21300000, guid: 4069384878f853746bc2f2a427c22602, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 25cba61682abb854a873a7c8549a5153, type: 3}
+      volume: 0.625
+    Name: CALL INCOMING
+    Content: '---'
+    waitTime: 2
+  - Image: {fileID: 21300000, guid: d3a619e3fdbe28340923170335f33b5e, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 27754ba30ee36304e85dc78a2d184f58, type: 3}
+      volume: 0.588
+    Name: Shade Corp. Executive
+    Content: "Made it in good time as usual. It\u2019ll be a shame to lose a pilot
+      as reliable as you."
+    waitTime: 4
+  - Image: {fileID: 21300000, guid: a7b057ef30380ef4f988e826ac412bd2, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: fd65cf68236bae940a394320990e0be0, type: 3}
+      volume: 0.569
+    Name: Beat Rider
+    Content: I'm still retiring after this...best to leave while I've got everything
+      I need.
+    waitTime: 4
+  - Image: {fileID: 21300000, guid: d3a619e3fdbe28340923170335f33b5e, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 27754ba30ee36304e85dc78a2d184f58, type: 3}
+      volume: 0.6
+    Name: Shade Corp. Executive
+    Content: Now that you're out of the city, we can get real about this.
+    waitTime: 4
+  - Image: {fileID: 21300000, guid: d3a619e3fdbe28340923170335f33b5e, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 27754ba30ee36304e85dc78a2d184f58, type: 3}
+      volume: 0.532
+    Name: Shade Corp. Executive
+    Content: The bonus for this short run will set you up for life, but we need you
+      to keep it off the books.
+    waitTime: 5
+  - Image: {fileID: 21300000, guid: a7b057ef30380ef4f988e826ac412bd2, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 17da9180729afec4099bad94f01d9a91, type: 3}
+      volume: 0.594
+    Name: Beat Rider
+    Content: This is starting to sound illegal.
+    waitTime: 2
+  - Image: {fileID: 21300000, guid: d3a619e3fdbe28340923170335f33b5e, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 27754ba30ee36304e85dc78a2d184f58, type: 3}
+      volume: 0.563
+    Name: Shade Corp. Executive
+    Content: Shouldn't be a concern, if you can keep communication closed.
+    waitTime: 3
+  - Image: {fileID: 21300000, guid: d3a619e3fdbe28340923170335f33b5e, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 27754ba30ee36304e85dc78a2d184f58, type: 3}
+      volume: 0.608
+    Name: Shade Corp. Executive
+    Content: "The package has been beamed onto your vessel. There\u2019s a marked
+      dropsite out in Bravo Canyons."
+    waitTime: 4
+  - Image: {fileID: 21300000, guid: d3a619e3fdbe28340923170335f33b5e, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 1ff0ab019e7d99b4e9a5d3df496e8d60, type: 3}
+      volume: 0.555
+    Name: Shade Corp. Executive
+    Content: "You\u2019ll be signalled when you arrive."
+    waitTime: 3
+  - Image: {fileID: 21300000, guid: 4069384878f853746bc2f2a427c22602, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: efcbaa609925fb64eb7d79e3c0c3508b, type: 3}
+      volume: 0.584
+    Name: END CALL
+    Content: CALL HAS BEEN TERMINATED
+    waitTime: 2
+  m_levelToPlay: {fileID: 11400000, guid: b2018c0fbd0bb074a9bc5c203dc7fd6d, type: 2}
