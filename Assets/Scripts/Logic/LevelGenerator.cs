@@ -58,7 +58,7 @@ namespace BeatRider
 	{
 		[Tooltip("A scriptable object that determines the layout of a level")]
 		public LevelTemplate m_levelTemplate;
-
+		
 		public ObjectSpawner[] m_objectSpawners;
 
 		List<GameObject> m_activeSceneryElements = new List<GameObject>();
@@ -66,6 +66,7 @@ namespace BeatRider
 
 		GameObject m_activeSceneryContainer;
 		GameObject m_inactiveSceneryContainer;
+		GameObject m_ground;
 
 		ObjectSpawner m_PickupSpawner;
 		int m_numberOfSceneryElements;
@@ -149,6 +150,10 @@ namespace BeatRider
 		// Use this for initialization
 		void Start()
 		{
+			// place the ground plane
+			m_ground = Instantiate(m_levelTemplate.m_groundPrefab);
+			m_ground.transform.position = Vector3.zero + Vector3.up * m_levelTemplate.m_spawnHeightOffset;
+
 			// find the speed of the ingame elements based on the distance to cover and the time to take
 			float sceneSpeed = transform.position.z / m_levelTemplate.m_travelTime;
 			float unitSize = m_levelTemplate.m_unitSize;

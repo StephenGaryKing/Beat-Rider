@@ -33,6 +33,7 @@ namespace BeatRider
 	public class LevelTemplate : ScriptableObject
 	{
 		public LevelType m_levelGenerationType;
+		public GameObject m_groundPrefab;
 		public float m_spawnHeightOffset;
 		public float m_trackWidth;
 		public float m_unitSize = 1;
