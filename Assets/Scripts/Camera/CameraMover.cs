@@ -22,7 +22,7 @@ namespace BeatRider
 			m_floatingCam = FindObjectOfType<FloatingCameraLogic>();
 		}
 
-		public Tweener MoveToPos()
+		public void MoveToPos()
 		{
 			// set the cinematics of the camera
 			if (m_floatingCam)
@@ -33,7 +33,7 @@ namespace BeatRider
 			Tweener tween = Camera.main.transform.DOMove(m_targetTransform.position, m_time);
 			Camera.main.transform.DORotateQuaternion(m_targetTransform.rotation, m_time);
 
-			return tween;
+			//return tween;
 		}
 	}
 }
