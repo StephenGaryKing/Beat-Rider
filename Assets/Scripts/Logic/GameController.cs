@@ -6,7 +6,6 @@ using MusicalGameplayMechanics;
 public class GameController : MonoBehaviour {
 
     public SongController songcontroller;		// used when pausing the song
-    [SerializeField] GameObject pauseMenu;		// displayed when the game is paused
 
 		// Pause the game
     [SerializeField] GameObject m_pauseMenu;
