@@ -59,6 +59,8 @@ namespace BeatRider
 		[Tooltip("A scriptable object that determines the layout of a level")]
 		public LevelTemplate m_levelTemplate;
 
+		public ObjectSpawner[] m_objectSpawners;
+
 		List<GameObject> m_activeSceneryElements = new List<GameObject>();
 		List<GameObject> m_inactiveSceneryElements = new List<GameObject>();
 
@@ -215,6 +217,18 @@ namespace BeatRider
 			}
 		}
 
+		public void WipeObjects()
+		{
+			foreach (ObjectSpawner spawner in m_objectSpawners)
+				spawner.WipeObjects();
+		}
+
+		public void WipeScenery()
+		{
+			while (m_activeSceneryContainer.transform.childCount > 0)
+				RemoveLayerOfLevel(m_activeSceneryContainer.transform.GetChild(m_activeSceneryContainer.transform.childCount - 1));
+		}
+
 		/// <summary>
 		/// remove a layer of the level to be used later
 		/// </summary>
@@ -249,13 +263,6 @@ namespace BeatRider
 			switch (m_levelTemplate.m_levelGenerationType)
 			{
 				case (LevelType.GRID):
-
-					//create Track piece
-					//foreach(var track in m_levelTemplate.m_trackElements)
-					//{
-
-
-					//}
 					//for each scenery layer, create a piece of scenery
 					if (m_inactiveSceneryElements.Count == 0)
 						Debug.LogError("Pool of scenery objects is empty! Tell Steve ASAP!");
@@ -306,15 +313,6 @@ namespace BeatRider
 
 					break;
 				case (LevelType.RANDOM):
-
-					//create Track piece
-					//foreach(var track in m_levelTemplate.m_trackElements)
-					//{
-
-
-					//}
-					//for each scenery layer, create a piece of scenery
-
 					if (m_inactiveSceneryElements.Count == 0)
 						Debug.LogError("Pool of scenery objects is empty! Tell Steve ASAP!");
 					for (int i = 1; i <= m_levelTemplate.m_numOfSceneryLayers; i++)

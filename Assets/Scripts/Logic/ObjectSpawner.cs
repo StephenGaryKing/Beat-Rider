@@ -53,6 +53,21 @@ namespace BeatRider
 			}
 		}
 
+		public void WipeObjects()
+		{
+			foreach (var list in m_objectLists)
+				foreach (GameObject go in list)
+				{
+					if (go.activeInHierarchy)
+					{
+						ParticleCreationLogic pc = go.GetComponent<ParticleCreationLogic>();
+						if (pc)
+							pc.SpawnParticle();
+						go.SetActive(false);
+					}
+				}
+		}
+
 		public override void SpawnObject(List<SavedPass> passes, int index)
 		{
 			foreach (SavedPass pass in passes)

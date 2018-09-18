@@ -9,7 +9,7 @@ namespace BeatRider
 	public class PlayerCollision : MonoBehaviour
 	{
 
-		ScoreBoardLogic _scoreBoardLogic;
+		ScoreBoardLogic m_scoreBoardLogic;
 		[SerializeField] float m_maxScoreMultiplier = 30;
 		public float m_maxZoomAmount = 6.43f;
 		[SerializeField] float m_FOVSmoothing = 0.1f;
@@ -23,13 +23,16 @@ namespace BeatRider
 
 		PlayerSoundEffects m_playerSoundEffects;
 
+		SongController m_songController;
+
 		// Use this for initialization
 		void Start()
 		{
+			m_songController = FindObjectOfType<SongController>();
 			m_targetFOV = m_minFOV;
 			m_startingCameraPos = Camera.main.transform.position;
 			m_floatingCamera = FindObjectOfType<FloatingCameraLogic>();
-			_scoreBoardLogic = FindObjectOfType<ScoreBoardLogic>();
+			m_scoreBoardLogic = FindObjectOfType<ScoreBoardLogic>();
 			m_playerSoundEffects = GetComponent<PlayerSoundEffects>();
 		}
 
@@ -45,11 +48,21 @@ namespace BeatRider
 			m_floatingCamera.SnapFOV();
 		}
 
+		public void Die()
+		{
+
+		}
+
+		public void Revive()
+		{
+
+		}
+
 		void OnTriggerEnter(Collider other)
 		{
 			if (other.CompareTag("Note"))
 			{
-				_scoreBoardLogic.m_score += Mathf.RoundToInt(1 + (m_maxScoreMultiplier * m_FOVAmount));
+				m_scoreBoardLogic.m_score += Mathf.RoundToInt(1 + (m_maxScoreMultiplier * m_FOVAmount));
 				other.gameObject.SetActive(false);
 				other.GetComponent<ParticleCreationLogic>().SpawnParticle();
 				m_playerSoundEffects.m_soundManager.PlaySound(m_playerSoundEffects.m_pickupNote);
@@ -73,7 +86,8 @@ namespace BeatRider
 				}
 				else
 				{
-					FindObjectOfType<SongController>().StopSong();
+					Die();
+					FindObjectOfType<SongController>().StopSong(true);
 				}
 				m_playerSoundEffects.m_soundManager.PlaySound(m_playerSoundEffects.m_hitObstical);
 			}

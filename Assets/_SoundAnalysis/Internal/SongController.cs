@@ -66,8 +66,8 @@ namespace MusicalGameplayMechanics
 		public Slider m_volumeSlider;
 		public Transform m_saveIcon;
 		public Transform m_loadIcon;
-		public MenuTransition m_StoryModeMenuTransition;
-		public MenuTransition m_FreeFlowMenuTransition;
+		public MenuTransition m_freeFlowMenuTransition;
+		public MenuTransition m_playerDeathMenuTransition;
 
 		int m_numChannels;									// Amount of channels in the current song
 		int m_numTotalSamples;								// Total amount of samples in this song
@@ -82,11 +82,18 @@ namespace MusicalGameplayMechanics
 		MusicalityAnalyzer m_preProcessedMusicalityAnalyzer;                // Class used to analyse the BPM, Pitch Variance and Beat Density of the spectrums of a song prior to playing it
 
 		//beat rider
+		PlayerCollision m_player;
+		ScoreBoardLogic m_scoreBoard;
+		LevelGenerator m_levelGen;
 		[HideInInspector] public Cutscene m_cutsceneToPlayAtEnd;
 		CutsceneManager m_cutsceneManager;
+		bool m_playerIsDead = false;
 
 		void Start()
 		{
+			m_player = FindObjectOfType<PlayerCollision>();
+			m_scoreBoard = FindObjectOfType<ScoreBoardLogic>();
+			m_levelGen = FindObjectOfType<LevelGenerator>();
 			m_cutsceneManager = FindObjectOfType<CutsceneManager>();
 			m_preProcessedMusicalityAnalyzer = new MusicalityAnalyzer();
 			if (m_playSongButton)
@@ -166,10 +173,16 @@ namespace MusicalGameplayMechanics
 			}
 		}
 
-		public void StopSong()
+		public void StopSong(bool playerIsDead = false)
 		{
-			m_cutsceneToPlayAtEnd = null;
+			m_playerIsDead = playerIsDead;
             _audioSource.Stop();
+		}
+
+		public void RestartSong()
+		{
+			PlayAudio();
+			m_player.Revive();
 		}
 
 		/// <summary>
@@ -241,18 +254,20 @@ namespace MusicalGameplayMechanics
 
 		void EndSong()
 		{
-			if (m_cutsceneToPlayAtEnd)
+			if (m_playerIsDead)
 			{
-				ResetValues();
-				m_cutsceneManager.PlayCutscene(m_cutsceneToPlayAtEnd);
+				// death specific code
+				m_playerDeathMenuTransition.PlayTransitions();
+				m_playerIsDead = false;
 			}
 			else
 			{
-				//handle Menus
-				m_FreeFlowMenuTransition.PlayInTransitions();
-				m_FreeFlowMenuTransition.PlayOutTransitions();
+				if (m_cutsceneToPlayAtEnd)
+					m_cutsceneManager.PlayCutscene(m_cutsceneToPlayAtEnd);
+				else
+					m_freeFlowMenuTransition.PlayTransitions();
 			}
-			Invoke("ResetValues", 6);		// should probs remove all the notes and stuff, the reset scores. stops the six second wait time.
+			ResetValues();
 		}
 
 		/// <summary>
@@ -520,8 +535,9 @@ namespace MusicalGameplayMechanics
 
 		public void ResetValues()
 		{
-			FindObjectOfType<BeatRider.PlayerCollision>().ResetSpeed();
-			FindObjectOfType<BeatRider.ScoreBoardLogic>().ResetScores();
+			m_levelGen.WipeObjects();
+			m_player.ResetSpeed();
+			m_scoreBoard.ResetScores();
 		}
 	}
 }

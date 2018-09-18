@@ -18,7 +18,7 @@ namespace BeatRider
 		public Text m_conversationBox;      // text box for the substance of what someone is saying
 		public Transform m_defaultCamerPosition;
 
-		public AudioSource m_backgroundMusicSource;
+		[HideInInspector] public AudioSource m_backgroundMusicSource;
 		SoundManager m_soundManager;
 		SongController m_songController;    // used to play the specified song after the cutscene is over (if any)
 		int m_speachBubbleNumber = 0;       // the current line to write
