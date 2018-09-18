@@ -210,7 +210,10 @@ namespace BeatRider
 				go.name = element.m_prefab.name + " : " + i;
 				go.SetActive(false);
 				go.transform.parent = m_inactiveSceneryContainer.transform;
-				go.transform.localScale = Vector3.one * m_levelTemplate.m_unitSize * Random.Range(element.randomScaleVariance.x, element.randomScaleVariance.y);
+				if (m_levelTemplate.m_levelGenerationType == LevelType.RANDOM)
+					go.transform.localScale = Vector3.one * Random.Range(element.randomScaleVariance.x, element.randomScaleVariance.y);
+				else
+					go.transform.localScale = Vector3.one * m_levelTemplate.m_unitSize * Random.Range(element.randomScaleVariance.x, element.randomScaleVariance.y);
 				go.transform.position = Vector3.zero;
 				SceneryModifier[] sm = go.GetComponents<SceneryModifier>();
 				if (sm.Length != 0)
