@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c220bbb9323f11478c9c4b2a4c61331, type: 3}
+  m_Name: ForestLevel
+  m_EditorClassIdentifier: 
+  m_levelGenerationType: 1
+  m_spawnHeightOffset: -150
+  m_trackWidth: 55.94
+  m_unitSize: 149.98
+  m_numOfSceneryLayers: 2
+  m_sceneryElements:
+  - m_prefab: {fileID: 1318485283856482, guid: bc50da305b3af2043bf4ce6118a87ee5, type: 2}
+    spawnChanceWeight: 100
+    randomScaleVariance: {x: 1, y: 1}
+  - m_prefab: {fileID: 1854507509423042, guid: 364f0e9b6788075469b9860375c92060, type: 2}
+    spawnChanceWeight: 100
+    randomScaleVariance: {x: 1, y: 1}
+  - m_prefab: {fileID: 1003117025029700, guid: 5a54df388a2a74d45a141b28d23f7720, type: 2}
+    spawnChanceWeight: 100
+    randomScaleVariance: {x: 1, y: 1}
+  - m_prefab: {fileID: 1135708729732230, guid: 7b0c195b6da387149ab463d76c48e52e, type: 2}
+    spawnChanceWeight: 100
+    randomScaleVariance: {x: 1, y: 1}
+  - m_prefab: {fileID: 1005963617670358, guid: 6287d531070c3b147abe88485182f75b, type: 2}
+    spawnChanceWeight: 100
+    randomScaleVariance: {x: 1, y: 1}
+  - m_prefab: {fileID: 1330783823777612, guid: bf2e99f9decba234caae6fdff218dca0, type: 2}
+    spawnChanceWeight: 100
+    randomScaleVariance: {x: 1, y: 1}
+  - m_prefab: {fileID: 1711009437426182, guid: 6ec6ee4efd4339943922a373d243ec86, type: 2}
+    spawnChanceWeight: 100
+    randomScaleVariance: {x: 1, y: 1}
+  - m_prefab: {fileID: 1108809042940410, guid: a2698fdfb166c504384de6454848a823, type: 2}
+    spawnChanceWeight: 100
+    randomScaleVariance: {x: 1, y: 1}
+  - m_prefab: {fileID: 1748397262165344, guid: 7eb4970e25d0c634b94126f8949386eb, type: 2}
+    spawnChanceWeight: 100
+    randomScaleVariance: {x: 1, y: 1}
+  - m_prefab: {fileID: 1391294379393360, guid: bb5abd9264b54bd48853cf33a1e75a60, type: 2}
+    spawnChanceWeight: 100
+    randomScaleVariance: {x: 1, y: 1}
+  m_trackElements: []
+  m_travelTime: 2
