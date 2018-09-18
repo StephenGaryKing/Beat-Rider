@@ -477,7 +477,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   songcontroller: {fileID: 1366554906}
-  pauseMenu: {fileID: 0}
   m_pauseMenu: {fileID: 11195485}
   m_playButton: {fileID: 290835335}
   m_pauseButton: {fileID: 1342308517}
@@ -9096,7 +9095,7 @@ GameObject:
   - component: {fileID: 914081256}
   - component: {fileID: 1328437353}
   m_Layer: 0
-  m_Name: StoryModeMenuNav
+  m_Name: PlayerDeathMenuNav
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10845,7 +10844,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d48cc8fbf0a715541a1a20ffdb942f6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_levelTemplate: {fileID: 11400000, guid: fecfa76bce4a0ab4496db6ae61c3de86, type: 2}
+  m_levelTemplate: {fileID: 11400000, guid: a38021498dc72cd4db4314c5a846b325, type: 2}
+  m_objectSpawners:
+  - {fileID: 1649255425}
+  - {fileID: 572648739}
 --- !u!4 &1089977676
 Transform:
   m_ObjectHideFlags: 0
@@ -12083,9 +12085,15 @@ MonoBehaviour:
       TargetScale: {x: 1, y: 1, z: 1}
       Time: 0.4
   m_inTransitions:
-  - ObjectToToggleEnabled: {fileID: 668240827}
+  - ObjectToToggleEnabled: {fileID: 1593970425}
     ObjectToAnimate:
-      Obj: {fileID: 668240827}
+      Obj: {fileID: 1593970425}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 1, y: 1, z: 1}
+      Time: 0.6
+  - ObjectToToggleEnabled: {fileID: 1571738935}
+    ObjectToAnimate:
+      Obj: {fileID: 1571738935}
       TargetPosition: {x: 0, y: 0, z: 0}
       TargetScale: {x: 1, y: 1, z: 1}
       Time: 0.6
@@ -14165,8 +14173,8 @@ MonoBehaviour:
   m_volumeSlider: {fileID: 319015728}
   m_saveIcon: {fileID: 2037957512}
   m_loadIcon: {fileID: 1050452339}
-  m_StoryModeMenuTransition: {fileID: 1328437353}
-  m_FreeFlowMenuTransition: {fileID: 1210102543}
+  m_freeFlowMenuTransition: {fileID: 1210102543}
+  m_playerDeathMenuTransition: {fileID: 1328437353}
   m_songIsBeingPlayed: 0
   m_passes:
   - name: LowPass
