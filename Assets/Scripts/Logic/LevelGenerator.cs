@@ -32,7 +32,7 @@ namespace BeatRider
 			Vector2 val = new Vector2(m_sumOfWheel, m_sumOfWheel += el.spawnChanceWeight);
 			m_wheel.Add(new KeyValuePair<SceneryElement, Vector2>(el, val));
 			// add a bit to stop overlap
-			m_sumOfWheel++;
+			//m_sumOfWheel++;
 		}
 
 		public SceneryElement Spin()
@@ -46,7 +46,7 @@ namespace BeatRider
 					return slice.Key;
 			}
 
-			Debug.LogError("Roulette Wheel failed when selecting an item. Tell Steve ASAP");
+			Debug.LogError("Roulette Wheel failed when selecting an item. Tell Steve ASAP\n" + "Item Number Was " + ran);
 			return m_wheel[0].Key;
 		}
 	}
@@ -65,7 +65,7 @@ namespace BeatRider
 		GameObject m_activeSceneryContainer;
 		GameObject m_inactiveSceneryContainer;
 
-		PickupSpawner m_PickupSpawner;
+		ObjectSpawner m_PickupSpawner;
 		int m_numberOfSceneryElements;
 		int m_numberOfTrackElements;
 		float m_spawnInterval = 0;
@@ -165,7 +165,7 @@ namespace BeatRider
 			m_numberOfTrackElements = (int)Mathf.Max((transform.position.z / unitSize) + 2, 0);
 			m_numberOfSceneryElements = Mathf.Max((m_numberOfTrackElements * m_levelTemplate.m_numOfSceneryLayers) * 2, 0);
 
-			m_PickupSpawner = FindObjectOfType<PickupSpawner>();
+			m_PickupSpawner = FindObjectOfType<ObjectSpawner>();
 			// create a pool of objects
 			CreatePool();
 

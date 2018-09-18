@@ -63,24 +63,40 @@ namespace BeatRider
 			m_playerRenderer.material.SetColor("_EmissionColor", newColour);
 		}
 
-		public void UpdateBodyColour(Toggle changeColourButton)
+		public void UpdateBodyColour(Color col, bool mode)
 		{
-			if (changeColourButton.isOn)
-				m_playerRenderer.material.color = AddColourToList(changeColourButton.GetComponentInChildren<Image>().color, ref m_bodyColour);
+			if (mode)
+				m_playerRenderer.material.color = AddColourToList(col, ref m_bodyColour);
 			else
-				m_playerRenderer.material.color = RemoveColourFromList(changeColourButton.GetComponentInChildren<Image>().color, ref m_bodyColour);
+				m_playerRenderer.material.color = RemoveColourFromList(col, ref m_bodyColour);
 
 			if (float.IsNaN(m_playerRenderer.material.color.r))
 				m_playerRenderer.material.color = m_defaultBodyColour;
 		}
 
-		public void UpdateHighlightsColour(Color colour)
+		public void UpdateHighlightsColour(Color col, bool mode)
 		{
-			Color newColour = AddColourToList(colour, ref m_highlightsColour) * m_highlightBrightness;
-			m_playerRenderer.material.SetColor("_EmissionColor", newColour);
+			if (mode)
+				m_playerRenderer.material.SetColor("_EmissionColor", AddColourToList(col, ref m_highlightsColour) * m_highlightBrightness);
+			else
+				m_playerRenderer.material.SetColor("_EmissionColor", AddColourToList(col, ref m_highlightsColour) * m_highlightBrightness);
+
+			if (float.IsNaN(m_playerRenderer.material.color.r))
+				m_playerRenderer.material.SetColor("_EmissionColor", m_defaultHighlightColour * m_highlightBrightness);
+			
 		}
 
 		public void UpdateBoostColour(Color colour)
+		{
+
+		}
+
+		public void UpdateShipModel(GameObject model)
+		{
+
+		}
+
+		public void UpdateShipTopper(GameObject hat)
 		{
 
 		}

@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: NewBuilding2
+  m_Name: Building 1
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP
   m_LightmapFlags: 1
@@ -19,7 +19,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 8adb32a280cad4d43a32e00fb75f900e, type: 3}
+        m_Texture: {fileID: 2800000, guid: e7afcc63f66fa97489f9aaa3eef41a26, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -35,15 +35,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 6125c460da03661448030d45d16d91af, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1258853c04faddb4b89dff2c6f9fa58c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 42c222a8f25f3a04bad06a6a9f7c1fbd, type: 3}
+        m_Texture: {fileID: 2800000, guid: 670de7d033531aa4c9aabfb3628e0486, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: a0b84c90624b22f49b24e4f15dfe079c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2a93f609399b2854ab6b2cb8d60b2a62, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -72,5 +72,5 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.5441177, g: 0.5441177, b: 0.5441177, a: 1}
-    - _EmissionColor: {r: 2.491, g: 2.4435043, b: 0.76927936, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 2, g: 1.9849898, b: 1.4558823, a: 1}
