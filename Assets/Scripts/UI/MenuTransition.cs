@@ -26,10 +26,12 @@ public class MenuTransition : MonoBehaviour {
     public Transition[] m_outTransitions;
 	public Transition[] m_inTransitions;
 
+	UIParticle m_UIparticle;
     Canvas canvas;
 
     private void Start() {
-        Transform t = transform;
+		m_UIparticle = GetComponent<UIParticle>();
+		Transform t = transform;
         while (t != null && canvas == null) {
             canvas = t.GetComponent<Canvas>();
             t = t.parent;
@@ -40,6 +42,8 @@ public class MenuTransition : MonoBehaviour {
 	{
 		InTransition();
 		OutTransition();
+		if (m_UIparticle)
+			m_UIparticle.Show(Vector3.zero);
 	}
 
 	public void PlayOutTransitions()

@@ -201,8 +201,11 @@ namespace BeatRider
 		void Start()
 		{
 			// place the ground plane
-			m_ground = Instantiate(m_levelTemplate.m_groundPrefab);
-			m_ground.transform.position = Vector3.zero + Vector3.up * m_levelTemplate.m_spawnHeightOffset;
+			if (m_levelTemplate.m_groundPrefab)
+			{
+				m_ground = Instantiate(m_levelTemplate.m_groundPrefab);
+				m_ground.transform.position = Vector3.zero + Vector3.up * m_levelTemplate.m_spawnHeightOffset;
+			}
 
 			// find the speed of the ingame elements based on the distance to cover and the time to take
 			float sceneSpeed = transform.position.z / m_levelTemplate.m_travelTime;
