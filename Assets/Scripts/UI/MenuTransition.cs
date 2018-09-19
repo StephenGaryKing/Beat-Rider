@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
+using Pixelplacement;
 
 [System.Serializable]
 public struct AnimateObject
@@ -10,6 +10,8 @@ public struct AnimateObject
 	public Vector3 TargetPosition;
 	public Vector3 TargetScale;
 	public float Time;
+	// using this type of tween curve
+	public TweenCurveHelper.CurveType CurveType;
 }
 
 [System.Serializable]
@@ -36,53 +38,49 @@ public class MenuTransition : MonoBehaviour {
 
     public void PlayTransitions()
 	{
-		StartCoroutine(InTransition());
-		StartCoroutine(OutTransition());
+		InTransition();
+		OutTransition();
 	}
 
 	public void PlayOutTransitions()
 	{
-		StartCoroutine(OutTransition());
+		OutTransition();
 	}
 
-	IEnumerator OutTransition()
+	void OutTransition()
 	{
-		List<Tweener> tweeners = new List<Tweener>();
-
+		// do the tween
 		foreach (Transition tran in m_outTransitions)
+		{
 			if (tran.ObjectToAnimate.Obj)
 			{
-                Vector3 localPos = GetLocalPos(tran.ObjectToAnimate.TargetPosition);
-                //Vector3 localPos = tran.ObjectToAnimate.TargetPosition;
-                if (tran.ObjectToAnimate.Time == 0)
-                {
-                    tran.ObjectToAnimate.Obj.transform.localPosition = localPos;
-                    tran.ObjectToAnimate.Obj.transform.localScale = tran.ObjectToAnimate.TargetScale;
-                }
-                else
-                {
-                    tweeners.Add(tran.ObjectToAnimate.Obj.transform.DOLocalMove(localPos, tran.ObjectToAnimate.Time));
-                    tweeners.Add(tran.ObjectToAnimate.Obj.transform.DOScale(tran.ObjectToAnimate.TargetScale, tran.ObjectToAnimate.Time));
-                }
+				Vector3 localPos = GetLocalPos(tran.ObjectToAnimate.TargetPosition);
+				if (tran.ObjectToAnimate.Time == 0)
+				{
+					tran.ObjectToAnimate.Obj.transform.localPosition = localPos;
+					tran.ObjectToAnimate.Obj.transform.localScale = tran.ObjectToAnimate.TargetScale;
+					TweenEnd();
+				}
+				else
+				{
+					RectTransform rt = tran.ObjectToAnimate.Obj.transform as RectTransform;
+					if (rt)
+						Tween.AnchoredPosition(tran.ObjectToAnimate.Obj.transform as RectTransform, tran.ObjectToAnimate.TargetPosition, tran.ObjectToAnimate.Time, 0, TweenCurveHelper.GetCurve(tran.ObjectToAnimate.CurveType), Tween.LoopType.None, null, TweenEnd, false);
+					else
+						Tween.LocalPosition(tran.ObjectToAnimate.Obj.transform, tran.ObjectToAnimate.TargetPosition, tran.ObjectToAnimate.Time, 0, TweenCurveHelper.GetCurve(tran.ObjectToAnimate.CurveType), Tween.LoopType.None, null, TweenEnd, false);
+
+					Tween.LocalScale(tran.ObjectToAnimate.Obj.transform, tran.ObjectToAnimate.TargetScale, tran.ObjectToAnimate.Time, 0, TweenCurveHelper.GetCurve(tran.ObjectToAnimate.CurveType), Tween.LoopType.None, null, null, false);
+				}
 			}
-
-			foreach (var tween in tweeners)
-				yield return tween.WaitForCompletion();
-
-		foreach (Transition tran in m_outTransitions)
-			if (tran.ObjectToToggleEnabled)
-				tran.ObjectToToggleEnabled.SetActive(false);
-
-		tweeners.Clear();
-		yield return null;
+		}
 	}
 
     public void PlayInTransitions()
 	{
-		StartCoroutine(InTransition());
+		InTransition();
 	}
 
-	IEnumerator InTransition()
+	void InTransition()
 	{
 		foreach (Transition tran in m_inTransitions)
 		{
@@ -98,12 +96,22 @@ public class MenuTransition : MonoBehaviour {
                 }
                 else
                 {
-                    tran.ObjectToAnimate.Obj.transform.DOLocalMove(localPos, tran.ObjectToAnimate.Time);
-                    tran.ObjectToAnimate.Obj.transform.DOScale(tran.ObjectToAnimate.TargetScale, tran.ObjectToAnimate.Time);
-                }
+					RectTransform rt = tran.ObjectToAnimate.Obj.transform as RectTransform;
+					if (rt)
+						Tween.AnchoredPosition(rt, tran.ObjectToAnimate.TargetPosition, tran.ObjectToAnimate.Time, 0, TweenCurveHelper.GetCurve(tran.ObjectToAnimate.CurveType), Tween.LoopType.None, null, null, false);
+					else
+						Tween.LocalPosition(tran.ObjectToAnimate.Obj.transform, tran.ObjectToAnimate.TargetPosition, tran.ObjectToAnimate.Time, 0, TweenCurveHelper.GetCurve(tran.ObjectToAnimate.CurveType), Tween.LoopType.None, null, null, false);
+					Tween.LocalScale(tran.ObjectToAnimate.Obj.transform, tran.ObjectToAnimate.TargetScale, tran.ObjectToAnimate.Time, 0, TweenCurveHelper.GetCurve(tran.ObjectToAnimate.CurveType), Tween.LoopType.None, null, null, false);
+				}
 			}
 		}
-		yield return null;
+	}
+
+	public void TweenEnd()
+	{
+		foreach (Transition tran in m_outTransitions)
+			if (tran.ObjectToToggleEnabled)
+				tran.ObjectToToggleEnabled.SetActive(false);
 	}
 
     Vector3 GetLocalPos(Vector3 anchorPos) {

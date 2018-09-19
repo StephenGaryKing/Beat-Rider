@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
 using BeatRider;
+using Pixelplacement;
 using System.IO;
 
 [System.Serializable]
@@ -23,6 +23,8 @@ public class CustomisationWindowNavigation : MonoBehaviour {
 	public float m_offsetDistance;
 	public Vector3 m_offsetScale;
 	public float m_animationSpeed = 0.5f;
+	// using this type of tween curve
+	public TweenCurveHelper.CurveType m_curveType;
 
 	public List<WindowItem> m_menuItems = new List<WindowItem>();
 
@@ -173,21 +175,46 @@ public class CustomisationWindowNavigation : MonoBehaviour {
 			btn.SetActive(true);
 
 		// position and scale the appropriate titles
-		titles[0].transform.DOLocalMove(m_templateTitle.transform.localPosition + Vector3.left * m_offsetDistance * 1.5f, m_animationSpeed);
-		titles[0].transform.DOScale(Vector3.zero, m_animationSpeed);
 
-		titles[1].transform.DOLocalMove(m_templateTitle.transform.localPosition + Vector3.left * m_offsetDistance, m_animationSpeed);
-		titles[1].transform.DOScale(m_offsetScale, m_animationSpeed);
+		// left 2
+		RectTransform rt = titles[0].transform as RectTransform;
+		if (rt)
+			Tween.AnchoredPosition(rt, m_templateTitle.transform.localPosition + Vector3.left * m_offsetDistance * 1.5f, m_animationSpeed, 0, TweenCurveHelper.GetCurve(m_curveType), Tween.LoopType.None, null, null, false);
+		else
+			Tween.LocalPosition(rt, m_templateTitle.transform.localPosition + Vector3.left * m_offsetDistance * 1.5f, m_animationSpeed, 0, TweenCurveHelper.GetCurve(m_curveType), Tween.LoopType.None, null, null, false);
+		Tween.LocalScale(titles[0].transform, Vector3.zero, m_animationSpeed, 0, TweenCurveHelper.GetCurve(m_curveType), Tween.LoopType.None, null, null, false);
+		
+		// left
+		rt = titles[1].transform as RectTransform;
+		if (rt)
+			Tween.AnchoredPosition(rt, m_templateTitle.transform.localPosition + Vector3.left * m_offsetDistance, m_animationSpeed, 0, TweenCurveHelper.GetCurve(m_curveType), Tween.LoopType.None, null, null, false);
+		else
+			Tween.LocalPosition(rt, m_templateTitle.transform.localPosition + Vector3.left * m_offsetDistance, m_animationSpeed, 0, TweenCurveHelper.GetCurve(m_curveType), Tween.LoopType.None, null, null, false);
+		Tween.LocalScale(titles[1].transform, m_offsetScale, m_animationSpeed, 0, TweenCurveHelper.GetCurve(m_curveType), Tween.LoopType.None, null, null, false);
 
-		titles[2].transform.DOLocalMove(m_templateTitle.transform.localPosition, m_animationSpeed);
-		titles[2].transform.DOScale(m_templateTitle.transform.localScale, m_animationSpeed);
+		// middle
+		rt = titles[2].transform as RectTransform;
+		if (rt)
+			Tween.AnchoredPosition(rt, m_templateTitle.transform.localPosition, m_animationSpeed, 0, TweenCurveHelper.GetCurve(m_curveType), Tween.LoopType.None, null, null, false);
+		else
+			Tween.LocalPosition(rt, m_templateTitle.transform.localPosition, m_animationSpeed, 0, TweenCurveHelper.GetCurve(m_curveType), Tween.LoopType.None, null, null, false);
+		Tween.LocalScale(titles[2].transform, m_templateTitle.transform.localScale, m_animationSpeed, 0, TweenCurveHelper.GetCurve(m_curveType), Tween.LoopType.None, null, null, false);
 
+		// right
+		rt = titles[3].transform as RectTransform;
+		if (rt)
+			Tween.AnchoredPosition(rt, m_templateTitle.transform.localPosition + Vector3.right * m_offsetDistance, m_animationSpeed, 0, TweenCurveHelper.GetCurve(m_curveType), Tween.LoopType.None, null, null, false);
+		else
+			Tween.LocalPosition(rt, m_templateTitle.transform.localPosition + Vector3.right * m_offsetDistance, m_animationSpeed, 0, TweenCurveHelper.GetCurve(m_curveType), Tween.LoopType.None, null, null, false);
+		Tween.LocalScale(titles[3].transform, m_offsetScale, m_animationSpeed, 0, TweenCurveHelper.GetCurve(m_curveType), Tween.LoopType.None, null, null, false);
 
-		titles[3].transform.DOLocalMove(m_templateTitle.transform.localPosition + Vector3.right * m_offsetDistance, m_animationSpeed);
-		titles[3].transform.DOScale(m_offsetScale, m_animationSpeed);
-
-		titles[4].transform.DOLocalMove(m_templateTitle.transform.localPosition + Vector3.right * m_offsetDistance * 1.5f, m_animationSpeed);
-		titles[4].transform.DOScale(Vector3.zero, m_animationSpeed);
+		// right 2
+		rt = titles[4].transform as RectTransform;
+		if (rt)
+			Tween.AnchoredPosition(rt, m_templateTitle.transform.localPosition + Vector3.right * m_offsetDistance * 1.5f, m_animationSpeed, 0, TweenCurveHelper.GetCurve(m_curveType), Tween.LoopType.None, null, null, false);
+		else
+			Tween.LocalPosition(rt, m_templateTitle.transform.localPosition + Vector3.right * m_offsetDistance * 1.5f, m_animationSpeed, 0, TweenCurveHelper.GetCurve(m_curveType), Tween.LoopType.None, null, null, false);
+		Tween.LocalScale(titles[4].transform, Vector3.zero, m_animationSpeed, 0, TweenCurveHelper.GetCurve(m_curveType), Tween.LoopType.None, null, null, false);
 	}
 
 	public void GotoNextWindow()
