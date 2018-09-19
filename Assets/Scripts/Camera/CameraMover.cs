@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
+using Pixelplacement;
 
 namespace BeatRider
 {
@@ -13,7 +13,8 @@ namespace BeatRider
 
 		public Transform m_targetTransform;				//location to move the camera
 		public float m_time = 1;						//time for animation to take (in seconds)
-		public bool m_cinematicMovementEnabled = false;	//should the ingame cinematics be disabled
+		public bool m_cinematicMovementEnabled = false; //should the ingame cinematics be disabled
+		public TweenCurveHelper.CurveType m_curveType;    // using this type of tween curve
 
 		FloatingCameraLogic m_floatingCam;				//the floating camera script. used when disabling ingame cinematics
 
@@ -30,8 +31,8 @@ namespace BeatRider
 			else
 				Debug.LogError("floating cam not found");
 			// use the tweening library to move the camera to the desired position with the desired rotation
-			Tweener tween = Camera.main.transform.DOMove(m_targetTransform.position, m_time);
-			Camera.main.transform.DORotateQuaternion(m_targetTransform.rotation, m_time);
+			Tween.LocalPosition(Camera.main.transform, m_targetTransform.position, m_time, 0, TweenCurveHelper.GetCurve(m_curveType), Tween.LoopType.None, null, null, false);
+			Tween.LocalRotation(Camera.main.transform, m_targetTransform.rotation, m_time, 0, TweenCurveHelper.GetCurve(m_curveType), Tween.LoopType.None, null, null, false);
 
 			//return tween;
 		}
