@@ -70,7 +70,7 @@ namespace BeatRider
 
 		ObjectSpawner m_PickupSpawner;
 		int m_numberOfSceneryElements;
-		int m_numberOfTrackElements;
+		//int m_numberOfTrackElements;
 		float m_spawnInterval = 0;
 
 		float m_timer = 0;
@@ -88,7 +88,7 @@ namespace BeatRider
 					// if the level is a grid
 					case (LevelType.GRID):
 						// find the correct number of elements of each type
-						m_numberOfTrackElements = (int)Mathf.Max((transform.position.z / (halfTrackWidth * 2)) + 2, 0);
+						//m_numberOfTrackElements = (int)Mathf.Max((transform.position.z / (halfTrackWidth * 2)) + 2, 0);
 						m_numberOfSceneryElements = (int)Mathf.Max(((transform.position.z / unitSize) + 2 * m_levelTemplate.m_numOfSceneryLayers) * 2, 0);
 
 						for (int i = 1; i <= m_levelTemplate.m_numOfSceneryLayers; i++)
@@ -104,6 +104,12 @@ namespace BeatRider
 
 								depth.z -= m_levelTemplate.m_unitSize;
 							}
+
+							// draw the track square
+							Gizmos.color = Color.green;
+							Gizmos.DrawWireCube(transform.position / 2, new Vector3(halfTrackWidth * 2, 0, transform.position.z));
+
+							/*
 							depth = transform.position;
 							while (depth.z >= -halfTrackWidth * 2)
 							{
@@ -113,23 +119,28 @@ namespace BeatRider
 
 								depth.z -= halfTrackWidth * 2;
 							}
-
+							*/
 						}
 						// draw the rough number of track pieces and scenery elemts to be spawned at any one point in time
 						GizmosUtils.DrawText(GUI.skin, m_numberOfSceneryElements.ToString(), transform.position + Vector3.forward * unitSize / 2 + Vector3.up * 50, Color.red, 20, 0.5f);
-						GizmosUtils.DrawText(GUI.skin, m_numberOfTrackElements.ToString(), transform.position + Vector3.forward * unitSize / 2 + Vector3.up * 100, Color.green, 20, 0.5f);
+						//GizmosUtils.DrawText(GUI.skin, m_numberOfTrackElements.ToString(), transform.position + Vector3.forward * unitSize / 2 + Vector3.up * 100, Color.green, 20, 0.5f);
 						break;
 
 					//if the level is random
 					case (LevelType.RANDOM):
 
-						m_numberOfTrackElements = (int)Mathf.Max((transform.position.z / (halfTrackWidth * 2)) + 2, 0);
+						//m_numberOfTrackElements = (int)Mathf.Max((transform.position.z / (halfTrackWidth * 2)) + 2, 0);
 
 						// draw the line for the random spawning either side of the track
 						Gizmos.color = Color.red;
 						Gizmos.DrawWireCube(transform.position + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.right * unitSize / 2 + Vector3.right * halfTrackWidth, new Vector3(unitSize, 0, 0));
 						Gizmos.DrawWireCube(transform.position + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.left * unitSize / 2 + Vector3.left * halfTrackWidth, new Vector3(unitSize, 0, 0));
 
+						// draw the track square
+						Gizmos.color = Color.green;
+						Gizmos.DrawWireCube(transform.position / 2, new Vector3(halfTrackWidth * 2, 0, transform.position.z));
+
+						/*
 						depth = transform.position;
 						while (depth.z >= -(halfTrackWidth * 2))
 						{
@@ -139,9 +150,48 @@ namespace BeatRider
 
 							depth.z -= halfTrackWidth * 2;
 						}
+						*/
+
 						// draw the rough number of track pieces and scenery elemts to be spawned at any one point in time
 						GizmosUtils.DrawText(GUI.skin, m_numberOfSceneryElements.ToString(), transform.position + Vector3.forward * unitSize / 2 + Vector3.up * 50, Color.red, 20, 0.5f);
-						GizmosUtils.DrawText(GUI.skin, m_numberOfTrackElements.ToString(), transform.position + Vector3.forward * halfTrackWidth + Vector3.up * 100, Color.green, 20, 0.5f);
+						//GizmosUtils.DrawText(GUI.skin, m_numberOfTrackElements.ToString(), transform.position + Vector3.forward * halfTrackWidth + Vector3.up * 100, Color.green, 20, 0.5f);
+						break;
+					
+					// If the level is Centered
+					case (LevelType.CENTERED):
+						// find the correct number of elements of each type
+						//m_numberOfTrackElements = (int)Mathf.Max((transform.position.z / (halfTrackWidth * 2)) + 2, 0);
+						m_numberOfSceneryElements = (int)Mathf.Max(((transform.position.z / unitSize) + 2 * m_levelTemplate.m_numOfSceneryLayers), 0);
+
+						// draw the line of squares for the layer on either side of the track
+						depth = transform.position;
+						while (depth.z >= -unitSize)
+						{
+							// draw the scenery squares
+							Gizmos.color = Color.red;
+							Gizmos.DrawWireCube(depth + Vector3.up * m_levelTemplate.m_spawnHeightOffset, new Vector3(unitSize, 0, unitSize));
+
+							depth.z -= m_levelTemplate.m_unitSize;
+						}
+
+						// draw the track square
+						Gizmos.color = Color.green;
+						Gizmos.DrawWireCube(transform.position / 2, new Vector3(halfTrackWidth * 2, 0, transform.position.z));
+						/*
+						depth = transform.position;
+						while (depth.z >= -halfTrackWidth * 2)
+						{
+							// draw the track squares
+							Gizmos.color = Color.green;
+							Gizmos.DrawWireCube(depth, new Vector3(halfTrackWidth * 2, 0, halfTrackWidth * 2));
+
+							depth.z -= halfTrackWidth * 2;
+						}
+						*/
+
+						// draw the rough number of track pieces and scenery elemts to be spawned at any one point in time
+						GizmosUtils.DrawText(GUI.skin, m_numberOfSceneryElements.ToString(), transform.position + Vector3.forward * unitSize / 2 + Vector3.up * 50, Color.red, 20, 0.5f);
+						//GizmosUtils.DrawText(GUI.skin, m_numberOfTrackElements.ToString(), transform.position + Vector3.forward * unitSize / 2 + Vector3.up * 100, Color.green, 20, 0.5f);
 						break;
 				}
 			}
@@ -174,8 +224,8 @@ namespace BeatRider
 			m_inactiveSceneryContainer = new GameObject("Inactive Scenery");
 
 			// find the correct number of elements of each type
-			m_numberOfTrackElements = (int)Mathf.Max((transform.position.z / unitSize) + 2, 0);
-			m_numberOfSceneryElements = Mathf.Max((m_numberOfTrackElements * m_levelTemplate.m_numOfSceneryLayers) * 2, 0);
+			//m_numberOfTrackElements = (int)Mathf.Max((transform.position.z / unitSize) + 2, 0);
+			m_numberOfSceneryElements = Mathf.Max(((int)Mathf.Max((transform.position.z / unitSize) + 2, 0) * m_levelTemplate.m_numOfSceneryLayers) * 2, 0);
 
 			m_PickupSpawner = FindObjectOfType<ObjectSpawner>();
 			// create a pool of objects
@@ -203,7 +253,11 @@ namespace BeatRider
 					break;
 
 				case (LevelType.RANDOM):
-					elementsMultiplier = 10;
+					elementsMultiplier = 100;
+					break;
+
+				case (LevelType.CENTERED):
+
 					break;
 			}
 
@@ -374,6 +428,10 @@ namespace BeatRider
 
 						sceneryContainer.transform.parent = layerContainer.transform;
 						layerContainer.transform.parent = m_activeSceneryContainer.transform;
+
+						break;
+
+					case (LevelType.CENTERED):
 
 						break;
 				}

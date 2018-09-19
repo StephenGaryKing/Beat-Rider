@@ -7,7 +7,8 @@ namespace BeatRider
 	public enum LevelType
 	{
 		GRID,
-		RANDOM
+		RANDOM,
+		CENTERED
 	}
 
 	[System.Serializable]
