@@ -28,4 +28,17 @@ public class UIParticle : MonoBehaviour {
         instance.SetActive(true);
     }
 
+    public void Show(Vector3 pos)
+    {
+        if (instance == null)
+        {
+            instance = Instantiate(prefab);
+            instance.transform.position = pos;
+        }
+
+        // toggle on and off to restart particle system (and whatever else)
+        instance.SetActive(false);
+        instance.SetActive(true);
+    }
+
 }
