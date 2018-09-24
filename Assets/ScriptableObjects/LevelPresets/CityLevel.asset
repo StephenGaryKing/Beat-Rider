@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Name: CityLevel
   m_EditorClassIdentifier: 
   m_levelGenerationType: 0
-  m_groundPrefab: {fileID: 1902621202172854, guid: 776a9fbb64b9f8d4c8d68b5151911aa4,
+  m_groundPrefab: {fileID: 1365361099035386, guid: a29f395333a87f54d999ebad46a2c8b5,
     type: 2}
   m_spawnHeightOffset: -150
   m_trackWidth: 55.94
   m_unitSize: 149.98
-  m_numOfSceneryLayers: 1
+  m_numOfSceneryLayers: 3
   m_sceneryElements:
   - m_prefab: {fileID: 1403617704442294, guid: 07340dd0ab4f5fa4a8b21cd441d062be, type: 2}
     spawnChanceWeight: 100
@@ -25,5 +25,7 @@ MonoBehaviour:
   - m_prefab: {fileID: 1956783810855892, guid: 25603f29c37ebf347aa4b6764f0691c0, type: 2}
     spawnChanceWeight: 100
     randomScaleVariance: {x: 1, y: 1}
-  m_trackElements: []
+  - m_prefab: {fileID: 1241832817142568, guid: 902234e7bce36b743af7663761eb9230, type: 2}
+    spawnChanceWeight: 100
+    randomScaleVariance: {x: 1, y: 1}
   m_travelTime: 9

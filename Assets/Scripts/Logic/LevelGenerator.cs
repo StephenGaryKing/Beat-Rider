@@ -175,7 +175,7 @@ namespace BeatRider
 				for (int i = 0; i < spawner.m_spawningAreas.Length; i++)
 					spawner.m_spawningAreas[i].m_centerPosition.z = transform.position.z;
 				// Update object speeds
-
+				spawner.SetSpeedAndTime(sceneSpeed, m_levelTemplate.m_travelTime);
 			}
 			*/
 			// correct the spawning interval
@@ -314,7 +314,7 @@ namespace BeatRider
 							ran = Random.Range(0, m_inactiveSceneryElements.Count);
 							go = m_inactiveSceneryElements[ran];
 							m_activeSceneryElements.Add(go);
-							m_inactiveSceneryElements.Remove(go);
+							m_inactiveSceneryElements.RemoveAt(ran);
 							go.transform.position = transform.position + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.back * (layerNum * unitSize) + Vector3.right * halfTrackWidth - Vector3.right * unitSize / 2 + Vector3.right * unitSize * i;
 							go.transform.parent = sceneryContainer.transform;
 							SceneryModifier[] smR = go.GetComponents<SceneryModifier>();
@@ -332,7 +332,7 @@ namespace BeatRider
 							ran = Random.Range(0, m_inactiveSceneryElements.Count);
 							go = m_inactiveSceneryElements[ran];
 							m_activeSceneryElements.Add(go);
-							m_inactiveSceneryElements.Remove(go);
+							m_inactiveSceneryElements.RemoveAt(ran);
 							go.transform.position = transform.position + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.back * (layerNum * unitSize) + Vector3.left * halfTrackWidth - Vector3.left * unitSize / 2 + Vector3.left * unitSize * i;
 							go.transform.parent = sceneryContainer.transform;
 							SceneryModifier[] smL = go.GetComponents<SceneryModifier>();
@@ -363,7 +363,7 @@ namespace BeatRider
 							ran = Random.Range(0, m_inactiveSceneryElements.Count);
 							go = m_inactiveSceneryElements[ran];
 							m_activeSceneryElements.Add(go);
-							m_inactiveSceneryElements.Remove(go);
+							m_inactiveSceneryElements.RemoveAt(ran);
 							go.transform.position = transform.position + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.back * (layerNum * unitSize) + Vector3.right * halfTrackWidth + Vector3.right * Random.Range(0, unitSize);
 							go.transform.parent = sceneryContainer.transform;
 							SceneryModifier[] smR = go.GetComponents<SceneryModifier>();
@@ -381,7 +381,7 @@ namespace BeatRider
 							ran = Random.Range(0, m_inactiveSceneryElements.Count);
 							go = m_inactiveSceneryElements[ran];
 							m_activeSceneryElements.Add(go);
-							m_inactiveSceneryElements.Remove(go);
+							m_inactiveSceneryElements.RemoveAt(ran);
 							go.transform.position = transform.position + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.back * (layerNum * unitSize) + Vector3.left * halfTrackWidth + Vector3.left * Random.Range(0, unitSize);
 							go.transform.parent = sceneryContainer.transform;
 							SceneryModifier[] smL = go.GetComponents<SceneryModifier>();
