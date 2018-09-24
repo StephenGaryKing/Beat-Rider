@@ -231,7 +231,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4678187071104204}
-  - component: {fileID: 95947457649363994}
   m_Layer: 0
   m_Name: Shroom
   m_TagString: Untagged
@@ -489,20 +488,3 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1099248921554568}
   m_Mesh: {fileID: 4300000, guid: f1ea2f7ffb8c0c64a851c910801eb6b9, type: 3}
---- !u!95 &95947457649363994
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1986892222506152}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: f1ea2f7ffb8c0c64a851c910801eb6b9, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
