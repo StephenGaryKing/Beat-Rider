@@ -167,7 +167,6 @@ namespace BeatRider
 			// find the speed of the ingame elements based on the distance to cover and the time to take
 			float sceneSpeed = transform.position.z / m_levelTemplate.m_travelTime;
 			float unitSize = m_levelTemplate.m_unitSize;
-			/*
 			// update object spawners
 			foreach (var spawner in m_objectSpawners)
 			{
@@ -175,9 +174,9 @@ namespace BeatRider
 				for (int i = 0; i < spawner.m_spawningAreas.Length; i++)
 					spawner.m_spawningAreas[i].m_centerPosition.z = transform.position.z;
 				// Update object speeds
-				spawner.SetSpeedAndTime(sceneSpeed, m_levelTemplate.m_travelTime);
+				spawner.SetObjectSpeed(sceneSpeed, m_levelTemplate.m_travelTime);
 			}
-			*/
+
 			// correct the spawning interval
 			switch (m_levelTemplate.m_levelGenerationType)
 			{

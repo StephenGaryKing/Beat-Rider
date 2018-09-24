@@ -48,10 +48,9 @@ namespace MusicalGameplayMechanics
 		string m_spectralFluxFilePath;						// The file path used when saving and loading spectral analysis files
 
 		public float m_timeToLookAhead = 0f;				// Used to preemptively expose the spectrum (for use when creating things prior to a beat happening)
-		int m_indexToAddToIndexer = 0;						// Time to look ahead converted to an amount of idexes									
- 
-		//[HideInInspector] public PeakEvent m_onPeakEvent;                       // the event called at the moment a peak occurs
-		//[HideInInspector] public PeakEvent m_onEarlyPeakEvent;              // the event called 'm_timeToLookAhead' seconds before a peak occurs											
+		int m_indexToAddToIndexer = 0;                      // Time to look ahead converted to an amount of idexes									
+
+		[HideInInspector] public SpectrumEvent m_onFrontBufferDump;			// the event called at the start of the song to populate the game field
 		[HideInInspector] public SpectrumEvent m_onMusicIsPlaying;          // the event called every frame in order to expose the spectrum on that frame											
 		[HideInInspector] public SpectrumEvent m_onEarlyMusicIsPlaying;     // the event called 'm_timeToLookAhead' seconds before this point in time in order to expose the spectrum on that frame
 		[HideInInspector] public bool m_paused = false;
@@ -166,7 +165,9 @@ namespace MusicalGameplayMechanics
 		{
 			if (m_bgThread == null && !m_songIsBeingPlayed)
 			{
-				_audioSource.PlayDelayed(m_timeToLookAhead);		// Play the song that has been loaded with the delay specified (this delay must occur in order to correctly preemptively call events)
+				//_audioSource.PlayDelayed(m_timeToLookAhead);        // Play the song that has been loaded with the delay specified (this delay must occur in order to correctly preemptively call events)
+				_audioSource.Play();
+				m_onFrontBufferDump.Invoke(m_spectralFluxSaver.m_savedPasses, 0);
 				Debug.Log("playing the song named " + _audioSource.clip.name);
 				StartCoroutine("UpdateListeners");
 				m_playSongButton.interactable = false;
@@ -193,20 +194,23 @@ namespace MusicalGameplayMechanics
 		/// </returns>
 		IEnumerator UpdateListeners()
 		{
-			float frontBufferTime = -m_timeToLookAhead;		// This front buffer time is used to correctly simulate the time before a song starts
+			//float frontBufferTime = -m_timeToLookAhead;		// This front buffer time is used to correctly simulate the time before a song starts
 			
 			float lastTimeChecked = 0;                      // This variable is used to avoid spamming listeners with updates every frame if the index is the same
 			float lastEarlyTimeChecked = 0;
 			while (true)
 			{
+
 				m_songIsBeingPlayed = false;
 
+				/*
 				if (frontBufferTime < 0)
 				{
 					m_songIsBeingPlayed = true;
 					frontBufferTime += Time.deltaTime;
 				}
-				else if (_audioSource.isPlaying)
+				*/
+				if (_audioSource.isPlaying)
 				{
 					m_songIsBeingPlayed = true;
 				}
@@ -224,7 +228,9 @@ namespace MusicalGameplayMechanics
 				}
 
 				int currentTime = Mathf.RoundToInt(_audioSource.time * 10f);
-				int earlyTime = Mathf.RoundToInt((frontBufferTime + _audioSource.time + m_timeToLookAhead) * 10f);
+
+				// int earlyTime = Mathf.RoundToInt((frontBufferTime + _audioSource.time + m_timeToLookAhead) * 10f);
+				int earlyTime = Mathf.RoundToInt((_audioSource.time + m_timeToLookAhead) * 10f);
 
 				if (earlyTime != lastEarlyTimeChecked)
 				{

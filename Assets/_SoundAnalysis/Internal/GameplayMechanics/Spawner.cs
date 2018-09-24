@@ -39,7 +39,7 @@ namespace MusicalGameplayMechanics
 
 		public AudioReactor m_audioReactor;					// Modifier to change the way this spawns objects
 
-		public virtual void Start()
+		public virtual void Awake()
 		{
 			int num = 0;
 			for (int i = 0; i < m_prefabsToSpawn.Count; i++)
@@ -51,7 +51,7 @@ namespace MusicalGameplayMechanics
 			if (num > 1000000)
 				Debug.LogError("WARNING! \nThe object named " + transform.name + " threw an over 100% error... \nCheck your Prefabs To Spawn chances" );
 			_songController = FindObjectOfType<SongController>();
-			_songController.m_onMusicIsPlaying.AddListener(SpawnObject);
+			_songController.m_onEarlyMusicIsPlaying.AddListener(SpawnObject);
 		}
 
 		/// <summary>
