@@ -65,7 +65,8 @@ namespace BeatRider
 				m_scoreBoardLogic.m_score += Mathf.RoundToInt(1 + (m_maxScoreMultiplier * m_FOVAmount));
 				other.gameObject.SetActive(false);
 				other.GetComponent<ParticleCreationLogic>().SpawnParticle();
-				m_playerSoundEffects.m_soundManager.PlaySound(m_playerSoundEffects.m_pickupNote);
+				if (m_playerSoundEffects.m_pickupNote.soundToPlay)
+					m_playerSoundEffects.m_soundManager.PlaySound(m_playerSoundEffects.m_pickupNote);
 			}
 
 			if (other.CompareTag("Boost"))
@@ -73,7 +74,8 @@ namespace BeatRider
 				{
 					m_targetFOV += other.GetComponent<BoostPadLogic>().m_boostAmount;
 					other.GetComponent<ParticleCreationLogic>().SpawnParticle();
-					m_playerSoundEffects.m_soundManager.PlaySound(m_playerSoundEffects.m_boost);
+					if (m_playerSoundEffects.m_boost.soundToPlay)
+						m_playerSoundEffects.m_soundManager.PlaySound(m_playerSoundEffects.m_boost);
 				}
 
 			if (other.CompareTag("Obstacle"))
@@ -89,7 +91,8 @@ namespace BeatRider
 					Die();
 					FindObjectOfType<SongController>().StopSong(true);
 				}
-				m_playerSoundEffects.m_soundManager.PlaySound(m_playerSoundEffects.m_hitObstical);
+				if (m_playerSoundEffects.m_hitObstical.soundToPlay)
+					m_playerSoundEffects.m_soundManager.PlaySound(m_playerSoundEffects.m_hitObstical);
 			}
 		}
 	}

@@ -203,13 +203,6 @@ namespace MusicalGameplayMechanics
 
 				m_songIsBeingPlayed = false;
 
-				/*
-				if (frontBufferTime < 0)
-				{
-					m_songIsBeingPlayed = true;
-					frontBufferTime += Time.deltaTime;
-				}
-				*/
 				if (_audioSource.isPlaying)
 				{
 					m_songIsBeingPlayed = true;
