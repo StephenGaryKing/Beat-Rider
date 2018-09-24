@@ -9,45 +9,74 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1144219834224812}
+  m_RootGameObject: {fileID: 1689662685069640}
   m_IsPrefabParent: 1
---- !u!1 &1144219834224812
+--- !u!1 &1689662685069640
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4105782070173514}
-  - component: {fileID: 33247677014245996}
-  - component: {fileID: 23883174131398288}
-  - component: {fileID: 95006076507240918}
+  - component: {fileID: 4695689246638908}
+  - component: {fileID: 95245418149091660}
   m_Layer: 0
-  m_Name: Log
+  m_Name: Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4105782070173514
+--- !u!1 &1866129562115242
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4805428482804506}
+  - component: {fileID: 33772718867630320}
+  - component: {fileID: 23939751251814344}
+  m_Layer: 0
+  m_Name: pCube78
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4695689246638908
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1144219834224812}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.1044804, y: 1.941849, z: -2.7802215}
+  m_GameObject: {fileID: 1689662685069640}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4805428482804506}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23883174131398288
+--- !u!4 &4805428482804506
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1866129562115242}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.23233064, y: 12.812456, z: -0.37922233}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4695689246638908}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &23939751251814344
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1144219834224812}
+  m_GameObject: {fileID: 1866129562115242}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -56,7 +85,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: c2727d50e315f7e4eb4899130d239c71, type: 2}
+  - {fileID: 2100000, guid: 20956e3d7d5817d4fbf3b7069839cb7c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -76,22 +105,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33247677014245996
+--- !u!33 &33772718867630320
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1144219834224812}
-  m_Mesh: {fileID: 4300000, guid: 324db14279e40184282d886d2b96b2ec, type: 3}
---- !u!95 &95006076507240918
+  m_GameObject: {fileID: 1866129562115242}
+  m_Mesh: {fileID: 4300000, guid: 4dcc2679180132a419495046135ea979, type: 3}
+--- !u!95 &95245418149091660
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1144219834224812}
+  m_GameObject: {fileID: 1689662685069640}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 324db14279e40184282d886d2b96b2ec, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 4dcc2679180132a419495046135ea979, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
