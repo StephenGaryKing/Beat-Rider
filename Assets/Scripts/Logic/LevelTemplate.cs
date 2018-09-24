@@ -21,15 +21,6 @@ namespace BeatRider
 		//public float spawnChancePercentage;
 	}
 
-	[System.Serializable]
-	public class TrackElement
-	{
-		public GameObject m_prefab;
-		public float spawnChanceWeight;
-		//[Header("Info")]
-		//public float spawnChancePercentage;
-	}
-
 	[CreateAssetMenu(fileName = "LevelTemplate", menuName = "Beat Rider/LevelTemplate", order = 1)]
 	public class LevelTemplate : ScriptableObject
 	{
@@ -40,7 +31,6 @@ namespace BeatRider
 		public float m_unitSize = 1;
 		public int m_numOfSceneryLayers;
 		public List<SceneryElement> m_sceneryElements = new List<SceneryElement>();
-		public List<TrackElement> m_trackElements = new List<TrackElement>();
 		[Tooltip("The time taken for the level to reach the player in seconds")]
 		public float m_travelTime = 2;
 	}
