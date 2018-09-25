@@ -9,8 +9,8 @@ public class GameController : MonoBehaviour {
 
 		// Pause the game
     [SerializeField] GameObject m_pauseMenu;
-    [SerializeField] GameObject m_playButton;
-    [SerializeField] GameObject m_pauseButton;
+    [SerializeField] GameObject m_playIcon;
+    [SerializeField] GameObject m_pauseIcon;
 	
 	// Update is called once per frame
 	void Update () {
@@ -22,8 +22,8 @@ public class GameController : MonoBehaviour {
             {
                 Time.timeScale = 0;
                 m_pauseMenu.SetActive(true);
-                m_pauseButton.SetActive(true);
-                m_playButton.SetActive(false);
+                m_pauseIcon.SetActive(true);
+                m_playIcon.SetActive(false);
             }
         }
 		// Play the game from a paused state
@@ -44,8 +44,8 @@ public class GameController : MonoBehaviour {
     {
         songcontroller.UnPause();
         m_pauseMenu.SetActive(false);
-        m_pauseButton.SetActive(false);
-        m_playButton.SetActive(true);
+        m_pauseIcon.SetActive(false);
+        m_playIcon.SetActive(true);
         Time.timeScale = 1;
     }
 
