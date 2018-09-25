@@ -7,9 +7,9 @@ namespace BeatRider
 {
 	public class LaneMovement : MonoBehaviour
 	{
-		public float m_unitsToMovePerSecond = 1;	// How fast to move
+		[HideInInspector] public float m_unitsToMovePerSecond = 1;	// How fast to move
 		public float m_zValueToDie;					// z depth to die at
-		public LevelGenerator m_levelGen;           // level generator, used to return to pool when killed
+		[HideInInspector ] public LevelGenerator m_levelGen;           // level generator, used to return to pool when killed
 
 		private void FixedUpdate()
 		{

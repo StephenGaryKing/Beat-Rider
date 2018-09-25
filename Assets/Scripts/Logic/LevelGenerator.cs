@@ -186,6 +186,9 @@ namespace BeatRider
 				case (LevelType.RANDOM):
 					m_spawnInterval = 0.1f / m_levelTemplate.m_numOfSceneryLayers;
 					break;
+				case (LevelType.CENTERED):
+					m_spawnInterval = unitSize / sceneSpeed;
+					break;
 			}
 
 			// create a container for scenery elements
@@ -226,7 +229,7 @@ namespace BeatRider
 					break;
 
 				case (LevelType.CENTERED):
-
+					elementsMultiplier = 2;
 					break;
 			}
 
@@ -298,6 +301,9 @@ namespace BeatRider
 				GameObject layerContainer = new GameObject("Layer Container : " + Time.time + " : " + layerNum);
 				GameObject sceneryContainer = new GameObject("Scenery Container");
 
+				int ran;
+				GameObject go;
+
 				switch (m_levelTemplate.m_levelGenerationType)
 				{
 					case (LevelType.GRID):
@@ -306,9 +312,6 @@ namespace BeatRider
 							Debug.LogError("Pool of scenery objects is empty! Tell Steve ASAP!");
 						for (int i = 1; i <= m_levelTemplate.m_numOfSceneryLayers; i++)
 						{
-							int ran;
-							GameObject go;
-
 							// right side
 							ran = Random.Range(0, m_inactiveSceneryElements.Count);
 							go = m_inactiveSceneryElements[ran];
@@ -355,9 +358,6 @@ namespace BeatRider
 							Debug.LogError("Pool of scenery objects is empty! Tell Steve ASAP!");
 						for (int i = 1; i <= m_levelTemplate.m_numOfSceneryLayers; i++)
 						{
-							int ran;
-							GameObject go;
-
 							// right side
 							ran = Random.Range(0, m_inactiveSceneryElements.Count);
 							go = m_inactiveSceneryElements[ran];
@@ -401,13 +401,37 @@ namespace BeatRider
 						break;
 
 					case (LevelType.CENTERED):
+						//for each scenery layer, create a piece of scenery
+						if (m_inactiveSceneryElements.Count == 0)
+							Debug.LogError("Pool of scenery objects is empty! Tell Steve ASAP!");
+
+						// middle
+						ran = Random.Range(0, m_inactiveSceneryElements.Count);
+						go = m_inactiveSceneryElements[ran];
+						m_activeSceneryElements.Add(go);
+						m_inactiveSceneryElements.RemoveAt(ran);
+						go.transform.position = transform.position + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.back * (layerNum * unitSize);
+						go.transform.parent = sceneryContainer.transform;
+						SceneryModifier[] sm = go.GetComponents<SceneryModifier>();
+						if (sm.Length != 0)
+						{
+							foreach (var mod in sm)
+							{
+								mod.ResetScenery();
+								mod.ModifyScenery();
+							}
+						}
+						go.SetActive(true);
+
+						sceneryContainer.transform.parent = layerContainer.transform;
+						layerContainer.transform.parent = m_activeSceneryContainer.transform;
 
 						break;
 				}
 
 				// add the lane movement component to the lane and set its variables (moving one object is cheeper than mooving all individualy)
 				LaneMovement lm = sceneryContainer.AddComponent<LaneMovement>();
-				const float dieAtZ = -100;
+				const float dieAtZ = -1000;
 				//do some math to find the speed the scene must move
 				lm.m_unitsToMovePerSecond = transform.position.z / m_levelTemplate.m_travelTime;
 				lm.m_zValueToDie = dieAtZ;

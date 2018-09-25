@@ -67,6 +67,7 @@ namespace BeatRider
 				other.GetComponent<ParticleCreationLogic>().SpawnParticle();
 				if (m_playerSoundEffects.m_pickupNote.soundToPlay)
 					m_playerSoundEffects.m_soundManager.PlaySound(m_playerSoundEffects.m_pickupNote);
+				return;
 			}
 
 			if (other.CompareTag("Boost"))
@@ -76,6 +77,7 @@ namespace BeatRider
 					other.GetComponent<ParticleCreationLogic>().SpawnParticle();
 					if (m_playerSoundEffects.m_boost.soundToPlay)
 						m_playerSoundEffects.m_soundManager.PlaySound(m_playerSoundEffects.m_boost);
+					return;
 				}
 
 			if (other.CompareTag("Obstacle"))
@@ -93,6 +95,16 @@ namespace BeatRider
 				}
 				if (m_playerSoundEffects.m_hitObstical.soundToPlay)
 					m_playerSoundEffects.m_soundManager.PlaySound(m_playerSoundEffects.m_hitObstical);
+				other.gameObject.SetActive(false);
+				return;
+			}
+
+			if (other.CompareTag("Gem"))
+			{
+				GemLogic gl = other.GetComponent<GemLogic>();
+				if (gl)
+					gl.PickupGem();
+				other.gameObject.SetActive(false);
 			}
 		}
 	}
