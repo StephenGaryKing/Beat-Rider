@@ -415,18 +415,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_templateTitle: {fileID: 1161257323228914}
-  m_templateMenuItem: {fileID: 1007577446393776}
   m_offsetDistance: 160
   m_offsetScale: {x: 0.4, y: 0.6, z: 0.6}
+  m_animationSpeed: 0.5
+  m_curveType: 0
   m_menuItems:
   - Title: Boosts
-    FileLocationToLoad: 
+    TitleImage: {fileID: 0}
+    TemplateMenuItem: {fileID: 0}
+    TitleGameObject: {fileID: 0}
+    MenuItemGameObjects: []
   - Title: Ship
-    FileLocationToLoad: 
+    TitleImage: {fileID: 0}
+    TemplateMenuItem: {fileID: 0}
+    TitleGameObject: {fileID: 0}
+    MenuItemGameObjects: []
   - Title: Track
-    FileLocationToLoad: 
+    TitleImage: {fileID: 0}
+    TemplateMenuItem: {fileID: 0}
+    TitleGameObject: {fileID: 0}
+    MenuItemGameObjects: []
   - Title: Level
-    FileLocationToLoad: 
+    TitleImage: {fileID: 0}
+    TemplateMenuItem: {fileID: 0}
+    TitleGameObject: {fileID: 0}
+    MenuItemGameObjects: []
 --- !u!114 &114294348698109356
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -917,12 +930,14 @@ MonoBehaviour:
       TargetPosition: {x: 0, y: 0, z: 0}
       TargetScale: {x: 0, y: 0, z: 0}
       Time: 0
+      CurveType: 0
   - ObjectToToggleEnabled: {fileID: 0}
     ObjectToAnimate:
       Obj: {fileID: 0}
       TargetPosition: {x: 0, y: 0, z: 0}
       TargetScale: {x: 0, y: 0, z: 0}
       Time: 0
+      CurveType: 0
   m_inTransitions:
   - ObjectToToggleEnabled: {fileID: 0}
     ObjectToAnimate:
@@ -930,6 +945,7 @@ MonoBehaviour:
       TargetPosition: {x: 0, y: 0, z: 0}
       TargetScale: {x: 0, y: 0, z: 0}
       Time: 0
+      CurveType: 0
 --- !u!114 &114948809492272416
 MonoBehaviour:
   m_ObjectHideFlags: 1
