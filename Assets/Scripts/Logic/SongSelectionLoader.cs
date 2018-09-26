@@ -56,7 +56,6 @@ public class SongSelectionLoader : MonoBehaviour {
 		int childCount = m_container.childCount - 1;
 		for (int i = 0; i < childCount; i++)
 			Destroy(m_container.GetChild(i + 1).gameObject);
-		Debug.Log(m_container.childCount);
 		
 		for (int i = 0; i < m_songs.Count; i++)
 		{

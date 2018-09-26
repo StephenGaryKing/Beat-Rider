@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using SimpleFileBrowser;
+using GracesGames.SimpleFileBrowser.Scripts;
 using System.IO;
 
 public class SongLocator : MonoBehaviour {
 
 	SongSelectionLoader m_songSelectionLoader;
+	public FileBrowser m_fileManager;
 
 	// Use this for initialization
 	void Start()
@@ -16,7 +17,12 @@ public class SongLocator : MonoBehaviour {
 
 	public void FindSongLocation()
 	{
-		FileBrowser.ShowLoadDialog(Success, Cancel);
+		m_fileManager.SetupFileBrowser(ViewMode.Landscape);
+		//string[] fileExtentions = new string[1];
+		//fileExtentions[0] = ".wav";
+		m_fileManager.OpenFilePanel(null);
+		m_fileManager.OnFileSelect += Success;
+		m_fileManager.OnFileBrowserClose += Cancel;
 	}
 
 	void Success(string fileLocation)
