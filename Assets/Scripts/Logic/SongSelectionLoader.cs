@@ -32,7 +32,8 @@ public class SongSelectionLoader : MonoBehaviour {
 	
 	public void RefreshFiles(string fileLocation)
 	{
-		DirectoryInfo dir = new DirectoryInfo(m_defaultFileLocation);
+		m_songs.Clear();
+		DirectoryInfo dir = new DirectoryInfo(fileLocation);
 		FileInfo[] info = dir.GetFiles("*.*");
 		foreach(FileInfo file in info)
 		{
@@ -52,17 +53,21 @@ public class SongSelectionLoader : MonoBehaviour {
 	void PopulateButtons()
 	{
 		// destroy all children
-		int childCount = m_container.childCount;
-		for (int i = 1; i < childCount; i ++)
-			Destroy(m_container.GetChild(0).gameObject);
-		for(int i = 0; i < m_songs.Count; i ++)
+		int childCount = m_container.childCount - 1;
+		for (int i = 0; i < childCount; i++)
+			Destroy(m_container.GetChild(i + 1).gameObject);
+		Debug.Log(m_container.childCount);
+		
+		for (int i = 0; i < m_songs.Count; i++)
 		{
 			Transform newButton = Instantiate(m_songButtonTemplate, m_container);
+			newButton.name += " " + i;
 			newButton.GetComponentInChildren<Text>().text = m_songs[i].fileName;
 			newButton.GetComponent<SongSelectButton>().m_filePath = m_songs[i].fileLocation;
+			newButton.gameObject.SetActive(true);
 		}
-		Destroy(m_songButtonTemplate.gameObject);
-		m_songButtonTemplate = m_container.GetChild(0);
+		
+		m_songButtonTemplate.gameObject.SetActive(false);
 	}
 
     public IEnumerator SelectSong(string filePath)
