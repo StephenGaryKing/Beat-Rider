@@ -29,23 +29,7 @@ namespace BeatRider
 		// Update is called once per frame
 		void Update()
 		{
-#if UNITY_STANDALONE || UNITY_EDITOR
 			m_amountToMove = Input.GetAxisRaw("Horizontal") * m_moveSpeed;
-#endif
-#if UNITY_ANDROID
-			Vector2 touchOrigin = new Vector2();
-			//Check if Input has registered more than zero touches
-			if (Input.touchCount > 0)
-			{
-				//Store the first touch detected.
-				Touch myTouch = Input.touches[0];
-				touchOrigin = myTouch.position;
-			}
-			if (touchOrigin.x > Screen.currentResolution.width/2)
-				m_amountToMove = m_moveSpeed;
-			else if (touchOrigin.x < Screen.currentResolution.width / 2)
-				m_amountToMove = m_moveSpeed;
-#endif
 		}
 
 		private void FixedUpdate()
