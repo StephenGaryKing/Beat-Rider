@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Name: End level One
   m_EditorClassIdentifier: 
   m_cameraTagToUse: Cutscene Cam
+  m_preCutsceneChoice:
+  - Image: {fileID: 21300000, guid: 4069384878f853746bc2f2a427c22602, type: 3}
+    CutsceneToPlay: {fileID: 11400000, guid: d93280194d51d414fb7c5cdb2ef751f9, type: 2}
+  - Image: {fileID: 21300000, guid: d3a619e3fdbe28340923170335f33b5e, type: 3}
+    CutsceneToPlay: {fileID: 0}
   m_conversation:
   - Image: {fileID: 21300000, guid: 4069384878f853746bc2f2a427c22602, type: 3}
     Audio:
@@ -87,4 +92,5 @@ MonoBehaviour:
     Name: END CALL
     Content: CALL HAS BEEN TERMINATED
     waitTime: 2
+  m_postCutsceneChoice: []
   m_levelToPlay: {fileID: 11400000, guid: b2018c0fbd0bb074a9bc5c203dc7fd6d, type: 2}
