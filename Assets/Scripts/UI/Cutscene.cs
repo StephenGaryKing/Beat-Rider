@@ -17,13 +17,22 @@ namespace BeatRider
 		public float waitTime;
 	};
 
+	[System.Serializable]
+	public struct Choice
+	{
+		public Sprite Image;
+		public Cutscene CutsceneToPlay;		
+	}
+
 	[CreateAssetMenu(fileName = "Cutscene", menuName = "Beat Rider/Cutscene", order = 1)]
 
 	public class Cutscene : ScriptableObject
 	{
 
 		public string m_cameraTagToUse;         // camera to use for the cutscene
+		public Choice[] m_preCutsceneChoice;		// played before cutscenes
 		public SpeachBubble[] m_conversation;   // a conversation with n elements
+		public Choice[] m_postCutsceneChoice;      // played before cutscenes
 		public Level m_levelToPlay;             // the song to play (if any) after the cutscene is over
 	}
 }
