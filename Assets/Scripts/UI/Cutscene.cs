@@ -21,7 +21,8 @@ namespace BeatRider
 	public struct Choice
 	{
 		public Sprite Image;
-		public Cutscene CutsceneToPlay;		
+		public Cutscene CutsceneToPlay;
+		public string EndGameCondition;
 	}
 
 	[CreateAssetMenu(fileName = "Cutscene", menuName = "Beat Rider/Cutscene", order = 1)]
