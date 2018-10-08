@@ -14,33 +14,24 @@ MonoBehaviour:
   m_levelGenerationType: 1
   m_groundPrefab: {fileID: 1866900193989758, guid: e4b0329926a941a42b4f0a18f53c2037,
     type: 2}
-  m_spawnHeightOffset: -10
+  m_spawnHeightOffset: -20
   m_trackWidth: 40
-  m_unitSize: 200
-  m_numOfSceneryLayers: 8
+  m_unitSize: 300
+  m_numOfSceneryLayers: 3
   m_sceneryElements:
-  - m_prefab: {fileID: 1144219834224812, guid: 5a54df388a2a74d45a141b28d23f7720, type: 2}
-    spawnChanceWeight: 100
-    randomScaleVariance: {x: 1, y: 1}
-  - m_prefab: {fileID: 1597569668270370, guid: 6ec6ee4efd4339943922a373d243ec86, type: 2}
-    spawnChanceWeight: 10
-    randomScaleVariance: {x: 1, y: 2}
-  - m_prefab: {fileID: 1986892222506152, guid: 7343bb96584aeba4eb12c500b0bda7a3, type: 2}
-    spawnChanceWeight: 30
-    randomScaleVariance: {x: 0.1, y: 0.5}
-  - m_prefab: {fileID: 1278202025506212, guid: 634c717316f11744a82b9f825dbdc68e, type: 2}
-    spawnChanceWeight: 0.5
-    randomScaleVariance: {x: 1, y: 1}
-  - m_prefab: {fileID: 1617455893055510, guid: bb5abd9264b54bd48853cf33a1e75a60, type: 2}
-    spawnChanceWeight: 0.5
-    randomScaleVariance: {x: 1, y: 1}
-  - m_prefab: {fileID: 1689662685069640, guid: 3d52276c76f21084f8bf2ad49d6c1f2b, type: 2}
-    spawnChanceWeight: 50
-    randomScaleVariance: {x: 1, y: 3}
-  - m_prefab: {fileID: 1908142757091196, guid: 31064c9b20dcc4a4ca66efd8216097da, type: 2}
-    spawnChanceWeight: 100
-    randomScaleVariance: {x: 1, y: 1}
   - m_prefab: {fileID: 1963162788459566, guid: 0ae7e72697f67414b9e704e8a0935dff, type: 2}
-    spawnChanceWeight: 50
-    randomScaleVariance: {x: 1, y: 4}
+    spawnChanceWeight: 10
+    randomScaleVariance: {x: 7, y: 3}
+  - m_prefab: {fileID: 1048809830537024, guid: 06c758be9d069b74cb4ce18d815eab31, type: 2}
+    spawnChanceWeight: 10
+    randomScaleVariance: {x: 15, y: 8}
+  - m_prefab: {fileID: 1077195105597262, guid: 5a7ac848c22b3bf48875b4aac864b00e, type: 2}
+    spawnChanceWeight: 10
+    randomScaleVariance: {x: 10, y: 5}
+  - m_prefab: {fileID: 1466623135338510, guid: 1be4769aecfbeed4187f16876660380f, type: 2}
+    spawnChanceWeight: 10
+    randomScaleVariance: {x: 5, y: 2}
+  - m_prefab: {fileID: 1355162666107308, guid: 5a54df388a2a74d45a141b28d23f7720, type: 2}
+    spawnChanceWeight: 10
+    randomScaleVariance: {x: 5, y: 7}
   m_travelTime: 9
