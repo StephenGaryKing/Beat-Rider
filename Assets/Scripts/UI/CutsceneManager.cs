@@ -15,6 +15,7 @@ namespace BeatRider
 		public Image m_imageBox;
 		public Text m_nameBox;              // text box for the name of whoever is talking
 		public Text m_conversationBox;      // text box for the substance of what someone is saying
+		public Button m_choiceButtonTemplate;
 		public Transform m_defaultCamerPosition;
 
 		[HideInInspector] public AudioSource m_backgroundMusicSource;
@@ -23,8 +24,14 @@ namespace BeatRider
 		int m_speachBubbleNumber = 0;       // the current line to write
 		LevelGenerator m_levelgen;
 
+		List<GameObject> choices = new List<GameObject>();
+
 		private void Start()
 		{
+			if (!m_choiceButtonTemplate)
+				Debug.LogError("Add a template for the choice button (used in CutsceneManager)");
+			else
+				m_choiceButtonTemplate.gameObject.SetActive(false);
 			m_levelgen = FindObjectOfType<LevelGenerator>();
 			m_soundManager = FindObjectOfType<SoundManager>();
 			m_songController = FindObjectOfType<SongController>();
@@ -41,7 +48,44 @@ namespace BeatRider
 			m_backgroundMusicSource = m_soundManager.PlaySound(m_backgroundMusic);
 			MoveCamera(cutscene, true);
 			m_speachBubbleNumber = 0;
-			StartCoroutine(StartCutscene(cutscene));
+			if (!CheckChoices(cutscene.m_preCutsceneChoice, cutscene))
+				StartCoroutine(StartCutscene(cutscene));
+		}
+
+		void StartCutsceneCaller(Cutscene cs)
+		{
+			//remove choice buttons
+			foreach (GameObject choice in choices)
+				Destroy(choice);
+			choices.Clear();
+
+			StartCoroutine(StartCutscene(cs));
+		}
+
+		public bool CheckChoices(Choice[] choiceArray, Cutscene cs)
+		{
+			// if there are pre choices to be made let the player do so
+			if (choiceArray.Length == 0)
+				return false;
+
+			// display choices
+			foreach (Choice c in choiceArray)
+			{
+				GameObject go = Instantiate(m_choiceButtonTemplate.gameObject, m_choiceButtonTemplate.transform.parent);
+				Button btn = go.GetComponent<Button>();
+				btn.image.sprite = c.Image;
+
+				if (c.CutsceneToPlay != null)
+					btn.onClick.AddListener(() => { StartCutsceneCaller(c.CutsceneToPlay); });
+				else
+					btn.onClick.AddListener(() => { StartCutsceneCaller(cs); });
+
+				Debug.Log(c.CutsceneToPlay);
+
+				go.SetActive(true);
+				choices.Add(go);
+			}
+			return true;
 		}
 
 		public void MoveCamera(Cutscene cutscene, bool moveIn)
@@ -105,16 +149,25 @@ namespace BeatRider
 					m_speachBubbleNumber++;
 				}
 			}
+			// make the conversation invisible
+			m_conversationBox.transform.parent.parent.gameObject.SetActive(false);
+
+			if (!CheckChoices(cs.m_postCutsceneChoice, cs))
+				StartCoroutine(StartSong(cs));
+		}
+
+		IEnumerator StartSong(Cutscene cs)
+		{ 
 			// if there is a song to play
 			if (cs.m_levelToPlay.m_song)
 			{
+				// change the level gen
+				m_levelgen.ChangeLevel(cs.m_levelToPlay.m_levelTemplate);
 				// if the song is not loading or analysing still
 				while (m_songController.m_bgThread != null)
 					yield return null;
 				// play it
 				m_songController.PlayAudio();
-				// change the level gen
-				m_levelgen.m_levelTemplate = cs.m_levelToPlay.m_levelTemplate;
 				// update cutscene
 				m_songController.m_cutsceneToPlayAtEnd = cs.m_levelToPlay.m_endCutscene;
 			}
@@ -126,6 +179,12 @@ namespace BeatRider
 			if (m_backgroundMusicSource)
 				if (m_backgroundMusicSource.isPlaying)
 					Destroy(m_backgroundMusicSource);
+
+			foreach (GameObject go in choices)
+				Destroy(go);
+			choices.Clear();
 		}
+
+
 	}
 }
