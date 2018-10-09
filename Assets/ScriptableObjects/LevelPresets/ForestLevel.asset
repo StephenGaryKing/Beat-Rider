@@ -14,17 +14,17 @@ MonoBehaviour:
   m_levelGenerationType: 1
   m_groundPrefab: {fileID: 1866900193989758, guid: e4b0329926a941a42b4f0a18f53c2037,
     type: 2}
-  m_spawnHeightOffset: -20
+  m_spawnHeightOffset: -30
   m_trackWidth: 40
-  m_unitSize: 300
+  m_unitSize: 200
   m_numOfSceneryLayers: 3
   m_sceneryElements:
   - m_prefab: {fileID: 1963162788459566, guid: 0ae7e72697f67414b9e704e8a0935dff, type: 2}
     spawnChanceWeight: 10
-    randomScaleVariance: {x: 7, y: 3}
+    randomScaleVariance: {x: 10, y: 7}
   - m_prefab: {fileID: 1048809830537024, guid: 06c758be9d069b74cb4ce18d815eab31, type: 2}
     spawnChanceWeight: 10
-    randomScaleVariance: {x: 15, y: 8}
+    randomScaleVariance: {x: 20, y: 15}
   - m_prefab: {fileID: 1077195105597262, guid: 5a7ac848c22b3bf48875b4aac864b00e, type: 2}
     spawnChanceWeight: 10
     randomScaleVariance: {x: 10, y: 5}
