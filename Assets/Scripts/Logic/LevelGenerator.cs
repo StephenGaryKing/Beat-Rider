@@ -198,8 +198,9 @@ namespace BeatRider
 					m_spawnInterval = unitSize / sceneSpeed;
 					break;
 				case (LevelType.RANDOM):
-					m_numberOfSceneryElements = Mathf.Max(((int)Mathf.Max((transform.position.z / unitSize) + 2, 0) * m_levelTemplate.m_numOfSceneryLayers), 0);
 					m_spawnInterval = 0.1f / m_levelTemplate.m_numOfSceneryLayers;
+					float newUnitSize = m_spawnInterval * sceneSpeed;
+					m_numberOfSceneryElements = Mathf.Max((int)Mathf.Max((transform.position.z / newUnitSize) + 2, 0), 0);
 					break;
 				case (LevelType.CENTERED):
 					m_numberOfSceneryElements = Mathf.Max((int)Mathf.Max((transform.position.z / unitSize) + 2, 0), 0);
@@ -223,7 +224,8 @@ namespace BeatRider
 						CreateLayerOfLevel(i);
 					break;
 				case (LevelType.RANDOM):
-					for (int i = 0; i < m_numberOfSceneryElements / (m_levelTemplate.m_numOfSceneryLayers); i++)
+					Debug.Log(m_numberOfSceneryElements + " scene layers");
+					for (int i = 0; i < m_numberOfSceneryElements; i++)
 						CreateLayerOfLevel(i);
 					break;
 				case (LevelType.CENTERED):
@@ -348,7 +350,7 @@ namespace BeatRider
 						case (LevelType.GRID):
 							//for each scenery layer, create a piece of scenery
 							if (m_inactiveSceneryElements.Count == 0)
-								Debug.LogError("Pool of scenery objects is empty! Tell Steve ASAP!");
+								Debug.LogError("Pool of grid scenery objects is empty! Tell Steve ASAP!");
 							for (int i = 1; i <= m_levelTemplate.m_numOfSceneryLayers; i++)
 							{
 								// right side
@@ -393,8 +395,11 @@ namespace BeatRider
 
 							break;
 						case (LevelType.RANDOM):
+							float sceneSpeed = transform.position.z / m_levelTemplate.m_travelTime;
+							float newUnitSize = m_spawnInterval * sceneSpeed;
+
 							if (m_inactiveSceneryElements.Count == 0)
-								Debug.LogError("Pool of scenery objects is empty! Tell Steve ASAP!");
+								Debug.LogError("Pool of random scenery objects is empty! Tell Steve ASAP!");
 							for (int i = 1; i <= m_levelTemplate.m_numOfSceneryLayers; i++)
 							{
 								// right side
@@ -402,7 +407,7 @@ namespace BeatRider
 								go = m_inactiveSceneryElements[ran];
 								m_activeSceneryElements.Add(go);
 								m_inactiveSceneryElements.RemoveAt(ran);
-								go.transform.position = transform.position + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.back * (layerNum * unitSize) + Vector3.right * halfTrackWidth + Vector3.right * Random.Range(0, unitSize);
+								go.transform.position = transform.position + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.back * (layerNum * newUnitSize) + Vector3.right * halfTrackWidth + Vector3.right * Random.Range(0, unitSize);
 								go.transform.parent = sceneryContainer.transform;
 								SceneryModifier[] smR = go.GetComponents<SceneryModifier>();
 								if (smR.Length != 0)
@@ -420,7 +425,7 @@ namespace BeatRider
 								go = m_inactiveSceneryElements[ran];
 								m_activeSceneryElements.Add(go);
 								m_inactiveSceneryElements.RemoveAt(ran);
-								go.transform.position = transform.position + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.back * (layerNum * unitSize) + Vector3.left * halfTrackWidth + Vector3.left * Random.Range(0, unitSize);
+								go.transform.position = transform.position + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.back * (layerNum * newUnitSize) + Vector3.left * halfTrackWidth + Vector3.left * Random.Range(0, unitSize);
 								go.transform.parent = sceneryContainer.transform;
 								SceneryModifier[] smL = go.GetComponents<SceneryModifier>();
 								if (smL.Length != 0)
@@ -442,7 +447,7 @@ namespace BeatRider
 						case (LevelType.CENTERED):
 							//for each scenery layer, create a piece of scenery
 							if (m_inactiveSceneryElements.Count == 0)
-								Debug.LogError("Pool of scenery objects is empty! Tell Steve ASAP!");
+								Debug.LogError("Pool of centered scenery objects is empty! Tell Steve ASAP!");
 
 							// middle
 							ran = Random.Range(0, m_inactiveSceneryElements.Count);
