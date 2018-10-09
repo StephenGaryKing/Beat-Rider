@@ -17,14 +17,16 @@ namespace BeatRider
 		public Text m_conversationBox;      // text box for the substance of what someone is saying
 		public Button m_choiceButtonTemplate;
 		public Transform m_defaultCamerPosition;
+		public WinCondition[] m_winConditions;
 
 		[HideInInspector] public AudioSource m_backgroundMusicSource;
 		SoundManager m_soundManager;
 		SongController m_songController;    // used to play the specified song after the cutscene is over (if any)
 		int m_speachBubbleNumber = 0;       // the current line to write
 		LevelGenerator m_levelgen;
+		List<string> m_endGameConditions = new List<string>();
 
-		List<GameObject> choices = new List<GameObject>();
+		List<GameObject> m_choices = new List<GameObject>();
 
 		private void Start()
 		{
@@ -55,11 +57,17 @@ namespace BeatRider
 		void StartCutsceneCaller(Cutscene cs)
 		{
 			//remove choice buttons
-			foreach (GameObject choice in choices)
+			foreach (GameObject choice in m_choices)
 				Destroy(choice);
-			choices.Clear();
+			m_choices.Clear();
 
 			StartCoroutine(StartCutscene(cs));
+		}
+
+		void ModifyEndCondition(string condition)
+		{
+			if (condition != "")
+				m_endGameConditions.Add(condition);
 		}
 
 		public bool CheckChoices(Choice[] choiceArray, Cutscene cs)
@@ -76,14 +84,14 @@ namespace BeatRider
 				btn.image.sprite = c.Image;
 
 				if (c.CutsceneToPlay != null)
-					btn.onClick.AddListener(() => { StartCutsceneCaller(c.CutsceneToPlay); });
+					btn.onClick.AddListener(() => { StartCutsceneCaller(c.CutsceneToPlay); ModifyEndCondition(c.EndGameCondition); });
 				else
-					btn.onClick.AddListener(() => { StartCutsceneCaller(cs); });
+					btn.onClick.AddListener(() => { StartCutsceneCaller(cs); ModifyEndCondition(c.EndGameCondition); });
 
 				Debug.Log(c.CutsceneToPlay);
 
 				go.SetActive(true);
-				choices.Add(go);
+				m_choices.Add(go);
 			}
 			return true;
 		}
@@ -180,9 +188,9 @@ namespace BeatRider
 				if (m_backgroundMusicSource.isPlaying)
 					Destroy(m_backgroundMusicSource);
 
-			foreach (GameObject go in choices)
+			foreach (GameObject go in m_choices)
 				Destroy(go);
-			choices.Clear();
+			m_choices.Clear();
 		}
 
 

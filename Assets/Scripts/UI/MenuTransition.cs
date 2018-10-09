@@ -42,8 +42,8 @@ public class MenuTransition : MonoBehaviour {
 	{
 		InTransition();
 		OutTransition();
-		if (m_UIparticle)
-			m_UIparticle.Show(Vector3.zero);
+		//if (m_UIparticle)
+		//	m_UIparticle.Show(Vector3.zero);
 	}
 
 	public void PlayOutTransitions()

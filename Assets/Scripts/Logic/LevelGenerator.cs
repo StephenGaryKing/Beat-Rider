@@ -190,15 +190,19 @@ namespace BeatRider
 			}
 
 			// correct the spawning interval
+			// find the correct number of elements of each type
 			switch (m_levelTemplate.m_levelGenerationType)
 			{
 				case (LevelType.GRID):
+					m_numberOfSceneryElements = Mathf.Max(((int)Mathf.Max((transform.position.z / unitSize) + 2, 0) * m_levelTemplate.m_numOfSceneryLayers) * 2, 0);
 					m_spawnInterval = unitSize / sceneSpeed;
 					break;
 				case (LevelType.RANDOM):
+					m_numberOfSceneryElements = Mathf.Max(((int)Mathf.Max((transform.position.z / unitSize) + 2, 0) * m_levelTemplate.m_numOfSceneryLayers), 0);
 					m_spawnInterval = 0.1f / m_levelTemplate.m_numOfSceneryLayers;
 					break;
 				case (LevelType.CENTERED):
+					m_numberOfSceneryElements = Mathf.Max((int)Mathf.Max((transform.position.z / unitSize) + 2, 0), 0);
 					m_spawnInterval = unitSize / sceneSpeed;
 					break;
 			}
@@ -207,15 +211,26 @@ namespace BeatRider
 			m_activeSceneryContainer = new GameObject("Active Scenery");
 			m_inactiveSceneryContainer = new GameObject("Inactive Scenery");
 
-			// find the correct number of elements of each type
-			m_numberOfSceneryElements = Mathf.Max(((int)Mathf.Max((transform.position.z / unitSize) + 2, 0) * m_levelTemplate.m_numOfSceneryLayers) * 2, 0);
 
 			// create a pool of objects
 			CreatePool();
 
 			// spawn the whole level at once to avoid the cascade of scenery elements
-			for (int i = 0; i < m_numberOfSceneryElements / (m_levelTemplate.m_numOfSceneryLayers * 2); i++)
-				CreateLayerOfLevel(i);
+			switch (m_levelTemplate.m_levelGenerationType)
+			{
+				case (LevelType.GRID):
+					for (int i = 0; i < m_numberOfSceneryElements / (m_levelTemplate.m_numOfSceneryLayers); i++)
+						CreateLayerOfLevel(i);
+					break;
+				case (LevelType.RANDOM):
+					for (int i = 0; i < m_numberOfSceneryElements / (m_levelTemplate.m_numOfSceneryLayers); i++)
+						CreateLayerOfLevel(i);
+					break;
+				case (LevelType.CENTERED):
+					for (int i = 0; i < m_numberOfSceneryElements / (m_levelTemplate.m_numOfSceneryLayers); i++)
+						CreateLayerOfLevel(i);
+					break;
+			}
 		}
 
 		void ClearOldLevel()
