@@ -40,7 +40,8 @@ namespace BeatRider
 
 		void ApplyMaterial()
 		{
-			m_ren.material = m_challengeManager.m_allChallenges[m_gemIndexNumber].m_material;
+			if (m_challengeManager.m_challengesCompleated.Count > 0)
+				m_ren.material = m_challengeManager.m_allChallenges[m_gemIndexNumber].m_material;
 		}
 
 	}
