@@ -106,7 +106,6 @@ namespace BeatRider
 				else
 					m_pickupImageLocations[i].gameObject.SetActive(false);
 			}
-
 		}
 
 		void RefreshPickupList()
