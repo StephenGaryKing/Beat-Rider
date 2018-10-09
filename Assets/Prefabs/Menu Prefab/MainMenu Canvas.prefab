@@ -1138,6 +1138,7 @@ GameObject:
   - component: {fileID: 114730882077100712}
   - component: {fileID: 114812917658051356}
   - component: {fileID: 114114196048798986}
+  - component: {fileID: 114469005279221592}
   m_Layer: 5
   m_Name: Modifiers Button
   m_TagString: Untagged
@@ -7003,6 +7004,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114469005279221592
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1429203163046754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65fc8a6c17302014a9c334f31f613bcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_fileManager: {fileID: 0}
 --- !u!114 &114480775058887104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10070,7 +10083,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114114196048798986}
+      - m_Target: {fileID: 114469005279221592}
         m_MethodName: FindSongLocation
         m_Mode: 1
         m_Arguments:
@@ -11289,8 +11302,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 114578027835041652}
-          m_MethodName: ShrinkText
+        - m_Target: {fileID: 114862265050776148}
+          m_MethodName: Show
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -11440,6 +11453,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 114879669501082702}
         m_MethodName: PlayTransitions
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114862265050776148}
+        m_MethodName: Show
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

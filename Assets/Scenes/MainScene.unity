@@ -354,7 +354,9 @@ MonoBehaviour:
   m_imageBox: {fileID: 1508101055}
   m_nameBox: {fileID: 161411911}
   m_conversationBox: {fileID: 1539931717}
+  m_choiceButtonTemplate: {fileID: 0}
   m_defaultCamerPosition: {fileID: 1130476949}
+  m_winConditions: []
   m_backgroundMusicSource: {fileID: 0}
 --- !u!4 &72358950
 Transform:
@@ -1486,7 +1488,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 431880893}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1366554906}
+        m_MethodName: RestartSong
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &431880893
@@ -5256,6 +5269,10 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 49763653}
+    - target: {fileID: 1974258298136546, guid: 9e60856e4ec100c4f989708d5bf39baf, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9e60856e4ec100c4f989708d5bf39baf, type: 2}
   m_IsPrefabParent: 0
