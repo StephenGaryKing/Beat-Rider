@@ -6,13 +6,13 @@ namespace BeatRider
 {
 	public class GemLogic : MonoBehaviour
 	{
-		ChallengeManager m_manager;
+		CraftingManager m_manager;
 		GemTypeRandomizer m_randomizer;
 		
 		// Use this for initialization
 		void Start()
 		{
-			m_manager = FindObjectOfType<ChallengeManager>();
+			m_manager = FindObjectOfType<CraftingManager>();
 			m_randomizer = GetComponentInChildren<GemTypeRandomizer>();
 		}
 
