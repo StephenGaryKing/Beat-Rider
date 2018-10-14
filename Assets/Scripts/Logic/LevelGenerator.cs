@@ -259,7 +259,7 @@ namespace BeatRider
 			switch (m_levelTemplate.m_levelGenerationType)
 			{
 				case (LevelType.GRID) :
-					elementsMultiplier = 4;
+					elementsMultiplier = 16;
 					break;
 
 				case (LevelType.RANDOM):
@@ -267,7 +267,7 @@ namespace BeatRider
 					break;
 
 				case (LevelType.CENTERED):
-					elementsMultiplier = 2;
+					elementsMultiplier = 8;
 					break;
 			}
 
@@ -474,7 +474,7 @@ namespace BeatRider
 
 					// add the lane movement component to the lane and set its variables (moving one object is cheeper than mooving all individualy)
 					LaneMovement lm = sceneryContainer.AddComponent<LaneMovement>();
-					const float dieAtZ = -1000;
+					const float dieAtZ = -500;
 					//do some math to find the speed the scene must move
 					lm.m_unitsToMovePerSecond = transform.position.z / m_levelTemplate.m_travelTime;
 					lm.m_zValueToDie = dieAtZ;
