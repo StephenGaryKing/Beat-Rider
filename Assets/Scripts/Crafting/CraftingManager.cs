@@ -6,20 +6,20 @@ using UnityEngine.UI;
 
 namespace BeatRider
 {
-	public class ChallengeManager : MonoBehaviour
+	public class CraftingManager : MonoBehaviour
 	{
 		public string m_saveFileName = "Challenges";
 
-		public Gem[] m_UnlocksToStartWith;
-		public Gem[] m_allChallenges;
-		public Image[] m_pickupImageLocations;
+		public Gem[] m_ReipesToStartWith;
+		public Gem[] m_allRecipes;
+		public Image[] m_pickedupGemImageLocations;
 		[HideInInspector] public List<Gem> m_collectedGems;
-		[HideInInspector] public List<int> m_challengesCompleated;
-		public int m_challengeToFocusOn;
+		[HideInInspector] public List<int> m_RecipesCompleated;
+		public int m_recipeToFocusOn;
 
 		private void Start()
 		{
-			foreach(var unlock in m_UnlocksToStartWith)
+			foreach(var unlock in m_ReipesToStartWith)
 				UnlockChallenge(FindGemIndex(unlock));
 			DisplayPickupList();
 		}
@@ -27,7 +27,7 @@ namespace BeatRider
 		public void SaveChallenges()
 		{
 			SaveFile saveFile = new SaveFile();
-			saveFile.AddList(m_challengesCompleated);
+			saveFile.AddList(m_RecipesCompleated);
 			saveFile.Save(m_saveFileName);
 		}
 
@@ -36,20 +36,20 @@ namespace BeatRider
 			SaveFile saveFile = new SaveFile();
 			saveFile.Load(m_saveFileName);
 
-			m_challengesCompleated = saveFile.m_numbers[0].list;
+			m_RecipesCompleated = saveFile.m_numbers[0].list;
 		}
 
 		public void PickChallenge(Gem challenge)
 		{
-			m_challengeToFocusOn = FindGemIndex(challenge);
+			m_recipeToFocusOn = FindGemIndex(challenge);
 			RefreshPickupList();
 		}
 
-		int FindGemIndex(Gem challenge)
+		public int FindGemIndex(Gem challenge)
 		{
 			int gemIndex = -1;
-			for (int i = 0; i < m_allChallenges.Length; i++)
-				if (m_allChallenges[i] == challenge)
+			for (int i = 0; i < m_allRecipes.Length; i++)
+				if (m_allRecipes[i] == challenge)
 					gemIndex = i;
 
 			if (gemIndex == -1)
@@ -64,24 +64,24 @@ namespace BeatRider
 			RefreshPickupList();
 			DisplayPickupList();
 			if (CheckPickupCombination())
-				UnlockChallenge(m_challengeToFocusOn);
+				UnlockChallenge(m_recipeToFocusOn);
 		}
 
 		void UnlockChallenge (int gemIndex)
 		{
-			if (!m_challengesCompleated.Contains(gemIndex))
-				m_challengesCompleated.Add(gemIndex);
+			if (!m_RecipesCompleated.Contains(gemIndex))
+				m_RecipesCompleated.Add(gemIndex);
 			SaveChallenges();
 		}
 
 		bool CheckPickupCombination()
 		{
-			if (m_collectedGems.Count != m_allChallenges[m_challengeToFocusOn].m_recipe.GemsToPickup.Length)
+			if (m_collectedGems.Count != m_allRecipes[m_recipeToFocusOn].m_recipe.GemsToPickup.Length)
 				return false;
 
 			for(int i = 0; i < m_collectedGems.Count; i ++)
 			{
-				if (m_collectedGems[i] != m_allChallenges[m_challengeToFocusOn].m_recipe.GemsToPickup[i])
+				if (m_collectedGems[i] != m_allRecipes[m_recipeToFocusOn].m_recipe.GemsToPickup[i])
 					return false;
 			}
 
@@ -91,27 +91,27 @@ namespace BeatRider
 
 		void DisplayPickupList()
 		{
-			if (m_pickupImageLocations.Length < m_collectedGems.Count)
+			if (m_pickedupGemImageLocations.Length < m_collectedGems.Count)
 				Debug.LogError("Not enough image locations for ChallengeManager!\nRequired " + m_collectedGems.Count + " image locations.");
-			for (int i = 0; i < m_pickupImageLocations.Length; i++)
+			for (int i = 0; i < m_pickedupGemImageLocations.Length; i++)
 			{
 				if (i < m_collectedGems.Count)
 				{
-					m_pickupImageLocations[i].sprite = m_collectedGems[i].m_unlockable.m_icon;
+					m_pickedupGemImageLocations[i].sprite = m_collectedGems[i].m_unlockable.m_icon;
 					UnlockableColour uc = m_collectedGems[i].m_unlockable as UnlockableColour;
 					if (uc)
-						m_pickupImageLocations[i].color = uc.m_colour;
-					m_pickupImageLocations[i].gameObject.SetActive(true);
+						m_pickedupGemImageLocations[i].color = uc.m_colour;
+					m_pickedupGemImageLocations[i].gameObject.SetActive(true);
 				}
 				else
-					m_pickupImageLocations[i].gameObject.SetActive(false);
+					m_pickedupGemImageLocations[i].gameObject.SetActive(false);
 			}
 		}
 
 		void RefreshPickupList()
 		{
 			// while there are more gems in the list than the focused recipies require, pop the oldest elements of the list
-			while (m_collectedGems.Count > m_allChallenges[m_challengeToFocusOn].m_recipe.GemsToPickup.Length)
+			while (m_collectedGems.Count > m_allRecipes[m_recipeToFocusOn].m_recipe.GemsToPickup.Length)
 				m_collectedGems.RemoveAt(0);
 		}
 	}

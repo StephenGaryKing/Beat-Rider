@@ -224,7 +224,6 @@ namespace BeatRider
 						CreateLayerOfLevel(i);
 					break;
 				case (LevelType.RANDOM):
-					Debug.Log(m_numberOfSceneryElements + " scene layers");
 					for (int i = 0; i < m_numberOfSceneryElements; i++)
 						CreateLayerOfLevel(i);
 					break;
