@@ -17,7 +17,7 @@ MonoBehaviour:
   m_spawnHeightOffset: -30
   m_trackWidth: 40
   m_unitSize: 200
-  m_numOfSceneryLayers: 3
+  m_numOfSceneryLayers: 5
   m_sceneryElements:
   - m_prefab: {fileID: 1963162788459566, guid: 0ae7e72697f67414b9e704e8a0935dff, type: 2}
     spawnChanceWeight: 10
@@ -28,10 +28,10 @@ MonoBehaviour:
   - m_prefab: {fileID: 1077195105597262, guid: 5a7ac848c22b3bf48875b4aac864b00e, type: 2}
     spawnChanceWeight: 10
     randomScaleVariance: {x: 10, y: 5}
-  - m_prefab: {fileID: 1466623135338510, guid: 1be4769aecfbeed4187f16876660380f, type: 2}
-    spawnChanceWeight: 10
-    randomScaleVariance: {x: 5, y: 2}
-  - m_prefab: {fileID: 1355162666107308, guid: 5a54df388a2a74d45a141b28d23f7720, type: 2}
-    spawnChanceWeight: 10
-    randomScaleVariance: {x: 5, y: 7}
+  - m_prefab: {fileID: 1323061763212610, guid: 51d5af634051a494ead09d68863f1707, type: 2}
+    spawnChanceWeight: 200
+    randomScaleVariance: {x: 0.5, y: 1}
+  - m_prefab: {fileID: 1765301824894802, guid: 77f1ee28f28b10c4198209d42a18494a, type: 2}
+    spawnChanceWeight: 5
+    randomScaleVariance: {x: 0.5, y: 1}
   m_travelTime: 9
