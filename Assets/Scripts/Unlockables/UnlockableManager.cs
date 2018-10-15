@@ -13,14 +13,29 @@ namespace BeatRider
 		public UnlockableShip[] m_unlockableShips;
 		public UnlockableTrail[] m_unlockableTrails;
 
-		[HideInInspector] public List<int> m_unlockedColours = new List<int>();
+		/*[HideInInspector]*/ public List<int> m_unlockedColours = new List<int>();
 		[HideInInspector] public List<int> m_unlockedHighlights = new List<int>();
 		[HideInInspector] public List<int> m_unlockedShips = new List<int>();
 		[HideInInspector] public List<int> m_unlockedTrails = new List<int>();
 
 		public void Start()
 		{
-			LoadUnlockables();
+
+		}
+
+		public void UnlockUnlockable(Unlockable unlock)
+		{
+			UnlockableColour colour = unlock as UnlockableColour;
+			if (colour)
+				UnlockColour(colour);
+
+			UnlockableShip ship = unlock as UnlockableShip;
+			if (ship)
+				UnlockShip(ship);
+
+			UnlockableTrail trail = unlock as UnlockableTrail;
+			if (trail)
+				UnlockTrail(trail);
 		}
 
 		public void UnlockColour(UnlockableColour colour)
