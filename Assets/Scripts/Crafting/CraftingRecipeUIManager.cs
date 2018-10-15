@@ -30,6 +30,8 @@ namespace BeatRider
 		// Use this for initialization
 		void Start() {
 			m_craftingManager = FindObjectOfType<CraftingManager>();
+			if (!m_craftingManager)
+				Debug.LogError("Add a Crafting Manager to the Game Controller");
 			PopulateRecipes(m_craftingManager.m_allRecipes);
 		}
 
@@ -81,29 +83,45 @@ namespace BeatRider
 
 		public void SetSizeFilter(int numOfIngredients)
 		{
-			Debug.Log("Update Test");
+			Debug.Log("Now looking at recipes with a size of " + numOfIngredients);
 			m_numOfIngredients = numOfIngredients;
 			UpdateRecipes();
 		}
 
 		public void UpdateRecipes()
 		{
-			// look for each recipe in the manager to decide wether to show the recipe or not
+			// look for each recipe in the manager to decide to show the recipe or not
 			foreach (int num in m_craftingManager.m_RecipesCompleated)
 			{
+				Gem gem = m_craftingManager.m_allRecipes[num];
 				foreach (RecipeUI ui in m_recipeUIs)
 				{
 					// look at ingredients
-					for (int i = 0; i < ui.Recipe.m_recipe.GemsToPickup.Length; i ++)
+					for (int i = 0; i < ui.Recipe.m_recipe.GemsToPickup.Length; i++)
 					{
+						Debug.Log(m_craftingManager.FindGemIndex(ui.Recipe.m_recipe.GemsToPickup[i]) + " :: " + num);
 						// if the ingredient has been unlocked, show it, else, show the grey version
 						if (m_craftingManager.FindGemIndex(ui.Recipe.m_recipe.GemsToPickup[i]) == num)
+						{
 							ui.Ingredients[i].sprite = ui.Recipe.m_recipe.GemsToPickup[i].m_unlockable.m_icon;
+							UnlockableColour caster = ui.Recipe.m_recipe.GemsToPickup[i].m_unlockable as UnlockableColour;
+							if (caster)
+								ui.Ingredients[i].color = caster.m_colour;
+							Debug.Log(m_craftingManager.FindGemIndex(ui.Recipe.m_recipe.GemsToPickup[i]) + " :: " + num);
+						}
 						else
 							ui.Ingredients[i].sprite = m_greyedOutGem;
 					}
-
 				}
+			}
+
+			// Show the relevent sized recipes
+			foreach (RecipeUI ui in m_recipeUIs)
+			{
+				if (ui.Recipe.m_recipe.GemsToPickup.Length == m_numOfIngredients)
+					ui.Root.SetActive(true);
+				else
+					ui.Root.SetActive(false);
 			}
 		}
 	}
