@@ -14,13 +14,26 @@ namespace BeatRider
 		public Gem[] m_allRecipes;
 		public Image[] m_pickedupGemImageLocations;
 		[HideInInspector] public List<Gem> m_collectedGems;
-		[HideInInspector] public List<int> m_RecipesCompleated;
+		/*[HideInInspector]*/ public List<int> m_RecipesCompleated;
 		public int m_recipeToFocusOn;
+		UnlockableManager m_UnlockableManager;
 
 		private void Start()
 		{
-			foreach(var unlock in m_ReipesToStartWith)
-				UnlockChallenge(FindGemIndex(unlock));
+			m_UnlockableManager = FindObjectOfType<UnlockableManager>();
+			List<Gem> newAllRecipies = new List<Gem>(m_allRecipes);
+
+			foreach (Gem recipe in m_ReipesToStartWith)
+				if (FindGemIndex(recipe) == -1)
+					newAllRecipies.Add(recipe);
+
+			m_allRecipes = newAllRecipies.ToArray();
+
+			foreach (var unlock in m_ReipesToStartWith)
+			{
+				UnlockChallenge(unlock);
+			}
+
 			DisplayPickupList();
 		}
 
@@ -45,15 +58,15 @@ namespace BeatRider
 			RefreshPickupList();
 		}
 
-		public int FindGemIndex(Gem challenge)
+		public int FindGemIndex(Gem Recipie)
 		{
 			int gemIndex = -1;
 			for (int i = 0; i < m_allRecipes.Length; i++)
-				if (m_allRecipes[i] == challenge)
+				if (m_allRecipes[i] == Recipie)
 					gemIndex = i;
 
 			if (gemIndex == -1)
-				Debug.LogError("Challenge (" + challenge + ") was not found in the challenge manager's list.\nDid not unlock. Please add this challenge to the list");
+				Debug.LogError("Recipie (" + Recipie + ") was not found in the Crafting Manager's \"All Recipies\" list.\nDid not unlock. Please add this recipe to the list");
 
 			return gemIndex;
 		}
@@ -64,13 +77,17 @@ namespace BeatRider
 			RefreshPickupList();
 			DisplayPickupList();
 			if (CheckPickupCombination())
-				UnlockChallenge(m_recipeToFocusOn);
+				UnlockChallenge(m_allRecipes[m_recipeToFocusOn]);
 		}
 
-		void UnlockChallenge (int gemIndex)
+		public void UnlockChallenge (Gem gem)
 		{
-			if (!m_RecipesCompleated.Contains(gemIndex))
-				m_RecipesCompleated.Add(gemIndex);
+			int index = FindGemIndex(gem);
+			if (!m_RecipesCompleated.Contains(index))
+			{
+				m_RecipesCompleated.Add(index);
+				m_UnlockableManager.UnlockUnlockable(gem.m_unlockable);
+			}
 			SaveChallenges();
 		}
 
