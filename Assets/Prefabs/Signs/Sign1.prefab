@@ -36,7 +36,7 @@ GameObject:
   - component: {fileID: 4925524914282528}
   - component: {fileID: 33926164082979758}
   - component: {fileID: 23024399301870326}
-  - component: {fileID: 95947242867133310}
+  - component: {fileID: 114559582697466498}
   m_Layer: 0
   m_Name: SIGN_01 (1)
   m_TagString: Untagged
@@ -112,20 +112,26 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1149535800861980}
   m_Mesh: {fileID: 4300000, guid: 2f2671bb6a0a98e4fac382b0163b0d2b, type: 3}
---- !u!95 &95947242867133310
-Animator:
-  serializedVersion: 3
+--- !u!114 &114559582697466498
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1149535800861980}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 2f2671bb6a0a98e4fac382b0163b0d2b, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9a9c0371c22a0c4199f9f5417168730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_currentValue: 0
+  m_passToReactTo: DEFAULT
+  m_reactToBeat: 0
+  m_reactToMusic: 0
+  m_smoothing: 1
+  m_maxValue: 1
+  m_minValue: 0
+  m_audioReactor: {fileID: 0}
+  m_startingBrightness: 0
+  m_destinationBrightness: 0
+  m_startingColour: {r: 0.034482475, g: 0, b: 1, a: 0}
+  m_destinationColour: {r: 0.034482718, g: 1, b: 0, a: 0}
