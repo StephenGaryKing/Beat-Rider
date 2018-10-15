@@ -1425,6 +1425,7 @@ GameObject:
   - component: {fileID: 431880892}
   - component: {fileID: 431880896}
   - component: {fileID: 431880895}
+  - component: {fileID: 431880897}
   m_Layer: 5
   m_Name: RestartButton
   m_TagString: Untagged
@@ -1491,6 +1492,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1366554906}
         m_MethodName: RestartSong
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 431880897}
+        m_MethodName: PlayTransitions
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1611,6 +1623,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_scaleAdjust: 1.15
+--- !u!114 &431880897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 431880890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ab34897e65ec248bf1c01542651a0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_outTransitions:
+  - ObjectToToggleEnabled: {fileID: 668240827}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 0, y: 0, z: 0}
+      Time: 0
+      CurveType: 0
+  m_inTransitions:
+  - ObjectToToggleEnabled: {fileID: 1110009416}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 0, y: 0, z: 0}
+      Time: 0
+      CurveType: 0
 --- !u!1001 &478835412
 Prefab:
   m_ObjectHideFlags: 0
@@ -2034,12 +2073,11 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 72358952}
-    - target: {fileID: 114419247034103198, guid: c5fd2927e1a12c1488c8ac3006dcde37,
+    - target: {fileID: 114661535185656080, guid: c5fd2927e1a12c1488c8ac3006dcde37,
         type: 2}
-      propertyPath: prefab
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1720432273369136, guid: 642d268d774396e488fcc8685d358bfe,
-        type: 2}
+      objectReference: {fileID: 1366554906}
     - target: {fileID: 114395233121005290, guid: c5fd2927e1a12c1488c8ac3006dcde37,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2065,12 +2103,6 @@ Prefab:
       propertyPath: m_inTransitions.Array.data[0].ObjectToToggleEnabled
       value: 
       objectReference: {fileID: 1192693724}
-    - target: {fileID: 114184295886240980, guid: c5fd2927e1a12c1488c8ac3006dcde37,
-        type: 2}
-      propertyPath: prefab
-      value: 
-      objectReference: {fileID: 1720432273369136, guid: 642d268d774396e488fcc8685d358bfe,
-        type: 2}
     - target: {fileID: 114147519736017388, guid: c5fd2927e1a12c1488c8ac3006dcde37,
         type: 2}
       propertyPath: m_targetTransform
@@ -2081,11 +2113,11 @@ Prefab:
       propertyPath: m_targetTransform
       value: 
       objectReference: {fileID: 1130476949}
-    - target: {fileID: 114661535185656080, guid: c5fd2927e1a12c1488c8ac3006dcde37,
+    - target: {fileID: 114583456924180070, guid: c5fd2927e1a12c1488c8ac3006dcde37,
         type: 2}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: m_fileManager
       value: 
-      objectReference: {fileID: 1366554906}
+      objectReference: {fileID: 1803084359}
     - target: {fileID: 114601499480917686, guid: c5fd2927e1a12c1488c8ac3006dcde37,
         type: 2}
       propertyPath: m_outTransitions.Array.data[0].ObjectToToggleEnabled
@@ -2106,16 +2138,6 @@ Prefab:
       propertyPath: m_inTransitions.Array.data[0].ObjectToAnimate.Obj
       value: 
       objectReference: {fileID: 668240827}
-    - target: {fileID: 114812917658051356, guid: c5fd2927e1a12c1488c8ac3006dcde37,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 767124619}
-    - target: {fileID: 114812917658051356, guid: c5fd2927e1a12c1488c8ac3006dcde37,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: FindSongLocation
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c5fd2927e1a12c1488c8ac3006dcde37, type: 2}
   m_IsPrefabParent: 0
@@ -2854,23 +2876,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 72e22daf25562464d98370c2e10fa6ab, type: 3}
   m_IsPrefabParent: 0
---- !u!1 &767124614 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1429203163046754, guid: c5fd2927e1a12c1488c8ac3006dcde37,
-    type: 2}
-  m_PrefabInternal: {fileID: 521646492}
---- !u!114 &767124619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 767124614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65fc8a6c17302014a9c334f31f613bcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_fileManager: {fileID: 1803084359}
 --- !u!1001 &769314195
 Prefab:
   m_ObjectHideFlags: 0
