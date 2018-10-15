@@ -107,7 +107,6 @@ namespace BeatRider
 							UnlockableColour caster = ui.Recipe.m_recipe.GemsToPickup[i].m_unlockable as UnlockableColour;
 							if (caster)
 								ui.Ingredients[i].color = caster.m_colour;
-							Debug.Log(m_craftingManager.FindGemIndex(ui.Recipe.m_recipe.GemsToPickup[i]) + " :: " + num);
 						}
 						else
 							ui.Ingredients[i].sprite = m_greyedOutGem;

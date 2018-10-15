@@ -1139,6 +1139,7 @@ GameObject:
   - component: {fileID: 114812917658051356}
   - component: {fileID: 114114196048798986}
   - component: {fileID: 114469005279221592}
+  - component: {fileID: 114583456924180070}
   m_Layer: 5
   m_Name: Modifiers Button
   m_TagString: Untagged
@@ -7925,6 +7926,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_scaleAdjust: 1.15
+--- !u!114 &114583456924180070
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1429203163046754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65fc8a6c17302014a9c334f31f613bcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_fileManager: {fileID: 0}
 --- !u!114 &114590057823895550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10006,13 +10019,6 @@ MonoBehaviour:
       TargetScale: {x: 1, y: 1, z: 1}
       Time: 0.6
       CurveType: 0
-  - ObjectToToggleEnabled: {fileID: 1127417069668052}
-    ObjectToAnimate:
-      Obj: {fileID: 1127417069668052}
-      TargetPosition: {x: 0, y: 0, z: 0}
-      TargetScale: {x: 1, y: 1, z: 1}
-      Time: 0.6
-      CurveType: 0
 --- !u!114 &114810117172030408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10083,7 +10089,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114469005279221592}
+      - m_Target: {fileID: 114583456924180070}
         m_MethodName: FindSongLocation
         m_Mode: 1
         m_Arguments:

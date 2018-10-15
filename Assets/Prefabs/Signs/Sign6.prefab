@@ -80,6 +80,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4975808235385226}
   - component: {fileID: 95588733792082388}
+  - component: {fileID: 114826969432030460}
   m_Layer: 0
   m_Name: SIGN_06
   m_TagString: Untagged
@@ -332,3 +333,26 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114826969432030460
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1692152524760270}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9a9c0371c22a0c4199f9f5417168730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_currentValue: 0
+  m_passToReactTo: DEFAULT
+  m_reactToBeat: 0
+  m_reactToMusic: 1
+  m_smoothing: 0.01
+  m_maxValue: 0
+  m_minValue: -40
+  m_audioReactor: {fileID: 11400000, guid: b74ee6569436b814cb6ad5ca71c387fb, type: 2}
+  m_startingBrightness: 2
+  m_destinationBrightness: 2.5
+  m_startingColour: {r: 0.50735295, g: 0.71460444, b: 1, a: 0}
+  m_destinationColour: {r: 1, g: 0.9440163, b: 0.49264705, a: 0}
