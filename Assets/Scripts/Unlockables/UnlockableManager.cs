@@ -87,7 +87,7 @@ namespace BeatRider
 			m_unlockedTrails = saveFile.m_numbers[3].list;
 		}
 
-		int FindUnlockedID<T>(T unlockable, T[] arrayToSearch)
+		public int FindUnlockedID<T>(T unlockable, T[] arrayToSearch)
 		{
 			for (int i = 0; i < arrayToSearch.Length; i++)
 			{
