@@ -43,36 +43,39 @@ namespace BeatRider
 			// populate container
 			foreach(Gem recipe in recipes)
 			{
-				GameObject RecipeObject = Instantiate(m_recipeContainerPrefab, transform);
-				RecipeUI newRecipe;
-				newRecipe.Root = RecipeObject;
-
-				// create product display
-				newRecipe.Product = Instantiate(new GameObject("Product", typeof(RectTransform), typeof(Image))).GetComponent<Image>();
-				newRecipe.Product.transform.parent = newRecipe.Root.transform;
-				newRecipe.Product.sprite = recipe.m_unlockable.m_icon;
-				UnlockableColour caster = recipe.m_unlockable as UnlockableColour;
-				if (caster)
-					newRecipe.Product.color = caster.m_colour;
-
-				// create equals
-				Instantiate(m_equalsSignPrefab, newRecipe.Root.transform);
-
-				// create ingredient displays
-				newRecipe.Ingredients = new Image[recipe.m_recipe.GemsToPickup.Length];
-				for (int i = 0; i < newRecipe.Ingredients.Length; i ++)
+				if (recipe.m_recipe.GemsToPickup.Length > 0)
 				{
-					newRecipe.Ingredients[i] = Instantiate(new GameObject("Ingredient " + i+1, typeof(RectTransform), typeof(Image))).GetComponent<Image>();
-					newRecipe.Ingredients[i].transform.parent = newRecipe.Root.transform;
-					newRecipe.Ingredients[i].sprite = m_greyedOutGem;
-					// create plus
-					if (i != newRecipe.Ingredients.Length - 1)
-						Instantiate(m_plusSignPrefab, newRecipe.Root.transform);
+					GameObject RecipeObject = Instantiate(m_recipeContainerPrefab, transform);
+					RecipeUI newRecipe;
+					newRecipe.Root = RecipeObject;
+
+					// create product display
+					newRecipe.Product = Instantiate(new GameObject("Product", typeof(RectTransform), typeof(Image))).GetComponent<Image>();
+					newRecipe.Product.transform.parent = newRecipe.Root.transform;
+					newRecipe.Product.sprite = recipe.m_unlockable.m_icon;
+					UnlockableColour caster = recipe.m_unlockable as UnlockableColour;
+					if (caster)
+						newRecipe.Product.color = caster.m_colour;
+
+					// create equals
+					Instantiate(m_equalsSignPrefab, newRecipe.Root.transform);
+
+					// create ingredient displays
+					newRecipe.Ingredients = new Image[recipe.m_recipe.GemsToPickup.Length];
+					for (int i = 0; i < newRecipe.Ingredients.Length; i++)
+					{
+						newRecipe.Ingredients[i] = Instantiate(new GameObject("Ingredient " + i + 1, typeof(RectTransform), typeof(Image))).GetComponent<Image>();
+						newRecipe.Ingredients[i].transform.parent = newRecipe.Root.transform;
+						newRecipe.Ingredients[i].sprite = m_greyedOutGem;
+						// create plus
+						if (i != newRecipe.Ingredients.Length - 1)
+							Instantiate(m_plusSignPrefab, newRecipe.Root.transform);
+					}
+
+					newRecipe.Recipe = recipe;
+
+					m_recipeUIs.Add(newRecipe);
 				}
-
-				newRecipe.Recipe = recipe;
-
-				m_recipeUIs.Add(newRecipe);
 			}
 		}
 
@@ -80,13 +83,13 @@ namespace BeatRider
 		{
 			Debug.Log("Update Test");
 			m_numOfIngredients = numOfIngredients;
-			UpdateRecipes(m_craftingManager.m_RecipesCompleated);
+			UpdateRecipes();
 		}
 
-		public void UpdateRecipes(List<int> RecipesCompleted)
+		public void UpdateRecipes()
 		{
 			// look for each recipe in the manager to decide wether to show the recipe or not
-			foreach (int num in RecipesCompleted)
+			foreach (int num in m_craftingManager.m_RecipesCompleated)
 			{
 				foreach (RecipeUI ui in m_recipeUIs)
 				{
