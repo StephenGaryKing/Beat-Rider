@@ -16,7 +16,7 @@ public class CustomisationButton : MonoBehaviour {
 
 	public PartToCustomise m_partToCustomise;
 	[HideInInspector] public Unlockable m_unlockable;
-	public ShipCustomiser m_shipCustomiser;
+	[HideInInspector] public ShipCustomiser m_shipCustomiser;
 	Toggle m_toggle;
 
 	// Use this for initialization

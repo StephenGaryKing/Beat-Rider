@@ -69,38 +69,86 @@ public class CustomisationWindowNavigation : MonoBehaviour {
 			switch (item.TemplateMenuItem.m_partToCustomise)
 			{
 				case (PartToCustomise.Colour):
-					foreach (var index in m_unlockableManager.m_unlockedColours)
+					foreach (var index in m_unlockableManager.m_unlockableColours)
 					{
 						GameObject newButton = Instantiate(item.TemplateMenuItem.gameObject, item.TemplateMenuItem.transform.parent);
-						newButton.GetComponent<CustomisationButton>().SetUnlockable(m_unlockableManager.m_unlockableColours[index]);
+						newButton.GetComponent<CustomisationButton>().SetUnlockable(index);
 						item.MenuItemGameObjects.Add(newButton);
+					}
+					break;
+				case (PartToCustomise.Highlight):
+					foreach (var index in m_unlockableManager.m_unlockableHighlights)
+					{
+						GameObject newButton = Instantiate(item.TemplateMenuItem.gameObject, item.TemplateMenuItem.transform.parent);
+						newButton.GetComponent<CustomisationButton>().SetUnlockable(index);
+						item.MenuItemGameObjects.Add(newButton);
+					}
+					break;
+				case (PartToCustomise.Ship):
+					foreach (var index in m_unlockableManager.m_unlockableShips)
+					{
+						GameObject newButton = Instantiate(item.TemplateMenuItem.gameObject, item.TemplateMenuItem.transform.parent);
+						newButton.GetComponent<CustomisationButton>().SetUnlockable(index);
+						item.MenuItemGameObjects.Add(newButton);
+					}
+					break;
+				case (PartToCustomise.Trail):
+					foreach (var index in m_unlockableManager.m_unlockableTrails)
+					{
+						GameObject newButton = Instantiate(item.TemplateMenuItem.gameObject, item.TemplateMenuItem.transform.parent);
+						newButton.GetComponent<CustomisationButton>().SetUnlockable(index);
+						item.MenuItemGameObjects.Add(newButton);
+					}
+					break;
+			}
+		}
+	}
+
+	public void UpdateInfo(WindowItem item)
+	{
+		foreach (GameObject go in item.MenuItemGameObjects)
+		{
+			// Default is hidden from the user
+			go.SetActive(false);
+			Debug.Log(go.name + " : " + go.activeInHierarchy);
+
+			switch (item.TemplateMenuItem.m_partToCustomise)
+			{
+				case (PartToCustomise.Colour):
+					foreach (int index in m_unlockableManager.m_unlockedColours)
+					{
+						UnlockableColour col = go.GetComponent<CustomisationButton>().m_unlockable as UnlockableColour;
+						if (index == m_unlockableManager.FindUnlockedID(col, m_unlockableManager.m_unlockableColours))
+							go.SetActive(true);
 					}
 					break;
 				case (PartToCustomise.Highlight):
 					foreach (var index in m_unlockableManager.m_unlockedHighlights)
 					{
-						GameObject newButton = Instantiate(item.TemplateMenuItem.gameObject, item.TemplateMenuItem.transform.parent);
-						newButton.GetComponent<CustomisationButton>().m_unlockable = m_unlockableManager.m_unlockableHighlights[index];
-						item.MenuItemGameObjects.Add(newButton);
+						UnlockableColour col = go.GetComponent<CustomisationButton>().m_unlockable as UnlockableColour;
+						if (index == m_unlockableManager.FindUnlockedID(col, m_unlockableManager.m_unlockableColours))
+							go.SetActive(true);
 					}
 					break;
 				case (PartToCustomise.Ship):
 					foreach (var index in m_unlockableManager.m_unlockedShips)
 					{
-						GameObject newButton = Instantiate(item.TemplateMenuItem.gameObject, item.TemplateMenuItem.transform.parent);
-						newButton.GetComponent<CustomisationButton>().m_unlockable = m_unlockableManager.m_unlockableShips[index];
-						item.MenuItemGameObjects.Add(newButton);
+						UnlockableShip col = go.GetComponent<CustomisationButton>().m_unlockable as UnlockableShip;
+						if (index == m_unlockableManager.FindUnlockedID(col, m_unlockableManager.m_unlockableShips))
+							go.SetActive(true);
 					}
 					break;
 				case (PartToCustomise.Trail):
 					foreach (var index in m_unlockableManager.m_unlockedTrails)
 					{
-						GameObject newButton = Instantiate(item.TemplateMenuItem.gameObject, item.TemplateMenuItem.transform.parent);
-						newButton.GetComponent<CustomisationButton>().m_unlockable = m_unlockableManager.m_unlockableTrails[index];
-						item.MenuItemGameObjects.Add(newButton);
+						UnlockableTrail col = go.GetComponent<CustomisationButton>().m_unlockable as UnlockableTrail;
+						if (index == m_unlockableManager.FindUnlockedID(col, m_unlockableManager.m_unlockableTrails))
+							go.SetActive(true);
 					}
 					break;
 			}
+
+			Debug.Log(go.name + " : " + go.activeInHierarchy);
 		}
 	}
 
@@ -127,8 +175,7 @@ public class CustomisationWindowNavigation : MonoBehaviour {
 				btn.SetActive(false);
 
 		// show buttons
-		foreach (var btn in m_menuItems[m_currentWindow].MenuItemGameObjects)
-			btn.SetActive(true);
+		UpdateInfo(m_menuItems[m_currentWindow]);
 
 		// position and scale the appropriate titles
 		titles[0].transform.localPosition = m_templateTitle.transform.localPosition + Vector3.left * m_offsetDistance * 1.5f;
@@ -171,8 +218,7 @@ public class CustomisationWindowNavigation : MonoBehaviour {
 				btn.SetActive(false);
 
 		// show buttons
-		foreach (var btn in m_menuItems[m_currentWindow].MenuItemGameObjects)
-			btn.SetActive(true);
+		UpdateInfo(m_menuItems[m_currentWindow]);
 
 		// position and scale the appropriate titles
 
