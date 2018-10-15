@@ -38,12 +38,14 @@ public class SongSelectionLoader : MonoBehaviour {
 		foreach(FileInfo file in info)
 		{
 			string name = file.Name;
-			string sub = name.Substring(name.Length - 4);
-			if (sub == ".wav")
+			string ext = file.Extension;
+			if (ext == ".wav" || ext == ".mp3")
 			{
-				Song newSong = new Song();
-				newSong.fileLocation = file.FullName;
-				newSong.fileName = name;
+				Song newSong = new Song
+				{
+					fileLocation = file.FullName,
+					fileName = name
+				};
 				m_songs.Add(newSong);
 			}
 		}

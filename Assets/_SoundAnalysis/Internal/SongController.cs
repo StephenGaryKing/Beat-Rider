@@ -377,17 +377,31 @@ namespace MusicalGameplayMechanics
 			}
 		}
 
-		IEnumerator LoadFile(string fileName)
+		IEnumerator LoadFile(string fileLocation)
 		{
 			m_cutsceneToPlayAtEnd = null;
-			if (fileName != null)
+			if (fileLocation != null)
 			{
-				using (var www = new WWW("file:///" + fileName))
+				string ext = Path.GetExtension(fileLocation);
+				if (ext == ".MP3" || ext == ".mp3")
 				{
-					yield return www;
-					_audioSource.clip = www.GetAudioClip();
-					_audioSource.clip.name = Path.GetFileNameWithoutExtension(fileName);     // Isolate its name;
-					GetData();
+					using (var www = new WWW("file:///" + fileLocation))
+					{
+						yield return www;
+						_audioSource.clip = NAudioPlayer.FromMp3Data(www.bytes);
+						_audioSource.clip.name = Path.GetFileNameWithoutExtension(fileLocation);     // Isolate its name;
+						GetData();
+					}
+				}
+				else
+				{
+					using (var www = new WWW("file:///" + fileLocation))
+					{
+						yield return www;
+						_audioSource.clip = www.GetAudioClip();
+						_audioSource.clip.name = Path.GetFileNameWithoutExtension(fileLocation);     // Isolate its name;
+						GetData();
+					}
 				}
 			}
 		}
