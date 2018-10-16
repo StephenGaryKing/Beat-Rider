@@ -11,17 +11,20 @@ public class MenuMusicManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		m_source = GetComponent<AudioSource>();
-	}
+        if (m_source == null)
+            m_source = GetComponent<AudioSource>();
+        PlayRandomSong();
+    }
 
 	private void OnEnable()
 	{
-		PlayRandomSong();
+        if (m_source == null)
+            m_source = GetComponent<AudioSource>();
+        PlayRandomSong();
 	}
 
 	public void PlayRandomSong()
 	{
-		m_source.Stop();
 		int ran = Random.Range(0, m_songs.Length);
 		m_source.clip = m_songs[ran];
 		m_source.Play();
@@ -29,7 +32,8 @@ public class MenuMusicManager : MonoBehaviour {
 
 	public void StopSong()
 	{
-		m_source.Stop();
+        if (m_source.isPlaying)
+		    m_source.Stop();
 	}
 
 	public void PlaySong()

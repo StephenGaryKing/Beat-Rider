@@ -395,7 +395,12 @@ namespace MusicalGameplayMechanics
 					using (var www = new WWW("file:///" + fileLocation))
 					{
 						yield return www;
-						_audioSource.clip = NAudioPlayer.FromMp3Data(www.bytes);
+						NAudioPlayer.StartMp3Thread(www.bytes);
+
+						while (NAudioPlayer.threadDone == false)
+							yield return null;
+
+						_audioSource.clip = NAudioPlayer.FromMp3Data();
 						_audioSource.clip.name = Path.GetFileNameWithoutExtension(fileLocation);     // Isolate its name;
 						GetData();
 					}
