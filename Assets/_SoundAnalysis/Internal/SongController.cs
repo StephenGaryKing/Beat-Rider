@@ -230,7 +230,14 @@ namespace MusicalGameplayMechanics
 					lastEarlyTimeChecked = earlyTime;
 					if (m_spectralFluxSaver.m_savedPasses[0].runtimeData.ContainsKey(earlyTime))
 					{
-						m_onEarlyMusicIsPlaying.Invoke(m_spectralFluxSaver.m_savedPasses, earlyTime);
+						try
+						{
+							m_onEarlyMusicIsPlaying.Invoke(m_spectralFluxSaver.m_savedPasses, earlyTime);
+						}
+						catch(System.Exception exc) {
+                            // This error sucks. lets just ignore it for now
+							//Debug.LogError (exc.Message + " event size is " + m_onEarlyMusicIsPlaying.GetPersistentEventCount());
+						}
 					}
 				}
 				if (lastTimeChecked != currentTime)
