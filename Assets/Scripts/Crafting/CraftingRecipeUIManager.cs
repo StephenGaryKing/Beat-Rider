@@ -51,14 +51,19 @@ namespace BeatRider
 					RecipeUI newRecipe;
 					newRecipe.Root = RecipeObject;
 
-					// create product display
-					newRecipe.Product = Instantiate(new GameObject("Product", typeof(RectTransform), typeof(Image))).GetComponent<Image>();
-					newRecipe.Product.transform.parent = newRecipe.Root.transform;
+                    // create product display
+                    GameObject prod = new GameObject("Product", typeof(RectTransform), typeof(Image));
+                    newRecipe.Product = Instantiate(prod, newRecipe.Root.transform).GetComponent<Image>();
 					newRecipe.Product.sprite = recipe.m_unlockable.m_icon;
 					UnlockableColour caster = recipe.m_unlockable as UnlockableColour;
 					if (caster)
 						newRecipe.Product.color = caster.m_colour;
-
+                    /*
+                    newRecipe.Product.transform.localScale = Vector3.one;
+                    Vector3 pos1 = newRecipe.Product.rectTransform.position;
+                    pos1.z = 0;
+                    newRecipe.Product.rectTransform.position = pos1;
+                    */
 					// create equals
 					Instantiate(m_equalsSignPrefab, newRecipe.Root.transform);
 
@@ -66,12 +71,20 @@ namespace BeatRider
 					newRecipe.Ingredients = new Image[recipe.m_recipe.GemsToPickup.Length];
 					for (int i = 0; i < newRecipe.Ingredients.Length; i++)
 					{
-						newRecipe.Ingredients[i] = Instantiate(new GameObject("Ingredient " + i + 1, typeof(RectTransform), typeof(Image))).GetComponent<Image>();
-						newRecipe.Ingredients[i].transform.parent = newRecipe.Root.transform;
+                        GameObject ingr = new GameObject("Ingredient " + i + 1, typeof(RectTransform), typeof(Image));
+                        newRecipe.Ingredients[i] = Instantiate(ingr, newRecipe.Root.transform).GetComponent<Image>();
+						newRecipe.Ingredients[i].rectTransform.parent = newRecipe.Root.transform;
 						newRecipe.Ingredients[i].sprite = m_greyedOutGem;
 						// create plus
 						if (i != newRecipe.Ingredients.Length - 1)
 							Instantiate(m_plusSignPrefab, newRecipe.Root.transform);
+                        /*
+                        newRecipe.Ingredients[i].transform.localScale = Vector3.one;
+                        Vector3 pos2 = newRecipe.Ingredients[i].rectTransform.position;
+                        pos2.z = 0;
+                        newRecipe.Ingredients[i].rectTransform.position = pos2;
+                        */
+
 					}
 
 					newRecipe.Recipe = recipe;
