@@ -74,7 +74,13 @@ public class SongSelectionLoader : MonoBehaviour {
     public IEnumerator SelectSong(string filePath)
     {
         m_songController.OpenSoundFile(filePath);
-        yield return new WaitForSeconds(1);
+
+		yield return new WaitForSeconds(1);
+
+		while (!NAudioPlayer.threadDone)
+			yield return null;
+
+
         while (m_songController.m_bgThread != null)
         {
             yield return null;
