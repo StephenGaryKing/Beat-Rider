@@ -9,16 +9,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c220bbb9323f11478c9c4b2a4c61331, type: 3}
-  m_Name: CanyonTest
+  m_Name: Canyon
   m_EditorClassIdentifier: 
-  m_levelGenerationType: 0
+  m_levelGenerationType: 2
+  m_groundPrefab: {fileID: 0}
   m_spawnHeightOffset: 0
   m_trackWidth: 50
-  m_unitSize: 1
+  m_unitSize: 100
   m_numOfSceneryLayers: 1
   m_sceneryElements:
-  - m_prefab: {fileID: 1939592599942388, guid: d549ebba567ee8943aa82fb275c19b5d, type: 2}
+  - m_prefab: {fileID: 1018980637003344, guid: 077fa95bda4d59744acb2bade778925b, type: 2}
     spawnChanceWeight: 100
     randomScaleVariance: {x: 1, y: 1}
-  m_trackElements: []
+  - m_prefab: {fileID: 1018980637003344, guid: 077fa95bda4d59744acb2bade778925b, type: 2}
+    spawnChanceWeight: 100
+    randomScaleVariance: {x: 1, y: 1}
   m_travelTime: 20
