@@ -5,23 +5,43 @@ using System.IO;
 using System;
 using NAudio;
 using NAudio.Wave;
+using System.Threading;
 
 public static class NAudioPlayer
 {
-	public static AudioClip FromMp3Data(byte[] data)
+	static WAV wav;
+	static byte[] data0;
+	public static bool threadDone = true;
+
+	public static void StartMp3Thread(byte[] data)
 	{
-		// Load the data into a stream
-		MemoryStream mp3stream = new MemoryStream(data);
-		// Convert the data in the stream to WAV format
-		Mp3FileReader mp3audio = new Mp3FileReader(mp3stream);
-		WaveStream waveStream = WaveFormatConversionStream.CreatePcmStream(mp3audio);
-		// Convert to WAV data
-		WAV wav = new WAV(AudioMemStream(waveStream).ToArray());
-		Debug.Log(wav);
+		threadDone = false;
+		data0 = data;
+		Thread thread = new Thread(FromMP3Thread);
+		thread.Start();
+	}
+
+	public static AudioClip FromMp3Data()
+	{
 		AudioClip audioClip = AudioClip.Create("testSound", wav.SampleCount, 1, wav.Frequency, false);
 		audioClip.SetData(wav.LeftChannel, 0);
 		// Return the clip
 		return audioClip;
+	}
+
+	static void FromMP3Thread()
+	{
+		Debug.Log("MP3 Thread started");
+		// Load the data into a stream
+		MemoryStream mp3stream = new MemoryStream(data0);
+		// Convert the data in the stream to WAV format
+		Mp3FileReader mp3audio = new Mp3FileReader(mp3stream);
+		WaveStream waveStream = WaveFormatConversionStream.CreatePcmStream(mp3audio);
+		// Convert to WAV data
+		wav = new WAV(AudioMemStream(waveStream).ToArray());
+		Debug.Log(wav);
+		threadDone = true;
+		Debug.Log("MP3 Thread ended");
 	}
 
 	private static MemoryStream AudioMemStream(WaveStream waveStream)

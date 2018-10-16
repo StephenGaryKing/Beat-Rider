@@ -269,21 +269,29 @@ public class CustomisationWindowNavigation : MonoBehaviour {
 
 	public void GotoNextWindow()
 	{
-		m_menuItems[m_currentWindow].RecipeButton.gameObject.SetActive(false);
+		if (m_menuItems[m_currentWindow].RecipeButton)
+			m_menuItems[m_currentWindow].RecipeButton.gameObject.SetActive(false);
 		m_currentWindow++;
 		m_currentWindow = (m_currentWindow >= m_menuItems.Count) ? 0 : m_currentWindow;
-		m_menuItems[m_currentWindow].RecipeButton.transform.position = m_RecipeButtonLocation.position;
-		m_menuItems[m_currentWindow].RecipeButton.gameObject.SetActive(true);
+		if (m_menuItems[m_currentWindow].RecipeButton)
+		{
+			m_menuItems[m_currentWindow].RecipeButton.transform.position = m_RecipeButtonLocation.position;
+			m_menuItems[m_currentWindow].RecipeButton.gameObject.SetActive(true);
+		}
 		UpdateWindows();
 	}
 
 	public void GotoPreviousWindow()
 	{
-		m_menuItems[m_currentWindow].RecipeButton.gameObject.SetActive(false);
+		if (m_menuItems[m_currentWindow].RecipeButton)
+			m_menuItems[m_currentWindow].RecipeButton.gameObject.SetActive(false);
 		m_currentWindow--;
 		m_currentWindow = (m_currentWindow < 0) ? m_menuItems.Count - 1 : m_currentWindow;
-		m_menuItems[m_currentWindow].RecipeButton.transform.position = m_RecipeButtonLocation.position;
-		m_menuItems[m_currentWindow].RecipeButton.gameObject.SetActive(true);
+		if (m_menuItems[m_currentWindow].RecipeButton)
+		{
+			m_menuItems[m_currentWindow].RecipeButton.transform.position = m_RecipeButtonLocation.position;
+			m_menuItems[m_currentWindow].RecipeButton.gameObject.SetActive(true);
+		}
 		UpdateWindows();
 	}
 	
