@@ -60,7 +60,7 @@ namespace BeatRider
 			foreach (GameObject choice in m_choices)
 				Destroy(choice);
 			m_choices.Clear();
-
+			m_speachBubbleNumber = 0;
 			StartCoroutine(StartCutscene(cs));
 		}
 
