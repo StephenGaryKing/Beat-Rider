@@ -12,6 +12,7 @@ public class WindowItem
 	public string Title;
 	public Sprite TitleImage;
 	public CustomisationButton TemplateMenuItem;
+	public Button RecipeButton;
 	[HideInInspector] public GameObject TitleGameObject;
 	[HideInInspector] public List<GameObject> MenuItemGameObjects = new List<GameObject>();
 }
@@ -19,6 +20,7 @@ public class WindowItem
 public class CustomisationWindowNavigation : MonoBehaviour {
 
 	public GameObject m_templateTitle;
+	public Transform m_RecipeButtonLocation;
 
 	public float m_offsetDistance;
 	public Vector3 m_offsetScale;
@@ -39,6 +41,7 @@ public class CustomisationWindowNavigation : MonoBehaviour {
 		m_templateTitle.SetActive(false);
 		PopulateTitles();
 		SnapUpdateWindows();
+		m_RecipeButtonLocation.gameObject.SetActive(false);
 	}
 
 	public void PopulateTitles()
@@ -54,6 +57,7 @@ public class CustomisationWindowNavigation : MonoBehaviour {
 			else
 				newTitle.GetComponentInChildren<Text>().text = m_menuItems[i].Title;
 			newTitle.SetActive(true);
+			m_menuItems[i].RecipeButton.gameObject.SetActive(false);
 			m_menuItems[i].TitleGameObject = newTitle;
 			PopulateInfo(m_menuItems[i]);
 			if (m_menuItems[i].TemplateMenuItem)
@@ -265,15 +269,21 @@ public class CustomisationWindowNavigation : MonoBehaviour {
 
 	public void GotoNextWindow()
 	{
+		m_menuItems[m_currentWindow].RecipeButton.gameObject.SetActive(false);
 		m_currentWindow++;
 		m_currentWindow = (m_currentWindow >= m_menuItems.Count) ? 0 : m_currentWindow;
+		m_menuItems[m_currentWindow].RecipeButton.transform.position = m_RecipeButtonLocation.position;
+		m_menuItems[m_currentWindow].RecipeButton.gameObject.SetActive(true);
 		UpdateWindows();
 	}
 
 	public void GotoPreviousWindow()
 	{
+		m_menuItems[m_currentWindow].RecipeButton.gameObject.SetActive(false);
 		m_currentWindow--;
 		m_currentWindow = (m_currentWindow < 0) ? m_menuItems.Count - 1 : m_currentWindow;
+		m_menuItems[m_currentWindow].RecipeButton.transform.position = m_RecipeButtonLocation.position;
+		m_menuItems[m_currentWindow].RecipeButton.gameObject.SetActive(true);
 		UpdateWindows();
 	}
 	

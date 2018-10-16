@@ -15,6 +15,7 @@ namespace BeatRider
 		[SerializeField] float m_tiltAmount = 0.3f;
 		[SerializeField] float m_tiltSpeed = 0.2f;
 
+		PlayerInput m_inputManager;
 		float m_amountToMove = 0;
 		float m_halfTrackWidth;
 
@@ -22,6 +23,15 @@ namespace BeatRider
 		// Use this for initialization
 		void Start()
 		{
+
+#if UNITY_STANDALONE || UNITY_EDITOR
+			m_inputManager = new ComputerInput();
+#endif
+
+#if UNITY_IOS || UNITY_ANDROID
+			m_inputManager = new MobileInput();
+#endif
+
 			m_halfTrackWidth = m_trackWidth / 2;
 			_rigidBody = GetComponent<Rigidbody>();
 		}
@@ -29,7 +39,7 @@ namespace BeatRider
 		// Update is called once per frame
 		void Update()
 		{
-			m_amountToMove = Input.GetAxisRaw("Horizontal") * m_moveSpeed;
+			m_amountToMove = m_inputManager.GatherInput() * m_moveSpeed;
 		}
 
 		private void FixedUpdate()
