@@ -198,9 +198,9 @@ namespace BeatRider
 					m_spawnInterval = unitSize / sceneSpeed;
 					break;
 				case (LevelType.RANDOM):
-					m_spawnInterval = 0.1f / m_levelTemplate.m_numOfSceneryLayers;
-					float newUnitSize = m_spawnInterval * sceneSpeed;
-					m_numberOfSceneryElements = Mathf.Max((int)Mathf.Max((transform.position.z / newUnitSize) + 2, 0), 0);
+					m_spawnInterval = 1;
+					unitSize = m_spawnInterval * sceneSpeed;
+					m_numberOfSceneryElements = Mathf.Max((int)Mathf.Max((transform.position.z / sceneSpeed) + 2, 0), 0);
 					break;
 				case (LevelType.CENTERED):
 					m_numberOfSceneryElements = Mathf.Max((int)Mathf.Max((transform.position.z / unitSize) + 2, 0), 0);
@@ -263,7 +263,7 @@ namespace BeatRider
 					break;
 
 				case (LevelType.RANDOM):
-					elementsMultiplier = 100;
+					elementsMultiplier = 1000;
 					break;
 
 				case (LevelType.CENTERED):
@@ -316,7 +316,7 @@ namespace BeatRider
 			while (container.childCount > 0)
 			{
 				Transform child = container.GetChild(container.childCount - 1);
-				child.parent = m_inactiveSceneryContainer.transform;
+				child.SetParent(m_inactiveSceneryContainer.transform);
 				child.gameObject.SetActive(false);
 				child.position = Vector3.zero;
 				m_inactiveSceneryElements.Add(child.gameObject);
@@ -340,6 +340,7 @@ namespace BeatRider
 
 					GameObject layerContainer = new GameObject("Layer Container : " + Time.time + " : " + layerNum);
 					GameObject sceneryContainer = new GameObject("Scenery Container");
+					sceneryContainer.transform.position = transform.position + Vector3.back * (layerNum * unitSize);
 
 					int ran;
 					GameObject go;
@@ -357,8 +358,8 @@ namespace BeatRider
 								go = m_inactiveSceneryElements[ran];
 								m_activeSceneryElements.Add(go);
 								m_inactiveSceneryElements.RemoveAt(ran);
-								go.transform.position = transform.position + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.back * (layerNum * unitSize) + Vector3.right * halfTrackWidth - Vector3.right * unitSize / 2 + Vector3.right * unitSize * i;
 								go.transform.parent = sceneryContainer.transform;
+								go.transform.position = transform.position + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.back * (layerNum * unitSize) + Vector3.right * halfTrackWidth - Vector3.right * unitSize / 2 + Vector3.right * unitSize * i;
 								SceneryModifier[] smR = go.GetComponents<SceneryModifier>();
 								if (smR.Length != 0)
 								{
@@ -375,8 +376,8 @@ namespace BeatRider
 								go = m_inactiveSceneryElements[ran];
 								m_activeSceneryElements.Add(go);
 								m_inactiveSceneryElements.RemoveAt(ran);
-								go.transform.position = transform.position + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.back * (layerNum * unitSize) + Vector3.left * halfTrackWidth - Vector3.left * unitSize / 2 + Vector3.left * unitSize * i;
 								go.transform.parent = sceneryContainer.transform;
+								go.transform.position = transform.position + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.back * (layerNum * unitSize) + Vector3.left * halfTrackWidth - Vector3.left * unitSize / 2 + Vector3.left * unitSize * i;
 								SceneryModifier[] smL = go.GetComponents<SceneryModifier>();
 								if (smL.Length != 0)
 								{
@@ -394,48 +395,55 @@ namespace BeatRider
 
 							break;
 						case (LevelType.RANDOM):
+							//spawn a block of object that will cover the next second that will
+
+							float spawnInterval = 0.1f / m_levelTemplate.m_numOfSceneryLayers;
 							float sceneSpeed = transform.position.z / m_levelTemplate.m_travelTime;
 							float newUnitSize = m_spawnInterval * sceneSpeed;
+							sceneryContainer.transform.position = transform.position + Vector3.back * (layerNum * newUnitSize);
 
-							if (m_inactiveSceneryElements.Count == 0)
-								Debug.LogError("Pool of random scenery objects is empty! Tell Steve ASAP!");
-							for (int i = 1; i <= m_levelTemplate.m_numOfSceneryLayers; i++)
+							for (float f = 0; f < 1; f += spawnInterval)
 							{
-								// right side
-								ran = Random.Range(0, m_inactiveSceneryElements.Count);
-								go = m_inactiveSceneryElements[ran];
-								m_activeSceneryElements.Add(go);
-								m_inactiveSceneryElements.RemoveAt(ran);
-								go.transform.position = transform.position + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.back * (layerNum * newUnitSize) + Vector3.right * halfTrackWidth + Vector3.right * Random.Range(0, unitSize);
-								go.transform.parent = sceneryContainer.transform;
-								SceneryModifier[] smR = go.GetComponents<SceneryModifier>();
-								if (smR.Length != 0)
+								if (m_inactiveSceneryElements.Count == 0)
+									Debug.LogError("Pool of random scenery objects is empty! Tell Steve ASAP!");
+								for (int i = 1; i <= m_levelTemplate.m_numOfSceneryLayers; i++)
 								{
-									foreach (var mod in smR)
+									// right side
+									ran = Random.Range(0, m_inactiveSceneryElements.Count);
+									go = m_inactiveSceneryElements[ran];
+									m_activeSceneryElements.Add(go);
+									m_inactiveSceneryElements.RemoveAt(ran);
+									go.transform.parent = sceneryContainer.transform;
+									go.transform.position = transform.position + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.back * (layerNum * newUnitSize) + Vector3.forward * (f * newUnitSize) + Vector3.right * halfTrackWidth + Vector3.right * Random.Range(0, unitSize);
+									SceneryModifier[] smR = go.GetComponents<SceneryModifier>();
+									if (smR.Length != 0)
 									{
-										mod.ResetScenery();
-										mod.ModifyScenery();
+										foreach (var mod in smR)
+										{
+											mod.ResetScenery();
+											mod.ModifyScenery();
+										}
 									}
-								}
-								go.SetActive(true);
+									go.SetActive(true);
 
-								// left side
-								ran = Random.Range(0, m_inactiveSceneryElements.Count);
-								go = m_inactiveSceneryElements[ran];
-								m_activeSceneryElements.Add(go);
-								m_inactiveSceneryElements.RemoveAt(ran);
-								go.transform.position = transform.position + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.back * (layerNum * newUnitSize) + Vector3.left * halfTrackWidth + Vector3.left * Random.Range(0, unitSize);
-								go.transform.parent = sceneryContainer.transform;
-								SceneryModifier[] smL = go.GetComponents<SceneryModifier>();
-								if (smL.Length != 0)
-								{
-									foreach (var mod in smL)
+									// left side
+									ran = Random.Range(0, m_inactiveSceneryElements.Count);
+									go = m_inactiveSceneryElements[ran];
+									m_activeSceneryElements.Add(go);
+									m_inactiveSceneryElements.RemoveAt(ran);
+									go.transform.parent = sceneryContainer.transform;
+									go.transform.position = transform.position + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.back * (layerNum * newUnitSize) + Vector3.forward * (f * newUnitSize) + Vector3.left * halfTrackWidth + Vector3.left * Random.Range(0, unitSize);
+									SceneryModifier[] smL = go.GetComponents<SceneryModifier>();
+									if (smL.Length != 0)
 									{
-										mod.ResetScenery();
-										mod.ModifyScenery();
+										foreach (var mod in smL)
+										{
+											mod.ResetScenery();
+											mod.ModifyScenery();
+										}
 									}
+									go.SetActive(true);
 								}
-								go.SetActive(true);
 							}
 
 							sceneryContainer.transform.parent = layerContainer.transform;
@@ -453,8 +461,8 @@ namespace BeatRider
 							go = m_inactiveSceneryElements[ran];
 							m_activeSceneryElements.Add(go);
 							m_inactiveSceneryElements.RemoveAt(ran);
-							go.transform.position = transform.position + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.back * (layerNum * unitSize);
 							go.transform.parent = sceneryContainer.transform;
+							go.transform.position = transform.position + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.back * (layerNum * unitSize);
 							SceneryModifier[] sm = go.GetComponents<SceneryModifier>();
 							if (sm.Length != 0)
 							{
@@ -474,10 +482,8 @@ namespace BeatRider
 
 					// add the lane movement component to the lane and set its variables (moving one object is cheeper than mooving all individualy)
 					LaneMovement lm = sceneryContainer.AddComponent<LaneMovement>();
-					const float dieAtZ = -500;
 					//do some math to find the speed the scene must move
 					lm.m_unitsToMovePerSecond = transform.position.z / m_levelTemplate.m_travelTime;
-					lm.m_zValueToDie = dieAtZ;
 					lm.m_levelGen = this;
 				}
 			}
