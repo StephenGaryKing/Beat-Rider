@@ -54,7 +54,7 @@ namespace BeatRider
 				if (oldLane != m_currentLane)
 				{
 					m_moving = true;
-					Invoke("ResetMoving", 0.2f);
+					Invoke("ResetMoving", 0.15f);
 				}
 			}
 			else
@@ -88,7 +88,7 @@ namespace BeatRider
 						targetPosition = Vector3.right * 2;
 						break;
 				}
-				transform.position = Vector3.Lerp(transform.position, targetPosition, 0.1f);
+				transform.position = Vector3.Lerp(transform.position, targetPosition, 0.001f * m_moveSpeed);
 				m_amountToMove = (targetPosition.x - transform.position.x);
 				_rigidBody.MoveRotation(Quaternion.Slerp(transform.rotation, Quaternion.Euler(Vector3.forward * (m_tiltAmount * -m_amountToMove)), m_tiltSpeed));
 			}
