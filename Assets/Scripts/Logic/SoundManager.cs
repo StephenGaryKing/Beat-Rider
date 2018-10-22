@@ -17,4 +17,15 @@ public class SoundManager : MonoBehaviour {
 		}
 		return null;
 	}
+
+	public void PlaySound(AudioClip sound)
+	{
+		if (sound != null)
+		{
+			AudioSource source = gameObject.AddComponent<AudioSource>();
+			source.clip = sound;
+			source.Play();
+			Destroy(source, sound.length);
+		}
+	}
 }
