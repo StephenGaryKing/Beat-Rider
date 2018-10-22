@@ -13,7 +13,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_cameraTagToUse: Cutscene Cam
   m_preCutsceneChoice: []
-  m_conversation: []
+  m_conversation:
+  - Image: {fileID: 21300000, guid: a7b057ef30380ef4f988e826ac412bd2, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 2d7a51c2ec38edf459c93707bfa43788, type: 3}
+      volume: 0.476
+    Name: Beat Rider
+    Content: Who are you, and how did you get this frequency?
+    waitTime: 3
+  - Image: {fileID: 21300000, guid: 8c5bb75c76f5cdf4ebef30ae184c76c2, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 9e1ec16eb854b1340a819faed92f664c, type: 3}
+      volume: 0.44
+    Name: HYPSEC Officer
+    Content: Courier B34-T, this is HYPSEC Civil Authorities. We're going to need
+      your complete co-operation in the handling of this case.
+    waitTime: 4
+  - Image: {fileID: 21300000, guid: a7b057ef30380ef4f988e826ac412bd2, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 2f12da2b69607b64592d7d404dde884d, type: 3}
+      volume: 0.415
+    Name: Beat Rider
+    Content: I need to know why this now involves the cops...am I carrying a weapon
+      of mass destruction or something?
+    waitTime: 4
+  - Image: {fileID: 21300000, guid: 8c5bb75c76f5cdf4ebef30ae184c76c2, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: ee3f780b6a5d37345a7cc0baa22a12cb, type: 3}
+      volume: 0.458
+    Name: HYPSEC Officer
+    Content: I'm afraid we can't disclose that information.
+    waitTime: 2
+  - Image: {fileID: 21300000, guid: 8c5bb75c76f5cdf4ebef30ae184c76c2, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 9e1ec16eb854b1340a819faed92f664c, type: 3}
+      volume: 0.488
+    Name: HYPSEC Officer
+    Content: If you co-operate with HYPSEC, we could get you out of this mess without
+      any charges. We just need the package.
+    waitTime: 4
   m_postCutsceneChoice:
   - Image: {fileID: 21300000, guid: 5c4b8e2c866830d42b37c906b13edd42, type: 3}
     CutsceneToPlay: {fileID: 11400000, guid: a53cf2c79e6b2374aa46e43515fe932a, type: 2}

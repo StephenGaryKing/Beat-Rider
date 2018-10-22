@@ -14,27 +14,28 @@ MonoBehaviour:
   m_cameraTagToUse: Cutscene Cam
   m_preCutsceneChoice: []
   m_conversation:
-  - Image: {fileID: 0}
+  - Image: {fileID: 21300000, guid: a7b057ef30380ef4f988e826ac412bd2, type: 3}
     Audio:
-      soundToPlay: {fileID: 0}
-      volume: 0
-    Name: 
-    Content: 
-    waitTime: 0
-  - Image: {fileID: 0}
+      soundToPlay: {fileID: 8300000, guid: 2f12da2b69607b64592d7d404dde884d, type: 3}
+      volume: 0.438
+    Name: Beat Rider
+    Content: Why should I trust you either? I'm keeping the package.
+    waitTime: 3
+  - Image: {fileID: 21300000, guid: 8c5bb75c76f5cdf4ebef30ae184c76c2, type: 3}
     Audio:
-      soundToPlay: {fileID: 0}
-      volume: 0
-    Name: 
-    Content: 
-    waitTime: 0
-  - Image: {fileID: 0}
+      soundToPlay: {fileID: 8300000, guid: 9e1ec16eb854b1340a819faed92f664c, type: 3}
+      volume: 0.484
+    Name: HYPSEC Officer
+    Content: You're on the wrong side of the law now, courier. We'll catch up again
+      soon.
+    waitTime: 4
+  - Image: {fileID: 21300000, guid: 4069384878f853746bc2f2a427c22602, type: 3}
     Audio:
-      soundToPlay: {fileID: 0}
-      volume: 0
-    Name: 
-    Content: 
-    waitTime: 0
+      soundToPlay: {fileID: 8300000, guid: f8cc3b86f26deb14cae680484c1dc666, type: 3}
+      volume: 0.466
+    Name: END CALL
+    Content: CALL HAS BEEN TERMINATED
+    waitTime: 2
   m_postCutsceneChoice:
   - Image: {fileID: 21300000, guid: 316260414d36bbb4794d1d9d03143910, type: 3}
     CutsceneToPlay: {fileID: 11400000, guid: b7748cefb5a2ae9438682b8d4340214b, type: 2}
