@@ -42,6 +42,8 @@ public class CustomisationWindowNavigation : MonoBehaviour {
 		PopulateTitles();
 		SnapUpdateWindows();
 		m_RecipeButtonLocation.gameObject.SetActive(false);
+		GotoNextWindow();
+		GotoPreviousWindow();
 	}
 
 	public void PopulateTitles()
@@ -57,8 +59,11 @@ public class CustomisationWindowNavigation : MonoBehaviour {
 			else
 				newTitle.GetComponentInChildren<Text>().text = m_menuItems[i].Title;
 			newTitle.SetActive(true);
-			m_menuItems[i].RecipeButton.gameObject.SetActive(false);
-			m_menuItems[i].TitleGameObject = newTitle;
+			if (m_menuItems[i].RecipeButton)
+			{
+				m_menuItems[i].RecipeButton.gameObject.SetActive(false);
+				m_menuItems[i].TitleGameObject = newTitle;
+			}
 			PopulateInfo(m_menuItems[i]);
 			if (m_menuItems[i].TemplateMenuItem)
 				m_menuItems[i].TemplateMenuItem.gameObject.SetActive(false);
@@ -114,7 +119,7 @@ public class CustomisationWindowNavigation : MonoBehaviour {
 		{
 			// Default is hidden from the user
 			go.SetActive(false);
-			Debug.Log(go.name + " : " + go.activeInHierarchy);
+			//Debug.Log(go.name + " : " + go.activeInHierarchy);
 
 			switch (item.TemplateMenuItem.m_partToCustomise)
 			{
@@ -152,7 +157,7 @@ public class CustomisationWindowNavigation : MonoBehaviour {
 					break;
 			}
 
-			Debug.Log(go.name + " : " + go.activeInHierarchy);
+			//Debug.Log(go.name + " : " + go.activeInHierarchy);
 		}
 	}
 

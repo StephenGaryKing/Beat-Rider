@@ -14,6 +14,8 @@ namespace BeatRider
 		List<GameObject>[] m_objectLists;
 		int m_previousSpawnPosition = 1;
 
+		ScoreBoardLogic m_scoreBoardLogic;
+
 		public override void Awake()
 		{
 			int num = 0;
@@ -29,6 +31,11 @@ namespace BeatRider
 			_songController.m_onFrontBufferDump.AddListener(SpawnDump);
 
 			CreatePool();
+		}
+
+		private void Start()
+		{
+			m_scoreBoardLogic = FindObjectOfType<ScoreBoardLogic>();
 		}
 
 		public void SetObjectSpeed(float speed, float lookAheadTime)
@@ -178,6 +185,9 @@ namespace BeatRider
 							m_objectLists[i][j].gameObject.SetActive(true);
 
 							i = m_prefabsToSpawn.Count;
+
+							if (m_prefabsToSpawn[i].prefab.CompareTag("Note"))
+								m_scoreBoardLogic.m_totalAmountOfNotes++;
 						}
 					}
 				}

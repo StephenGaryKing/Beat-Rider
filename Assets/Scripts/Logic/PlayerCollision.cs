@@ -67,6 +67,7 @@ namespace BeatRider
 				other.GetComponent<ParticleCreationLogic>().SpawnParticle();
 				if (m_playerSoundEffects.m_pickupNote.soundToPlay)
 					m_playerSoundEffects.m_soundManager.PlaySound(m_playerSoundEffects.m_pickupNote);
+				AchievementManager.OnTallyPickups("Obsticle");
 				return;
 			}
 
@@ -96,6 +97,8 @@ namespace BeatRider
 				if (m_playerSoundEffects.m_hitObstical.soundToPlay)
 					m_playerSoundEffects.m_soundManager.PlaySound(m_playerSoundEffects.m_hitObstical);
 				other.gameObject.SetActive(false);
+
+				AchievementManager.OnTallyPickups("Obsticle");
 				return;
 			}
 
@@ -105,6 +108,7 @@ namespace BeatRider
 				if (gl)
 					gl.PickupGem();
 				other.gameObject.SetActive(false);
+				AchievementManager.OnTallyPickups("Gem");
 			}
 		}
 	}
