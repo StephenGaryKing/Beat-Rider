@@ -14,6 +14,7 @@ namespace BeatRider
 		public int m_scorePerSecond = 1;
 		public Text m_scoreText = null;
 		SongController m_songController;
+		[HideInInspector] public int m_totalAmountOfNotes;
 
 		float m_scoreToAdd = 0;
 
@@ -43,6 +44,11 @@ namespace BeatRider
 		public void ResetScores()
 		{
 			m_score = 0;
+		}
+
+		public void GetPercentageOfNotes()
+		{
+
 		}
 	}
 }

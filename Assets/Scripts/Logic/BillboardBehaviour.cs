@@ -13,6 +13,6 @@ public class BillboardBehaviour : MonoBehaviour {
 	
 	// Update is called once per frame
 	void LateUpdate () {
-		transform.forward = (m_mainCam.transform.position - transform.position).normalized;
+		transform.forward = (m_mainCam.transform.position - transform.position);
 	}
 }

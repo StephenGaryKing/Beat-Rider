@@ -87,6 +87,7 @@ namespace MusicalGameplayMechanics
 		[HideInInspector] public Cutscene m_cutsceneToPlayAtEnd;
 		CutsceneManager m_cutsceneManager;
 		bool m_playerIsDead = false;
+		MenuMusicManager m_menuMusicManager;
 
 		void Start()
 		{
@@ -101,6 +102,7 @@ namespace MusicalGameplayMechanics
 			if (m_volumeSlider)
 				m_volumeSlider.value = _audioSource.volume;                 // initialize the volume slider
 			_audioSource.minDistance = 0.3f;
+			m_menuMusicManager = FindObjectOfType<MenuMusicManager>();
 		}
 
 		void Update()
@@ -260,6 +262,7 @@ namespace MusicalGameplayMechanics
 
 		void EndSong()
 		{
+			AchievementManager.OnTallyPickups("Final");
 			if (m_playerIsDead)
 			{
 				// death specific code
@@ -268,6 +271,7 @@ namespace MusicalGameplayMechanics
 			}
 			else
 			{
+				m_menuMusicManager.PlayRandomSong();
 				if (m_cutsceneToPlayAtEnd)
 					m_cutsceneManager.PlayCutscene(m_cutsceneToPlayAtEnd);
 				else

@@ -52,5 +52,8 @@ public class CustomisationButton : MonoBehaviour {
 				m_shipCustomiser.CustomiseTrail(m_unlockable as UnlockableTrail, m_toggle.isOn);
 				break;
 		}
+
+		Debug.Log(m_partToCustomise.ToString());
+		AchievementManager.OnCustomisation(m_partToCustomise.ToString());
 	}
 }

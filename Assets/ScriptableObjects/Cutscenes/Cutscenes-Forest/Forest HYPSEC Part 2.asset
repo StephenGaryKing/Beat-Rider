@@ -14,26 +14,27 @@ MonoBehaviour:
   m_cameraTagToUse: Cutscene Cam
   m_preCutsceneChoice: []
   m_conversation:
-  - Image: {fileID: 0}
+  - Image: {fileID: 21300000, guid: a7b057ef30380ef4f988e826ac412bd2, type: 3}
     Audio:
-      soundToPlay: {fileID: 0}
-      volume: 0
-    Name: 
-    Content: 
-    waitTime: 0
-  - Image: {fileID: 0}
+      soundToPlay: {fileID: 8300000, guid: 2f12da2b69607b64592d7d404dde884d, type: 3}
+      volume: 0.519
+    Name: Beat Rider
+    Content: Fine, I'm in. What do you need me to do?
+    waitTime: 3
+  - Image: {fileID: 21300000, guid: 8c5bb75c76f5cdf4ebef30ae184c76c2, type: 3}
     Audio:
-      soundToPlay: {fileID: 0}
-      volume: 0
-    Name: 
-    Content: 
-    waitTime: 0
-  - Image: {fileID: 0}
+      soundToPlay: {fileID: 8300000, guid: 9e1ec16eb854b1340a819faed92f664c, type: 3}
+      volume: 0.484
+    Name: HYPSEC Officer
+    Content: Get as far away from your employer's outposts as possible, to limit reprisal.
+      An escort force is on the way, but it'll be a while.
+    waitTime: 6
+  - Image: {fileID: 21300000, guid: 4069384878f853746bc2f2a427c22602, type: 3}
     Audio:
-      soundToPlay: {fileID: 0}
-      volume: 0
-    Name: 
-    Content: 
-    waitTime: 0
+      soundToPlay: {fileID: 8300000, guid: f8cc3b86f26deb14cae680484c1dc666, type: 3}
+      volume: 0.443
+    Name: END CALL
+    Content: CALL HAS BEEN TERMINATED
+    waitTime: 3
   m_postCutsceneChoice: []
   m_levelToPlay: {fileID: 11400000, guid: 0b9c377f47bfa664ca38829b08e2460c, type: 2}
