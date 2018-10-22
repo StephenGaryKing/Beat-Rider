@@ -4632,6 +4632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_templateTitle: {fileID: 1461929142774164}
+  m_RecipeButtonLocation: {fileID: 0}
   m_offsetDistance: 160
   m_offsetScale: {x: 0.42, y: 0.6, z: 0.6}
   m_animationSpeed: 0.5
@@ -4640,26 +4641,31 @@ MonoBehaviour:
   - Title: Boosts
     TitleImage: {fileID: 21300000, guid: e9332ce07089f864b96aaa41264cd07c, type: 3}
     TemplateMenuItem: {fileID: 114045306608903848}
+    RecipeButton: {fileID: 0}
     TitleGameObject: {fileID: 0}
     MenuItemGameObjects: []
   - Title: Ship
     TitleImage: {fileID: 21300000, guid: 24db584dab3f1974c8809ced57a00e0c, type: 3}
     TemplateMenuItem: {fileID: 114688160426262850}
+    RecipeButton: {fileID: 0}
     TitleGameObject: {fileID: 0}
     MenuItemGameObjects: []
   - Title: Track
     TitleImage: {fileID: 21300000, guid: bad06fcf969527c47b75652b5ceb16f1, type: 3}
     TemplateMenuItem: {fileID: 114600297374989374}
+    RecipeButton: {fileID: 0}
     TitleGameObject: {fileID: 0}
     MenuItemGameObjects: []
   - Title: Level
     TitleImage: {fileID: 21300000, guid: 9191fd4b04d86e84c80613174227dc78, type: 3}
     TemplateMenuItem: {fileID: 114147567611091754}
+    RecipeButton: {fileID: 0}
     TitleGameObject: {fileID: 0}
     MenuItemGameObjects: []
   - Title: Level
     TitleImage: {fileID: 21300000, guid: 96514d8316ac4834d8e05a1b8c172eb8, type: 3}
     TemplateMenuItem: {fileID: 0}
+    RecipeButton: {fileID: 0}
     TitleGameObject: {fileID: 0}
     MenuItemGameObjects: []
 --- !u!114 &114209922794156398
@@ -7534,7 +7540,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -12943,15 +12949,15 @@ RectTransform:
   m_GameObject: {fileID: 1694334047824708}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 20.900742, y: 11.843605, z: 0.9927082}
+  m_LocalScale: {x: 43.206284, y: 11.843605, z: 0.9927082}
   m_Children: []
   m_Father: {fileID: 224940053356843574}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.4, y: 0.6}
-  m_SizeDelta: {x: 91.7, y: 122.3}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 2.3999996, y: 0.6000004}
+  m_SizeDelta: {x: -8.300003, y: 22.300003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224291905552229632
 RectTransform:
