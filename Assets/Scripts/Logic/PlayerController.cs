@@ -14,10 +14,13 @@ namespace BeatRider
 		[SerializeField] float m_bounceAmount = 8;
 		[SerializeField] float m_tiltAmount = 0.3f;
 		[SerializeField] float m_tiltSpeed = 0.2f;
+		[SerializeField] bool m_fixedLaneMovement = false; 
 
 		PlayerInput m_inputManager;
 		float m_amountToMove = 0;
 		float m_halfTrackWidth;
+		public bool m_moving;              //used with fixed lane movement
+		public int m_currentLane = 1;
 
 		Rigidbody _rigidBody;
 		// Use this for initialization
@@ -39,24 +42,72 @@ namespace BeatRider
 		// Update is called once per frame
 		void Update()
 		{
-			m_amountToMove = m_inputManager.GatherInput() * m_moveSpeed;
+			if (m_fixedLaneMovement && !m_moving)
+			{
+				float dir = m_inputManager.GatherInput();
+				int oldLane = m_currentLane;
+
+				if (dir > 0 && m_currentLane < 2)
+					m_currentLane ++;
+				if (dir < 0 && m_currentLane > 0)
+					m_currentLane--;
+				if (oldLane != m_currentLane)
+				{
+					m_moving = true;
+					Invoke("ResetMoving", 0.2f);
+				}
+			}
+			else
+			{
+				m_amountToMove = m_inputManager.GatherInput() * m_moveSpeed;
+			}
+		}
+
+
+		private void ResetMoving()
+		{
+			m_moving = false;
 		}
 
 		private void FixedUpdate()
 		{
-			_rigidBody.AddForce(Vector3.right * m_amountToMove);
-			if (transform.position.x < -m_halfTrackWidth)
+			if (m_fixedLaneMovement)
 			{
-				_rigidBody.velocity = Vector3.zero;
-				_rigidBody.AddForce(Vector3.right * m_bounceAmount, ForceMode.Impulse);
-			}
-			if (transform.position.x > m_halfTrackWidth)
-			{
-				_rigidBody.velocity = Vector3.zero;
-				_rigidBody.AddForce(Vector3.left * m_bounceAmount, ForceMode.Impulse);
-			}
+				Vector3 targetPosition = Vector3.zero;
+				switch(m_currentLane)
+				{
+					case (0):
+						targetPosition = Vector3.left * 2;
+						break;
 
-			_rigidBody.MoveRotation(Quaternion.Slerp(transform.rotation, Quaternion.Euler(Vector3.forward * (m_tiltAmount * -m_amountToMove)), m_tiltSpeed));
+					case (1):
+						targetPosition = Vector3.zero;
+						break;
+
+					case (2):
+						targetPosition = Vector3.right * 2;
+						break;
+				}
+				transform.position = Vector3.Lerp(transform.position, targetPosition, 0.1f);
+				m_amountToMove = (targetPosition.x - transform.position.x);
+				_rigidBody.MoveRotation(Quaternion.Slerp(transform.rotation, Quaternion.Euler(Vector3.forward * (m_tiltAmount * -m_amountToMove)), m_tiltSpeed));
+			}
+			else
+			{
+				_rigidBody.AddForce(Vector3.right * m_amountToMove);
+				if (transform.position.x < -m_halfTrackWidth)
+				{
+					_rigidBody.velocity = Vector3.zero;
+					_rigidBody.AddForce(Vector3.right * m_bounceAmount, ForceMode.Impulse);
+				}
+				if (transform.position.x > m_halfTrackWidth)
+				{
+					_rigidBody.velocity = Vector3.zero;
+					_rigidBody.AddForce(Vector3.left * m_bounceAmount, ForceMode.Impulse);
+				}
+
+				_rigidBody.MoveRotation(Quaternion.Slerp(transform.rotation, Quaternion.Euler(Vector3.forward * (m_tiltAmount * -m_amountToMove)), m_tiltSpeed));
+			}
 		}
 	}
 }

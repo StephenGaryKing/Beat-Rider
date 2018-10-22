@@ -260,6 +260,7 @@ namespace MusicalGameplayMechanics
 
 		void EndSong()
 		{
+			AchievementManager.OnTallyPickups("Final");
 			if (m_playerIsDead)
 			{
 				// death specific code

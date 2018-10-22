@@ -8,13 +8,13 @@ namespace BeatRider
 {
 	public class CraftingManager : MonoBehaviour
 	{
-		public string m_saveFileName = "Challenges";
+		public string m_saveFileName = "Crafting";
 
 		public Gem[] m_ReipesToStartWith;
 		public Gem[] m_allRecipes;
 		public Image[] m_pickedupGemImageLocations;
 		[HideInInspector] public List<Gem> m_collectedGems;
-		/*[HideInInspector]*/ public List<int> m_RecipesCompleated;
+		[HideInInspector] public List<int> m_RecipesCompleated;
 		public int m_recipeToFocusOn;
 		UnlockableManager m_UnlockableManager;
 
@@ -88,6 +88,7 @@ namespace BeatRider
 				m_RecipesCompleated.Add(index);
 				m_UnlockableManager.UnlockUnlockable(gem.m_unlockable);
 			}
+			AchievementManager.OnCraft("");
 			SaveChallenges();
 		}
 
