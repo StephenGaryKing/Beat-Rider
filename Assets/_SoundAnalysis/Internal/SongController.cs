@@ -62,7 +62,6 @@ namespace MusicalGameplayMechanics
 		public Slider m_songProgressSlider;
 		public Slider m_spectralAnalisisSlider;
 		float m_spectralAnalisisSliderValue;
-		public Slider m_volumeSlider;
 		public Transform m_saveIcon;
 		public Transform m_loadIcon;
 		public MenuTransition m_freeFlowMenuTransition;
@@ -99,8 +98,6 @@ namespace MusicalGameplayMechanics
 			if (m_playSongButton)
 				m_playSongButton.interactable = false;						// Since no song is loaded the play song button should not be accessable
 			_audioSource = GetComponent<AudioSource>();
-			if (m_volumeSlider)
-				m_volumeSlider.value = _audioSource.volume;                 // initialize the volume slider
 			_audioSource.minDistance = 0.3f;
 			m_menuMusicManager = FindObjectOfType<MenuMusicManager>();
 		}
@@ -155,9 +152,9 @@ namespace MusicalGameplayMechanics
 		/// <summary>
 		/// Change the volume of the AudioSource based on the volume slider's value
 		/// </summary>
-		public void ChangeVolume()
+		public void UpdateVolume(Slider slider)
 		{
-			_audioSource.volume = m_volumeSlider.value;				// Adjust the volume of the song based on the volume slider (this does not affect the spectral analysis data)
+			_audioSource.volume = slider.value;				// Adjust the volume of the song based on the volume slider (this does not affect the spectral analysis data)
 		}
 
 		/// <summary>
