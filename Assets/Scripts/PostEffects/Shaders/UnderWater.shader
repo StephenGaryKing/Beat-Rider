@@ -7,6 +7,7 @@
 		_Frequency("Frequency", float) = 1
 		_Speed("Speed", float) = 1
 		_PixelOffset("Pixel Offset", float) = 0.005
+		_IsEnabled("Is Enabled", float) = 0
 	}
 		SubShader
 	{
@@ -45,27 +46,28 @@
 	float _Frequency;
 	float _Speed;
 	float _PixelOffset;
+	bool _IsEnabled;
 
 	v2f vert(appdata v)
 	{
 		v2f o;
 		o.vertex = UnityObjectToClipPos(v.vertex);
 		o.scrPos = ComputeScreenPos(o.vertex);
+		o.uv = TRANSFORM_TEX(v.uv, _MainTex);
 		UNITY_TRANSFER_FOG(o,o.vertex);
 		return o;
 	}
 
 	fixed4 frag(v2f i) : COLOR
 	{
+		float3 pos = float3(i.scrPos.x, i.scrPos.y, 0) * _Frequency * _IsEnabled;
+		pos.z += _Time.x * _Speed * _IsEnabled;
+		float noise = _Scale * _IsEnabled * ((snoise(pos) + 1) / 2);
 
-	float3 pos = float3(i.scrPos.x, i.scrPos.y, 0) * _Frequency;
-	pos.z += _Time.x * _Speed;
-	float noise = _Scale * ((snoise(pos) + 1)/2);
+		float4 noiseToDir = float4(cos(noise * PI * 2), sin(noise * PI * 2), 0, 0);
+		float4 col = tex2Dproj(_MainTex, i.scrPos + (normalize(noiseToDir) * _PixelOffset));
 
-	float4 noiseToDir = float4(cos(noise * PI * 2), sin(noise * PI * 2), 0, 0);
-	float4 col = tex2Dproj(_MainTex, i.scrPos + (normalize(noiseToDir) * _PixelOffset));
-
-	return col;
+		return col;
 	}
 		ENDCG
 	}

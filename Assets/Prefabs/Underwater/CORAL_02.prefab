@@ -366,7 +366,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4724328632626410}
-  - component: {fileID: 95530154941853190}
   m_Layer: 0
   m_Name: CORAL_02
   m_TagString: Untagged
@@ -1330,20 +1329,3 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1503702556155274}
   m_Mesh: {fileID: 4300000, guid: 7de235b645349924486abcad58e19e49, type: 3}
---- !u!95 &95530154941853190
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1591841161154974}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 7de235b645349924486abcad58e19e49, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
