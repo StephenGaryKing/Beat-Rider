@@ -18,27 +18,32 @@ namespace BeatRider
 
 		float m_scoreToAdd = 0;
 
-		private void Start()
+		private void Awake()
 		{
 			m_songController = FindObjectOfType<SongController>();
 		}
 
 		public void Update()
 		{
-			m_scoreText.text = m_score.ToString();
+            if (!m_songController)
+                m_songController = FindObjectOfType<SongController>();
+            m_scoreText.text = m_score.ToString();
 		}
 
 		private void FixedUpdate()
 		{
-			if (m_songController.m_songIsBeingPlayed)
-			{
-				m_scoreToAdd += Time.deltaTime;
-				if (m_scoreToAdd > 1)
-				{
-					m_score += m_scorePerSecond;
-					m_scoreToAdd = 0;
-				}
-			}
+            if (m_songController)
+            {
+                if (m_songController.m_songIsBeingPlayed)
+                {
+                    m_scoreToAdd += Time.deltaTime;
+                    if (m_scoreToAdd > 1)
+                    {
+                        m_score += m_scorePerSecond;
+                        m_scoreToAdd = 0;
+                    }
+                }
+            }
 		}
 
 		public void ResetScores()

@@ -60,12 +60,6 @@
 				float x = f * (i.uv.x - 0.5) + 0.5;
 				float y = f * (i.uv.y - 0.5) + 0.5;
 				return tex2D(_MainTex, float2(x, y));
-
-				// sample the texture
-				fixed4 col = tex2D(_MainTex, i.uv);
-
-				
-				return col;
 			}
 			ENDCG
 		}

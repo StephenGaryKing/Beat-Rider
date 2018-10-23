@@ -6,11 +6,14 @@ public class PostProcess : MonoBehaviour {
 
 	public List<Material> m_mats;
 	RenderTexture m_tempBuffer;
+	RenderTexture m_middleManBuffer;
 
 	private void OnRenderImage(RenderTexture source, RenderTexture destination)
 	{
 		if (!m_tempBuffer)
 			m_tempBuffer = RenderTexture.GetTemporary(source.descriptor);
+		if (!m_middleManBuffer)
+			m_middleManBuffer = RenderTexture.GetTemporary(m_tempBuffer.descriptor);
 
 		if (m_mats.Count > 1)
 		{
@@ -24,7 +27,8 @@ public class PostProcess : MonoBehaviour {
 				if (m_mats[i])
 				{
 					ApplyVariables(i, source);
-					Graphics.Blit(m_tempBuffer, m_tempBuffer, m_mats[i]);
+					Graphics.Blit(m_tempBuffer, m_middleManBuffer, m_mats[i]);
+					Graphics.CopyTexture(m_middleManBuffer, m_tempBuffer);
 				}
 			}
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using MusicalGameplayMechanics;
+using UnityEngine.UI;
 
 namespace BeatRider
 {
@@ -19,8 +20,8 @@ namespace BeatRider
 		PlayerInput m_inputManager;
 		float m_amountToMove = 0;
 		float m_halfTrackWidth;
-		public bool m_moving;              //used with fixed lane movement
-		public int m_currentLane = 1;
+		bool m_moving;              // used with fixed lane movement
+		int m_currentLane = 1;
 
 		Rigidbody _rigidBody;
 		// Use this for initialization
@@ -67,6 +68,16 @@ namespace BeatRider
 		private void ResetMoving()
 		{
 			m_moving = false;
+		}
+
+		public void UpdateSpeed(Slider slider)
+		{
+			m_moveSpeed = slider.value;
+		}
+
+		public void UpdateMovementType(Toggle toggle)
+		{
+			m_fixedLaneMovement = toggle.isOn;
 		}
 
 		private void FixedUpdate()
