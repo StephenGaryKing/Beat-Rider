@@ -172,6 +172,7 @@ GameObject:
   - component: {fileID: 4896476608175252}
   - component: {fileID: 33391104003831258}
   - component: {fileID: 23854438482734194}
+  - component: {fileID: 114136161869568802}
   m_Layer: 0
   m_Name: pCube68
   m_TagString: Untagged
@@ -402,6 +403,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1978666777241862}
   m_Mesh: {fileID: 4300000, guid: d5727f56fdd9aff4293bcba925ec899a, type: 3}
+--- !u!114 &114136161869568802
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1978666777241862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a23d596df9127e24ab6c6ebbb5310400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114924138593592112
 MonoBehaviour:
   m_ObjectHideFlags: 1

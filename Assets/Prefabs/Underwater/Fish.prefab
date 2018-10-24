@@ -304,6 +304,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4330695232479886}
+  - component: {fileID: 114760368261951306}
   m_Layer: 0
   m_Name: FISH_03
   m_TagString: Untagged
@@ -1198,3 +1199,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minHeight: 10
   maxHeight: -30
+--- !u!114 &114760368261951306
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1625508417019068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a23d596df9127e24ab6c6ebbb5310400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

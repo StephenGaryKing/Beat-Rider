@@ -142,6 +142,7 @@ GameObject:
   - component: {fileID: 4996548128678916}
   - component: {fileID: 33763023877311396}
   - component: {fileID: 23645457781558830}
+  - component: {fileID: 114881641649893000}
   m_Layer: 0
   m_Name: polySurface39
   m_TagString: Untagged
@@ -357,3 +358,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minHeight: 10
   maxHeight: -30
+--- !u!114 &114881641649893000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1932411774103952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a23d596df9127e24ab6c6ebbb5310400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
