@@ -17,8 +17,6 @@ namespace BeatRider
 		public GameObject m_prefab;
 		public float spawnChanceWeight;
 		public Vector2 randomScaleVariance = Vector2.one;
-		//[Header("Info")]
-		//public float spawnChancePercentage;
 	}
 
 	[CreateAssetMenu(fileName = "LevelTemplate", menuName = "Beat Rider/LevelTemplate", order = 1)]
@@ -33,5 +31,6 @@ namespace BeatRider
 		public List<SceneryElement> m_sceneryElements = new List<SceneryElement>();
 		[Tooltip("The time taken for the level to reach the player in seconds")]
 		public float m_travelTime = 2;
+		public Material m_customPostProcess;
 	}
 }

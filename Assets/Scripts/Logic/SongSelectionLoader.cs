@@ -24,8 +24,11 @@ public class SongSelectionLoader : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         m_songController = FindObjectOfType<SongController>();
+		if (m_songSelectButton)
+		{ 
 		m_songButtonTemplate = m_songSelectButton;
 		m_container = m_songSelectButton.parent;
+		}
 		m_defaultFileLocation = Application.dataPath + "/" + m_defaultFileLocation;
 		RefreshFiles(m_defaultFileLocation);
 	}
@@ -54,21 +57,24 @@ public class SongSelectionLoader : MonoBehaviour {
 
 	void PopulateButtons()
 	{
-		// destroy all children
-		int childCount = m_container.childCount - 1;
-		for (int i = 0; i < childCount; i++)
-			Destroy(m_container.GetChild(i + 1).gameObject);
-		
-		for (int i = 0; i < m_songs.Count; i++)
+		if (m_container)
 		{
-			Transform newButton = Instantiate(m_songButtonTemplate, m_container);
-			newButton.name += " " + i;
-			newButton.GetComponentInChildren<Text>().text = m_songs[i].fileName;
-			newButton.GetComponent<SongSelectButton>().m_filePath = m_songs[i].fileLocation;
-			newButton.gameObject.SetActive(true);
+			// destroy all children
+			int childCount = m_container.childCount - 1;
+			for (int i = 0; i < childCount; i++)
+				Destroy(m_container.GetChild(i + 1).gameObject);
+
+			for (int i = 0; i < m_songs.Count; i++)
+			{
+				Transform newButton = Instantiate(m_songButtonTemplate, m_container);
+				newButton.name += " " + i;
+				newButton.GetComponentInChildren<Text>().text = m_songs[i].fileName;
+				newButton.GetComponent<SongSelectButton>().m_filePath = m_songs[i].fileLocation;
+				newButton.gameObject.SetActive(true);
+			}
+
+			m_songButtonTemplate.gameObject.SetActive(false);
 		}
-		
-		m_songButtonTemplate.gameObject.SetActive(false);
 	}
 
     public IEnumerator SelectSong(string filePath)

@@ -159,9 +159,20 @@ namespace BeatRider
 			SetupLevel();
 		}
 
+		LevelTemplate m_oldlevelTemplate;
+		private void LateUpdate()
+		{
+			if (!m_oldlevelTemplate)
+				m_oldlevelTemplate = m_levelTemplate;
+			if (m_oldlevelTemplate != m_levelTemplate)
+			{
+				ChangeLevel(m_levelTemplate);
+				m_oldlevelTemplate = m_levelTemplate;
+			}
+		}
+
 		public void ChangeLevel(LevelTemplate newTemplate)
 		{
-			Debug.Log("new Level");
 			m_levelTemplate = newTemplate;
 			ClearOldLevel();
 			SetupLevel();
@@ -169,6 +180,10 @@ namespace BeatRider
 
 		void SetupLevel()
 		{
+			// Enable custom post effect
+			if (m_levelTemplate.m_customPostProcess)
+				m_levelTemplate.m_customPostProcess.SetFloat("_IsEnabled", 1);
+
 			// place the ground plane
 			if (m_levelTemplate.m_groundPrefab)
 			{
@@ -236,6 +251,10 @@ namespace BeatRider
 
 		void ClearOldLevel()
 		{
+			// Dissable custom post effect
+			if (m_oldlevelTemplate.m_customPostProcess)
+				m_oldlevelTemplate.m_customPostProcess.SetFloat("_IsEnabled", 0);
+
 			WipeObjects();
 			WipeScenery();
 			Destroy(m_ground);
