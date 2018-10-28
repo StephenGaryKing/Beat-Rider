@@ -304,7 +304,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4330695232479886}
-  - component: {fileID: 95246110966776924}
+  - component: {fileID: 114760368261951306}
   m_Layer: 0
   m_Name: FISH_03
   m_TagString: Untagged
@@ -485,6 +485,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4492527348650466}
+  - component: {fileID: 114285293375033500}
   m_Layer: 0
   m_Name: Fish
   m_TagString: Untagged
@@ -1185,20 +1186,27 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1933176937945532}
   m_Mesh: {fileID: 4300000, guid: 8a7320a96f5eeda43a8f09f92d23f759, type: 3}
---- !u!95 &95246110966776924
-Animator:
-  serializedVersion: 3
+--- !u!114 &114285293375033500
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1851868283379792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de032be041fd45c4f8f97d10115c3a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minHeight: 10
+  maxHeight: -30
+--- !u!114 &114760368261951306
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1625508417019068}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 8a7320a96f5eeda43a8f09f92d23f759, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a23d596df9127e24ab6c6ebbb5310400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
