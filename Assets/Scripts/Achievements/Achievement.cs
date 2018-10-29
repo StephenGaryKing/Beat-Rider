@@ -6,6 +6,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(AchievementManager))]
 public abstract class Achievement : MonoBehaviour {
 
+	[TextArea]
 	public string m_description;
 	public int m_targetValue;
 	public Sprite m_previewImage;
