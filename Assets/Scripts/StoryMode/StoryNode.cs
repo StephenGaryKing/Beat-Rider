@@ -49,7 +49,11 @@ namespace BeatRider
 		{
 			m_unlocked = true;
 			UpdateUI();
-			m_storyModeManager.AddCondition(m_EndGameCondition);
+			if (m_storyModeManager)
+			{
+				m_storyModeManager.SaveProgress();
+				m_storyModeManager.AddCondition(m_EndGameCondition);
+			}
 			if (m_parent)
 				m_parent.Unlock();
 		}

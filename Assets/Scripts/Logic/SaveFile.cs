@@ -17,6 +17,8 @@ namespace BeatRider
 
 	}
 
+	// TO DO: Add Hashing and salting
+
 	[System.Serializable]
 	public class SaveFile
 	{

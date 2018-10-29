@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class LevelPercentAchievement : Achievement
+/// <summary>
+/// Keeps track of the number of gems crafted
+/// </summary>
+public class CraftAchievement : Achievement
 {
 	void Start()
 	{
-		AchievementManager.onLevelPercent.AddListener(OnEvent);
+		AchievementManager.onCraft.AddListener(OnEvent);
 	}
 
 	protected override void OnEvent(string val)
