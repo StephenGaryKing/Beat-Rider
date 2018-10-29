@@ -8,7 +8,7 @@ public abstract class Achievement : MonoBehaviour {
 
 	public string m_description;
 	public int m_targetValue;
-	public Image m_previewImage;
+	public Sprite m_previewImage;
 	//[SerializeField]
 	protected int m_currentValue = 0;
 	protected bool m_complete = false;

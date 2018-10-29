@@ -8,6 +8,7 @@ struct AchievementUI
 	public GameObject Root;
 	public Text Description;
 	public Text Progress;
+	public Image PreviewImage;
 	public Achievement TargetAchievement;
 }
 
@@ -42,6 +43,7 @@ public class AchievementUIManager : MonoBehaviour {
 				GameObject achievementObject = Instantiate(m_achievementContainerPrefab, transform);
 				AchievementUI newAchievementUI;
 				newAchievementUI.Root = achievementObject;
+				newAchievementUI.TargetAchievement = a;
 
 				// create description display
 				GameObject descriptionText = Instantiate(m_progressTextPrefab, achievementObject.transform);
@@ -49,9 +51,14 @@ public class AchievementUIManager : MonoBehaviour {
 				newAchievementUI.Description.text = a.m_description;
 
 				// create progress display
+				GameObject progressText = Instantiate(m_progressTextPrefab, achievementObject.transform);
+				newAchievementUI.Progress = progressText.GetComponent<Text>();
+				newAchievementUI.Progress.text = (newAchievementUI.TargetAchievement.CurrentValue + "/" + newAchievementUI.TargetAchievement.m_targetValue);
 
-
-				// create  
+				// create preview image
+				GameObject preview = new GameObject("Preview Image", typeof(RectTransform), typeof(Image));
+				newAchievementUI.PreviewImage = preview.GetComponent<Image>();
+				newAchievementUI.PreviewImage.sprite = newAchievementUI.TargetAchievement.m_previewImage;
 			}
 		}
 	}
