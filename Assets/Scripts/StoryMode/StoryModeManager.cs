@@ -6,13 +6,50 @@ namespace BeatRider
 {
 	public class StoryModeManager : MonoBehaviour
 	{
-		public List<Cutscene> m_cutscenes;
-		CutsceneManager m_cutsceneManager;
 		List<EndGameCondition> m_conditionsCompleated;
 
-		private void Start()
+		public FinalStoryNode[] m_FinalStoryNodes;
+
+		public void SaveProgress()
 		{
-			m_cutsceneManager = FindObjectOfType<CutsceneManager>();
+			List<float> data = new List<float>();
+
+			foreach (FinalStoryNode node in m_FinalStoryNodes)
+			{
+				int steps = 0;
+				bool unlockFound = false;
+
+				if (node.m_unlocked)
+				{
+					data.Add(steps);
+					continue;
+				}
+				// if the final node has not been unlocked
+				StoryNode parent = node.m_parent;
+				// look through nodes and tally steps till unlocked
+				while (!unlockFound)
+				{
+					steps++;
+					if (!parent)
+					{
+						data.Add(steps);
+						unlockFound = true;
+						break;
+					}
+					if (parent.m_unlocked)
+					{
+						data.Add(steps);
+						unlockFound = true;
+						break;
+					}
+					parent = parent.m_parent;
+				}
+			}
+		}
+
+		public void LoadProgress()
+		{
+			// look through nodes and apply tally of unlocked steps
 		}
 
 		public void AddCondition(EndGameCondition condition)
