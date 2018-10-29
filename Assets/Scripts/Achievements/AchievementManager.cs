@@ -15,7 +15,7 @@ public class AchievementManager : MonoBehaviour {
 	public static GameplayEvent onCustomisation = new GameplayEvent();
 	public static GameplayEvent onCustomGameplayEvent = new GameplayEvent();
 
-	Achievement[] m_Achievements;
+	[HideInInspector]public Achievement[] m_Achievements;
 
 	private void Start()
 	{
