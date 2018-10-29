@@ -58,12 +58,6 @@ namespace BeatRider
 					UnlockableColour caster = recipe.m_unlockable as UnlockableColour;
 					if (caster)
 						newRecipe.Product.color = caster.m_colour;
-                    /*
-                    newRecipe.Product.transform.localScale = Vector3.one;
-                    Vector3 pos1 = newRecipe.Product.rectTransform.position;
-                    pos1.z = 0;
-                    newRecipe.Product.rectTransform.position = pos1;
-                    */
 					// create equals
 					Instantiate(m_equalsSignPrefab, newRecipe.Root.transform);
 
@@ -78,12 +72,6 @@ namespace BeatRider
 						// create plus
 						if (i != newRecipe.Ingredients.Length - 1)
 							Instantiate(m_plusSignPrefab, newRecipe.Root.transform);
-                        /*
-                        newRecipe.Ingredients[i].transform.localScale = Vector3.one;
-                        Vector3 pos2 = newRecipe.Ingredients[i].rectTransform.position;
-                        pos2.z = 0;
-                        newRecipe.Ingredients[i].rectTransform.position = pos2;
-                        */
 
 					}
 

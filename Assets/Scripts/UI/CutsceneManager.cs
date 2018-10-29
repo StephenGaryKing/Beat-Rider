@@ -24,7 +24,6 @@ namespace BeatRider
 		SongController m_songController;    // used to play the specified song after the cutscene is over (if any)
 		int m_speachBubbleNumber = 0;       // the current line to write
 		LevelGenerator m_levelgen;
-		List<string> m_endGameConditions = new List<string>();
 
 		List<GameObject> m_choices = new List<GameObject>();
 
@@ -64,12 +63,6 @@ namespace BeatRider
 			StartCoroutine(StartCutscene(cs));
 		}
 
-		void ModifyEndCondition(string condition)
-		{
-			if (condition != "")
-				m_endGameConditions.Add(condition);
-		}
-
 		public bool CheckChoices(Choice[] choiceArray, Cutscene cs)
 		{
 			// if there are pre choices to be made let the player do so
@@ -84,9 +77,9 @@ namespace BeatRider
 				btn.image.sprite = c.Image;
 
 				if (c.CutsceneToPlay != null)
-					btn.onClick.AddListener(() => { StartCutsceneCaller(c.CutsceneToPlay); ModifyEndCondition(c.EndGameCondition); });
+					btn.onClick.AddListener(() => { StartCutsceneCaller(c.CutsceneToPlay);});
 				else
-					btn.onClick.AddListener(() => { StartCutsceneCaller(cs); ModifyEndCondition(c.EndGameCondition); });
+					btn.onClick.AddListener(() => { StartCutsceneCaller(cs);});
 
 				Debug.Log(c.CutsceneToPlay);
 
@@ -130,6 +123,8 @@ namespace BeatRider
 
 		public IEnumerator StartCutscene(Cutscene cs)
 		{
+			if (cs.m_nodeToUnlock)
+				cs.m_nodeToUnlock.Unlock();
 			// if there is a song to be loaded, do it at the start
 			if (cs.m_levelToPlay.m_song)
 				m_songController.OpenSoundFile(cs.m_levelToPlay.m_song);
