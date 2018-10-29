@@ -6,13 +6,70 @@ namespace BeatRider
 {
 	public class StoryModeManager : MonoBehaviour
 	{
-		public List<Cutscene> m_cutscenes;
-		CutsceneManager m_cutsceneManager;
 		List<EndGameCondition> m_conditionsCompleated;
+		public string m_saveFileName = "LevelProgression";
+		public FinalStoryNode[] m_FinalStoryNodes;
 
 		private void Start()
 		{
-			m_cutsceneManager = FindObjectOfType<CutsceneManager>();
+			LoadProgress();
+		}
+
+		public void SaveProgress()
+		{
+			List<int> data = new List<int>();
+
+			foreach (FinalStoryNode node in m_FinalStoryNodes)
+			{
+				int steps = 0;
+				bool unlockFound = false;
+
+				if (node.m_unlocked)
+				{
+					data.Add(steps);
+					continue;
+				}
+				// if the final node has not been unlocked
+				StoryNode parent = node.m_parent;
+				// look through nodes and tally steps till unlocked
+				while (!unlockFound)
+				{
+					steps++;
+					if (!parent)
+					{
+						data.Add(steps);
+						unlockFound = true;
+						break;
+					}
+					if (parent.m_unlocked)
+					{
+						data.Add(steps);
+						unlockFound = true;
+						break;
+					}
+					parent = parent.m_parent;
+				}
+			}
+			SaveFile save = new SaveFile();
+			save.AddList(data);
+			save.Save(m_saveFileName);
+		}
+
+		public void LoadProgress()
+		{
+			SaveFile save = new SaveFile();
+			save.Load(m_saveFileName);
+			List<int> data = new List<int>();
+			if (save.m_numbers.Count > 0)
+				data = save.m_numbers[0].list;
+			// look through nodes and apply tally of unlocked steps
+			for (int i = 0; i < m_FinalStoryNodes.Length; i ++)
+			{
+				StoryNode parent = m_FinalStoryNodes[i].m_parent;
+				for (int j = 0; j < data[i]; j ++)
+					parent = parent.m_parent;
+				parent.Unlock();
+			}
 		}
 
 		public void AddCondition(EndGameCondition condition)
