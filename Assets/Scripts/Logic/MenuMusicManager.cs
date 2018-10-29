@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(AudioSource))]
 public class MenuMusicManager : MonoBehaviour {
@@ -18,6 +19,11 @@ public class MenuMusicManager : MonoBehaviour {
             m_source = GetComponent<AudioSource>();
         PlayRandomSong();
     }
+
+	public void UpdateVolume(Slider slider)
+	{
+		m_source.volume = slider.value;
+	}
 
 	private void OnEnable()
 	{

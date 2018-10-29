@@ -1,14 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(AchievementManager))]
 public abstract class Achievement : MonoBehaviour {
 
+	public string m_description;
 	public int m_targetValue;
+	public Image m_previewImage;
 	//[SerializeField]
 	protected int m_currentValue = 0;
 	protected bool m_complete = false;
+
+	public int CurrentValue
+	{
+		get { return m_currentValue; }
+	}
 
 	protected void Increment(int val = 1)
 	{

@@ -2,6 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public enum EndGameCondition
+{
+	NONE,
+	DeathTrigger,
+	AnswerDenyPolice,
+	AidPolice,
+	NoGroup
+}
+
 namespace BeatRider
 {
 	/// <summary>
@@ -22,7 +32,6 @@ namespace BeatRider
 	{
 		public Sprite Image;
 		public Cutscene CutsceneToPlay;
-		public string EndGameCondition;
 	}
 
 	[CreateAssetMenu(fileName = "Cutscene", menuName = "Beat Rider/Cutscene", order = 1)]
@@ -35,5 +44,6 @@ namespace BeatRider
 		public SpeachBubble[] m_conversation;   // a conversation with n elements
 		public Choice[] m_postCutsceneChoice;      // played before cutscenes
 		public Level m_levelToPlay;             // the song to play (if any) after the cutscene is over
+		public StoryNode m_nodeToUnlock;
 	}
 }
