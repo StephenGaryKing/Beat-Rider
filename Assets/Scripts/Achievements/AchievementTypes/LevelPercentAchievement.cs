@@ -1,13 +1,14 @@
-﻿using System.Collections;
+﻿/*
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 
-public class CraftAchievement : Achievement
+public class LevelPercentAchievement : Achievement
 {
 	void Start()
 	{
-		AchievementManager.onCraft.AddListener(OnEvent);
+		AchievementManager.onLevelPercent.AddListener(OnEvent);
 	}
 
 	protected override void OnEvent(string val)
@@ -15,3 +16,4 @@ public class CraftAchievement : Achievement
 		Increment();
 	}
 }
+*/

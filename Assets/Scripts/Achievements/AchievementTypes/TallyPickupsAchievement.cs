@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+/// <summary>
+/// Tally's the number of pickups collected with the tag 'Pickup Tag' (Currently performed after level is over)
+/// </summary>
 public class TallyPickupsAchievement : Achievement
 {
 	public string m_pickupTag;
