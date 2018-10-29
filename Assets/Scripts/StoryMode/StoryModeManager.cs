@@ -15,16 +15,6 @@ namespace BeatRider
 			m_cutsceneManager = FindObjectOfType<CutsceneManager>();
 		}
 
-		//public void LoadCutscene(int cutsceneNumber)
-		//{
-		//	m_cutsceneManager.PlayCutscene(m_cutscenes[cutsceneNumber]);
-		//}
-
-		public void UpdateStoryProgress(StoryNode nodeToUnlock)
-		{
-			nodeToUnlock.Unlock();
-		}
-
 		public void AddCondition(EndGameCondition condition)
 		{
 			if (condition == EndGameCondition.NONE)

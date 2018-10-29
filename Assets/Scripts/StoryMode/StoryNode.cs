@@ -16,9 +16,9 @@ namespace BeatRider
 		public StoryNode m_parent;
 		public Cutscene m_cutsceneToPlay;
 		public EndGameCondition m_EndGameCondition;
-		public bool m_unlocked;
+		bool m_unlocked;
 
-		public void Select()
+		public virtual void Select()
 		{
 			m_cutsceneManager.PlayCutscene(m_cutsceneToPlay);
 			m_storyModeManager.InitializeConditions(this);
@@ -35,7 +35,7 @@ namespace BeatRider
 				m_image.sprite = m_inactiveImage;
 		}
 
-		public void Unlock()
+		public virtual void Unlock()
 		{
 			m_unlocked = true;
 			UpdateUI();
