@@ -59,12 +59,17 @@ public class AchievementUIManager : MonoBehaviour {
 				GameObject preview = new GameObject("Preview Image", typeof(RectTransform), typeof(Image));
 				newAchievementUI.PreviewImage = preview.GetComponent<Image>();
 				newAchievementUI.PreviewImage.sprite = newAchievementUI.TargetAchievement.m_previewImage;
+
+				m_achievemntUIs.Add(newAchievementUI);
 			}
 		}
 	}
 
 	public void UpdateAchievements()
 	{
-
+		foreach(AchievementUI ui in m_achievemntUIs)
+		{
+			ui.Progress.text = (ui.TargetAchievement.CurrentValue + "/" + ui.TargetAchievement.m_targetValue);
+		}
 	}
 }
