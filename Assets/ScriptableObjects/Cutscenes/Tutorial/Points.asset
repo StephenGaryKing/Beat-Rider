@@ -11,8 +11,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98c2dbea8b6767a4ea3d8fb903a452f9, type: 3}
   m_Name: Points
   m_EditorClassIdentifier: 
+  m_cameraTagToUse: 
+  m_preCutsceneChoice: []
   m_conversation:
-  - Name: Boss
-    Content: Don't Forget to collect the beats you're going to want those points.
-    waitTime: 4
-  m_songToPlay: 
+  - Image: {fileID: 21300000, guid: e41038dc15be93641919ef987c3bfd51, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 6c4c45ef1f1f1114994dd74b66c44c8a, type: 3}
+      volume: 0.461
+    Name: SHADE CORP. TRAINING AGENT
+    Content: Collect beats to increase your score!
+    waitTime: 5
+  m_postCutsceneChoice: []
+  m_levelToPlay: {fileID: 0}
+  m_nodeToUnlock: {fileID: 0}

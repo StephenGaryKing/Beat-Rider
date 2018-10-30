@@ -18,6 +18,12 @@ public class DotDotDotter : MonoBehaviour {
 		StartCoroutine(DotDotDot());
 	}
 
+	private void OnEnable()
+	{
+		StopAllCoroutines();
+		StartCoroutine(DotDotDot());
+	}
+
 	IEnumerator DotDotDot()
 	{
 		while (true)

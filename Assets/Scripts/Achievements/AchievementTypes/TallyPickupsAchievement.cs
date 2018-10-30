@@ -2,35 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// Tally's the number of pickups collected with the tag 'Pickup Tag' (Currently performed after level is over)
-/// </summary>
-public class TallyPickupsAchievement : Achievement
+namespace BeatRider
 {
-	public string m_pickupTag;
-	public bool m_lessThanOrEqualTo = false;
-
-	void Start()
+	/// <summary>
+	/// Tally's the number of pickups collected with the tag 'Pickup Tag' (Currently performed after level is over)
+	/// </summary>
+	public class TallyPickupsAchievement : Achievement
 	{
-		AchievementManager.onTallyPickups.AddListener(OnEvent);
-	}
+		public string m_pickupTag;
+		public bool m_lessThanOrEqualTo = false;
 
-	protected override void OnEvent(string val)
-	{
-		if (val == m_pickupTag)
-			m_currentValue++;
-		if (val == ("Final"))
-			CheckFinalCondition();
-	}
+		void Start()
+		{
+			AchievementManager.onTallyPickups.AddListener(OnEvent);
+		}
 
-	void CheckFinalCondition()
-	{
-		if (m_lessThanOrEqualTo)
-			if (m_currentValue <= m_targetValue)
-				Complete();
-			else
-			if (m_currentValue > m_targetValue)
-				Complete();
-		m_currentValue = 0;
+		protected override void OnEvent(string val)
+		{
+			if (val == m_pickupTag)
+				m_currentValue++;
+			if (val == ("Final"))
+				CheckFinalCondition();
+		}
+
+		void CheckFinalCondition()
+		{
+			if (m_lessThanOrEqualTo)
+				if (m_currentValue <= m_targetValue)
+					Complete();
+				else
+				if (m_currentValue > m_targetValue)
+					Complete();
+			m_currentValue = 0;
+		}
 	}
 }

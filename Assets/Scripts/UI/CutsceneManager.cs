@@ -129,8 +129,9 @@ namespace BeatRider
 			if (cs.m_nodeToUnlock)
 				cs.m_nodeToUnlock.Unlock();
 			// if there is a song to be loaded, do it at the start
-			if (cs.m_levelToPlay.m_song)
-				m_songController.OpenSoundFile(cs.m_levelToPlay.m_song);
+			if (cs.m_levelToPlay)
+				if (cs.m_levelToPlay.m_song)
+					m_songController.OpenSoundFile(cs.m_levelToPlay.m_song);
 
 			// make the conversation visible
 			m_conversationBox.transform.parent.parent.gameObject.SetActive(true);

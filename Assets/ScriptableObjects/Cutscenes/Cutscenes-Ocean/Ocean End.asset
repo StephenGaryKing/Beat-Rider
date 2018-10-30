@@ -14,118 +14,123 @@ MonoBehaviour:
   m_cameraTagToUse: Cutscene Cam
   m_preCutsceneChoice: []
   m_conversation:
-  - Image: {fileID: 0}
+  - Image: {fileID: 21300000, guid: a7b057ef30380ef4f988e826ac412bd2, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 0c7a9e146f9e25647bbb8db121bce59f, type: 3}
+      volume: 0.47
+    Name: 1 CALL INCOMING
+    Content: -Call from Shade Corp., Automatic Answer
+    waitTime: 2
+  - Image: {fileID: 21300000, guid: a91a2bc4be5741749a2b7f47bf8cff0e, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 35f841c33d72de849abff278d7949f81, type: 3}
+      volume: 0.47
+    Name: Liaison
+    Content: "You\u2019ve reached optimal distance. Chance of being tailed now is
+      extremely low."
+    waitTime: 4
+  - Image: {fileID: 21300000, guid: a7b057ef30380ef4f988e826ac412bd2, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 2d7a51c2ec38edf459c93707bfa43788, type: 3}
+      volume: 0.44
+    Name: Beat Rider
+    Content: Finally. Practically out in the middle of nowhere.
+    waitTime: 3
+  - Image: {fileID: 21300000, guid: a91a2bc4be5741749a2b7f47bf8cff0e, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 35f841c33d72de849abff278d7949f81, type: 3}
+      volume: 0.403
+    Name: Liaison
+    Content: Begin broadcasting your co-ordinates and we'll locate you to manually
+      collect the package.
+    waitTime: 4
+  - Image: {fileID: 21300000, guid: e41038dc15be93641919ef987c3bfd51, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: e1480adaba9f37c478b2483f987f525c, type: 3}
+      volume: 0.208
+    Name: SHADE CO. BROADCAST SYSTEMS
+    Content: SENDING CO-ORDINATES [-65.736, 135.188, . . . . . . . . . ]
+    waitTime: 8
+  - Image: {fileID: 21300000, guid: a91a2bc4be5741749a2b7f47bf8cff0e, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: ed3a5d11cea6c1b429880522d7ed2c4b, type: 3}
+      volume: 0.403
+    Name: Liaison
+    Content: Ok, beam it over, quickly.
+    waitTime: 4
+  - Image: {fileID: 21300000, guid: a7b057ef30380ef4f988e826ac412bd2, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 2f12da2b69607b64592d7d404dde884d, type: 3}
+      volume: 0.385
+    Name: Beat Rider
+    Content: Delivery secured. So, how is my payment going to be handled...
+    waitTime: 4
+  - Image: {fileID: 21300000, guid: e41038dc15be93641919ef987c3bfd51, type: 3}
     Audio:
       soundToPlay: {fileID: 0}
       volume: 0
     Name: 
-    Content: 
-    waitTime: 0
-  - Image: {fileID: 0}
+    Content: (A missile is then shot at Beat Rider's ship. There's no asset for this
+      yet
+    waitTime: 3
+  - Image: {fileID: 21300000, guid: a7b057ef30380ef4f988e826ac412bd2, type: 3}
     Audio:
-      soundToPlay: {fileID: 0}
-      volume: 0
-    Name: 
-    Content: 
-    waitTime: 0
-  - Image: {fileID: 0}
+      soundToPlay: {fileID: 8300000, guid: 2d7a51c2ec38edf459c93707bfa43788, type: 3}
+      volume: 0.415
+    Name: Beat Rider
+    Content: NANI?!?!?
+    waitTime: 2
+  - Image: {fileID: 21300000, guid: e41038dc15be93641919ef987c3bfd51, type: 3}
     Audio:
-      soundToPlay: {fileID: 0}
-      volume: 0
-    Name: 
-    Content: 
-    waitTime: 0
-  - Image: {fileID: 0}
+      soundToPlay: {fileID: 8300000, guid: f8cc3b86f26deb14cae680484c1dc666, type: 3}
+      volume: 0.354
+    Name: SHADE CORP.
+    Content: Call patching...
+    waitTime: 2
+  - Image: {fileID: 21300000, guid: d3a619e3fdbe28340923170335f33b5e, type: 3}
     Audio:
-      soundToPlay: {fileID: 0}
-      volume: 0
-    Name: 
-    Content: 
-    waitTime: 0
-  - Image: {fileID: 0}
+      soundToPlay: {fileID: 8300000, guid: 07bd50ad95e83be4d9789a3ecd0e2817, type: 3}
+      volume: 0.433
+    Name: Shade Corp. Executive
+    Content: You're finished, Beat Rider. We can't just let you slip away after this.
+    waitTime: 4
+  - Image: {fileID: 21300000, guid: a7b057ef30380ef4f988e826ac412bd2, type: 3}
     Audio:
-      soundToPlay: {fileID: 0}
-      volume: 0
-    Name: 
-    Content: 
-    waitTime: 0
-  - Image: {fileID: 0}
+      soundToPlay: {fileID: 8300000, guid: 2d7a51c2ec38edf459c93707bfa43788, type: 3}
+      volume: 0.409
+    Name: Beat Rider
+    Content: What the {BLEEP} !? We had a deal!
+    waitTime: 3
+  - Image: {fileID: 21300000, guid: d3a619e3fdbe28340923170335f33b5e, type: 3}
     Audio:
-      soundToPlay: {fileID: 0}
-      volume: 0
-    Name: 
-    Content: 
-    waitTime: 0
-  - Image: {fileID: 0}
+      soundToPlay: {fileID: 8300000, guid: 07bd50ad95e83be4d9789a3ecd0e2817, type: 3}
+      volume: 0.458
+    Name: Shade Corp. Executive
+    Content: It's better for our budget to tie up loose ends like this. Plus, if you
+      went any deeper into the mission, information getting out would hurt our public
+      image.
+    waitTime: 6
+  - Image: {fileID: 21300000, guid: d3a619e3fdbe28340923170335f33b5e, type: 3}
     Audio:
-      soundToPlay: {fileID: 0}
-      volume: 0
-    Name: 
-    Content: 
-    waitTime: 0
-  - Image: {fileID: 0}
+      soundToPlay: {fileID: 8300000, guid: 2a94530c569648f4b9fb0b1f8713e963, type: 3}
+      volume: 0.366
+    Name: Shade Corp. Executive
+    Content: Please understand.
+    waitTime: 2
+  - Image: {fileID: 21300000, guid: a91a2bc4be5741749a2b7f47bf8cff0e, type: 3}
     Audio:
-      soundToPlay: {fileID: 0}
-      volume: 0
-    Name: 
-    Content: 
-    waitTime: 0
-  - Image: {fileID: 0}
+      soundToPlay: {fileID: 8300000, guid: ed3a5d11cea6c1b429880522d7ed2c4b, type: 3}
+      volume: 0.379
+    Name: Shade Corp., Asset Termination Department
+    Content: Happy retirement, Beat Rider. We'll be sending our best...
+    waitTime: 5
+  - Image: {fileID: 21300000, guid: a91a2bc4be5741749a2b7f47bf8cff0e, type: 3}
     Audio:
-      soundToPlay: {fileID: 0}
-      volume: 0
-    Name: 
-    Content: 
-    waitTime: 0
-  - Image: {fileID: 0}
-    Audio:
-      soundToPlay: {fileID: 0}
-      volume: 0
-    Name: 
-    Content: 
-    waitTime: 0
-  - Image: {fileID: 0}
-    Audio:
-      soundToPlay: {fileID: 0}
-      volume: 0
-    Name: 
-    Content: 
-    waitTime: 0
-  - Image: {fileID: 0}
-    Audio:
-      soundToPlay: {fileID: 0}
-      volume: 0
-    Name: 
-    Content: 
-    waitTime: 0
-  - Image: {fileID: 0}
-    Audio:
-      soundToPlay: {fileID: 0}
-      volume: 0
-    Name: 
-    Content: 
-    waitTime: 0
-  - Image: {fileID: 0}
-    Audio:
-      soundToPlay: {fileID: 0}
-      volume: 0
-    Name: 
-    Content: 
-    waitTime: 0
-  - Image: {fileID: 0}
-    Audio:
-      soundToPlay: {fileID: 0}
-      volume: 0
-    Name: 
-    Content: 
-    waitTime: 0
-  - Image: {fileID: 0}
-    Audio:
-      soundToPlay: {fileID: 0}
-      volume: 0
-    Name: 
-    Content: 
-    waitTime: 0
+      soundToPlay: {fileID: 8300000, guid: f8cc3b86f26deb14cae680484c1dc666, type: 3}
+      volume: 0.433
+    Name: END CALL
+    Content: Connection lost.
+    waitTime: 3
   m_postCutsceneChoice: []
-  m_levelToPlay: {fileID: 0}
+  m_levelToPlay: {fileID: 11400000, guid: f3f5cc9a331450f40b2db9495772295f, type: 2}
   m_nodeToUnlock: {fileID: 0}

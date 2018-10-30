@@ -22,9 +22,10 @@ namespace BeatRider
 		public GameObject m_equalsSignPrefab;
 		public GameObject m_plusSignPrefab;
 		public GameObject m_recipeContainerPrefab;
+		public FilterButton[] m_filterButtons;
 
+		FilterButton m_lastFilterUsed; 
 		List<RecipeUI> m_recipeUIs = new List<RecipeUI>();
-		int m_numOfIngredients = 2;
 		CraftingManager m_craftingManager;
 
 		// Use this for initialization
@@ -33,6 +34,22 @@ namespace BeatRider
 			if (!m_craftingManager)
 				Debug.LogError("Add a Crafting Manager to the Game Controller");
 			PopulateRecipes(m_craftingManager.m_allRecipes);
+			m_lastFilterUsed = m_filterButtons[0];
+		}
+
+		public void Filter(FilterButton button)
+		{
+			m_lastFilterUsed = button;
+			foreach (FilterButton btn in m_filterButtons)
+			{
+				if (btn == button)
+				{
+					SetSizeFilter(btn.m_filterNumber);
+					btn.Activate();
+				}
+				else
+					btn.DeActivate();
+			}
 		}
 
 		public void PopulateRecipes(Gem[] recipes)
@@ -76,21 +93,21 @@ namespace BeatRider
 					}
 
 					newRecipe.Recipe = recipe;
-
 					m_recipeUIs.Add(newRecipe);
 				}
 			}
 		}
 
-		public void SetSizeFilter(int numOfIngredients)
+		void SetSizeFilter(int numOfIngredients)
 		{
 			Debug.Log("Now looking at recipes with a size of " + numOfIngredients);
-			m_numOfIngredients = numOfIngredients;
+			m_craftingManager.m_filterNumber = numOfIngredients;
 			UpdateRecipes();
 		}
 
 		public void UpdateRecipes()
 		{
+			Filter(m_lastFilterUsed);
 			// look for each recipe in the manager to decide to show the recipe or not
 			foreach (int num in m_craftingManager.m_RecipesCompleated)
 			{
@@ -118,7 +135,7 @@ namespace BeatRider
 			// Show the relevent sized recipes
 			foreach (RecipeUI ui in m_recipeUIs)
 			{
-				if (ui.Recipe.m_recipe.GemsToPickup.Length == m_numOfIngredients)
+				if (ui.Recipe.m_recipe.GemsToPickup.Length == m_craftingManager.m_filterNumber)
 					ui.Root.SetActive(true);
 				else
 					ui.Root.SetActive(false);

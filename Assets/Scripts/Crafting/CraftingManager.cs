@@ -15,8 +15,9 @@ namespace BeatRider
 		public Image[] m_pickedupGemImageLocations;
 		[HideInInspector] public List<Gem> m_collectedGems;
 		[HideInInspector] public List<int> m_RecipesCompleated;
-		public int m_recipeToFocusOn;
+		public int m_filterNumber;
 		UnlockableManager m_UnlockableManager;
+		List<Gem> m_filteredRecipes = new List<Gem>();
 
 		private void Start()
 		{
@@ -52,9 +53,10 @@ namespace BeatRider
 			m_RecipesCompleated = saveFile.m_numbers[0].list;
 		}
 
-		public void PickChallenge(Gem challenge)
+		public void Filter(int filter)
 		{
-			m_recipeToFocusOn = FindGemIndex(challenge);
+			m_filterNumber = filter;
+			RefreshFilteredRecipes();
 			RefreshPickupList();
 		}
 
@@ -77,7 +79,7 @@ namespace BeatRider
 			RefreshPickupList();
 			DisplayPickupList();
 			if (CheckPickupCombination())
-				UnlockChallenge(m_allRecipes[m_recipeToFocusOn]);
+				UnlockChallenge(m_allRecipes[m_filterNumber]);
 		}
 
 		public void UnlockChallenge (Gem gem)
@@ -94,14 +96,19 @@ namespace BeatRider
 
 		bool CheckPickupCombination()
 		{
-			if (m_collectedGems.Count != m_allRecipes[m_recipeToFocusOn].m_recipe.GemsToPickup.Length)
+			if (m_collectedGems.Count != m_allRecipes[m_filterNumber].m_recipe.GemsToPickup.Length)
 				return false;
 
+			// check to see if the collecte gems match any recipies that are being focused on
+
+
+			/*
 			for(int i = 0; i < m_collectedGems.Count; i ++)
 			{
-				if (m_collectedGems[i] != m_allRecipes[m_recipeToFocusOn].m_recipe.GemsToPickup[i])
+				if (m_collectedGems[i] != m_allRecipes[m_filterNumber].m_recipe.GemsToPickup[i])
 					return false;
 			}
+			*/
 
 			// everything matches up
 			return true;
@@ -126,10 +133,24 @@ namespace BeatRider
 			}
 		}
 
+		void RefreshFilteredRecipes()
+		{
+			m_filteredRecipes.Clear();
+			// exclude any recipes that are finished
+			// exclude recipes of the wrong size
+			for(int i = 0; i < m_allRecipes.Length; i ++)
+			{
+				if (m_allRecipes[i].m_recipe.GemsToPickup.Length == m_filterNumber && !m_RecipesCompleated.Contains(i))
+				{
+					m_filteredRecipes.Add(m_allRecipes[i]);
+				}
+			}
+		}
+
 		void RefreshPickupList()
 		{
 			// while there are more gems in the list than the focused recipies require, pop the oldest elements of the list
-			while (m_collectedGems.Count > m_allRecipes[m_recipeToFocusOn].m_recipe.GemsToPickup.Length)
+			while (m_collectedGems.Count > m_allRecipes[m_filterNumber].m_recipe.GemsToPickup.Length)
 				m_collectedGems.RemoveAt(0);
 		}
 	}
