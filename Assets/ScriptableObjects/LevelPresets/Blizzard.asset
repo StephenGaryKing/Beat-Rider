@@ -12,11 +12,21 @@ MonoBehaviour:
   m_Name: Blizzard
   m_EditorClassIdentifier: 
   m_levelGenerationType: 1
-  m_groundPrefab: {fileID: 0}
-  m_spawnHeightOffset: 0
-  m_trackWidth: 0
-  m_unitSize: 1
-  m_numOfSceneryLayers: 0
-  m_sceneryElements: []
-  m_travelTime: 2
+  m_groundPrefab: {fileID: 1859034733271936, guid: 17a770c98eec75c4c972eec1e306e630,
+    type: 2}
+  m_spawnHeightOffset: -10
+  m_trackWidth: 50
+  m_unitSize: 200
+  m_numOfSceneryLayers: 2
+  m_sceneryElements:
+  - m_prefab: {fileID: 1314613720498082, guid: 1993de0fdb63033448bdfa88cdab3c2c, type: 2}
+    spawnChanceWeight: 1
+    randomScaleVariance: {x: 1, y: 1}
+  - m_prefab: {fileID: 1752940158778380, guid: 96941964dc7f4e44d8acd0e05fa6f694, type: 2}
+    spawnChanceWeight: 1
+    randomScaleVariance: {x: 1, y: 1}
+  - m_prefab: {fileID: 1491517014350110, guid: b0eb90e4e955ff24983f1bee7848de66, type: 2}
+    spawnChanceWeight: 1
+    randomScaleVariance: {x: 1, y: 1}
+  m_travelTime: 10
   m_customPostProcess: {fileID: 0}
