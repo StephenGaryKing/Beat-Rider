@@ -181,6 +181,9 @@ namespace BeatRider
 		void SetupLevel()
 		{
 			// Apply Fog
+			RenderSettings.fogColor = m_levelTemplate.m_fogColour;
+			RenderSettings.fogStartDistance = m_levelTemplate.m_fogStart;
+			RenderSettings.fogEndDistance = m_levelTemplate.m_fogEnd;
 
 			// Enable custom post effect
 			if (m_levelTemplate.m_customPostProcess)
