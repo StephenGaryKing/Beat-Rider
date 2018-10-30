@@ -11,8 +11,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98c2dbea8b6767a4ea3d8fb903a452f9, type: 3}
   m_Name: Ocean 2 End
   m_EditorClassIdentifier: 
-  m_cameraTagToUse: 
+  m_cameraTagToUse: Cutscene Cam
   m_preCutsceneChoice: []
-  m_conversation: []
+  m_conversation:
+  - Image: {fileID: 21300000, guid: e41038dc15be93641919ef987c3bfd51, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 0c7a9e146f9e25647bbb8db121bce59f, type: 3}
+      volume: 0.446
+    Name: 1 CALL INCOMING
+    Content: -Call from Shade Corp., Automatic Answer
+    waitTime: 2
+  - Image: {fileID: 21300000, guid: a91a2bc4be5741749a2b7f47bf8cff0e, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 35f841c33d72de849abff278d7949f81, type: 3}
+      volume: 0.488
+    Name: Liaison
+    Content: Courier,  what the hell are you doing?
+    waitTime: 3
+  - Image: {fileID: 21300000, guid: a7b057ef30380ef4f988e826ac412bd2, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 2f12da2b69607b64592d7d404dde884d, type: 3}
+      volume: 0.482
+    Name: Beat Rider
+    Content: I don't know what you have me handling, but I'm not going to prison over
+      it.
+    waitTime: 4
+  - Image: {fileID: 21300000, guid: a7b057ef30380ef4f988e826ac412bd2, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 2f12da2b69607b64592d7d404dde884d, type: 3}
+      volume: 0.421
+    Name: Beat Rider
+    Content: You should probably back off before you dig yourself any deeper.
+    waitTime: 3
+  - Image: {fileID: 21300000, guid: a91a2bc4be5741749a2b7f47bf8cff0e, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: ed3a5d11cea6c1b429880522d7ed2c4b, type: 3}
+      volume: 0.391
+    Name: Liaison
+    Content: YOU JUST CROSSED THE WRONG PEOPLE, BEAT RIDER.
+    waitTime: 4
+  - Image: {fileID: 21300000, guid: a91a2bc4be5741749a2b7f47bf8cff0e, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 35f841c33d72de849abff278d7949f81, type: 3}
+      volume: 0.433
+    Name: Liaison
+    Content: And you know what? Out here, we can just wipe you out, and no-one will
+      notice.
+    waitTime: 4
+  - Image: {fileID: 21300000, guid: a7b057ef30380ef4f988e826ac412bd2, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 2d7a51c2ec38edf459c93707bfa43788, type: 3}
+      volume: 0.366
+    Name: Beat Rider
+    Content: Try me.
+    waitTime: 2
+  - Image: {fileID: 21300000, guid: 4069384878f853746bc2f2a427c22602, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: f8cc3b86f26deb14cae680484c1dc666, type: 3}
+      volume: 0.452
+    Name: END CALL
+    Content: Connection has been lost.
+    waitTime: 2
   m_postCutsceneChoice: []
-  m_levelToPlay: {fileID: 0}
+  m_levelToPlay: {fileID: 11400000, guid: f3f5cc9a331450f40b2db9495772295f, type: 2}
+  m_nodeToUnlock: {fileID: 0}
