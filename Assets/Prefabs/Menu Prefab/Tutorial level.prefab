@@ -4060,6 +4060,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_cutsceneToShow: {fileID: 11400000, guid: 19e6f3dc00ef54d4a8c9ae8e9d597941, type: 2}
   m_continueKeys: 
+  m_timescale: 0
+  onPause:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: BeatRider.PauseEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114074701669292108
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4305,6 +4311,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_cutsceneToShow: {fileID: 11400000, guid: 77c32d1255813a64c984b9d7b5d2c0f4, type: 2}
   m_continueKeys: 61000000640000001401000013010000
+  m_timescale: 0
+  onPause:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: BeatRider.PauseEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114442858903445484
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4469,8 +4481,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67bcd14836ce5de4ebceca7b82d7ce0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_cutsceneToShow: {fileID: 11400000, guid: 86bbc3efd7e5b4c4b8d8681eabafebdc, type: 2}
+  m_cutsceneToShow: {fileID: 0}
   m_continueKeys: 61000000640000001401000013010000
+  m_timescale: 0
+  onPause:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: EndTutorial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: BeatRider.PauseEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114557543547952160
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4767,6 +4796,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_cutsceneToShow: {fileID: 11400000, guid: c758f6340410ae84bbe429653fc98403, type: 2}
   m_continueKeys: 61000000640000001401000013010000
+  m_timescale: 0
+  onPause:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: BeatRider.PauseEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114823461445542992
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4793,6 +4828,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_cutsceneToShow: {fileID: 11400000, guid: 20bc2ac40bfcf624c871cf8fc382917e, type: 2}
   m_continueKeys: 61000000640000001401000013010000
+  m_timescale: 0
+  onPause:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: BeatRider.PauseEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114882760144580572
 MonoBehaviour:
   m_ObjectHideFlags: 1
