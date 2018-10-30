@@ -180,6 +180,8 @@ namespace BeatRider
 
 		void SetupLevel()
 		{
+			// Apply Fog
+
 			// Enable custom post effect
 			if (m_levelTemplate.m_customPostProcess)
 				m_levelTemplate.m_customPostProcess.SetFloat("_IsEnabled", 1);

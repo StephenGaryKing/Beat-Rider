@@ -32,5 +32,8 @@ namespace BeatRider
 		[Tooltip("The time taken for the level to reach the player in seconds")]
 		public float m_travelTime = 2;
 		public Material m_customPostProcess;
+		public Color m_fogColour = Color.black;
+		public float m_fogStart = -2f;
+		public float m_fogEnd = 600f;
 	}
 }

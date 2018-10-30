@@ -24,6 +24,7 @@ namespace BeatRider
 		public GameObject m_recipeContainerPrefab;
 		public FilterButton[] m_filterButtons;
 
+		FilterButton m_lastFilterUsed; 
 		List<RecipeUI> m_recipeUIs = new List<RecipeUI>();
 		CraftingManager m_craftingManager;
 
@@ -33,10 +34,12 @@ namespace BeatRider
 			if (!m_craftingManager)
 				Debug.LogError("Add a Crafting Manager to the Game Controller");
 			PopulateRecipes(m_craftingManager.m_allRecipes);
+			m_lastFilterUsed = m_filterButtons[0];
 		}
 
 		public void Filter(FilterButton button)
 		{
+			m_lastFilterUsed = button;
 			foreach (FilterButton btn in m_filterButtons)
 			{
 				if (btn == button)
@@ -104,6 +107,7 @@ namespace BeatRider
 
 		public void UpdateRecipes()
 		{
+			Filter(m_lastFilterUsed);
 			// look for each recipe in the manager to decide to show the recipe or not
 			foreach (int num in m_craftingManager.m_RecipesCompleated)
 			{
