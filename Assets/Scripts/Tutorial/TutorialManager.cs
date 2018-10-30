@@ -4,18 +4,29 @@ using UnityEngine;
 
 public class TutorialManager : MonoBehaviour {
 
-	public GameObject m_tutorialPrefab;
-	GameObject m_currentTutorial;
+	public GameObject m_tutorialGameObject;
+
+	GameObject[] m_notes;       // must be replaced when reinitilized
+
+	private void Start()
+	{
+		m_tutorialGameObject.SetActive(false);
+	}
+
+	void Initialize()
+	{
+		m_tutorialGameObject.SetActive(true);
+		m_tutorialGameObject.transform.position = Vector3.zero;
+		foreach (GameObject n in m_notes)
+			n.SetActive(true);
+	}
 
 	public void StartTutorial()
 	{
-		if (m_currentTutorial)
-			Destroy(m_currentTutorial);
-		m_currentTutorial = Instantiate(m_tutorialPrefab);
+		Initialize();
 	}
 	public void EndTutorial()
 	{
-		if (m_currentTutorial)
-			Destroy(m_currentTutorial);
+		m_tutorialGameObject.SetActive(false);
 	}
 }
