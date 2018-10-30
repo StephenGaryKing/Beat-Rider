@@ -2,21 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// Keeps track of how many times a part has been customised
-/// </summary>
-public class CustomiseAchievement : Achievement
+namespace BeatRider
 {
-	public PartToCustomise m_partType;
-
-	void Start()
+	/// <summary>
+	/// Keeps track of how many times a part has been customised
+	/// </summary>
+	public class CustomiseAchievement : Achievement
 	{
-		AchievementManager.onCustomisation.AddListener(OnEvent);
-	}
+		public PartToCustomise m_partType;
 
-	protected override void OnEvent(string val)
-	{
-		if (val.Equals(m_partType.ToString()))
-			Increment();
+		void Start()
+		{
+			AchievementManager.onCustomisation.AddListener(OnEvent);
+		}
+
+		protected override void OnEvent(string val)
+		{
+			if (val.Equals(m_partType.ToString()))
+				Increment();
+		}
 	}
 }
