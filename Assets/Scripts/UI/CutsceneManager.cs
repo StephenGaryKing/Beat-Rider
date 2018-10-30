@@ -91,26 +91,29 @@ namespace BeatRider
 
 		public void MoveCamera(Cutscene cutscene, bool moveIn)
 		{
-			CameraMover mover = new CameraMover();
-			mover.Start();
-
-			GameObject cutsceneCam = GameObject.FindGameObjectWithTag(cutscene.m_cameraTagToUse);
-			if (cutsceneCam)
+			if (cutscene.m_cameraTagToUse.Length > 0)
 			{
-				if (moveIn)
+				CameraMover mover = new CameraMover();
+				mover.Start();
+
+				GameObject cutsceneCam = GameObject.FindGameObjectWithTag(cutscene.m_cameraTagToUse);
+				if (cutsceneCam)
 				{
-					mover.m_targetTransform = cutsceneCam.transform;
-					mover.m_cinematicMovementEnabled = false;
+					if (moveIn)
+					{
+						mover.m_targetTransform = cutsceneCam.transform;
+						mover.m_cinematicMovementEnabled = false;
+					}
+					else
+					{
+						mover.m_targetTransform = m_defaultCamerPosition;
+						mover.m_cinematicMovementEnabled = true;
+					}
+					mover.MoveToPos();
 				}
 				else
-				{
-					mover.m_targetTransform = m_defaultCamerPosition;
-					mover.m_cinematicMovementEnabled = true;
-				}
-				mover.MoveToPos();
+					Debug.LogError("There is no camera with the tag " + cutscene.m_cameraTagToUse);
 			}
-			else
-				Debug.LogError("There is no camera with the tag " + cutscene.m_cameraTagToUse);
 		}
 
 		/// <summary>
