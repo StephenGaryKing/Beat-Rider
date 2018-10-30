@@ -1,27 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace BeatRider
 {
-	public class TutorialPausePoint : MonoBehaviour
-	{
+	[System.Serializable]
+	public class PauseEvent : UnityEvent { }
 
+	public class TutorialPausePoint : MonoBehaviour
+	{ 
 		public Cutscene m_cutsceneToShow;
 		public KeyCode[] m_continueKeys;
+		public float m_timescale = 0;
+
+		[SerializeField]
+		public PauseEvent onPause;
 
 		CutsceneManager m_cutsceneManager;
 
 		private void OnTriggerEnter(Collider other)
 		{
-			Time.timeScale = 0;
-			m_cutsceneManager.PlayCutscene(m_cutsceneToShow);
+			if (m_cutsceneToShow)
+			{
+				Time.timeScale = m_timescale;
+				m_cutsceneManager.PlayCutscene(m_cutsceneToShow);
 
-			float timeToWait = 0;
-			foreach (SpeachBubble sb in m_cutsceneToShow.m_conversation)
-				timeToWait += sb.waitTime;
-			if (timeToWait > 0)
-				Invoke("ContinueTutorial", timeToWait);
+				float timeToWait = 0;
+				foreach (SpeachBubble sb in m_cutsceneToShow.m_conversation)
+					timeToWait += sb.waitTime;
+				if (timeToWait > 0)
+					Invoke("ContinueTutorial", timeToWait);
+			}
 		}
 
 		private void Update()
