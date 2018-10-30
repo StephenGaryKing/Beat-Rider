@@ -33,6 +33,7 @@ namespace BeatRider
 			if (m_challengeManager.m_RecipesCompleated.Count > 0)
 			{
 				//NOTE: maybe implement a roulett wheel to allow for rarity
+				//NOTE: only randomize from pool currently used for the filtered recipes
 				int rand = Random.Range(0, m_challengeManager.m_RecipesCompleated.Count);
 				m_gemIndexNumber = m_challengeManager.m_RecipesCompleated[rand];
 			}

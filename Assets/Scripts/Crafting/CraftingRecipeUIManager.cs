@@ -25,7 +25,6 @@ namespace BeatRider
 		public FilterButton[] m_filterButtons;
 
 		List<RecipeUI> m_recipeUIs = new List<RecipeUI>();
-		int m_numOfIngredients = 2;
 		CraftingManager m_craftingManager;
 
 		// Use this for initialization
@@ -99,7 +98,7 @@ namespace BeatRider
 		void SetSizeFilter(int numOfIngredients)
 		{
 			Debug.Log("Now looking at recipes with a size of " + numOfIngredients);
-			m_numOfIngredients = numOfIngredients;
+			m_craftingManager.m_filterNumber = numOfIngredients;
 			UpdateRecipes();
 		}
 
@@ -132,7 +131,7 @@ namespace BeatRider
 			// Show the relevent sized recipes
 			foreach (RecipeUI ui in m_recipeUIs)
 			{
-				if (ui.Recipe.m_recipe.GemsToPickup.Length == m_numOfIngredients)
+				if (ui.Recipe.m_recipe.GemsToPickup.Length == m_craftingManager.m_filterNumber)
 					ui.Root.SetActive(true);
 				else
 					ui.Root.SetActive(false);
