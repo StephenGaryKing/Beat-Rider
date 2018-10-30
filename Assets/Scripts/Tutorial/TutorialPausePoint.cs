@@ -21,6 +21,7 @@ namespace BeatRider
 
 		private void OnTriggerEnter(Collider other)
 		{
+			onPause.Invoke();
 			if (m_cutsceneToShow)
 			{
 				Time.timeScale = m_timescale;
@@ -47,7 +48,7 @@ namespace BeatRider
 		}
 
 		// Use this for initialization
-		void Start()
+		void Awake()
 		{
 			m_cutsceneManager = FindObjectOfType<CutsceneManager>();
 		}

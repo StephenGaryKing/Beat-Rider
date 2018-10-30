@@ -3,63 +3,79 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class AchievementManager : MonoBehaviour {
-
-	[System.Serializable]
-	public class GameplayEvent : UnityEvent<string> { }
-
-	public static GameplayEvent onCraft = new GameplayEvent();
-	public static GameplayEvent onUnlock = new GameplayEvent();
-	public static GameplayEvent onLevelPercent = new GameplayEvent();
-	public static GameplayEvent onTallyPickups = new GameplayEvent();
-	public static GameplayEvent onCustomisation = new GameplayEvent();
-	public static GameplayEvent onCustomGameplayEvent = new GameplayEvent();
-
-	[HideInInspector]public Achievement[] m_Achievements;
-
-	private void Start()
+namespace BeatRider
+{
+	public class AchievementManager : MonoBehaviour
 	{
-		m_Achievements = GetComponents<Achievement>();
-	}
 
-	public static void SaveAchievements()
-	{
-		// get all the achievements on this object and serialize them
-	}
+		[System.Serializable]
+		public class GameplayEvent : UnityEvent<string> { }
 
-	public static void LoadAchievements()
-	{
-		// deserialize the saved data and apply it to the achievements on this object
-	}
+		public string m_saveFileName = "AchievementProgress";
 
-	public static void OnCraft(string val)
-	{
-		onCraft.Invoke(val);
-	}
+		public static GameplayEvent onCraft = new GameplayEvent();
+		public static GameplayEvent onUnlock = new GameplayEvent();
+		public static GameplayEvent onLevelPercent = new GameplayEvent();
+		public static GameplayEvent onTallyPickups = new GameplayEvent();
+		public static GameplayEvent onCustomisation = new GameplayEvent();
+		public static GameplayEvent onCustomGameplayEvent = new GameplayEvent();
 
-	public static void OnUnlock(string val)
-	{
-		onUnlock.Invoke(val);
-	}
+		[HideInInspector] public Achievement[] m_achievements;
 
-	public static void OnCustomisation(string val)
-	{
-		onCustomisation.Invoke(val);
-	}
+		private void Start()
+		{
+			m_achievements = GetComponents<Achievement>();
+		}
 
-	public static void OnLevelPercent(string val)
-	{
-		onLevelPercent.Invoke(val);
-	}
+		public void SaveAchievements()
+		{
+			List<int> m_data = new List<int>();
+			// get all the achievements on this object and serialize them
+			foreach (Achievement a in m_achievements)
+			{
+				m_data.Add(a.CurrentValue);
+			}
+			SaveFile saver = new SaveFile();
+			saver.AddList(m_data);
+			saver.Save(m_saveFileName);
+		}
 
-	public static void OnTallyPickups(string val)
-	{
-		onTallyPickups.Invoke(val);
-	}
+		public void LoadAchievements()
+		{
+			// deserialize the saved data and apply it to the achievements on this object
+			SaveFile loader = new SaveFile();
+			loader.Load(m_saveFileName);
+		}
+
+		public static void OnCraft(string val)
+		{
+			onCraft.Invoke(val);
+		}
+
+		public static void OnUnlock(string val)
+		{
+			onUnlock.Invoke(val);
+		}
+
+		public static void OnCustomisation(string val)
+		{
+			onCustomisation.Invoke(val);
+		}
+
+		public static void OnLevelPercent(string val)
+		{
+			onLevelPercent.Invoke(val);
+		}
+
+		public static void OnTallyPickups(string val)
+		{
+			onTallyPickups.Invoke(val);
+		}
 
 
-	public static void OnCustomGameplayEvent(string val)
-	{
-		onCustomGameplayEvent.Invoke(val);
+		public static void OnCustomGameplayEvent(string val)
+		{
+			onCustomGameplayEvent.Invoke(val);
+		}
 	}
 }
