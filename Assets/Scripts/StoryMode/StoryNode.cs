@@ -27,7 +27,8 @@ namespace BeatRider
 
 		public void Awake()
 		{
-			m_cutsceneManager = FindObjectOfType<CutsceneManager>();
+            m_storyModeManager = FindObjectOfType<StoryModeManager>();
+            m_cutsceneManager = FindObjectOfType<CutsceneManager>();
 			m_image = GetComponent<Image>();
 			m_image.sprite = m_inactiveImage;
 			if (m_parent == null)
