@@ -104,6 +104,8 @@ namespace MusicalGameplayMechanics
 
 		void Update()
 		{
+			if (Input.GetKeyDown(KeyCode.End))
+				_audioSource.Stop();
 			if (m_loadIcon != null)
 			{
 				if (m_spectralFluxSaver.m_loading)
@@ -268,11 +270,13 @@ namespace MusicalGameplayMechanics
 			}
 			else
 			{
-				m_menuMusicManager.PlayRandomSong();
 				if (m_cutsceneToPlayAtEnd)
 					m_cutsceneManager.PlayCutscene(m_cutsceneToPlayAtEnd);
 				else
+				{
+					m_menuMusicManager.PlayRandomSong();
 					m_freeFlowMenuTransition.PlayTransitions();
+				}
 			}
 			ResetValues();
 		}
