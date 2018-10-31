@@ -63,6 +63,7 @@ public class MenuTransition : MonoBehaviour {
 				{
                     tran.ObjectToAnimate.Obj.transform.localPosition = localPos;
                     tran.ObjectToAnimate.Obj.transform.localScale = tran.ObjectToAnimate.TargetScale;
+					TweenEnd();
 				}
 				else
 				{
@@ -75,7 +76,6 @@ public class MenuTransition : MonoBehaviour {
 					Tween.LocalScale(tran.ObjectToAnimate.Obj.transform, tran.ObjectToAnimate.TargetScale, tran.ObjectToAnimate.Time, 0, TweenCurveHelper.GetCurve(tran.ObjectToAnimate.CurveType), Tween.LoopType.None, null, null, false);
 				}
 			}
-            TweenEnd();
         }
 	}
 
