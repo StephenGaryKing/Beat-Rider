@@ -63,7 +63,6 @@ public class MenuTransition : MonoBehaviour {
 				{
                     tran.ObjectToAnimate.Obj.transform.localPosition = localPos;
                     tran.ObjectToAnimate.Obj.transform.localScale = tran.ObjectToAnimate.TargetScale;
-					TweenEnd();
 				}
 				else
 				{
@@ -77,7 +76,8 @@ public class MenuTransition : MonoBehaviour {
 				}
 			}
         }
-	}
+        TweenEnd();
+    }
 
     public void PlayInTransitions()
 	{
