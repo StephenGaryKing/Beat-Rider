@@ -17,7 +17,7 @@ MonoBehaviour:
   m_spawnHeightOffset: -10
   m_trackWidth: 50
   m_unitSize: 200
-  m_numOfSceneryLayers: 2
+  m_numOfSceneryLayers: 1
   m_sceneryElements:
   - m_prefab: {fileID: 1314613720498082, guid: 1993de0fdb63033448bdfa88cdab3c2c, type: 2}
     spawnChanceWeight: 1
@@ -28,5 +28,23 @@ MonoBehaviour:
   - m_prefab: {fileID: 1491517014350110, guid: b0eb90e4e955ff24983f1bee7848de66, type: 2}
     spawnChanceWeight: 1
     randomScaleVariance: {x: 1, y: 1}
+  - m_prefab: {fileID: 1176818471960532, guid: 6f4f26aac7e14714ebb79f7a48ca8550, type: 2}
+    spawnChanceWeight: 1
+    randomScaleVariance: {x: 6, y: 5}
+  - m_prefab: {fileID: 1213903599575632, guid: e2db6c0aa2c3da94dbe4021efa56d84c, type: 2}
+    spawnChanceWeight: 5
+    randomScaleVariance: {x: 15, y: 10}
+  - m_prefab: {fileID: 1218831409143436, guid: 0339e0393aaf7c64789a9cb983974d74, type: 2}
+    spawnChanceWeight: 1
+    randomScaleVariance: {x: 5, y: 5}
+  - m_prefab: {fileID: 1650288222022050, guid: 2165dad4281d3aa40ae7a83dabdc4b72, type: 2}
+    spawnChanceWeight: 1
+    randomScaleVariance: {x: 2, y: 2}
+  - m_prefab: {fileID: 1381700508634090, guid: c27ea4a72d7f089459e83ddb0b13e368, type: 2}
+    spawnChanceWeight: 5
+    randomScaleVariance: {x: 5, y: 5}
   m_travelTime: 10
   m_customPostProcess: {fileID: 0}
+  m_fogColour: {r: 0.6985294, g: 0.6985294, b: 0.6985294, a: 1}
+  m_fogStart: -400
+  m_fogEnd: 200
