@@ -1638,6 +1638,31 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: StartTutorial
       objectReference: {fileID: 0}
+    - target: {fileID: 114862529785102712, guid: c5fd2927e1a12c1488c8ac3006dcde37,
+        type: 2}
+      propertyPath: m_outTransitions.Array.data[0].ObjectToAnimate.Obj
+      value: 
+      objectReference: {fileID: 787288157}
+    - target: {fileID: 114862529785102712, guid: c5fd2927e1a12c1488c8ac3006dcde37,
+        type: 2}
+      propertyPath: m_outTransitions.Array.data[2].ObjectToAnimate.Obj
+      value: 
+      objectReference: {fileID: 1483734599}
+    - target: {fileID: 114862529785102712, guid: c5fd2927e1a12c1488c8ac3006dcde37,
+        type: 2}
+      propertyPath: m_outTransitions.Array.data[2].ObjectToAnimate.TargetScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114862529785102712, guid: c5fd2927e1a12c1488c8ac3006dcde37,
+        type: 2}
+      propertyPath: m_outTransitions.Array.data[2].ObjectToAnimate.TargetScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114862529785102712, guid: c5fd2927e1a12c1488c8ac3006dcde37,
+        type: 2}
+      propertyPath: m_outTransitions.Array.data[2].ObjectToAnimate.TargetScale.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c5fd2927e1a12c1488c8ac3006dcde37, type: 2}
   m_IsPrefabParent: 0
@@ -2608,6 +2633,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 749e74257f9c13a4abc53e50ab89c6cf, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &787288157 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1267410486787910, guid: c5fd2927e1a12c1488c8ac3006dcde37,
+    type: 2}
+  m_PrefabInternal: {fileID: 492973777}
 --- !u!114 &805459630 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114564668962263904, guid: b705cf485b45e964083a98ba5ed96199,
@@ -4223,7 +4253,7 @@ Prefab:
     - target: {fileID: 224288930717438444, guid: b1ecdeb2236dbf9409c47a59b4343ed0,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -45
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1401627100939630, guid: b1ecdeb2236dbf9409c47a59b4343ed0, type: 2}
       propertyPath: m_IsActive
@@ -5501,6 +5531,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114544719039471822, guid: 33cefd27a6206014bbaa0738c092085a,
+        type: 2}
+      propertyPath: onPause.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4697839282486714, guid: 33cefd27a6206014bbaa0738c092085a, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5541,6 +5576,36 @@ Prefab:
     - target: {fileID: 1316902854252646, guid: 33cefd27a6206014bbaa0738c092085a, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114544719039471822, guid: 33cefd27a6206014bbaa0738c092085a,
+        type: 2}
+      propertyPath: onPause.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114544719039471822, guid: 33cefd27a6206014bbaa0738c092085a,
+        type: 2}
+      propertyPath: onPause.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114544719039471822, guid: 33cefd27a6206014bbaa0738c092085a,
+        type: 2}
+      propertyPath: m_cutsceneToShow
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114544719039471822, guid: 33cefd27a6206014bbaa0738c092085a,
+        type: 2}
+      propertyPath: onPause.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1802138838}
+    - target: {fileID: 114544719039471822, guid: 33cefd27a6206014bbaa0738c092085a,
+        type: 2}
+      propertyPath: onPause.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayTransitions
+      objectReference: {fileID: 0}
+    - target: {fileID: 114544719039471822, guid: 33cefd27a6206014bbaa0738c092085a,
+        type: 2}
+      propertyPath: onPause.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 33cefd27a6206014bbaa0738c092085a, type: 2}
@@ -5603,6 +5668,45 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 72e22daf25562464d98370c2e10fa6ab, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &1802138836 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1042748263816648, guid: 33cefd27a6206014bbaa0738c092085a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1741461860}
+--- !u!114 &1802138838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1802138836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ab34897e65ec248bf1c01542651a0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_outTransitions:
+  - ObjectToToggleEnabled: {fileID: 0}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 0, y: 0, z: 0}
+      Time: 0
+      CurveType: 0
+  m_inTransitions:
+  - ObjectToToggleEnabled: {fileID: 716761717}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 0, y: 0, z: 0}
+      Time: 0
+      CurveType: 0
+  - ObjectToToggleEnabled: {fileID: 2057423453}
+    ObjectToAnimate:
+      Obj: {fileID: 1483734599}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 1, y: 1, z: 1}
+      Time: 0
+      CurveType: 0
 --- !u!1001 &1803084358
 Prefab:
   m_ObjectHideFlags: 0
