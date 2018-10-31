@@ -40,6 +40,7 @@ public class MenuMusicManager : MonoBehaviour {
 
 	public void PlayRandomSong()
 	{
+		Debug.Log("Playing Random Menu Music");
 		m_songShouldBePlaying = true;
 		int ran = Random.Range(0, m_songs.Length);
 		if (m_songs.Length > 1)
@@ -53,6 +54,7 @@ public class MenuMusicManager : MonoBehaviour {
 
 	public void StopSong()
 	{
+		Debug.Log("Stopping Menu Music");
 		m_songShouldBePlaying = false;
         if (m_source.isPlaying)
 		    m_source.Stop();
@@ -60,6 +62,7 @@ public class MenuMusicManager : MonoBehaviour {
 
 	public void PauseSong()
 	{
+		Debug.Log("Pausing Menu Music");
 		m_songShouldBePlaying = false;
 		if (m_source.isPlaying)
 			m_source.Pause();
@@ -67,6 +70,7 @@ public class MenuMusicManager : MonoBehaviour {
 
 	public void PlaySong()
 	{
+		Debug.Log("Playing Menu Music");
 		m_songShouldBePlaying = true;
 		m_source.Play();
 	}
