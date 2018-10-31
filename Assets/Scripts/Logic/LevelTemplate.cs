@@ -35,5 +35,12 @@ namespace BeatRider
 		public Color m_fogColour = Color.black;
 		public float m_fogStart = -2f;
 		public float m_fogEnd = 600f;
+
+		private void Awake()
+		{
+			// Disable custom post effect
+			if (m_customPostProcess)
+				m_customPostProcess.SetFloat("_IsEnabled", 0);
+		}
 	}
 }

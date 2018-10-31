@@ -178,6 +178,13 @@ namespace BeatRider
 			SetupLevel();
 		}
 
+		private void OnApplicationQuit()
+		{
+			// Disable custom post effect
+			if (m_levelTemplate.m_customPostProcess)
+				m_levelTemplate.m_customPostProcess.SetFloat("_IsEnabled", 0);
+		}
+
 		void SetupLevel()
 		{
 			// Apply Fog

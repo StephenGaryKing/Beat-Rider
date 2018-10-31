@@ -105,9 +105,13 @@ namespace BeatRider
 			UpdateRecipes();
 		}
 
-		public void UpdateRecipes()
+		public void RefreshWindow()
 		{
 			Filter(m_lastFilterUsed);
+		}
+
+		void UpdateRecipes()
+		{
 			// look for each recipe in the manager to decide to show the recipe or not
 			foreach (int num in m_craftingManager.m_RecipesCompleated)
 			{
