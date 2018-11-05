@@ -47,9 +47,9 @@ public class MenuMusicManager : MonoBehaviour {
 			while (ran == m_lastSongPlayed)
 				ran = Random.Range(0, m_songs.Length);
 
+		m_lastSongPlayed = ran;
 		m_source.clip = m_songs[ran];
 		m_source.Play();
-
 	}
 
 	public void StopSong()

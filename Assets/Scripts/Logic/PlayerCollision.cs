@@ -42,13 +42,7 @@ namespace BeatRider
 				m_targetFOV -= m_ambientSpeedDegradation;
 		}
 		
-		public void ResetSpeed()
-		{
-			m_targetFOV = m_minFOV;
-			m_floatingCamera.SnapFOV();
-		}
-
-		public void Die()
+		void Die()
 		{
 
 		}
@@ -56,6 +50,12 @@ namespace BeatRider
 		public void Revive()
 		{
 
+		}
+
+		public void ResetSpeed()
+		{
+			m_targetFOV = m_minFOV;
+			m_floatingCamera.SnapFOV();
 		}
 
 		void OnTriggerEnter(Collider other)
@@ -92,7 +92,7 @@ namespace BeatRider
 				else
 				{
 					Die();
-					FindObjectOfType<SongController>().StopSong(true);
+					m_songController.ActualStopSong(StopSongCondition.PlayerDead);
 				}
 				if (m_playerSoundEffects.m_hitObstical.soundToPlay)
 					m_playerSoundEffects.m_soundManager.PlaySound(m_playerSoundEffects.m_hitObstical);
