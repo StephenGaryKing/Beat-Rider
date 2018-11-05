@@ -17,12 +17,20 @@ namespace BeatRider
 		public Cutscene m_cutsceneToPlay;
 		public EndGameCondition m_EndGameCondition;
 		public bool m_unlocked = false;
+		public Text m_textBox;
+		[Multiline]
+		public string m_infoText;
 		bool m_unlockedLastFrame = false;
 
 		public virtual void Select()
 		{
 			m_cutsceneManager.PlayCutscene(m_cutsceneToPlay);
 			m_storyModeManager.InitializeConditions(this);
+		}
+
+		public void UpdateTextBox()
+		{
+			m_textBox.text = m_infoText;
 		}
 
 		public void Awake()
