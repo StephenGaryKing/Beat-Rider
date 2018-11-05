@@ -62,7 +62,7 @@ namespace BeatRider
 		{
 			if (other.CompareTag("Note"))
 			{
-				m_scoreBoardLogic.m_score += Mathf.RoundToInt(1 + (m_maxScoreMultiplier * m_FOVAmount));
+				m_scoreBoardLogic.PickupNote();
 				other.gameObject.SetActive(false);
 				other.GetComponent<ParticleCreationLogic>().SpawnParticle();
 				if (m_playerSoundEffects.m_pickupNote.soundToPlay)

@@ -185,9 +185,6 @@ namespace BeatRider
 							m_objectLists[i][j].gameObject.SetActive(true);
 
 							i = m_prefabsToSpawn.Count;
-
-							if (m_prefabsToSpawn[i].prefab.CompareTag("Note"))
-								m_scoreBoardLogic.m_totalAmountOfNotes++;
 						}
 					}
 				}

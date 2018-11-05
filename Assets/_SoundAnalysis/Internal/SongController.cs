@@ -173,6 +173,7 @@ namespace MusicalGameplayMechanics
 		{
 			if (m_bgThread == null && !m_songIsBeingPlayed)
 			{
+				m_scoreBoard.FindAllNotes(m_spectralFluxSaver.m_savedPasses);
 				//_audioSource.PlayDelayed(m_timeToLookAhead);        // Play the song that has been loaded with the delay specified (this delay must occur in order to correctly preemptively call events)
 				_audioSource.Play();
 				m_onFrontBufferDump.Invoke(m_spectralFluxSaver.m_savedPasses, 0);
@@ -192,19 +193,20 @@ namespace MusicalGameplayMechanics
 		{
 			StopCoroutine("UpdateListeners");
 			_audioSource.Stop();
+			m_songIsBeingPlayed = false;
 			switch (condition)
 			{
 				case (StopSongConditions.EndOfSong):
-
+					EndOfSong();
 					break;
 				case (StopSongConditions.PlayerDead):
-
+					PlayerDead();
 					break;
 				case (StopSongConditions.RestartSong):
-
+					RestartSong();
 					break;
 				case (StopSongConditions.ReturnToMenu):
-
+					ReturnToMenu();
 					break;
 			}
 			ResetValues();
