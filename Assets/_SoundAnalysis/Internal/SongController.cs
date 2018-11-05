@@ -175,7 +175,7 @@ namespace MusicalGameplayMechanics
 			}
 		}
 
-		public void StopSong(bool playerIsDead = false)
+		public void ActualStopSong(bool playerIsDead = false)
 		{
 			m_playerIsDead = playerIsDead;
             _audioSource.Stop();
