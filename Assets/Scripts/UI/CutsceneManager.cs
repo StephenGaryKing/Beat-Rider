@@ -151,7 +151,7 @@ namespace BeatRider
 				else
 				{
 					// wait for the specified amount of time in realtime to negate any pausing that may occur
-					yield return new WaitForSecondsRealtime(cs.m_conversation[m_speachBubbleNumber].waitTime);
+					yield return  new WaitForVoiceLineEnd(cs.m_conversation[m_speachBubbleNumber].waitTime, KeyCode.Space);
 					// go to the next speach bubble
 					m_speachBubbleNumber++;
 				}
