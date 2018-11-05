@@ -66,6 +66,9 @@ namespace BeatRider
 
 		GameObject m_activeSceneryContainer;
 		GameObject m_inactiveSceneryContainer;
+		GameObject m_tempActiveSceneryContainer;
+		GameObject m_tempInactiveSceneryContainer;
+
 		GameObject m_ground;
 
 		int m_numberOfSceneryElements;
@@ -156,7 +159,7 @@ namespace BeatRider
 		// Use this for initialization
 		void Start()
 		{
-			SetupLevel();
+			StartCoroutine(SetupLevelAsync());
 		}
 
 		LevelTemplate m_oldlevelTemplate;
@@ -173,9 +176,20 @@ namespace BeatRider
 
 		public void ChangeLevel(LevelTemplate newTemplate)
 		{
+			StartCoroutine(ChangeLevelAsync(newTemplate));
+		}
+
+		IEnumerator ChangeLevelAsync(LevelTemplate newTemplate)
+		{
+			Debug.Log("Change level Async");
 			m_levelTemplate = newTemplate;
-			ClearOldLevel();
-			SetupLevel();
+			StartCoroutine(ClearOldLevelAsync());
+			// wait till clear, setup new level
+			while (!c_levelClear)
+				yield return null;
+			StartCoroutine(SetupLevelAsync());
+			Destroy(m_tempActiveSceneryContainer);
+			Destroy(m_tempInactiveSceneryContainer);
 		}
 
 		private void OnApplicationQuit()
@@ -185,8 +199,9 @@ namespace BeatRider
 				m_levelTemplate.m_customPostProcess.SetFloat("_IsEnabled", 0);
 		}
 
-		void SetupLevel()
+		IEnumerator SetupLevelAsync()
 		{
+			Debug.Log("Setting up level Async");
 			// Apply Fog
 			RenderSettings.fogColor = m_levelTemplate.m_fogColour;
 			RenderSettings.fogStartDistance = m_levelTemplate.m_fogStart;
@@ -240,47 +255,68 @@ namespace BeatRider
 			m_inactiveSceneryContainer = new GameObject("Inactive Scenery");
 
 
-			// create a pool of objects
-			CreatePool();
+			// create a pool of objects A-sync
+			StartCoroutine(CreatePoolAsync());
+			while (!c_poolCreated)
+				yield return null;
 
 			// spawn the whole level at once to avoid the cascade of scenery elements
 			switch (m_levelTemplate.m_levelGenerationType)
 			{
 				case (LevelType.GRID):
 					for (int i = 0; i < m_numberOfSceneryElements / (m_levelTemplate.m_numOfSceneryLayers); i++)
+					{
 						CreateLayerOfLevel(i);
+						yield return null;
+					}
 					break;
 				case (LevelType.RANDOM):
 					for (int i = 0; i < m_numberOfSceneryElements; i++)
+					{ 
 						CreateLayerOfLevel(i);
+						yield return null;
+					}
 					break;
 				case (LevelType.CENTERED):
 					for (int i = 0; i < m_numberOfSceneryElements / (m_levelTemplate.m_numOfSceneryLayers); i++)
+					{ 
 						CreateLayerOfLevel(i);
+						yield return null;
+					}
 					break;
 			}
 		}
 
-		void ClearOldLevel()
+		bool c_levelClear;
+		IEnumerator ClearOldLevelAsync()
 		{
+			Debug.Log("Clearing level Async");
+			c_levelClear = false;
 			// Dissable custom post effect
 			if (m_oldlevelTemplate.m_customPostProcess)
 				m_oldlevelTemplate.m_customPostProcess.SetFloat("_IsEnabled", 0);
 
 			WipeObjects();
-			WipeScenery();
+			StartCoroutine(WipeSceneryAsync());
+			while (!c_sceneryClear)
+				yield return null;
 			Destroy(m_ground);
+			m_tempActiveSceneryContainer = m_activeSceneryContainer;
+			m_tempInactiveSceneryContainer = m_inactiveSceneryContainer;
 			Destroy(m_inactiveSceneryContainer);
 			Destroy(m_activeSceneryContainer);
 			m_activeSceneryElements.Clear();
 			m_inactiveSceneryElements.Clear();
+			c_levelClear = true;
 		}
 
+		bool c_poolCreated;
 		/// <summary>
 		/// Creates a pool of obects to be used in level generation. Stops constant Instantiation
 		/// </summary>
-		void CreatePool()
+		IEnumerator CreatePoolAsync()
 		{
+			c_poolCreated = false;
 			//add the values together then pick a random value via roulette wheels selection
 			RouletteWheel wheel = new RouletteWheel();
 			wheel.Init(m_levelTemplate.m_sceneryElements);
@@ -289,7 +325,7 @@ namespace BeatRider
 			// Give some wiggle room for spawning objects
 			switch (m_levelTemplate.m_levelGenerationType)
 			{
-				case (LevelType.GRID) :
+				case (LevelType.GRID):
 					elementsMultiplier = 16;
 					break;
 
@@ -302,8 +338,10 @@ namespace BeatRider
 					break;
 			}
 
+			Debug.Log("creating pool of size " + (m_numberOfSceneryElements * elementsMultiplier));
+
 			// Make a pool of objects to make each layer out of
-			for (int i = 0; i < m_numberOfSceneryElements * elementsMultiplier; i ++)
+			for (int i = 0; i < m_numberOfSceneryElements * elementsMultiplier; i++)
 			{
 				SceneryElement element = wheel.Spin();
 				GameObject go = Instantiate(element.m_prefab, null);
@@ -322,7 +360,12 @@ namespace BeatRider
 						mod.CreatePool();
 				}
 				m_inactiveSceneryElements.Add(go);
+				//yield return null;
 			}
+
+			Debug.Log("finished creating pool");
+			yield return null;
+			c_poolCreated = true;
 		}
 
 		public void WipeObjects()
@@ -331,18 +374,23 @@ namespace BeatRider
 				spawner.WipeObjects();
 		}
 
-		public void WipeScenery()
+		bool c_sceneryClear;
+		IEnumerator WipeSceneryAsync()
 		{
-			for(int i = 0; i < m_activeSceneryContainer.transform.childCount; i ++)
-				RemoveLayerOfLevel(m_activeSceneryContainer.transform.GetChild(0));
+			Debug.Log("Wipe Scenery Async");
+			c_sceneryClear = false;
+			for (int i = 0; i < m_activeSceneryContainer.transform.childCount; i++)
+			{
+				StartCoroutine(RemoveLayerOfLevelAsync(m_activeSceneryContainer.transform.GetChild(0)));
+				while (!c_layerRemoved)
+					yield return null;
+			}
+			c_sceneryClear = true;
 		}
 
-		/// <summary>
-		/// remove a layer of the level to be used later
-		/// </summary>
-		/// <param name="container"></param>
 		public void RemoveLayerOfLevel(Transform container)
 		{
+			c_layerRemoved = false;
 			// Unpack container and add parts back to the pool
 			while (container.childCount > 0)
 			{
@@ -352,7 +400,24 @@ namespace BeatRider
 				child.position = Vector3.zero;
 				m_inactiveSceneryElements.Add(child.gameObject);
 			}
-			Destroy(container.parent.gameObject);
+			c_layerRemoved = true;
+		}
+
+		bool c_layerRemoved;
+		IEnumerator RemoveLayerOfLevelAsync(Transform container)
+		{
+			c_layerRemoved = false;
+			// Unpack container and add parts back to the pool
+			while (container.childCount > 0)
+			{
+				Transform child = container.GetChild(container.childCount - 1);
+				child.SetParent(m_inactiveSceneryContainer.transform);
+				child.gameObject.SetActive(false);
+				child.position = Vector3.zero;
+				m_inactiveSceneryElements.Add(child.gameObject);
+				yield return null;
+			}
+			c_layerRemoved = true;
 		}
 
 		/// <summary>
@@ -527,7 +592,8 @@ namespace BeatRider
 			if (m_timer >= m_spawnInterval)
 			{
 				m_timer = 0;
-				CreateLayerOfLevel(0);
+				if (c_poolCreated)
+					CreateLayerOfLevel(0);
 			}
 		}
 	}
