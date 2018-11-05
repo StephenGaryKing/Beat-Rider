@@ -16,6 +16,14 @@ using UnityEditor;
 
 namespace MusicalGameplayMechanics
 {
+	public enum StopSongConditions
+	{
+		EndOfSong,
+		RestartSong,
+		PlayerDead,
+		ReturnToMenu
+	}
+
 	[System.Serializable]
 	public struct Pass
 	{
@@ -85,7 +93,6 @@ namespace MusicalGameplayMechanics
 		LevelGenerator m_levelGen;
 		[HideInInspector] public Cutscene m_cutsceneToPlayAtEnd;
 		CutsceneManager m_cutsceneManager;
-		bool m_playerIsDead = false;
 		MenuMusicManager m_menuMusicManager;
 
 		void Start()
@@ -175,16 +182,60 @@ namespace MusicalGameplayMechanics
 			}
 		}
 
-		public void ActualStopSong(bool playerIsDead = false)
+		[EnumAction(typeof(StopSongConditions))]
+		public void StopSong(int num)
 		{
-			m_playerIsDead = playerIsDead;
-            _audioSource.Stop();
+			ActualStopSong((StopSongConditions)num);
 		}
 
-		public void RestartSong()
+		public void ActualStopSong(StopSongConditions condition)
+		{
+			StopCoroutine("UpdateListeners");
+			_audioSource.Stop();
+			switch (condition)
+			{
+				case (StopSongConditions.EndOfSong):
+
+					break;
+				case (StopSongConditions.PlayerDead):
+
+					break;
+				case (StopSongConditions.RestartSong):
+
+					break;
+				case (StopSongConditions.ReturnToMenu):
+
+					break;
+			}
+			ResetValues();
+		}
+
+		void EndOfSong()
+		{
+			AchievementManager.OnTallyPickups("Final");
+			if (m_cutsceneToPlayAtEnd)
+				m_cutsceneManager.PlayCutscene(m_cutsceneToPlayAtEnd);
+			else
+			{
+				ReturnToMenu();
+			}
+		}
+
+		void PlayerDead()
+		{
+			m_playerDeathMenuTransition.PlayTransitions();
+		}
+
+		void RestartSong()
 		{
 			PlayAudio();
 			m_player.Revive();
+		}
+
+		void ReturnToMenu()
+		{
+			m_menuMusicManager.PlayRandomSong();
+			m_freeFlowMenuTransition.PlayTransitions();
 		}
 
 		/// <summary>
@@ -255,30 +306,7 @@ namespace MusicalGameplayMechanics
 				yield return new WaitForFixedUpdate();
 			}
 
-            // end song
-            EndSong();
-		}
-
-		void EndSong()
-		{
-			AchievementManager.OnTallyPickups("Final");
-			if (m_playerIsDead)
-			{
-				// death specific code
-				m_playerDeathMenuTransition.PlayTransitions();
-				m_playerIsDead = false;
-			}
-			else
-			{
-				if (m_cutsceneToPlayAtEnd)
-					m_cutsceneManager.PlayCutscene(m_cutsceneToPlayAtEnd);
-				else
-				{
-					m_menuMusicManager.PlayRandomSong();
-					m_freeFlowMenuTransition.PlayTransitions();
-				}
-			}
-			ResetValues();
+			ActualStopSong(StopSongConditions.EndOfSong);
 		}
 
 		/// <summary>

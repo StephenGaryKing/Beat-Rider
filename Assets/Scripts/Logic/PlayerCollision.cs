@@ -92,8 +92,7 @@ namespace BeatRider
 				else
 				{
 					Die();
-					m_songController.ActualStopSong(true);
-					//m_songController.ActualStopSong(StopSongCondition.PlayerDead);
+					m_songController.ActualStopSong(StopSongConditions.PlayerDead);
 				}
 				if (m_playerSoundEffects.m_hitObstical.soundToPlay)
 					m_playerSoundEffects.m_soundManager.PlaySound(m_playerSoundEffects.m_hitObstical);
