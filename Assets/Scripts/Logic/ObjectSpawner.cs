@@ -87,6 +87,8 @@ namespace BeatRider
 
 		public void SpawnDump(List<SavedPass> passes, int index)
 		{
+			int numberOfSpawns = 0;
+			Debug.Log(transform.name + " is performing spawn dump");
 			foreach (SavedPass pass in passes)
 			{
 				if (m_passToReactTo != "DEFAULT" && pass.name != m_passToReactTo)
@@ -95,7 +97,10 @@ namespace BeatRider
 				foreach (var data in pass.runtimeData)
 				{
 					if (data.Value.time / 10f >= m_secondsToLookAhead)
+					{
+						Debug.Log(numberOfSpawns + " objects were spawned by " + transform.name);
 						return;
+					}
 					// spawn object based on the time it occures in the song
 					if (m_reactToBeat && !data.Value.isPeak)
 						continue;
@@ -130,9 +135,11 @@ namespace BeatRider
 								while (m_objectLists[i][j].activeInHierarchy)
 									j++;
 
+								Debug.Log(pos.z);
 								m_objectLists[i][j].transform.position = pos;
 								m_objectLists[i][j].transform.rotation = Quaternion.identity;
 								m_objectLists[i][j].gameObject.SetActive(true);
+								numberOfSpawns++;
 
 								i = m_prefabsToSpawn.Count;
 							}
