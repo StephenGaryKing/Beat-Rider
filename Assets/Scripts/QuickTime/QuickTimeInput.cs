@@ -22,11 +22,14 @@ namespace BeatRider
 
 		private void Update()
 		{
+
+			/*
 			if (m_previouslyPressedKeys.Count > 0)
 			{
 				foreach (var key in m_previouslyPressedKeys)
 					Debug.Log(key.Key + " : " + key.Value);
 			}
+			*/
 			FetchKey();
 			DelKeys();
 		}
