@@ -21,7 +21,7 @@ namespace BeatRider
 		public GameObject m_descriptionTextPrefab;
 		public GameObject m_progressTextPrefab;
 		AchievementManager m_achievementManager;
-		List<AchievementUI> m_achievemntUIs;
+		List<AchievementUI> m_achievemntUIs = new List<AchievementUI>();
 
 		private void Start()
 		{
@@ -49,7 +49,7 @@ namespace BeatRider
 					newAchievementUI.TargetAchievement = a;
 
 					// create description display
-					GameObject descriptionText = Instantiate(m_progressTextPrefab, achievementObject.transform);
+					GameObject descriptionText = Instantiate(m_descriptionTextPrefab, achievementObject.transform);
 					newAchievementUI.Description = descriptionText.GetComponent<Text>();
 					newAchievementUI.Description.text = a.m_description;
 
@@ -59,7 +59,7 @@ namespace BeatRider
 					newAchievementUI.Progress.text = (newAchievementUI.TargetAchievement.CurrentValue + "/" + newAchievementUI.TargetAchievement.m_targetValue);
 
 					// create preview image
-					GameObject preview = new GameObject("Preview Image", typeof(RectTransform), typeof(Image));
+					GameObject preview = Instantiate(new GameObject("Preview Image", typeof(RectTransform), typeof(Image)), achievementObject.transform);
 					newAchievementUI.PreviewImage = preview.GetComponent<Image>();
 					newAchievementUI.PreviewImage.sprite = newAchievementUI.TargetAchievement.m_previewImage;
 

@@ -178,7 +178,7 @@ namespace MusicalGameplayMechanics
 				_audioSource.Play();
 				m_onFrontBufferDump.Invoke(m_spectralFluxSaver.m_savedPasses, 0);
 				Debug.Log("playing the song named " + _audioSource.clip.name);
-				StartCoroutine("UpdateListeners");
+				StartCoroutine(UpdateListeners());
 				m_playSongButton.interactable = false;
 			}
 		}
@@ -191,7 +191,8 @@ namespace MusicalGameplayMechanics
 
 		public void ActualStopSong(StopSongConditions condition)
 		{
-			StopCoroutine("UpdateListeners");
+			Debug.Log("stop");
+			StopAllCoroutines();
 			_audioSource.Stop();
 			m_songIsBeingPlayed = false;
 			switch (condition)

@@ -8,8 +8,6 @@ namespace BeatRider
 	[RequireComponent(typeof(PlayerSoundEffects))]
 	public class PlayerCollision : MonoBehaviour
 	{
-
-		ScoreBoardLogic m_scoreBoardLogic;
 		[SerializeField] float m_maxScoreMultiplier = 30;
 		public float m_maxZoomAmount = 6.43f;
 		[SerializeField] float m_FOVSmoothing = 0.1f;
@@ -22,17 +20,18 @@ namespace BeatRider
 		[HideInInspector] public Vector3 m_startingCameraPos;
 
 		PlayerSoundEffects m_playerSoundEffects;
+		QuickTimeInput m_quickTime;
 
 		SongController m_songController;
 
 		// Use this for initialization
 		void Start()
 		{
+			m_quickTime = GetComponent<QuickTimeInput>();
 			m_songController = FindObjectOfType<SongController>();
 			m_targetFOV = m_minFOV;
 			m_startingCameraPos = Camera.main.transform.position;
 			m_floatingCamera = FindObjectOfType<FloatingCameraLogic>();
-			m_scoreBoardLogic = FindObjectOfType<ScoreBoardLogic>();
 			m_playerSoundEffects = GetComponent<PlayerSoundEffects>();
 		}
 
@@ -62,12 +61,10 @@ namespace BeatRider
 		{
 			if (other.CompareTag("Note"))
 			{
-				m_scoreBoardLogic.PickupNote();
-				other.gameObject.SetActive(false);
-				other.GetComponent<ParticleCreationLogic>().SpawnParticle();
-				if (m_playerSoundEffects.m_pickupNote.soundToPlay)
-					m_playerSoundEffects.m_soundManager.PlaySound(m_playerSoundEffects.m_pickupNote);
-				AchievementManager.OnTallyPickups("Obsticle");
+				// get the number off the gem
+				int val = other.GetComponent<QuickTimeNote>().Val;
+				m_quickTime.StartCoroutine(m_quickTime.LookForKeyPress(val, other.gameObject));
+				
 				return;
 			}
 
@@ -78,6 +75,7 @@ namespace BeatRider
 					other.GetComponent<ParticleCreationLogic>().SpawnParticle();
 					if (m_playerSoundEffects.m_boost.soundToPlay)
 						m_playerSoundEffects.m_soundManager.PlaySound(m_playerSoundEffects.m_boost);
+					AchievementManager.OnTallyPickups(other.tag);
 					return;
 				}
 
@@ -98,7 +96,7 @@ namespace BeatRider
 					m_playerSoundEffects.m_soundManager.PlaySound(m_playerSoundEffects.m_hitObstical);
 				other.gameObject.SetActive(false);
 
-				AchievementManager.OnTallyPickups("Obsticle");
+				AchievementManager.OnTallyPickups(other.tag);
 				return;
 			}
 
@@ -108,7 +106,7 @@ namespace BeatRider
 				if (gl)
 					gl.PickupGem();
 				other.gameObject.SetActive(false);
-				AchievementManager.OnTallyPickups("Gem");
+				AchievementManager.OnTallyPickups(other.tag);
 			}
 		}
 	}

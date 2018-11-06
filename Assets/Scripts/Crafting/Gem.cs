@@ -8,7 +8,7 @@ public struct Recipe
 	public Gem[] GemsToPickup;
 }
 
-[CreateAssetMenu(fileName = "Challenge", menuName = "Beat Rider/Challenges/Gem")]
+[CreateAssetMenu(fileName = "Recipe", menuName = "Beat Rider/Crafting/Gem")]
 public class Gem : ScriptableObject {
 
 	public Recipe m_recipe;

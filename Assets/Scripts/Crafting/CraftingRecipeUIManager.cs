@@ -18,7 +18,8 @@ namespace BeatRider
 	/// </summary>
 	public class CraftingRecipeUIManager : MonoBehaviour {
 
-		public Sprite m_greyedOutGem;
+		public Sprite m_unknownGem;
+		public Sprite m_defaultGem;
 		public GameObject m_equalsSignPrefab;
 		public GameObject m_plusSignPrefab;
 		public GameObject m_recipeContainerPrefab;
@@ -68,16 +69,6 @@ namespace BeatRider
 					RecipeUI newRecipe;
 					newRecipe.Root = RecipeObject;
 
-                    // create product display
-                    GameObject prod = new GameObject("Product", typeof(RectTransform), typeof(Image));
-                    newRecipe.Product = Instantiate(prod, newRecipe.Root.transform).GetComponent<Image>();
-					newRecipe.Product.sprite = recipe.m_unlockable.m_icon;
-					UnlockableColour caster = recipe.m_unlockable as UnlockableColour;
-					if (caster)
-						newRecipe.Product.color = caster.m_colour;
-					// create equals
-					Instantiate(m_equalsSignPrefab, newRecipe.Root.transform);
-
 					// create ingredient displays
 					newRecipe.Ingredients = new Image[recipe.m_recipe.GemsToPickup.Length];
 					for (int i = 0; i < newRecipe.Ingredients.Length; i++)
@@ -85,12 +76,23 @@ namespace BeatRider
                         GameObject ingr = new GameObject("Ingredient " + i + 1, typeof(RectTransform), typeof(Image));
                         newRecipe.Ingredients[i] = Instantiate(ingr, newRecipe.Root.transform).GetComponent<Image>();
 						newRecipe.Ingredients[i].rectTransform.parent = newRecipe.Root.transform;
-						newRecipe.Ingredients[i].sprite = m_greyedOutGem;
+						newRecipe.Ingredients[i].sprite = m_defaultGem;
 						// create plus
 						if (i != newRecipe.Ingredients.Length - 1)
 							Instantiate(m_plusSignPrefab, newRecipe.Root.transform);
 
 					}
+
+					// create equals
+					Instantiate(m_equalsSignPrefab, newRecipe.Root.transform);
+
+					// create product display
+					GameObject prod = new GameObject("Product", typeof(RectTransform), typeof(Image));
+					newRecipe.Product = Instantiate(prod, newRecipe.Root.transform).GetComponent<Image>();
+					newRecipe.Product.sprite = recipe.m_unlockable.m_icon;
+					UnlockableColour caster = recipe.m_unlockable as UnlockableColour;
+					if (caster)
+						newRecipe.Product.color = caster.m_colour;
 
 					newRecipe.Recipe = recipe;
 					m_recipeUIs.Add(newRecipe);
@@ -131,7 +133,7 @@ namespace BeatRider
 								ui.Ingredients[i].color = caster.m_colour;
 						}
 						else
-							ui.Ingredients[i].sprite = m_greyedOutGem;
+							ui.Ingredients[i].sprite = m_unknownGem;
 					}
 				}
 			}
