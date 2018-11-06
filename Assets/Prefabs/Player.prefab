@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 114584951406598992}
   - component: {fileID: 114880165130541552}
   - component: {fileID: 114567397056675076}
+  - component: {fileID: 114879098487705112}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1112,6 +1113,7 @@ MonoBehaviour:
   m_bounceAmount: 15
   m_tiltAmount: 0.1
   m_tiltSpeed: 0.2
+  m_fixedLaneMovement: 1
 --- !u!114 &114567397056675076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1138,15 +1140,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_boost:
-    soundToPlay: {fileID: 8300000, guid: 15b16b59a53bb9443b58b9834b8e1943, type: 3}
+    soundToPlay: {fileID: 8300000, guid: bca3019ee8dc3834899b98d9b4ca5395, type: 3}
     volume: 1
   m_pickupNote:
-    soundToPlay: {fileID: 8300000, guid: 14652ebf3908ddb4e9030a2a2c138641, type: 3}
+    soundToPlay: {fileID: 8300000, guid: 2621fcd13f59eb84095b9eb0be3aa125, type: 3}
     volume: 0.2
   m_hitObstical:
-    soundToPlay: {fileID: 8300000, guid: 7328c159409409849bf0cf659cc168ae, type: 3}
+    soundToPlay: {fileID: 8300000, guid: 5c08e616c791e6f4081e884dee6f15e3, type: 3}
     volume: 0.557
   m_soundManager: {fileID: 0}
+--- !u!114 &114879098487705112
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1394093755142130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b52726ae875c63c4e9da1f3bb2c05c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_trail: {fileID: 0}
+  m_body: {fileID: 23027081202301900}
+  m_highlightBrightness: 4
 --- !u!114 &114880165130541552
 MonoBehaviour:
   m_ObjectHideFlags: 1
