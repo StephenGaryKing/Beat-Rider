@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ecd9c3a0eb7d32439254f332009b63a, type: 3}
+  m_Name: Indigo
+  m_EditorClassIdentifier: 
+  m_recipe:
+    GemsToPickup:
+    - {fileID: 11400000, guid: d86e2c178d01cba45a2565686a03f50f, type: 2}
+    - {fileID: 11400000, guid: e6e0c40ed487b2749907adddacd8f8f6, type: 2}
+    - {fileID: 11400000, guid: 4938d4fdeca4ef44c8660e1d1daf738a, type: 2}
+    - {fileID: 11400000, guid: 8b900cf9aa08a2d4690b8ca420f4bbfa, type: 2}
+  m_unlockable: {fileID: 11400000, guid: 8f54ef2718634eb43adb6b747c4af54a, type: 2}
+  m_material: {fileID: 2100000, guid: 1e37c0e9c429d4748b672ecf46941336, type: 2}

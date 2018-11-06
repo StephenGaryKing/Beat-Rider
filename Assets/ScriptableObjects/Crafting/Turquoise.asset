@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ecd9c3a0eb7d32439254f332009b63a, type: 3}
+  m_Name: Turquoise
+  m_EditorClassIdentifier: 
+  m_recipe:
+    GemsToPickup:
+    - {fileID: 11400000, guid: 686b28920cde08247a88229c2a3d5ad2, type: 2}
+    - {fileID: 11400000, guid: 7b7752869efc9714cb4587c6735db398, type: 2}
+    - {fileID: 11400000, guid: 8b900cf9aa08a2d4690b8ca420f4bbfa, type: 2}
+    - {fileID: 11400000, guid: ceef023c3fdd90941aecf597466cbab9, type: 2}
+  m_unlockable: {fileID: 11400000, guid: be3f177e14ff9374c8d00f149b07215a, type: 2}
+  m_material: {fileID: 2100000, guid: 0c9d3ae3be6f2294781d02dfd6127d14, type: 2}

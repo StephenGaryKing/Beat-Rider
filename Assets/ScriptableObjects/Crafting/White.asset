@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ecd9c3a0eb7d32439254f332009b63a, type: 3}
+  m_Name: White
+  m_EditorClassIdentifier: 
+  m_recipe:
+    GemsToPickup:
+    - {fileID: 11400000, guid: 8b900cf9aa08a2d4690b8ca420f4bbfa, type: 2}
+    - {fileID: 11400000, guid: afaab9f9eb3f2cc4f8862ea4efd35d20, type: 2}
+    - {fileID: 11400000, guid: ceef023c3fdd90941aecf597466cbab9, type: 2}
+  m_unlockable: {fileID: 11400000, guid: a43a640b0cdc9c642a07db80e0386983, type: 2}
+  m_material: {fileID: 2100000, guid: 91dc65337245da540a97c1beb2fdc14c, type: 2}
