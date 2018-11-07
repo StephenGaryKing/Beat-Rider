@@ -789,7 +789,9 @@ MonoBehaviour:
   m_EndGameCondition: 0
   m_unlocked: 1
   m_textBox: {fileID: 1408513485}
-  m_infoText: LEVEL 1 (CITY)
+  m_infoText: 'LEVEL 1 (CITY)
+
+    Beat Rider receives a special mission...'
 --- !u!114 &51589882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1648,6 +1650,7 @@ MonoBehaviour:
   m_pauseMenu: {fileID: 11195485}
   m_playIcon: {fileID: 1361862248}
   m_pauseIcon: {fileID: 1853172552}
+  m_difficulty: 0
 --- !u!114 &72358953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2984,7 +2987,7 @@ GameObject:
   - component: {fileID: 133191108}
   - component: {fileID: 133191107}
   m_Layer: 5
-  m_Name: Node 4 (Groupless)
+  m_Name: Node 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3028,7 +3031,9 @@ MonoBehaviour:
   m_EndGameCondition: 1
   m_unlocked: 0
   m_textBox: {fileID: 1408513485}
-  m_infoText: Test Text
+  m_infoText: 'LEVEL FOUR (DEEP SEA)
+
+    3 Incoming calls...unusual.'
 --- !u!114 &133191107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3669,8 +3674,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 355411981}
   m_HandleRect: {fileID: 355411980}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 0.9999987
+  m_Value: 1
+  m_Size: 0
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7146,14 +7151,14 @@ MonoBehaviour:
       Time: 0
       CurveType: 0
   m_inTransitions:
-  - ObjectToToggleEnabled: {fileID: 0}
+  - ObjectToToggleEnabled: {fileID: 1513613006}
     ObjectToAnimate:
       Obj: {fileID: 0}
       TargetPosition: {x: 0, y: 287, z: 0}
       TargetScale: {x: 11, y: 11, z: 1}
       Time: 0.23
       CurveType: 5
-  - ObjectToToggleEnabled: {fileID: 0}
+  - ObjectToToggleEnabled: {fileID: 2024368371}
     ObjectToAnimate:
       Obj: {fileID: 0}
       TargetPosition: {x: 0, y: 0, z: 0}
@@ -7904,7 +7909,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000024167724, y: 0.000879625}
+  m_AnchoredPosition: {x: -0.000024167724, y: 0.000048238442}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &433587879
@@ -10242,9 +10247,9 @@ MonoBehaviour:
   m_EndGameCondition: 0
   m_unlocked: 0
   m_textBox: {fileID: 1408513485}
-  m_infoText: 'Test Text Node 2
+  m_infoText: 'LEVEL 2 (THE CANYONS)
 
-'
+    Two incoming calls.'
 --- !u!114 &607878246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11108,7 +11113,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1168380867}
   m_HandleRect: {fileID: 1168380866}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 0.9999987
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -19237,7 +19242,7 @@ Prefab:
     - target: {fileID: 224288930717438444, guid: b1ecdeb2236dbf9409c47a59b4343ed0,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -45
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1401627100939630, guid: b1ecdeb2236dbf9409c47a59b4343ed0, type: 2}
       propertyPath: m_IsActive
@@ -19364,7 +19369,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000685057}
+  m_AnchoredPosition: {x: 0, y: 0.00046761928}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1457668266
@@ -19978,7 +19983,9 @@ MonoBehaviour:
   m_EndGameCondition: 0
   m_unlocked: 0
   m_textBox: {fileID: 1408513485}
-  m_infoText: Test Text
+  m_infoText: 'LEVEL 3 (NIGHTSHADE FOREST)
+
+    2 incoming calls. Business as usual...'
 --- !u!114 &1513251151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25051,7 +25058,9 @@ MonoBehaviour:
   m_EndGameCondition: 0
   m_unlocked: 0
   m_textBox: {fileID: 1408513485}
-  m_infoText: Test Text
+  m_infoText: 'LEVEL FOUR (DEEP SEA)
+
+    3 Incoming calls...unusual.'
 --- !u!114 &1789966057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27452,7 +27461,9 @@ MonoBehaviour:
   m_EndGameCondition: 0
   m_unlocked: 0
   m_textBox: {fileID: 1408513485}
-  m_infoText: Test Text
+  m_infoText: 'LEVEL 3 (NIGHTSHADE FOREST)
+
+    Beat Rider receives an update on his mission...'
 --- !u!114 &1984534452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28194,7 +28205,9 @@ MonoBehaviour:
   m_EndGameCondition: 1
   m_unlocked: 0
   m_textBox: {fileID: 1408513485}
-  m_infoText: Test Text
+  m_infoText: 'LEVEL 3 (NIGHTSHADE FOREST)
+
+    Beat Rider receives a concerning call from his wife...'
 --- !u!114 &2037116398
 MonoBehaviour:
   m_ObjectHideFlags: 0
