@@ -24,8 +24,11 @@ namespace BeatRider
 
 		public virtual void Select()
 		{
-			m_cutsceneManager.PlayCutscene(m_cutsceneToPlay);
-			m_storyModeManager.InitializeConditions(this);
+			if (m_unlocked)
+			{
+				m_cutsceneManager.PlayCutscene(m_cutsceneToPlay);
+				m_storyModeManager.InitializeConditions(this);
+			}
 		}
 
 		public void UpdateTextBox()
