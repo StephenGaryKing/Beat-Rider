@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using MusicalGameplayMechanics;
 
+public enum Difficulty
+{
+	EASY,
+	MEDUIM,
+	HARD
+}
+
 public class GameController : MonoBehaviour {
 
     public SongController songcontroller;		// used when pausing the song
@@ -11,7 +18,20 @@ public class GameController : MonoBehaviour {
     [SerializeField] GameObject m_pauseMenu;
     [SerializeField] GameObject m_playIcon;
     [SerializeField] GameObject m_pauseIcon;
+
+	public Difficulty m_difficulty;
 	
+	[EnumAction(typeof(Difficulty))]
+	public void ChangeDifficulty(int diff)
+	{
+		RealChangeDifficulty((Difficulty)diff);
+	}
+
+	public void RealChangeDifficulty(Difficulty diff)
+	{
+		m_difficulty = diff;
+	}
+
 	// Update is called once per frame
 	void Update () {
         CursorControl();
