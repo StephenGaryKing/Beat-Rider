@@ -26,9 +26,8 @@ namespace BeatRider
 			}
 			if (num > 100000)
 				Debug.LogError("WARNING! \nThe object named " + transform.name + " threw an over 100% error... Check your \"Prefabs To Spawn\" chances");
-			_songController = FindObjectOfType<SongController>();
-			_songController.m_onEarlyMusicIsPlaying.AddListener(SpawnObject);
-			_songController.m_onFrontBufferDump.AddListener(SpawnDump);
+			SongController.m_onEarlyMusicIsPlaying.AddListener(SpawnObject);
+			SongController.m_onFrontBufferDump.AddListener(SpawnDump);
 
 			CreatePool();
 		}
@@ -42,7 +41,7 @@ namespace BeatRider
 		{
 			m_objectSpeed = speed;
 			m_secondsToLookAhead = lookAheadTime;
-			_songController.m_timeToLookAhead = lookAheadTime;
+			SongController.m_timeToLookAhead = lookAheadTime;
 			//set the speed of all the objects
 			foreach(var list in m_objectLists)
 				foreach(var obj in list)

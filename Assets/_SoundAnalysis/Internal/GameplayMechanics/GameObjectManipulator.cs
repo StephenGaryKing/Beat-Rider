@@ -9,7 +9,6 @@ namespace MusicalGameplayMechanics
 	/// </summary>
 	public abstract class GameObjectManipulator : MonoBehaviour
 	{
-		SongController _songController;
 
 		// used to find what the maxVal and minVal should be
 		[Header("Debug")]
@@ -34,8 +33,8 @@ namespace MusicalGameplayMechanics
 		// Use this for initialization
 		protected virtual void Start()
 		{
-			_songController = FindObjectOfType<SongController>();
-			_songController.m_onMusicIsPlaying.AddListener(ManipulateObject);
+			//_songController = FindObjectOfType<SongController>();
+			SongController.m_onMusicIsPlaying.AddListener(ManipulateObject);
 		}
 
 		/// <summary>

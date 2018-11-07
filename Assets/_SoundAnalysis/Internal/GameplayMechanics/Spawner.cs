@@ -27,7 +27,6 @@ namespace MusicalGameplayMechanics
 	/// </summary>
 	public class Spawner : MonoBehaviour
 	{
-		protected SongController _songController;
 		public List<SpawnableObject> m_prefabsToSpawn;
 
 		// What to react to
@@ -50,8 +49,7 @@ namespace MusicalGameplayMechanics
 			Debug.Log(num);
 			if (num > 1000000)
 				Debug.LogError("WARNING! \nThe object named " + transform.name + " threw an over 100% error... \nCheck your Prefabs To Spawn chances" );
-			_songController = FindObjectOfType<SongController>();
-			_songController.m_onEarlyMusicIsPlaying.AddListener(SpawnObject);
+			SongController.m_onEarlyMusicIsPlaying.AddListener(SpawnObject);
 		}
 
 		/// <summary>

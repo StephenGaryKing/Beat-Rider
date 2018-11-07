@@ -20,8 +20,6 @@ namespace MusicalGameplayMechanics
 	/// </summary>
 	public class SpectrumPlotter : MonoBehaviour
 	{
-
-		SongController _songController;
 		[SerializeField] int m_numberOfBars = 500;					// Number of bars in the graph
 		[SerializeField] AudioReactor m_audioReactor;				// AudioReactor modifier
 		[SerializeField] float m_keepPercentage = 60;				// Percentage of the spectrum to keep (starting from the bottom)
@@ -49,9 +47,7 @@ namespace MusicalGameplayMechanics
 			CreateSpectrum();
 			amountOfIndexesToKeep = (int)(spectrumSize * Mathf.Min(m_keepPercentage / 100, 1));
 
-			_songController = FindObjectOfType<SongController>();
-
-			_songController.m_onMusicIsPlaying.AddListener(React);	// Always react to the music
+			SongController.m_onMusicIsPlaying.AddListener(React);	// Always react to the music
 		}
 
 		/// <summary>
@@ -153,7 +149,7 @@ namespace MusicalGameplayMechanics
 						float value = 0;
 						int indexToUse = (int)((amountOfIndexesToKeep / (float)m_numberOfBars) * i);                                // Select the correct index from the spectrum
 																																	//Debug.Log("num " + i + " : " + indexToUse + " : " + amountOfIndexesToKeep + " : " + m_numberOfBars);
-						value = _songController.m_curSpectrum[indexToUse];
+						value = SongController.m_curSpectrum[indexToUse];
 						value *= Scale;
 
 						value = Mathf.Lerp(previousBarValue, value, m_barAppearanceSmoothing);                                      // Lerp to smooth out the spectrum as a whole

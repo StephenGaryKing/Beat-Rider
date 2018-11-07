@@ -52,15 +52,15 @@ namespace MusicalGameplayMechanics
 	public class SongController : MonoBehaviour
 	{
 		AudioSource _audioSource;                           // The audio source attached to this Gameobject
-		[HideInInspector] public float[] m_curSpectrum;
+		[HideInInspector] public static float[] m_curSpectrum;
 		string m_spectralFluxFilePath;						// The file path used when saving and loading spectral analysis files
 
-		public float m_timeToLookAhead = 0f;				// Used to preemptively expose the spectrum (for use when creating things prior to a beat happening)
+		public static float m_timeToLookAhead = 0f;				// Used to preemptively expose the spectrum (for use when creating things prior to a beat happening)
 		int m_indexToAddToIndexer = 0;                      // Time to look ahead converted to an amount of idexes									
 
-		[HideInInspector] public SpectrumEvent m_onFrontBufferDump;			// the event called at the start of the song to populate the game field
-		[HideInInspector] public SpectrumEvent m_onMusicIsPlaying;          // the event called every frame in order to expose the spectrum on that frame											
-		[HideInInspector] public SpectrumEvent m_onEarlyMusicIsPlaying;     // the event called 'm_timeToLookAhead' seconds before this point in time in order to expose the spectrum on that frame
+		public static SpectrumEvent m_onFrontBufferDump = new SpectrumEvent();			// the event called at the start of the song to populate the game field
+		public static SpectrumEvent m_onMusicIsPlaying = new SpectrumEvent();          // the event called every frame in order to expose the spectrum on that frame											
+		public static SpectrumEvent m_onEarlyMusicIsPlaying = new SpectrumEvent();     // the event called 'm_timeToLookAhead' seconds before this point in time in order to expose the spectrum on that frame
 		[HideInInspector] public bool m_paused = false;
 
 		// UI
