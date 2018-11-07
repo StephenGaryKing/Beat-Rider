@@ -23,14 +23,14 @@ MonoBehaviour:
     waitTime: 2
   - Image: {fileID: 21300000, guid: a7b057ef30380ef4f988e826ac412bd2, type: 3}
     Audio:
-      soundToPlay: {fileID: 8300000, guid: 2f12da2b69607b64592d7d404dde884d, type: 3}
+      soundToPlay: {fileID: 8300000, guid: 67ea6e0c0a6351f45979c43f2782c48a, type: 3}
       volume: 0.446
     Name: Beat Rider
     Content: I'm going to be home much later than planned, it seems.
     waitTime: 4
   - Image: {fileID: 21300000, guid: cffd952504d001845a00fe65ecd747a7, type: 3}
     Audio:
-      soundToPlay: {fileID: 8300000, guid: f17faaf9df3ff894f8336af9ca02a3ce, type: 3}
+      soundToPlay: {fileID: 8300000, guid: c5b9f24662867dd4d84881dfd4502e89, type: 3}
       volume: 0.446
     Name: Wife
     Content: Urgh... ok, we can put off going out for your retirement dinner for tomorrow
@@ -38,14 +38,14 @@ MonoBehaviour:
     waitTime: 3
   - Image: {fileID: 21300000, guid: cffd952504d001845a00fe65ecd747a7, type: 3}
     Audio:
-      soundToPlay: {fileID: 8300000, guid: f17faaf9df3ff894f8336af9ca02a3ce, type: 3}
+      soundToPlay: {fileID: 8300000, guid: c5b9f24662867dd4d84881dfd4502e89, type: 3}
       volume: 0.507
     Name: Wife
     Content: Grab something for us both when you finally get off.
     waitTime: 3
   - Image: {fileID: 21300000, guid: a7b057ef30380ef4f988e826ac412bd2, type: 3}
     Audio:
-      soundToPlay: {fileID: 8300000, guid: 2f12da2b69607b64592d7d404dde884d, type: 3}
+      soundToPlay: {fileID: 8300000, guid: 67ea6e0c0a6351f45979c43f2782c48a, type: 3}
       volume: 0.464
     Name: Beat Rider
     Content: By the way, I'm not sure if this mission is legitimate... something just
@@ -53,7 +53,7 @@ MonoBehaviour:
     waitTime: 4
   - Image: {fileID: 21300000, guid: cffd952504d001845a00fe65ecd747a7, type: 3}
     Audio:
-      soundToPlay: {fileID: 8300000, guid: f17faaf9df3ff894f8336af9ca02a3ce, type: 3}
+      soundToPlay: {fileID: 8300000, guid: c5b9f24662867dd4d84881dfd4502e89, type: 3}
       volume: 0.421
     Name: Wife
     Content: No prob. Hey, maybe with that bonus payout, we can eat out somewhere
@@ -61,14 +61,14 @@ MonoBehaviour:
     waitTime: 4
   - Image: {fileID: 21300000, guid: a7b057ef30380ef4f988e826ac412bd2, type: 3}
     Audio:
-      soundToPlay: {fileID: 8300000, guid: 2d7a51c2ec38edf459c93707bfa43788, type: 3}
+      soundToPlay: {fileID: 8300000, guid: 0ed86fa609c2f6243972f29c6138aee5, type: 3}
       volume: 0.452
     Name: Beat Rider
     Content: Maybe. I'll have time to figure it out later.
     waitTime: 3
   - Image: {fileID: 21300000, guid: 4069384878f853746bc2f2a427c22602, type: 3}
     Audio:
-      soundToPlay: {fileID: 8300000, guid: f8cc3b86f26deb14cae680484c1dc666, type: 3}
+      soundToPlay: {fileID: 8300000, guid: 657b42fca44f8224d8ecad24a8d9490a, type: 3}
       volume: 0.458
     Name: END CALL
     Content: CALL HAS BEEN TERMINATED
@@ -76,5 +76,5 @@ MonoBehaviour:
   m_postCutsceneChoice:
   - Image: {fileID: 21300000, guid: 316260414d36bbb4794d1d9d03143910, type: 3}
     CutsceneToPlay: {fileID: 11400000, guid: 54f16f332da6206458c68e7baa8ab525, type: 2}
-    EndGameCondition: 
   m_levelToPlay: {fileID: 11400000, guid: 28fd00a854b89a1409743048f0773728, type: 2}
+  m_nodeToUnlock: {fileID: 0}
