@@ -215,6 +215,7 @@ namespace MusicalGameplayMechanics
 
 		void EndOfSong()
 		{
+			m_levelGen.WipeObjects();
 			AchievementManager.OnTallyPickups("Final");
 			if (m_cutsceneToPlayAtEnd)
 				m_cutsceneManager.PlayCutscene(m_cutsceneToPlayAtEnd);
@@ -226,17 +227,20 @@ namespace MusicalGameplayMechanics
 
 		void PlayerDead()
 		{
+			m_levelGen.WipeObjects();
 			m_playerDeathMenuTransition.PlayTransitions();
 		}
 
 		void RestartSong()
 		{
+			m_levelGen.WipeObjects();
 			PlayAudio();
 			m_player.Revive();
 		}
 
 		void ReturnToMenu()
 		{
+			m_levelGen.WipeObjects();
 			m_menuMusicManager.PlayRandomSong();
 			m_freeFlowMenuTransition.PlayTransitions();
 		}
@@ -596,7 +600,6 @@ namespace MusicalGameplayMechanics
 
 		public void ResetValues()
 		{
-			m_levelGen.WipeObjects();
 			m_player.ResetSpeed();
 			m_scoreBoard.ResetScores();
 		}

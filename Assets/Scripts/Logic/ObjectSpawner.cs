@@ -135,7 +135,6 @@ namespace BeatRider
 								while (m_objectLists[i][j].activeInHierarchy)
 									j++;
 
-								Debug.Log(pos.z);
 								m_objectLists[i][j].transform.position = pos;
 								m_objectLists[i][j].transform.rotation = Quaternion.identity;
 								m_objectLists[i][j].gameObject.SetActive(true);
