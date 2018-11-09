@@ -9,6 +9,7 @@ namespace BeatRider
 	public class StoryNode : MonoBehaviour {
 
 		Image m_image;
+		Button m_button;
 		CutsceneManager m_cutsceneManager;
 		StoryModeManager m_storyModeManager;
 		public Sprite m_activeImage;
@@ -33,11 +34,14 @@ namespace BeatRider
 
 		public void UpdateTextBox()
 		{
-			m_textBox.text = m_infoText;
+			if (m_unlocked)
+				m_textBox.text = m_infoText;
 		}
 
 		public void Awake()
 		{
+			m_button = GetComponent<Button>();
+			m_button.interactable = false;
             m_storyModeManager = FindObjectOfType<StoryModeManager>();
             m_cutsceneManager = FindObjectOfType<CutsceneManager>();
 			m_image = GetComponent<Image>();
@@ -60,6 +64,7 @@ namespace BeatRider
 		public virtual void Unlock()
 		{
 			m_unlocked = true;
+			m_button.interactable = true;
 			UpdateUI();
 			if (m_storyModeManager)
 			{

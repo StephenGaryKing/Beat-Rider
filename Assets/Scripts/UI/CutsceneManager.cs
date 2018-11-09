@@ -24,6 +24,7 @@ namespace BeatRider
 		SongController m_songController;    // used to play the specified song after the cutscene is over (if any)
 		int m_speachBubbleNumber = 0;       // the current line to write
 		LevelGenerator m_levelgen;
+		StoryModeManager m_storyModeManager;
 
 		List<GameObject> m_choices = new List<GameObject>();
 
@@ -36,6 +37,7 @@ namespace BeatRider
 			m_levelgen = FindObjectOfType<LevelGenerator>();
 			m_soundManager = FindObjectOfType<SoundManager>();
 			m_songController = FindObjectOfType<SongController>();
+			m_storyModeManager = FindObjectOfType<StoryModeManager>();
 		}
 
 		/// <summary>
@@ -126,8 +128,9 @@ namespace BeatRider
 
 		public IEnumerator StartCutscene(Cutscene cs)
 		{
-			if (cs.m_nodeToUnlock)
-				cs.m_nodeToUnlock.Unlock();
+			// if this cutscene exists in any node, it will be unlocked
+			m_storyModeManager.UnlockNode(cs);
+
 			// if there is a song to be loaded, do it at the start
 			if (cs.m_levelToPlay)
 				if (cs.m_levelToPlay.m_song)
