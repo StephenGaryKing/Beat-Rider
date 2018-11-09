@@ -20,10 +20,15 @@ namespace BeatRider
 			foreach (FinalStoryNode node in m_FinalStoryNodes)
 			{
 				StoryNode currentNode = node;
-				if (currentNode.m_cutsceneToPlay == cutscene)
+				while (currentNode != null)
 				{
-					currentNode.Unlock();
-					break;
+					if (currentNode.m_cutsceneToPlay == cutscene)
+					{
+						currentNode.Unlock();
+						return;
+					}
+					else
+						currentNode = currentNode.m_parent;
 				}
 			}
 		}
