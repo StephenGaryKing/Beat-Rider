@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class TextSizeChange : MonoBehaviour {
 
@@ -21,4 +22,9 @@ public class TextSizeChange : MonoBehaviour {
         transform.localScale = m_savedScale;
     }
 
+	public void RollOffText()
+	{
+		EventSystem.current.SetSelectedGameObject(null);
+		ShrinkText();
+	}
 }

@@ -11,54 +11,22 @@ public class ShipCustomiser : MonoBehaviour {
 	List<Color> m_shipColour = new List<Color>();
 	List<Color> m_highlightColour = new List<Color>();
 
-	public void CustomiseColour(UnlockableColour colour, bool on)
+	public void CustomiseColour(UnlockableColour colour)
 	{
-		if (on)
-			m_shipColour.Add(colour.m_colour);
-		else
-		{
-			if (m_shipColour.Contains(colour.m_colour))
-				m_shipColour.Remove(colour.m_colour);
-		}
-
-		Color newCol = Color.black;
-		foreach (var col in m_shipColour)
-			newCol += col;
-		newCol /= m_shipColour.Count;
-
-		if (m_shipColour.Count == 0)
-			newCol = Color.white;
-
-		m_body.material.color = newCol;
+		m_body.material.color = colour.m_colour;
 	}
 
-	public void CustomiseHighlights(UnlockableColour highlight, bool on)
+	public void CustomiseHighlights(UnlockableColour highlight)
 	{
-		if (on)
-			m_highlightColour.Add(highlight.m_colour);
-		else
-		{
-			if (m_highlightColour.Contains(highlight.m_colour))
-				m_highlightColour.Remove(highlight.m_colour);
-		}
-
-		Color newCol = Color.black;
-		foreach (var col in m_highlightColour)
-			newCol += col;
-		newCol /= m_highlightColour.Count;
-
-		if (m_highlightColour.Count == 0)
-			newCol = Color.white;
-
-		m_body.material.SetColor("_EmissionColor", newCol * m_highlightBrightness);
+		m_body.material.SetColor("_EmissionColor", highlight.m_colour * m_highlightBrightness);
 	}
 
-	public void CustomiseShip(UnlockableShip ship, bool on)
+	public void CustomiseShip(UnlockableShip ship)
 	{
 		m_body.GetComponent<MeshFilter>().mesh = ship.m_model;
 	}
 
-	public void CustomiseTrail(UnlockableTrail trail, bool on)
+	public void CustomiseTrail(UnlockableTrail trail)
 	{
 		m_trail = trail.m_particle;
 	}

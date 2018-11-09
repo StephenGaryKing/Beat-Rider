@@ -13,19 +13,17 @@ namespace BeatRider
 		Trail
 	}
 
-	[RequireComponent(typeof(Toggle))]
+	[RequireComponent(typeof(Button))]
 	public class CustomisationButton : MonoBehaviour
 	{
 
 		public PartToCustomise m_partToCustomise;
 		[HideInInspector] public Unlockable m_unlockable;
 		[HideInInspector] public ShipCustomiser m_shipCustomiser;
-		Toggle m_toggle;
 
 		// Use this for initialization
 		void Start()
 		{
-			m_toggle = GetComponent<Toggle>();
 			m_shipCustomiser = FindObjectOfType<ShipCustomiser>();
 		}
 
@@ -43,16 +41,16 @@ namespace BeatRider
 			switch (m_partToCustomise)
 			{
 				case (PartToCustomise.Colour):
-					m_shipCustomiser.CustomiseColour(m_unlockable as UnlockableColour, m_toggle.isOn);
+					m_shipCustomiser.CustomiseColour(m_unlockable as UnlockableColour);
 					break;
 				case (PartToCustomise.Highlight):
-					m_shipCustomiser.CustomiseHighlights(m_unlockable as UnlockableColour, m_toggle.isOn);
+					m_shipCustomiser.CustomiseHighlights(m_unlockable as UnlockableColour);
 					break;
 				case (PartToCustomise.Ship):
-					m_shipCustomiser.CustomiseShip(m_unlockable as UnlockableShip, m_toggle.isOn);
+					m_shipCustomiser.CustomiseShip(m_unlockable as UnlockableShip);
 					break;
 				case (PartToCustomise.Trail):
-					m_shipCustomiser.CustomiseTrail(m_unlockable as UnlockableTrail, m_toggle.isOn);
+					m_shipCustomiser.CustomiseTrail(m_unlockable as UnlockableTrail);
 					break;
 			}
 

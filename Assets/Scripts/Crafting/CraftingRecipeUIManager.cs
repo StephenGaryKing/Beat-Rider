@@ -123,7 +123,7 @@ namespace BeatRider
 					// look at ingredients
 					for (int i = 0; i < ui.Recipe.m_recipe.GemsToPickup.Length; i++)
 					{
-						Debug.Log(m_craftingManager.FindGemIndex(ui.Recipe.m_recipe.GemsToPickup[i]) + " :: " + num);
+						//Debug.Log(m_craftingManager.FindGemIndex(ui.Recipe.m_recipe.GemsToPickup[i]) + " :: " + num);
 						// if the ingredient has been unlocked, show it, else, show the grey version
 						if (m_craftingManager.FindGemIndex(ui.Recipe.m_recipe.GemsToPickup[i]) == num)
 						{
