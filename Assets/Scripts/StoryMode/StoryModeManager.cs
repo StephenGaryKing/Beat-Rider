@@ -15,6 +15,19 @@ namespace BeatRider
 			LoadProgress();
 		}
 
+		public void UnlockNode(Cutscene cutscene)
+		{
+			foreach (FinalStoryNode node in m_FinalStoryNodes)
+			{
+				StoryNode currentNode = node;
+				if (currentNode.m_cutsceneToPlay == cutscene)
+				{
+					currentNode.Unlock();
+					break;
+				}
+			}
+		}
+
 		public void SaveProgress()
 		{
 			List<int> data = new List<int>();
