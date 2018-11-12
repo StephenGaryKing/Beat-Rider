@@ -23,6 +23,8 @@ public class FilterButton : MonoBehaviour {
 
 	public void Activate()
 	{
-		m_image.sprite = m_selectedImage;
+        if (!m_image)
+            m_image = GetComponent<Image>();
+        m_image.sprite = m_selectedImage;
 	}
 }
