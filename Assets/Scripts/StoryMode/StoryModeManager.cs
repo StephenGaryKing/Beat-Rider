@@ -15,14 +15,14 @@ namespace BeatRider
 			LoadProgress();
 		}
 
-		public void UnlockNode(Cutscene cutscene)
+		public void UnlockNode(int nodeNumber)
 		{
 			foreach (FinalStoryNode node in m_FinalStoryNodes)
 			{
 				StoryNode currentNode = node;
 				while (currentNode != null)
 				{
-					if (currentNode.m_cutsceneToPlay == cutscene)
+					if (currentNode.m_nodeNumber == nodeNumber)
 					{
 						currentNode.Unlock();
 						return;

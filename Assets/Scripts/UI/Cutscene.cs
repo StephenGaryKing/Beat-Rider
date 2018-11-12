@@ -44,5 +44,6 @@ namespace BeatRider
 		public SpeachBubble[] m_conversation;   // a conversation with n elements
 		public Choice[] m_postCutsceneChoice;      // played before cutscenes
 		public Level m_levelToPlay;             // the song to play (if any) after the cutscene is over
+		public int m_nodeNumberToUnlock = 0;
 	}
 }

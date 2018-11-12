@@ -42,6 +42,9 @@ public class CustomisationWindowNavigation : MonoBehaviour {
 		PopulateTitles();
 		SnapUpdateWindows();
 		m_RecipeButtonLocation.gameObject.SetActive(false);
+	}
+	private void Start()
+	{
 		GotoNextWindow();
 		GotoPreviousWindow();
 	}

@@ -129,7 +129,7 @@ namespace BeatRider
 		public IEnumerator StartCutscene(Cutscene cs)
 		{
 			// if this cutscene exists in any node, it will be unlocked
-			m_storyModeManager.UnlockNode(cs);
+			m_storyModeManager.UnlockNode(cs.m_nodeNumberToUnlock);
 
 			// if there is a song to be loaded, do it at the start
 			if (cs.m_levelToPlay)
