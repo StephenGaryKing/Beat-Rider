@@ -22,7 +22,6 @@ namespace BeatRider
 		[Multiline]
 		public string m_infoText;
 		bool m_unlockedLastFrame = false;
-		[HideInInspector] public int m_nodeNumber = 0;
 
 		public virtual void Select()
 		{
