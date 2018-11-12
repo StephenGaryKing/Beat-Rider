@@ -35,7 +35,7 @@ public class CustomisationWindowNavigation : MonoBehaviour {
 
 
 	// Use this for initialization
-	void Start()
+	void Awake()
 	{
 		m_unlockableManager = FindObjectOfType<UnlockableManager>();
 		m_templateTitle.SetActive(false);
