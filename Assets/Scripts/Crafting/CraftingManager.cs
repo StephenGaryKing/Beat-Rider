@@ -15,7 +15,7 @@ namespace BeatRider
 		public Image[] m_pickedupGemImageLocations;
 		[HideInInspector] public List<Gem> m_collectedGems;
 		[HideInInspector] public List<int> m_RecipesCompleated;
-		public int m_filterNumber;
+		[HideInInspector] public int m_filterNumber = 2;
 		UnlockableManager m_UnlockableManager;
 		List<Gem> m_filteredRecipes = new List<Gem>();
 
@@ -78,8 +78,9 @@ namespace BeatRider
 			m_collectedGems.Add(gem);
 			RefreshPickupList();
 			DisplayPickupList();
-			if (CheckPickupCombination())
-				UnlockChallenge(m_allRecipes[m_filterNumber]);
+			Gem gemToUnlock = CheckPickupCombination();
+			if (gemToUnlock)
+				UnlockChallenge(gemToUnlock);
 		}
 
 		public void UnlockChallenge (Gem gem)
@@ -94,24 +95,35 @@ namespace BeatRider
 			SaveChallenges();
 		}
 
-		bool CheckPickupCombination()
+		Gem CheckPickupCombination()
 		{
-			if (m_collectedGems.Count != m_allRecipes[m_filterNumber].m_recipe.GemsToPickup.Length)
-				return false;
+			if (m_collectedGems.Count != m_filterNumber)
+				return null;
 
 			// check to see if the collecte gems match any recipies that are being focused on
-
-
-			/*
-			for(int i = 0; i < m_collectedGems.Count; i ++)
+			// loop through the list of all recipes, 
+			foreach(Gem gem in m_allRecipes)
 			{
-				if (m_collectedGems[i] != m_allRecipes[m_filterNumber].m_recipe.GemsToPickup[i])
-					return false;
+				// for all the recipes with the correct recipe size, 
+				if (gem.m_recipe.GemsToPickup.Length == m_filterNumber)
+				{
+					// if it has not been unlocked already
+					if (!m_RecipesCompleated.Contains(FindGemIndex(gem)))
+					{
+						bool gemIsAMatch = true;
+						// check if the current list of picked up gems is the same
+						for (int i = 0; i < m_collectedGems.Count; i++)
+						{
+							if (m_collectedGems[i] != gem.m_recipe.GemsToPickup[i])
+								gemIsAMatch = false;
+						}
+						if (gemIsAMatch)
+							return gem;
+					}
+				}
 			}
-			*/
-
-			// everything matches up
-			return true;
+			// everything matches up (return the gem)
+			return null;
 		}
 
 		void DisplayPickupList()
