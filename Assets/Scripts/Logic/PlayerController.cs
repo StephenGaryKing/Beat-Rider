@@ -104,8 +104,6 @@ namespace BeatRider
 
 				// rotate the ship
 				Vector3 displacement = targetPosition - transform.position;
-				Debug.Log(displacement);
-				Debug.Log(displacement.x);
 				m_amountToMove = displacement.x * 300;
 				_rigidBody.MoveRotation(Quaternion.Slerp(transform.rotation, Quaternion.Euler(Vector3.forward * (m_tiltAmount * -m_amountToMove)), m_tiltSpeed));
 			}
