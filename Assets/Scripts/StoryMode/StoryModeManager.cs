@@ -15,20 +15,38 @@ namespace BeatRider
 			LoadProgress();
 		}
 
-		public void UnlockNode(int nodeNumber)
+		public void UnlockNode(Cutscene cs)
 		{
 			foreach (FinalStoryNode node in m_FinalStoryNodes)
 			{
 				StoryNode currentNode = node;
 				while (currentNode != null)
 				{
-					if (currentNode.m_nodeNumber == nodeNumber)
+					if (currentNode.m_cutsceneToPlay == cs)
 					{
-						currentNode.Unlock();
-						return;
+						bool correctNode = true;
+						// build a list of past events in that line
+						List<EndGameCondition> conditions = new List<EndGameCondition>();
+						StoryNode nodeToCheck = currentNode;
+						while (nodeToCheck != null)
+						{
+							if (nodeToCheck.m_EndGameCondition != EndGameCondition.NONE)
+								conditions.Add(nodeToCheck.m_EndGameCondition);
+							nodeToCheck = nodeToCheck.m_parent;
+						}
+						// if they match your current history
+						foreach (EndGameCondition con in conditions)
+							if (!m_conditionsCompleated.Contains(con))
+								correctNode = false;
+						// this is the correct node
+						if (correctNode)
+						{
+							currentNode.Unlock();
+							return;
+						}
+						else
+							currentNode = currentNode.m_parent;
 					}
-					else
-						currentNode = currentNode.m_parent;
 				}
 			}
 		}
@@ -108,6 +126,11 @@ namespace BeatRider
 				AddCondition(parent.m_EndGameCondition);
 				parent = parent.m_parent;
 			}
+		}
+
+		public void ClearConditions()
+		{
+			m_conditionsCompleated.Clear();
 		}
 	}
 }
