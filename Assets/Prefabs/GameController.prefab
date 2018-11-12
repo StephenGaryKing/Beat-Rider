@@ -1,0 +1,225 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1192360029166088}
+  m_IsPrefabParent: 1
+--- !u!1 &1192360029166088
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4349699787270994}
+  - component: {fileID: 114727519949540870}
+  - component: {fileID: 114446509742757086}
+  - component: {fileID: 114890165525235046}
+  - component: {fileID: 114755231755699044}
+  - component: {fileID: 114756043040447552}
+  - component: {fileID: 114484266473405550}
+  - component: {fileID: 114802100401818462}
+  - component: {fileID: 114949866453224506}
+  - component: {fileID: 114201882989485978}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4349699787270994
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1192360029166088}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.116795495, y: -0.7155547, z: 1.2112522}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114201882989485978
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1192360029166088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf8f21e960eec794296517b2ce111519, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_tutorialGameObject: {fileID: 0}
+--- !u!114 &114446509742757086
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1192360029166088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20468a62eb8c0ed45bc6f0f365912e26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_defaultFileLocation: Songs
+  m_songs: []
+  m_songSelectButton: {fileID: 0}
+--- !u!114 &114484266473405550
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1192360029166088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a994b6ed0fbf4e44c8fc2244dce643c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_audioClipVolume: 0.5
+--- !u!114 &114727519949540870
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1192360029166088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f09edd4bfb1cd1d45bbaa8a6e310fd01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_backgroundMusic:
+    soundToPlay: {fileID: 0}
+    volume: 0
+  m_imageBox: {fileID: 0}
+  m_nameBox: {fileID: 0}
+  m_conversationBox: {fileID: 0}
+  m_choiceButtonTemplate: {fileID: 0}
+  m_defaultCamerPosition: {fileID: 0}
+  m_winConditions: []
+  m_backgroundMusicSource: {fileID: 0}
+--- !u!114 &114755231755699044
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1192360029166088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b76652be11dcfe4ca829c6f5466c00b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_saveFileName: LevelProgression
+  m_FinalStoryNodes: []
+--- !u!114 &114756043040447552
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1192360029166088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0627cd911f5b0a94eb5d455d69020f2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_score: 0
+  m_scoreText: {fileID: 0}
+  m_noteSpawner: {fileID: 0}
+  m_displayAsPercentage: 0
+--- !u!114 &114802100401818462
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1192360029166088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1aa7505af1d42f4187f36bdcacaf266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_saveFileName: Unlockables
+  m_unlockableColours:
+  - {fileID: 11400000, guid: a5b76d77bf82a03468fbfbd3106af939, type: 2}
+  - {fileID: 11400000, guid: 2ac55ab2dc5f34e449b096247004eec9, type: 2}
+  - {fileID: 11400000, guid: fc3357e7ced9d544f92c460f0a570461, type: 2}
+  - {fileID: 11400000, guid: 267fd20a85cdf254382fab675f67a029, type: 2}
+  - {fileID: 11400000, guid: b50cc4670774f4a4b9d53cc1c37f5f9a, type: 2}
+  - {fileID: 11400000, guid: 8f54ef2718634eb43adb6b747c4af54a, type: 2}
+  - {fileID: 11400000, guid: 175c1990902fe1641ad4840e5cdc0daa, type: 2}
+  - {fileID: 11400000, guid: 1188bbe4fb53b9749946ffad11dd472e, type: 2}
+  - {fileID: 11400000, guid: 06517483daadff94ca17109b52ab2e24, type: 2}
+  - {fileID: 11400000, guid: c1126aa1eaa74c74594c81494fdebb31, type: 2}
+  - {fileID: 11400000, guid: be3f177e14ff9374c8d00f149b07215a, type: 2}
+  - {fileID: 11400000, guid: a43a640b0cdc9c642a07db80e0386983, type: 2}
+  - {fileID: 11400000, guid: e49edca6e03f0aa4f89627330aea49e0, type: 2}
+  m_unlockableHighlights: []
+  m_unlockableShips: []
+  m_unlockableTrails: []
+  m_unlockedColours: 
+  m_unlockedHighlights: 
+  m_unlockedShips: 
+  m_unlockedTrails: 
+--- !u!114 &114890165525235046
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1192360029166088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ab0d749982662a4eb4440a4fd00e341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  songcontroller: {fileID: 0}
+  m_pauseMenu: {fileID: 0}
+  m_playIcon: {fileID: 0}
+  m_pauseIcon: {fileID: 0}
+  m_difficulty: 0
+--- !u!114 &114949866453224506
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1192360029166088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4641c3fd659bd32468e5b31a3608f23c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_saveFileName: Crafting
+  m_ReipesToStartWith:
+  - {fileID: 11400000, guid: 686b28920cde08247a88229c2a3d5ad2, type: 2}
+  - {fileID: 11400000, guid: afaab9f9eb3f2cc4f8862ea4efd35d20, type: 2}
+  - {fileID: 11400000, guid: ceef023c3fdd90941aecf597466cbab9, type: 2}
+  - {fileID: 11400000, guid: 8b900cf9aa08a2d4690b8ca420f4bbfa, type: 2}
+  m_allRecipes:
+  - {fileID: 11400000, guid: 4938d4fdeca4ef44c8660e1d1daf738a, type: 2}
+  - {fileID: 11400000, guid: 8b900cf9aa08a2d4690b8ca420f4bbfa, type: 2}
+  - {fileID: 11400000, guid: d76b5c3021129e546b0f3a8d5417cecd, type: 2}
+  - {fileID: 11400000, guid: 7b7752869efc9714cb4587c6735db398, type: 2}
+  - {fileID: 11400000, guid: ceef023c3fdd90941aecf597466cbab9, type: 2}
+  - {fileID: 11400000, guid: c7215c2795fab0f4d99b11712a9f384c, type: 2}
+  - {fileID: 11400000, guid: 9e9fd65fb035f6741a7ae6b0e6848554, type: 2}
+  - {fileID: 11400000, guid: d86e2c178d01cba45a2565686a03f50f, type: 2}
+  - {fileID: 11400000, guid: e6e0c40ed487b2749907adddacd8f8f6, type: 2}
+  - {fileID: 11400000, guid: afaab9f9eb3f2cc4f8862ea4efd35d20, type: 2}
+  - {fileID: 11400000, guid: 3224dafec36f3d34cb4bf745e3c14ec0, type: 2}
+  - {fileID: 11400000, guid: 686b28920cde08247a88229c2a3d5ad2, type: 2}
+  - {fileID: 11400000, guid: 51da1e8bc7b98f842afd841f09124a28, type: 2}
+  m_pickedupGemImageLocations:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_collectedGems: []
+  m_RecipesCompleated: 
+  m_filterNumber: 0
