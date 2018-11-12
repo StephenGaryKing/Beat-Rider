@@ -94,9 +94,11 @@ namespace MusicalGameplayMechanics
 		[HideInInspector] public Cutscene m_cutsceneToPlayAtEnd;
 		CutsceneManager m_cutsceneManager;
 		MenuMusicManager m_menuMusicManager;
+		StoryModeManager m_storyModeManager;
 
 		void Start()
 		{
+			m_storyModeManager = FindObjectOfType<StoryModeManager>();
 			m_player = FindObjectOfType<PlayerCollision>();
 			m_scoreBoard = FindObjectOfType<ScoreBoardLogic>();
 			m_levelGen = FindObjectOfType<LevelGenerator>();
@@ -240,6 +242,7 @@ namespace MusicalGameplayMechanics
 
 		void ReturnToMenu()
 		{
+			m_storyModeManager.ClearConditions();
 			m_levelGen.WipeObjects();
 			m_menuMusicManager.PlayRandomSong();
 			m_freeFlowMenuTransition.PlayTransitions();
