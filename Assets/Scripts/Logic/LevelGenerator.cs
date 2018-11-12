@@ -330,7 +330,7 @@ namespace BeatRider
 					break;
 
 				case (LevelType.RANDOM):
-					elementsMultiplier = 1000;
+					elementsMultiplier = 2000;
 					break;
 
 				case (LevelType.CENTERED):
@@ -408,7 +408,7 @@ namespace BeatRider
 		{
 			c_layerRemoved = false;
 			// Unpack container and add parts back to the pool
-			while (container.childCount > 0)
+			while (container && container.childCount > 0)
 			{
 				Transform child = container.GetChild(container.childCount - 1);
 				child.SetParent(m_inactiveSceneryContainer.transform);

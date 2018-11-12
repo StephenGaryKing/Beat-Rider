@@ -99,8 +99,12 @@ namespace BeatRider
 						targetPosition = Vector3.right * 2;
 						break;
 				}
-				transform.position = Vector3.Lerp(transform.position, targetPosition, 0.001f * m_moveSpeed);
-				m_amountToMove = (targetPosition.x - transform.position.x);
+				Vector3 lastPos = transform.position;
+				_rigidBody.MovePosition(Vector3.Lerp(transform.position, targetPosition, 0.001f * m_moveSpeed));
+
+				// rotate the ship
+				Vector3 displacement = targetPosition - transform.position;
+				m_amountToMove = displacement.x * 300;
 				_rigidBody.MoveRotation(Quaternion.Slerp(transform.rotation, Quaternion.Euler(Vector3.forward * (m_tiltAmount * -m_amountToMove)), m_tiltSpeed));
 			}
 			else
