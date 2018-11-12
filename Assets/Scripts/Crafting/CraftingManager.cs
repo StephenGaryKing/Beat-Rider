@@ -15,7 +15,7 @@ namespace BeatRider
 		public Image[] m_pickedupGemImageLocations;
 		[HideInInspector] public List<Gem> m_collectedGems;
 		[HideInInspector] public List<int> m_RecipesCompleated;
-		[HideInInspector] public int m_filterNumber = 2;
+		public int m_filterNumber = 2;
 		UnlockableManager m_UnlockableManager;
 		List<Gem> m_filteredRecipes = new List<Gem>();
 
@@ -129,7 +129,7 @@ namespace BeatRider
 		void DisplayPickupList()
 		{
 			if (m_pickedupGemImageLocations.Length < m_collectedGems.Count)
-				Debug.LogError("Not enough image locations for ChallengeManager!\nRequired " + m_collectedGems.Count + " image locations.");
+				Debug.LogError("Not enough image locations for CraftingManager!\nRequired " + m_collectedGems.Count + " image locations.");
 			for (int i = 0; i < m_pickedupGemImageLocations.Length; i++)
 			{
 				if (i < m_collectedGems.Count)
@@ -162,7 +162,7 @@ namespace BeatRider
 		void RefreshPickupList()
 		{
 			// while there are more gems in the list than the focused recipies require, pop the oldest elements of the list
-			while (m_collectedGems.Count > m_allRecipes[m_filterNumber].m_recipe.GemsToPickup.Length)
+			while (m_collectedGems.Count > m_filterNumber)
 				m_collectedGems.RemoveAt(0);
 		}
 	}
