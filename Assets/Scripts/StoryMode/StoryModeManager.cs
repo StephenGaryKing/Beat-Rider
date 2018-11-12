@@ -19,7 +19,9 @@ namespace BeatRider
 		{
 			foreach (FinalStoryNode node in m_FinalStoryNodes)
 			{
+				List<StoryNode> seenNodes = new List<StoryNode>();
 				StoryNode currentNode = node;
+				seenNodes.Add(currentNode);
 				while (currentNode != null)
 				{
 					if (currentNode.m_cutsceneToPlay == cs)
@@ -45,8 +47,19 @@ namespace BeatRider
 							return;
 						}
 						else
+						{
 							currentNode = currentNode.m_parent;
+							if (!seenNodes.Contains(currentNode))
+								seenNodes.Add(currentNode);
+							else
+							{
+								Debug.LogError("Loop found on node " + currentNode.name);
+								return;
+							}
+						}
 					}
+					else
+						currentNode = currentNode.m_parent;
 				}
 			}
 		}
