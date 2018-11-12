@@ -53,6 +53,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1030929818691624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224969932572727130}
+  - component: {fileID: 222592994342698502}
+  - component: {fileID: 114226699408645778}
+  - component: {fileID: 114887433988608744}
+  - component: {fileID: 114285338149018558}
+  - component: {fileID: 114123090620445114}
+  - component: {fileID: 114325194024503346}
+  m_Layer: 5
+  m_Name: Node 4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1032287939324190
 GameObject:
   m_ObjectHideFlags: 0
@@ -67,27 +88,6 @@ GameObject:
   - component: {fileID: 114355107970332918}
   - component: {fileID: 114501538955904306}
   - component: {fileID: 114618322424988762}
-  m_Layer: 5
-  m_Name: Node 4 (Exec)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1095974872989696
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 224146583760095022}
-  - component: {fileID: 222210704787923474}
-  - component: {fileID: 114233152312797194}
-  - component: {fileID: 114666115146397562}
-  - component: {fileID: 114947799689421376}
-  - component: {fileID: 114499487582259456}
-  - component: {fileID: 114870732590942410}
   m_Layer: 5
   m_Name: Node 4 (Exec)
   m_TagString: Untagged
@@ -195,27 +195,6 @@ GameObject:
   - component: {fileID: 114593726677105254}
   m_Layer: 5
   m_Name: Final Node (Groupless,Worst Ending)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1259965498351780
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 224642476073888342}
-  - component: {fileID: 222592004625031126}
-  - component: {fileID: 114680034974093768}
-  - component: {fileID: 114169024973321266}
-  - component: {fileID: 114092114962461256}
-  - component: {fileID: 114676026179835430}
-  - component: {fileID: 114920514247620326}
-  m_Layer: 5
-  m_Name: Node 4 (HYPSEC) (ACCEPT)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -410,22 +389,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1524647170558124
+--- !u!1 &1524565943246064
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 224905785691391090}
-  - component: {fileID: 222479838331538238}
-  - component: {fileID: 114378622855820286}
-  - component: {fileID: 114536228247116122}
-  - component: {fileID: 114196018799844582}
-  - component: {fileID: 114419708688404774}
-  - component: {fileID: 114170054199685904}
+  - component: {fileID: 224454326534493676}
+  - component: {fileID: 222760338926704922}
+  - component: {fileID: 114824843562682382}
+  - component: {fileID: 114933553175399224}
+  - component: {fileID: 114869229679613166}
+  - component: {fileID: 114829638257098674}
+  - component: {fileID: 114119693598027772}
   m_Layer: 5
-  m_Name: Node 4 (HYPSEC)
+  m_Name: Node 4 (HYPSEC DENY)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -468,6 +447,27 @@ GameObject:
   - component: {fileID: 114454190344368960}
   m_Layer: 5
   m_Name: Node 4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1626589205229320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224197673183795242}
+  - component: {fileID: 222654669650046742}
+  - component: {fileID: 114377862066000008}
+  - component: {fileID: 114812384130360152}
+  - component: {fileID: 114109197965565230}
+  - component: {fileID: 114663918634149926}
+  - component: {fileID: 114437258283433554}
+  m_Layer: 5
+  m_Name: Node 5 (Showdown)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -525,6 +525,27 @@ GameObject:
   - component: {fileID: 114439723175875232}
   m_Layer: 5
   m_Name: Node 4 Wife (Branchoff)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1761619896602416
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224478077532326562}
+  - component: {fileID: 222292250249871254}
+  - component: {fileID: 114002886894285806}
+  - component: {fileID: 114904667996289906}
+  - component: {fileID: 114870730191746878}
+  - component: {fileID: 114195645445515458}
+  - component: {fileID: 114055253103544800}
+  m_Layer: 5
+  m_Name: Node 4 (Exec)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -637,22 +658,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1845541146910372
+--- !u!1 &1853449018044698
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 224797068741627272}
-  - component: {fileID: 222372924144518896}
-  - component: {fileID: 114090944474959064}
-  - component: {fileID: 114425385896913560}
-  - component: {fileID: 114808281805865250}
-  - component: {fileID: 114481361006122438}
-  - component: {fileID: 114377936941735992}
+  - component: {fileID: 224901768374708236}
+  - component: {fileID: 222955811369339164}
+  - component: {fileID: 114860323196822282}
+  - component: {fileID: 114755056208622082}
+  - component: {fileID: 114128980212753124}
+  - component: {fileID: 114756720763593734}
+  - component: {fileID: 114705543304775202}
   m_Layer: 5
-  m_Name: Node 4 (HYPSEC DENY)
+  m_Name: Node 4 (HYPSEC)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -700,6 +721,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1914588239546636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224488336113827412}
+  - component: {fileID: 222941272526858940}
+  - component: {fileID: 114132796227970902}
+  - component: {fileID: 114273613141781712}
+  - component: {fileID: 114434633762956658}
+  - component: {fileID: 114677024305316200}
+  - component: {fileID: 114540006030346156}
+  m_Layer: 5
+  m_Name: Node 4 (HYPSEC) (ACCEPT)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1941388708759250
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,48 +758,6 @@ GameObject:
   - component: {fileID: 114208365868127082}
   m_Layer: 5
   m_Name: Node 3 (Answered Wife)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1976178150811546
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 224276770154347474}
-  - component: {fileID: 222083945559509874}
-  - component: {fileID: 114093444914022206}
-  - component: {fileID: 114580157756759182}
-  - component: {fileID: 114423733163446960}
-  - component: {fileID: 114683559874723150}
-  - component: {fileID: 114407016647125354}
-  m_Layer: 5
-  m_Name: Node 5 (Showdown)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1976872580015390
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 224725063294609212}
-  - component: {fileID: 222220979558757196}
-  - component: {fileID: 114235162596871502}
-  - component: {fileID: 114974636938883372}
-  - component: {fileID: 114932951424920102}
-  - component: {fileID: 114035535124947146}
-  - component: {fileID: 114235967435599238}
-  m_Layer: 5
-  m_Name: Node 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -803,29 +803,29 @@ Transform:
   - {fileID: 224437881877083418}
   - {fileID: 224392579602220774}
   - {fileID: 224135483323168982}
-  - {fileID: 224366165663698244}
+  - {fileID: 224901768374708236}
   - {fileID: 224052907978450592}
-  - {fileID: 224674911745332990}
+  - {fileID: 224488336113827412}
   - {fileID: 224615932585978822}
   - {fileID: 224411898494959278}
-  - {fileID: 224696437113958730}
-  - {fileID: 224290949116759554}
+  - {fileID: 224478077532326562}
+  - {fileID: 224197673183795242}
   - {fileID: 224478072372416360}
   - {fileID: 224168208581543754}
   - {fileID: 224342059610979808}
   - {fileID: 224340869342698864}
   - {fileID: 224854579447459426}
-  - {fileID: 224725063294609212}
+  - {fileID: 224969932572727130}
   - {fileID: 224949677420063312}
   - {fileID: 224734808959310750}
   - {fileID: 224068086736876948}
-  - {fileID: 224905785691391090}
-  - {fileID: 224797068741627272}
-  - {fileID: 224642476073888342}
+  - {fileID: 224366165663698244}
+  - {fileID: 224454326534493676}
+  - {fileID: 224674911745332990}
   - {fileID: 224373809014380422}
   - {fileID: 224884450305867548}
-  - {fileID: 224146583760095022}
-  - {fileID: 224276770154347474}
+  - {fileID: 224696437113958730}
+  - {fileID: 224290949116759554}
   - {fileID: 224455676562067898}
   - {fileID: 224313481547192280}
   - {fileID: 224395853869218838}
@@ -854,7 +854,33 @@ MonoBehaviour:
   m_infoText: 'LEVEL 5 (THE ICE WASTES)
 
     Beat Rider finally delivers the mysterious package...'
-  m_nodeNumber: 16
+--- !u!114 &114002886894285806
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1761619896602416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.5735294, b: 0.5735294, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 8328c18fba95b754e83002436ca2bb51, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!114 &114004152880559840
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -968,13 +994,12 @@ MonoBehaviour:
   m_inactiveImage: {fileID: 21300000, guid: d9be09c33132e274fb3ee48af31696d7, type: 3}
   m_parent: {fileID: 114144111992970510}
   m_cutsceneToPlay: {fileID: 11400000, guid: ec3e5c9d062b75843b641e4fc9917ef8, type: 2}
-  m_EndGameCondition: 4
+  m_EndGameCondition: 0
   m_unlocked: 1
   m_textBox: {fileID: 0}
   m_infoText: 'LEVEL 5 (THE ICE WASTES)
 
     Beat Rider confronts his shady employers.'
-  m_nodeNumber: 24
 --- !u!114 &114025562575668976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1101,47 +1126,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114035535124947146
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1976872580015390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69ab34897e65ec248bf1c01542651a0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_outTransitions:
-  - ObjectToToggleEnabled: {fileID: 0}
-    ObjectToAnimate:
-      Obj: {fileID: 0}
-      TargetPosition: {x: 0, y: 0, z: 0}
-      TargetScale: {x: 0, y: 0, z: 0}
-      Time: 0
-      CurveType: 0
-  - ObjectToToggleEnabled: {fileID: 0}
-    ObjectToAnimate:
-      Obj: {fileID: 0}
-      TargetPosition: {x: 0, y: 0, z: 0}
-      TargetScale: {x: 0, y: 0, z: 0}
-      Time: 0
-      CurveType: 0
-  - ObjectToToggleEnabled: {fileID: 0}
-    ObjectToAnimate:
-      Obj: {fileID: 0}
-      TargetPosition: {x: 0, y: 0, z: 0}
-      TargetScale: {x: 0, y: 0, z: 0}
-      Time: 0
-      CurveType: 0
-  m_inTransitions:
-  - ObjectToToggleEnabled: {fileID: 0}
-    ObjectToAnimate:
-      Obj: {fileID: 0}
-      TargetPosition: {x: 0, y: 0, z: 0}
-      TargetScale: {x: 0, y: 0, z: 0}
-      Time: 0
-      CurveType: 0
 --- !u!114 &114043505126110286
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1182,13 +1166,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_activeImage: {fileID: 21300000, guid: 8328c18fba95b754e83002436ca2bb51, type: 3}
   m_inactiveImage: {fileID: 21300000, guid: d9be09c33132e274fb3ee48af31696d7, type: 3}
-  m_parent: {fileID: 114580157756759182}
+  m_parent: {fileID: 114001828918924350}
   m_cutsceneToPlay: {fileID: 11400000, guid: ac3db1fe1919877419e01ed0001400ab, type: 2}
   m_EndGameCondition: 0
   m_unlocked: 0
   m_textBox: {fileID: 0}
   m_infoText: Beat Rider meets his end...
-  m_nodeNumber: 33
   m_animaticPrefab: {fileID: 1072073202832808, guid: 00492b99bd9ee11469743171da492c60,
     type: 2}
 --- !u!114 &114052919818130702
@@ -1212,7 +1195,36 @@ MonoBehaviour:
   m_infoText: 'LEVEL 5 (THE ICE WASTES)
 
     Beat Rider finally delivers the mysterious package...'
-  m_nodeNumber: 35
+--- !u!114 &114055253103544800
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1761619896602416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114904667996289906}
+          m_MethodName: UpdateTextBox
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!114 &114056677004490144
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1438,7 +1450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_activeImage: {fileID: 21300000, guid: 8328c18fba95b754e83002436ca2bb51, type: 3}
   m_inactiveImage: {fileID: 21300000, guid: d9be09c33132e274fb3ee48af31696d7, type: 3}
-  m_parent: {fileID: 114444585818501806}
+  m_parent: {fileID: 114273613141781712}
   m_cutsceneToPlay: {fileID: 11400000, guid: 9695ef8b590b7a4488720bb8ecbe01f9, type: 2}
   m_EndGameCondition: 3
   m_unlocked: 1
@@ -1446,130 +1458,12 @@ MonoBehaviour:
   m_infoText: 'LEVEL 5 (THE ICE WASTES)
 
     Beat Rider confronts his shady employers.'
-  m_nodeNumber: 13
 --- !u!114 &114089845321947200
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1032287939324190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.5735294, b: 0.5735294, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8328c18fba95b754e83002436ca2bb51, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!114 &114090944474959064
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1845541146910372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.5735294, b: 0.5735294, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d899add52b0252945a4136222c49152e, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!114 &114092114962461256
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1259965498351780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 0.36277902, g: 0.24264705, b: 1, a: 1}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 114680034974093768}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114169024973321266}
-        m_MethodName: Select
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 114299435868785852}
-        m_MethodName: PlayTransitions
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &114093444914022206
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1976178150811546}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -1632,6 +1526,69 @@ MonoBehaviour:
       TargetScale: {x: 0, y: 0, z: 0}
       Time: 0
       CurveType: 0
+--- !u!114 &114109197965565230
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1626589205229320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 0.36277902, g: 0.24264705, b: 1, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 114377862066000008}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114812384130360152}
+        m_MethodName: Select
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114299435868785852}
+        m_MethodName: PlayTransitions
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114111075821531662
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1645,7 +1602,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_activeImage: {fileID: 21300000, guid: d899add52b0252945a4136222c49152e, type: 3}
   m_inactiveImage: {fileID: 21300000, guid: 7225ab0d8c613de45b90cabccfafd4c5, type: 3}
-  m_parent: {fileID: 114531088700555484}
+  m_parent: {fileID: 114755056208622082}
   m_cutsceneToPlay: {fileID: 11400000, guid: 8aade5a11d5f85a40aa775f6931960e0, type: 2}
   m_EndGameCondition: 2
   m_unlocked: 1
@@ -1653,7 +1610,77 @@ MonoBehaviour:
   m_infoText: 'LEVEL 4 (DEEP SEA)
 
     Beat Rider remains a loyal employee...'
-  m_nodeNumber: 11
+--- !u!114 &114119693598027772
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1524565943246064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114933553175399224}
+          m_MethodName: UpdateTextBox
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
+--- !u!114 &114123090620445114
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1030929818691624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ab34897e65ec248bf1c01542651a0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_outTransitions:
+  - ObjectToToggleEnabled: {fileID: 0}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 0, y: 0, z: 0}
+      Time: 0
+      CurveType: 0
+  - ObjectToToggleEnabled: {fileID: 0}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 0, y: 0, z: 0}
+      Time: 0
+      CurveType: 0
+  - ObjectToToggleEnabled: {fileID: 0}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 0, y: 0, z: 0}
+      Time: 0
+      CurveType: 0
+  m_inTransitions:
+  - ObjectToToggleEnabled: {fileID: 0}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 0, y: 0, z: 0}
+      Time: 0
+      CurveType: 0
 --- !u!114 &114126134008537434
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1736,6 +1763,96 @@ MonoBehaviour:
       TargetScale: {x: 0, y: 0, z: 0}
       Time: 0
       CurveType: 0
+--- !u!114 &114128980212753124
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1853449018044698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 0.36277902, g: 0.24264705, b: 1, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 114860323196822282}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114755056208622082}
+        m_MethodName: Select
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114299435868785852}
+        m_MethodName: PlayTransitions
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &114132796227970902
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1914588239546636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.5735294, b: 0.5735294, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 8328c18fba95b754e83002436ca2bb51, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!114 &114133980941534164
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1755,7 +1872,6 @@ MonoBehaviour:
   m_unlocked: 0
   m_textBox: {fileID: 0}
   m_infoText: Beat Rider becomes an outlaw...
-  m_nodeNumber: 9
   m_animaticPrefab: {fileID: 1943762477399604, guid: ade8674da073dc04db52551f026324c3,
     type: 2}
 --- !u!114 &114144111992970510
@@ -1771,7 +1887,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_activeImage: {fileID: 21300000, guid: 8328c18fba95b754e83002436ca2bb51, type: 3}
   m_inactiveImage: {fileID: 21300000, guid: d9be09c33132e274fb3ee48af31696d7, type: 3}
-  m_parent: {fileID: 114974636938883372}
+  m_parent: {fileID: 114887433988608744}
   m_cutsceneToPlay: {fileID: 11400000, guid: eac3cdfc3a47c5f4fa5cc2874a6d9ccf, type: 2}
   m_EndGameCondition: 4
   m_unlocked: 1
@@ -1779,7 +1895,6 @@ MonoBehaviour:
   m_infoText: 'LEVEL 4 (DEEP SEA)
 
     Beat Rider receives a concerning call from his wife...'
-  m_nodeNumber: 23
 --- !u!114 &114151745590575716
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1799,7 +1914,6 @@ MonoBehaviour:
   m_unlocked: 1
   m_textBox: {fileID: 0}
   m_infoText: '---'
-  m_nodeNumber: 6
 --- !u!114 &114155269177254018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1914,59 +2028,6 @@ MonoBehaviour:
   m_infoText: 'LEVEL 5 (THE ICE WASTES)
 
     Beat Rider finally delivers the mysterious package...'
-  m_nodeNumber: 19
---- !u!114 &114169024973321266
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1259965498351780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 906a7a4ec77fec14f886fff540d2f1cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_activeImage: {fileID: 21300000, guid: 8328c18fba95b754e83002436ca2bb51, type: 3}
-  m_inactiveImage: {fileID: 21300000, guid: d9be09c33132e274fb3ee48af31696d7, type: 3}
-  m_parent: {fileID: 114536228247116122}
-  m_cutsceneToPlay: {fileID: 11400000, guid: a53cf2c79e6b2374aa46e43515fe932a, type: 2}
-  m_EndGameCondition: 3
-  m_unlocked: 1
-  m_textBox: {fileID: 0}
-  m_infoText: 'LEVEL 4 (DEEP SEA)
-
-    Beat Rider sides with the law...'
-  m_nodeNumber: 28
---- !u!114 &114170054199685904
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1524647170558124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 114536228247116122}
-          m_MethodName: UpdateTextBox
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!114 &114172316518380800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2253,70 +2314,47 @@ MonoBehaviour:
   m_infoText: 'LEVEL 4 (DEEP SEA)
 
     Beat Rider receives a concerning call from his wife...'
-  m_nodeNumber: 7
---- !u!114 &114196018799844582
+--- !u!114 &114195645445515458
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1524647170558124}
+  m_GameObject: {fileID: 1761619896602416}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 69ab34897e65ec248bf1c01542651a0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 0.36277902, g: 0.24264705, b: 1, a: 1}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 114378622855820286}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114536228247116122}
-        m_MethodName: Select
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 114299435868785852}
-        m_MethodName: PlayTransitions
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+  m_outTransitions:
+  - ObjectToToggleEnabled: {fileID: 0}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 0, y: 0, z: 0}
+      Time: 0
+      CurveType: 0
+  - ObjectToToggleEnabled: {fileID: 0}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 0, y: 0, z: 0}
+      Time: 0
+      CurveType: 0
+  - ObjectToToggleEnabled: {fileID: 0}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 0, y: 0, z: 0}
+      Time: 0
+      CurveType: 0
+  m_inTransitions:
+  - ObjectToToggleEnabled: {fileID: 0}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 0, y: 0, z: 0}
+      Time: 0
+      CurveType: 0
 --- !u!114 &114208365868127082
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2388,6 +2426,33 @@ MonoBehaviour:
       TargetScale: {x: 0, y: 0, z: 0}
       Time: 0
       CurveType: 0
+--- !u!114 &114226699408645778
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1030929818691624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.5735294, b: 0.5735294, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: d899add52b0252945a4136222c49152e, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!114 &114227820348246038
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2425,90 +2490,6 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 114390579765479892}
-          m_MethodName: UpdateTextBox
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
---- !u!114 &114233152312797194
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1095974872989696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.5735294, b: 0.5735294, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8328c18fba95b754e83002436ca2bb51, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!114 &114235162596871502
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1976872580015390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.5735294, b: 0.5735294, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d899add52b0252945a4136222c49152e, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!114 &114235967435599238
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1976872580015390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 114974636938883372}
           m_MethodName: UpdateTextBox
           m_Mode: 1
           m_Arguments:
@@ -2606,7 +2587,6 @@ MonoBehaviour:
   m_infoText: 'LEVEL 4 (DEEP SEA)
 
     Beat Rider hides from the law''s reach...'
-  m_nodeNumber: 18
 --- !u!114 &114257055807962778
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2746,6 +2726,27 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
+--- !u!114 &114273613141781712
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1914588239546636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 906a7a4ec77fec14f886fff540d2f1cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_activeImage: {fileID: 21300000, guid: 8328c18fba95b754e83002436ca2bb51, type: 3}
+  m_inactiveImage: {fileID: 21300000, guid: d9be09c33132e274fb3ee48af31696d7, type: 3}
+  m_parent: {fileID: 114755056208622082}
+  m_cutsceneToPlay: {fileID: 11400000, guid: a53cf2c79e6b2374aa46e43515fe932a, type: 2}
+  m_EndGameCondition: 3
+  m_unlocked: 1
+  m_textBox: {fileID: 0}
+  m_infoText: 'LEVEL 4 (DEEP SEA)
+
+    Beat Rider sides with the law...'
 --- !u!114 &114277886536666618
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2849,6 +2850,69 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114547279728703886}
+        m_MethodName: Select
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114299435868785852}
+        m_MethodName: PlayTransitions
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &114285338149018558
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1030929818691624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 0.36277902, g: 0.24264705, b: 1, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 114226699408645778}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114887433988608744}
         m_MethodName: Select
         m_Mode: 1
         m_Arguments:
@@ -3147,7 +3211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_activeImage: {fileID: 21300000, guid: 8328c18fba95b754e83002436ca2bb51, type: 3}
   m_inactiveImage: {fileID: 21300000, guid: d9be09c33132e274fb3ee48af31696d7, type: 3}
-  m_parent: {fileID: 114425385896913560}
+  m_parent: {fileID: 114933553175399224}
   m_cutsceneToPlay: {fileID: 11400000, guid: b7748cefb5a2ae9438682b8d4340214b, type: 2}
   m_EndGameCondition: 0
   m_unlocked: 1
@@ -3155,7 +3219,36 @@ MonoBehaviour:
   m_infoText: 'LEVEL 4 (DEEP SEA)
 
     Beat Rider hides from the law''s reach...'
-  m_nodeNumber: 34
+--- !u!114 &114325194024503346
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1030929818691624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114887433988608744}
+          m_MethodName: UpdateTextBox
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!114 &114328080010091872
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3267,7 +3360,6 @@ MonoBehaviour:
   m_infoText: 'LEVEL 2 (THE CANYONS)
 
     Two incoming calls.'
-  m_nodeNumber: 2
 --- !u!114 &114349638180525174
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3281,15 +3373,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_activeImage: {fileID: 21300000, guid: 8328c18fba95b754e83002436ca2bb51, type: 3}
   m_inactiveImage: {fileID: 21300000, guid: d9be09c33132e274fb3ee48af31696d7, type: 3}
-  m_parent: {fileID: 114169024973321266}
+  m_parent: {fileID: 114444585818501806}
   m_cutsceneToPlay: {fileID: 11400000, guid: 9695ef8b590b7a4488720bb8ecbe01f9, type: 2}
-  m_EndGameCondition: 3
+  m_EndGameCondition: 0
   m_unlocked: 1
   m_textBox: {fileID: 0}
   m_infoText: 'LEVEL 5 (THE ICE WASTES)
 
     Beat Rider confronts his shady employers.'
-  m_nodeNumber: 29
 --- !u!114 &114355107970332918
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3329,7 +3420,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114845818134904918}
+      - m_Target: {fileID: 114001828918924350}
         m_MethodName: Select
         m_Mode: 1
         m_Arguments:
@@ -3461,11 +3552,10 @@ MonoBehaviour:
   m_inactiveImage: {fileID: 21300000, guid: d9be09c33132e274fb3ee48af31696d7, type: 3}
   m_parent: {fileID: 114023420085893274}
   m_cutsceneToPlay: {fileID: 11400000, guid: e8747c1a396e63b45a016c63e6be2e25, type: 2}
-  m_EndGameCondition: 1
+  m_EndGameCondition: 0
   m_unlocked: 0
   m_textBox: {fileID: 0}
   m_infoText: Beat Rider discovers an ugly reality...
-  m_nodeNumber: 25
   m_animaticPrefab: {fileID: 1613833878917598, guid: f0546924a89a33541a046c71368c10ad,
     type: 2}
 --- !u!114 &114370893117633622
@@ -3530,7 +3620,6 @@ MonoBehaviour:
   m_infoText: 'LEVEL 3 (NIGHTSHADE FOREST)
 
     Beat Rider receives an update on his mission...'
-  m_nodeNumber: 4
 --- !u!114 &114372600242462534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3651,36 +3740,33 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114377936941735992
+--- !u!114 &114377862066000008
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1845541146910372}
+  m_GameObject: {fileID: 1626589205229320}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 114425385896913560}
-          m_MethodName: UpdateTextBox
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.5735294, b: 0.5735294, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 8328c18fba95b754e83002436ca2bb51, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!114 &114378407575888464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3722,33 +3808,6 @@ MonoBehaviour:
       TargetScale: {x: 0, y: 0, z: 0}
       Time: 0
       CurveType: 0
---- !u!114 &114378622855820286
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1524647170558124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.5735294, b: 0.5735294, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8328c18fba95b754e83002436ca2bb51, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
 --- !u!114 &114379002519558360
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3833,7 +3892,6 @@ MonoBehaviour:
   m_infoText: 'LEVEL 3 (NIGHTSHADE FOREST)
 
     2 incoming calls. Business as usual...'
-  m_nodeNumber: 3
 --- !u!114 &114384020950593564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3885,7 +3943,6 @@ MonoBehaviour:
   m_infoText: 'LEVEL 1 (CITY)
 
     Beat Rider receives a special mission...'
-  m_nodeNumber: 1
 --- !u!114 &114397985851357396
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3927,36 +3984,6 @@ MonoBehaviour:
       TargetScale: {x: 0, y: 0, z: 0}
       Time: 0
       CurveType: 0
---- !u!114 &114407016647125354
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1976178150811546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 114580157756759182}
-          m_MethodName: UpdateTextBox
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!114 &114411656989346024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4050,47 +4077,6 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
---- !u!114 &114419708688404774
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1524647170558124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69ab34897e65ec248bf1c01542651a0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_outTransitions:
-  - ObjectToToggleEnabled: {fileID: 0}
-    ObjectToAnimate:
-      Obj: {fileID: 0}
-      TargetPosition: {x: 0, y: 0, z: 0}
-      TargetScale: {x: 0, y: 0, z: 0}
-      Time: 0
-      CurveType: 0
-  - ObjectToToggleEnabled: {fileID: 0}
-    ObjectToAnimate:
-      Obj: {fileID: 0}
-      TargetPosition: {x: 0, y: 0, z: 0}
-      TargetScale: {x: 0, y: 0, z: 0}
-      Time: 0
-      CurveType: 0
-  - ObjectToToggleEnabled: {fileID: 0}
-    ObjectToAnimate:
-      Obj: {fileID: 0}
-      TargetPosition: {x: 0, y: 0, z: 0}
-      TargetScale: {x: 0, y: 0, z: 0}
-      Time: 0
-      CurveType: 0
-  m_inTransitions:
-  - ObjectToToggleEnabled: {fileID: 0}
-    ObjectToAnimate:
-      Obj: {fileID: 0}
-      TargetPosition: {x: 0, y: 0, z: 0}
-      TargetScale: {x: 0, y: 0, z: 0}
-      Time: 0
-      CurveType: 0
 --- !u!114 &114419824894105582
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4121,12 +4107,12 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
---- !u!114 &114423733163446960
+--- !u!114 &114434633762956658
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1976178150811546}
+  m_GameObject: {fileID: 1914588239546636}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -4156,11 +4142,11 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 114093444914022206}
+  m_TargetGraphic: {fileID: 114132796227970902}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114580157756759182}
+      - m_Target: {fileID: 114273613141781712}
         m_MethodName: Select
         m_Mode: 1
         m_Arguments:
@@ -4184,28 +4170,36 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114425385896913560
+--- !u!114 &114437258283433554
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1845541146910372}
+  m_GameObject: {fileID: 1626589205229320}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 906a7a4ec77fec14f886fff540d2f1cf, type: 3}
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_activeImage: {fileID: 21300000, guid: d899add52b0252945a4136222c49152e, type: 3}
-  m_inactiveImage: {fileID: 21300000, guid: 7225ab0d8c613de45b90cabccfafd4c5, type: 3}
-  m_parent: {fileID: 114536228247116122}
-  m_cutsceneToPlay: {fileID: 11400000, guid: 8aade5a11d5f85a40aa775f6931960e0, type: 2}
-  m_EndGameCondition: 2
-  m_unlocked: 1
-  m_textBox: {fileID: 0}
-  m_infoText: 'LEVEL 4 (DEEP SEA)
-
-    Beat Rider remains a loyal employee...'
-  m_nodeNumber: 27
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114812384130360152}
+          m_MethodName: UpdateTextBox
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!114 &114438699576605460
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4227,7 +4221,6 @@ MonoBehaviour:
   m_infoText: 'LEVEL 4 (DEEP SEA)
 
     3 Incoming calls...unusual.'
-  m_nodeNumber: 5
 --- !u!114 &114439723175875232
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4306,7 +4299,6 @@ MonoBehaviour:
   m_infoText: 'LEVEL 4 (DEEP SEA)
 
     Beat Rider sides with the law...'
-  m_nodeNumber: 12
 --- !u!114 &114446993163990022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4594,47 +4586,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114481361006122438
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1845541146910372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69ab34897e65ec248bf1c01542651a0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_outTransitions:
-  - ObjectToToggleEnabled: {fileID: 0}
-    ObjectToAnimate:
-      Obj: {fileID: 0}
-      TargetPosition: {x: 0, y: 0, z: 0}
-      TargetScale: {x: 0, y: 0, z: 0}
-      Time: 0
-      CurveType: 0
-  - ObjectToToggleEnabled: {fileID: 0}
-    ObjectToAnimate:
-      Obj: {fileID: 0}
-      TargetPosition: {x: 0, y: 0, z: 0}
-      TargetScale: {x: 0, y: 0, z: 0}
-      Time: 0
-      CurveType: 0
-  - ObjectToToggleEnabled: {fileID: 0}
-    ObjectToAnimate:
-      Obj: {fileID: 0}
-      TargetPosition: {x: 0, y: 0, z: 0}
-      TargetScale: {x: 0, y: 0, z: 0}
-      Time: 0
-      CurveType: 0
-  m_inTransitions:
-  - ObjectToToggleEnabled: {fileID: 0}
-    ObjectToAnimate:
-      Obj: {fileID: 0}
-      TargetPosition: {x: 0, y: 0, z: 0}
-      TargetScale: {x: 0, y: 0, z: 0}
-      Time: 0
-      CurveType: 0
 --- !u!114 &114483629496110450
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4692,47 +4643,6 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
---- !u!114 &114499487582259456
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1095974872989696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69ab34897e65ec248bf1c01542651a0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_outTransitions:
-  - ObjectToToggleEnabled: {fileID: 0}
-    ObjectToAnimate:
-      Obj: {fileID: 0}
-      TargetPosition: {x: 0, y: 0, z: 0}
-      TargetScale: {x: 0, y: 0, z: 0}
-      Time: 0
-      CurveType: 0
-  - ObjectToToggleEnabled: {fileID: 0}
-    ObjectToAnimate:
-      Obj: {fileID: 0}
-      TargetPosition: {x: 0, y: 0, z: 0}
-      TargetScale: {x: 0, y: 0, z: 0}
-      Time: 0
-      CurveType: 0
-  - ObjectToToggleEnabled: {fileID: 0}
-    ObjectToAnimate:
-      Obj: {fileID: 0}
-      TargetPosition: {x: 0, y: 0, z: 0}
-      TargetScale: {x: 0, y: 0, z: 0}
-      Time: 0
-      CurveType: 0
-  m_inTransitions:
-  - ObjectToToggleEnabled: {fileID: 0}
-    ObjectToAnimate:
-      Obj: {fileID: 0}
-      TargetPosition: {x: 0, y: 0, z: 0}
-      TargetScale: {x: 0, y: 0, z: 0}
-      Time: 0
-      CurveType: 0
 --- !u!114 &114501538955904306
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4793,7 +4703,6 @@ MonoBehaviour:
   m_unlocked: 0
   m_textBox: {fileID: 0}
   m_infoText: Beat Rider aids a takedown...
-  m_nodeNumber: 30
   m_animaticPrefab: {fileID: 1543997265343370, guid: f22c0c0a951ae7743b3f88d4a7030c22,
     type: 2}
 --- !u!114 &114522396718279550
@@ -4908,7 +4817,6 @@ MonoBehaviour:
   m_unlocked: 0
   m_textBox: {fileID: 0}
   m_infoText: Beat Rider aids a takedown...
-  m_nodeNumber: 14
   m_animaticPrefab: {fileID: 1543997265343370, guid: f22c0c0a951ae7743b3f88d4a7030c22,
     type: 2}
 --- !u!114 &114531088700555484
@@ -4924,7 +4832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_activeImage: {fileID: 21300000, guid: 8328c18fba95b754e83002436ca2bb51, type: 3}
   m_inactiveImage: {fileID: 21300000, guid: d9be09c33132e274fb3ee48af31696d7, type: 3}
-  m_parent: {fileID: 114438699576605460}
+  m_parent: {fileID: 114887433988608744}
   m_cutsceneToPlay: {fileID: 11400000, guid: 934bf34816693d9468690e2ee18bf760, type: 2}
   m_EndGameCondition: 0
   m_unlocked: 1
@@ -4932,29 +4840,36 @@ MonoBehaviour:
   m_infoText: 'LEVEL 4 (DEEP SEA)
 
     Beat Rider is intercepted by ???...'
-  m_nodeNumber: 10
---- !u!114 &114536228247116122
+--- !u!114 &114540006030346156
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1524647170558124}
+  m_GameObject: {fileID: 1914588239546636}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 906a7a4ec77fec14f886fff540d2f1cf, type: 3}
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_activeImage: {fileID: 21300000, guid: 8328c18fba95b754e83002436ca2bb51, type: 3}
-  m_inactiveImage: {fileID: 21300000, guid: d9be09c33132e274fb3ee48af31696d7, type: 3}
-  m_parent: {fileID: 114974636938883372}
-  m_cutsceneToPlay: {fileID: 11400000, guid: 934bf34816693d9468690e2ee18bf760, type: 2}
-  m_EndGameCondition: 1
-  m_unlocked: 1
-  m_textBox: {fileID: 0}
-  m_infoText: 'LEVEL 4 (DEEP SEA)
-
-    Beat Rider is intercepted by ???...'
-  m_nodeNumber: 26
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114273613141781712}
+          m_MethodName: UpdateTextBox
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!114 &114545786297595530
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5004,7 +4919,6 @@ MonoBehaviour:
   m_unlocked: 0
   m_textBox: {fileID: 0}
   m_infoText: Beat Rider goes on the run...
-  m_nodeNumber: 20
   m_animaticPrefab: {fileID: 1842506847576202, guid: 8c4a5f575b6e2544b8d818a2a3fbe085,
     type: 2}
 --- !u!114 &114557249124289186
@@ -5141,28 +5055,6 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
---- !u!114 &114580157756759182
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1976178150811546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 906a7a4ec77fec14f886fff540d2f1cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_activeImage: {fileID: 21300000, guid: 8328c18fba95b754e83002436ca2bb51, type: 3}
-  m_inactiveImage: {fileID: 21300000, guid: d9be09c33132e274fb3ee48af31696d7, type: 3}
-  m_parent: {fileID: 114666115146397562}
-  m_cutsceneToPlay: {fileID: 11400000, guid: 1769988aeb96d4f4a9890500c808901d, type: 2}
-  m_EndGameCondition: 1
-  m_unlocked: 1
-  m_textBox: {fileID: 0}
-  m_infoText: 'LEVEL 5 (THE ICE WASTES)
-
-    Beat Rider finally delivers the mysterious package...'
-  m_nodeNumber: 32
 --- !u!114 &114586543835826046
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5298,7 +5190,6 @@ MonoBehaviour:
   m_infoText: 'LEVEL 3 (NIGHTSHADE FOREST)
 
     Beat Rider updates his dinner plans...'
-  m_nodeNumber: 21
 --- !u!114 &114600147050699512
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5528,34 +5419,53 @@ MonoBehaviour:
       TargetScale: {x: 0, y: 0, z: 0}
       Time: 0
       CurveType: 0
---- !u!114 &114666115146397562
+--- !u!114 &114663918634149926
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1095974872989696}
+  m_GameObject: {fileID: 1626589205229320}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 906a7a4ec77fec14f886fff540d2f1cf, type: 3}
+  m_Script: {fileID: 11500000, guid: 69ab34897e65ec248bf1c01542651a0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_activeImage: {fileID: 21300000, guid: 8328c18fba95b754e83002436ca2bb51, type: 3}
-  m_inactiveImage: {fileID: 21300000, guid: d9be09c33132e274fb3ee48af31696d7, type: 3}
-  m_parent: {fileID: 114974636938883372}
-  m_cutsceneToPlay: {fileID: 11400000, guid: b7748cefb5a2ae9438682b8d4340214b, type: 2}
-  m_EndGameCondition: 1
-  m_unlocked: 1
-  m_textBox: {fileID: 0}
-  m_infoText: 'LEVEL 4 (DEEP SEA)
-
-    Beat Rider needs to go deeper...'
-  m_nodeNumber: 31
---- !u!114 &114676026179835430
+  m_outTransitions:
+  - ObjectToToggleEnabled: {fileID: 0}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 0, y: 0, z: 0}
+      Time: 0
+      CurveType: 0
+  - ObjectToToggleEnabled: {fileID: 0}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 0, y: 0, z: 0}
+      Time: 0
+      CurveType: 0
+  - ObjectToToggleEnabled: {fileID: 0}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 0, y: 0, z: 0}
+      Time: 0
+      CurveType: 0
+  m_inTransitions:
+  - ObjectToToggleEnabled: {fileID: 0}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 0, y: 0, z: 0}
+      Time: 0
+      CurveType: 0
+--- !u!114 &114677024305316200
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1259965498351780}
+  m_GameObject: {fileID: 1914588239546636}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69ab34897e65ec248bf1c01542651a0d, type: 3}
@@ -5632,33 +5542,6 @@ MonoBehaviour:
       TargetScale: {x: 0, y: 0, z: 0}
       Time: 0
       CurveType: 0
---- !u!114 &114680034974093768
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1259965498351780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.5735294, b: 0.5735294, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8328c18fba95b754e83002436ca2bb51, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
 --- !u!114 &114683248207666900
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5686,47 +5569,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114683559874723150
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1976178150811546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69ab34897e65ec248bf1c01542651a0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_outTransitions:
-  - ObjectToToggleEnabled: {fileID: 0}
-    ObjectToAnimate:
-      Obj: {fileID: 0}
-      TargetPosition: {x: 0, y: 0, z: 0}
-      TargetScale: {x: 0, y: 0, z: 0}
-      Time: 0
-      CurveType: 0
-  - ObjectToToggleEnabled: {fileID: 0}
-    ObjectToAnimate:
-      Obj: {fileID: 0}
-      TargetPosition: {x: 0, y: 0, z: 0}
-      TargetScale: {x: 0, y: 0, z: 0}
-      Time: 0
-      CurveType: 0
-  - ObjectToToggleEnabled: {fileID: 0}
-    ObjectToAnimate:
-      Obj: {fileID: 0}
-      TargetPosition: {x: 0, y: 0, z: 0}
-      TargetScale: {x: 0, y: 0, z: 0}
-      Time: 0
-      CurveType: 0
-  m_inTransitions:
-  - ObjectToToggleEnabled: {fileID: 0}
-    ObjectToAnimate:
-      Obj: {fileID: 0}
-      TargetPosition: {x: 0, y: 0, z: 0}
-      TargetScale: {x: 0, y: 0, z: 0}
-      Time: 0
-      CurveType: 0
 --- !u!114 &114702151948732686
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5790,6 +5632,36 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114705543304775202
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1853449018044698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114755056208622082}
+          m_MethodName: UpdateTextBox
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!114 &114707049995649676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5963,6 +5835,68 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1350286240964566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ab34897e65ec248bf1c01542651a0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_outTransitions:
+  - ObjectToToggleEnabled: {fileID: 0}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 0, y: 0, z: 0}
+      Time: 0
+      CurveType: 0
+  - ObjectToToggleEnabled: {fileID: 0}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 0, y: 0, z: 0}
+      Time: 0
+      CurveType: 0
+  - ObjectToToggleEnabled: {fileID: 0}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 0, y: 0, z: 0}
+      Time: 0
+      CurveType: 0
+  m_inTransitions:
+  - ObjectToToggleEnabled: {fileID: 0}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 0, y: 0, z: 0}
+      Time: 0
+      CurveType: 0
+--- !u!114 &114755056208622082
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1853449018044698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 906a7a4ec77fec14f886fff540d2f1cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_activeImage: {fileID: 21300000, guid: 8328c18fba95b754e83002436ca2bb51, type: 3}
+  m_inactiveImage: {fileID: 21300000, guid: d9be09c33132e274fb3ee48af31696d7, type: 3}
+  m_parent: {fileID: 114438699576605460}
+  m_cutsceneToPlay: {fileID: 11400000, guid: 934bf34816693d9468690e2ee18bf760, type: 2}
+  m_EndGameCondition: 0
+  m_unlocked: 1
+  m_textBox: {fileID: 0}
+  m_infoText: 'LEVEL 4 (DEEP SEA)
+
+    Beat Rider is intercepted by ???...'
+--- !u!114 &114756720763593734
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1853449018044698}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69ab34897e65ec248bf1c01542651a0d, type: 3}
@@ -6177,7 +6111,6 @@ MonoBehaviour:
   m_infoText: 'LEVEL 5 (THE ICE WASTES)
 
     Beat Rider confronts his shady employers.'
-  m_nodeNumber: 8
 --- !u!114 &114797238474273446
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6339,69 +6272,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114808281805865250
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1845541146910372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 0.36277902, g: 0.24264705, b: 1, a: 1}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 114090944474959064}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114169024973321266}
-        m_MethodName: Select
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 114299435868785852}
-        m_MethodName: PlayTransitions
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114811868243870892
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6429,6 +6299,27 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114812384130360152
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1626589205229320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 906a7a4ec77fec14f886fff540d2f1cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_activeImage: {fileID: 21300000, guid: 8328c18fba95b754e83002436ca2bb51, type: 3}
+  m_inactiveImage: {fileID: 21300000, guid: d9be09c33132e274fb3ee48af31696d7, type: 3}
+  m_parent: {fileID: 114904667996289906}
+  m_cutsceneToPlay: {fileID: 11400000, guid: 1769988aeb96d4f4a9890500c808901d, type: 2}
+  m_EndGameCondition: 0
+  m_unlocked: 1
+  m_textBox: {fileID: 0}
+  m_infoText: 'LEVEL 5 (THE ICE WASTES)
+
+    Beat Rider finally delivers the mysterious package...'
 --- !u!114 &114822654384816420
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6456,6 +6347,74 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114824843562682382
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1524565943246064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.5735294, b: 0.5735294, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: d899add52b0252945a4136222c49152e, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!114 &114829638257098674
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1524565943246064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ab34897e65ec248bf1c01542651a0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_outTransitions:
+  - ObjectToToggleEnabled: {fileID: 0}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 0, y: 0, z: 0}
+      Time: 0
+      CurveType: 0
+  - ObjectToToggleEnabled: {fileID: 0}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 0, y: 0, z: 0}
+      Time: 0
+      CurveType: 0
+  - ObjectToToggleEnabled: {fileID: 0}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 0, y: 0, z: 0}
+      Time: 0
+      CurveType: 0
+  m_inTransitions:
+  - ObjectToToggleEnabled: {fileID: 0}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 0, y: 0, z: 0}
+      Time: 0
+      CurveType: 0
 --- !u!114 &114838131887727420
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6496,15 +6455,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_activeImage: {fileID: 21300000, guid: 8328c18fba95b754e83002436ca2bb51, type: 3}
   m_inactiveImage: {fileID: 21300000, guid: d9be09c33132e274fb3ee48af31696d7, type: 3}
-  m_parent: {fileID: 114438699576605460}
+  m_parent: {fileID: 114887433988608744}
   m_cutsceneToPlay: {fileID: 11400000, guid: b7748cefb5a2ae9438682b8d4340214b, type: 2}
-  m_EndGameCondition: 1
+  m_EndGameCondition: 0
   m_unlocked: 1
   m_textBox: {fileID: 0}
   m_infoText: 'LEVEL 4 (DEEP SEA)
 
     Beat Rider needs to go deeper...'
-  m_nodeNumber: 15
 --- !u!114 &114854343205252830
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6546,6 +6504,33 @@ MonoBehaviour:
       TargetScale: {x: 0, y: 0, z: 0}
       Time: 0
       CurveType: 0
+--- !u!114 &114860323196822282
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1853449018044698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.5735294, b: 0.5735294, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 8328c18fba95b754e83002436ca2bb51, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!114 &114862515486201428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6641,6 +6626,69 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114869229679613166
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1524565943246064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 0.36277902, g: 0.24264705, b: 1, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 114824843562682382}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114444585818501806}
+        m_MethodName: Select
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114299435868785852}
+        m_MethodName: PlayTransitions
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114869537443041952
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6671,36 +6719,69 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
---- !u!114 &114870732590942410
+--- !u!114 &114870730191746878
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1095974872989696}
+  m_GameObject: {fileID: 1761619896602416}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 114666115146397562}
-          m_MethodName: UpdateTextBox
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 0.36277902, g: 0.24264705, b: 1, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 114002886894285806}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114904667996289906}
+        m_MethodName: Select
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114299435868785852}
+        m_MethodName: PlayTransitions
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114871104684802858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6717,7 +6798,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 114444585818501806}
+        - m_Target: {fileID: 114273613141781712}
           m_MethodName: UpdateTextBox
           m_Mode: 1
           m_Arguments:
@@ -6835,6 +6916,27 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114887433988608744
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1030929818691624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 906a7a4ec77fec14f886fff540d2f1cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_activeImage: {fileID: 21300000, guid: d899add52b0252945a4136222c49152e, type: 3}
+  m_inactiveImage: {fileID: 21300000, guid: 7225ab0d8c613de45b90cabccfafd4c5, type: 3}
+  m_parent: {fileID: 114596579669885292}
+  m_cutsceneToPlay: {fileID: 11400000, guid: b3f1b3feba998904bb2054543d9e4d22, type: 2}
+  m_EndGameCondition: 0
+  m_unlocked: 1
+  m_textBox: {fileID: 0}
+  m_infoText: 'LEVEL FOUR (DEEP SEA)
+
+    3 Incoming calls...unusual.'
 --- !u!114 &114895244372627266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6892,6 +6994,27 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114904667996289906
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1761619896602416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 906a7a4ec77fec14f886fff540d2f1cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_activeImage: {fileID: 21300000, guid: 8328c18fba95b754e83002436ca2bb51, type: 3}
+  m_inactiveImage: {fileID: 21300000, guid: d9be09c33132e274fb3ee48af31696d7, type: 3}
+  m_parent: {fileID: 114438699576605460}
+  m_cutsceneToPlay: {fileID: 11400000, guid: b7748cefb5a2ae9438682b8d4340214b, type: 2}
+  m_EndGameCondition: 1
+  m_unlocked: 1
+  m_textBox: {fileID: 0}
+  m_infoText: 'LEVEL 4 (DEEP SEA)
+
+    Beat Rider needs to go deeper...'
 --- !u!114 &114911296713575458
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6905,45 +7028,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_activeImage: {fileID: 21300000, guid: 8328c18fba95b754e83002436ca2bb51, type: 3}
   m_inactiveImage: {fileID: 21300000, guid: d9be09c33132e274fb3ee48af31696d7, type: 3}
-  m_parent: {fileID: 114001828918924350}
+  m_parent: {fileID: 114812384130360152}
   m_cutsceneToPlay: {fileID: 11400000, guid: ac3db1fe1919877419e01ed0001400ab, type: 2}
   m_EndGameCondition: 0
   m_unlocked: 0
   m_textBox: {fileID: 0}
   m_infoText: Beat Rider meets his end...
-  m_nodeNumber: 17
   m_animaticPrefab: {fileID: 1072073202832808, guid: 00492b99bd9ee11469743171da492c60,
     type: 2}
---- !u!114 &114920514247620326
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1259965498351780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 114169024973321266}
-          m_MethodName: UpdateTextBox
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!114 &114924470348001318
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7075,69 +7167,27 @@ MonoBehaviour:
       TargetScale: {x: 0, y: 0, z: 0}
       Time: 0
       CurveType: 0
---- !u!114 &114932951424920102
+--- !u!114 &114933553175399224
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1976872580015390}
+  m_GameObject: {fileID: 1524565943246064}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 906a7a4ec77fec14f886fff540d2f1cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 0.36277902, g: 0.24264705, b: 1, a: 1}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 114235162596871502}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114974636938883372}
-        m_MethodName: Select
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 114299435868785852}
-        m_MethodName: PlayTransitions
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+  m_activeImage: {fileID: 21300000, guid: d899add52b0252945a4136222c49152e, type: 3}
+  m_inactiveImage: {fileID: 21300000, guid: 7225ab0d8c613de45b90cabccfafd4c5, type: 3}
+  m_parent: {fileID: 114531088700555484}
+  m_cutsceneToPlay: {fileID: 11400000, guid: 8aade5a11d5f85a40aa775f6931960e0, type: 2}
+  m_EndGameCondition: 2
+  m_unlocked: 1
+  m_textBox: {fileID: 0}
+  m_infoText: 'LEVEL 4 (DEEP SEA)
+
+    Beat Rider remains a loyal employee...'
 --- !u!114 &114943276401979334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7242,69 +7292,6 @@ MonoBehaviour:
       TargetScale: {x: 0, y: 0, z: 0}
       Time: 0
       CurveType: 0
---- !u!114 &114947799689421376
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1095974872989696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 0.36277902, g: 0.24264705, b: 1, a: 1}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 114233152312797194}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114580157756759182}
-        m_MethodName: Select
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 114299435868785852}
-        m_MethodName: PlayTransitions
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114966220561260558
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7395,28 +7382,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114974636938883372
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1976872580015390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 906a7a4ec77fec14f886fff540d2f1cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_activeImage: {fileID: 21300000, guid: d899add52b0252945a4136222c49152e, type: 3}
-  m_inactiveImage: {fileID: 21300000, guid: 7225ab0d8c613de45b90cabccfafd4c5, type: 3}
-  m_parent: {fileID: 114596579669885292}
-  m_cutsceneToPlay: {fileID: 11400000, guid: b3f1b3feba998904bb2054543d9e4d22, type: 2}
-  m_EndGameCondition: 1
-  m_unlocked: 1
-  m_textBox: {fileID: 0}
-  m_infoText: 'LEVEL FOUR (DEEP SEA)
-
-    3 Incoming calls...unusual.'
-  m_nodeNumber: 22
 --- !u!114 &114975904553551006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7436,7 +7401,6 @@ MonoBehaviour:
   m_unlocked: 0
   m_textBox: {fileID: 0}
   m_infoText: Beat Rider goes on the run...
-  m_nodeNumber: 36
   m_animaticPrefab: {fileID: 1842506847576202, guid: 8c4a5f575b6e2544b8d818a2a3fbe085,
     type: 2}
 --- !u!114 &114984308189985018
@@ -7532,12 +7496,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1349870109716434}
---- !u!222 &222083945559509874
-CanvasRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1976178150811546}
 --- !u!222 &222173198943466360
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -7550,18 +7508,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1032287939324190}
---- !u!222 &222210704787923474
-CanvasRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1095974872989696}
---- !u!222 &222220979558757196
-CanvasRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1976872580015390}
 --- !u!222 &222239813959690644
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -7580,6 +7526,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1780782726922168}
+--- !u!222 &222292250249871254
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1761619896602416}
 --- !u!222 &222297729187253254
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -7604,12 +7556,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1489609223442384}
---- !u!222 &222372924144518896
-CanvasRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1845541146910372}
 --- !u!222 &222418386332212746
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -7646,12 +7592,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1770997787705188}
---- !u!222 &222479838331538238
-CanvasRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1524647170558124}
 --- !u!222 &222561737522211582
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -7664,18 +7604,30 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1606769479699936}
---- !u!222 &222592004625031126
+--- !u!222 &222592994342698502
 CanvasRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1259965498351780}
+  m_GameObject: {fileID: 1030929818691624}
+--- !u!222 &222654669650046742
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1626589205229320}
 --- !u!222 &222696393359620712
 CanvasRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1629307424116390}
+--- !u!222 &222760338926704922
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1524565943246064}
 --- !u!222 &222762511335982254
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -7700,6 +7652,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1406810334090402}
+--- !u!222 &222941272526858940
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1914588239546636}
+--- !u!222 &222955811369339164
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1853449018044698}
 --- !u!222 &222965806575348426
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -7790,24 +7754,6 @@ RectTransform:
   m_AnchoredPosition: {x: 336.8, y: 45.4}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!224 &224146583760095022
-RectTransform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1095974872989696}
-  m_LocalRotation: {x: -0, y: -0, z: -0.9999898, w: -0.004516323}
-  m_LocalPosition: {x: 0, y: 0, z: -6.1}
-  m_LocalScale: {x: 0.5, y: 0.17, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4191611342867116}
-  m_RootOrder: 30
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -360.518}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 262.3, y: 174.3}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224168208581543754
 RectTransform:
   m_ObjectHideFlags: 1
@@ -7824,6 +7770,24 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 330.18756, y: 98.58183}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224197673183795242
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1626589205229320}
+  m_LocalRotation: {x: -0, y: -0, z: -0.9999898, w: -0.0045163627}
+  m_LocalPosition: {x: 0, y: 0, z: -6.1}
+  m_LocalScale: {x: 0.5, y: 0.17, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4191611342867116}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -360.518}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 307.6, y: 113.8}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224222431554128954
@@ -7862,12 +7826,12 @@ RectTransform:
   m_AnchoredPosition: {x: 239.08755, y: 93.08183}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!224 &224276770154347474
+--- !u!224 &224290949116759554
 RectTransform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1976178150811546}
+  m_GameObject: {fileID: 1016611330028186}
   m_LocalRotation: {x: -0, y: -0, z: -0.99998987, w: -0.004516323}
   m_LocalPosition: {x: 0, y: 0, z: -6.1}
   m_LocalScale: {x: 0.5, y: 0.17, z: 1}
@@ -7878,24 +7842,6 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 306.7, y: 174.4}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!224 &224290949116759554
-RectTransform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1016611330028186}
-  m_LocalRotation: {x: -0, y: -0, z: -0.9999898, w: -0.0045163627}
-  m_LocalPosition: {x: 0, y: 0, z: -6.1}
-  m_LocalScale: {x: 0.5, y: 0.17, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4191611342867116}
-  m_RootOrder: 15
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -360.518}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 307.6, y: 113.8}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224313481547192280
@@ -7958,16 +7904,16 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1458215333868978}
-  m_LocalRotation: {x: -0, y: -0, z: -0.9183352, w: -0.39580363}
+  m_LocalRotation: {x: -0, y: -0, z: -0.9183352, w: -0.3958036}
   m_LocalPosition: {x: 0, y: 0, z: -6.131055}
   m_LocalScale: {x: 0.5, y: 0.17, z: 1}
   m_Children: []
   m_Father: {fileID: 4191611342867116}
-  m_RootOrder: 9
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -226.63199}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 256.98755, y: 95.08183}
+  m_AnchoredPosition: {x: 252.68756, y: 158.28181}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224373809014380422
@@ -8096,6 +8042,24 @@ RectTransform:
   m_AnchoredPosition: {x: 254.48755, y: 58.681828}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224454326534493676
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1524565943246064}
+  m_LocalRotation: {x: -0, y: -0, z: -0.9825529, w: 0.1859836}
+  m_LocalPosition: {x: 0, y: 0, z: -6.131274}
+  m_LocalScale: {x: 0.4506213, y: 0.08683864, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4191611342867116}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -291.931}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 288.4903, y: 154.98137}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224455676562067898
 RectTransform:
   m_ObjectHideFlags: 1
@@ -8132,6 +8096,42 @@ RectTransform:
   m_AnchoredPosition: {x: 349.3, y: 114.963104}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224478077532326562
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1761619896602416}
+  m_LocalRotation: {x: -0, y: -0, z: -0.99998987, w: -0.004516363}
+  m_LocalPosition: {x: 0, y: 0, z: -6.131055}
+  m_LocalScale: {x: 0.5, y: 0.17, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4191611342867116}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -360.518}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 263.18756, y: 114.08183}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224488336113827412
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1914588239546636}
+  m_LocalRotation: {x: -0, y: 0.000000014901161, z: -0.9900001, w: -0.14106631}
+  m_LocalPosition: {x: 0, y: 0, z: -6.1}
+  m_LocalScale: {x: 0.5, y: 0.17, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4191611342867116}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -329.587}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 294.2, y: 74.5}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224615932585978822
 RectTransform:
   m_ObjectHideFlags: 1
@@ -8150,12 +8150,12 @@ RectTransform:
   m_AnchoredPosition: {x: 337.3, y: 68.9}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!224 &224642476073888342
+--- !u!224 &224674911745332990
 RectTransform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1259965498351780}
+  m_GameObject: {fileID: 1349870109716434}
   m_LocalRotation: {x: -0, y: 0.000000014901161, z: -0.9900001, w: -0.14106628}
   m_LocalPosition: {x: 0, y: 0, z: -6.1}
   m_LocalScale: {x: 0.5, y: 0.17, z: 1}
@@ -8168,58 +8168,22 @@ RectTransform:
   m_AnchoredPosition: {x: 290, y: 137}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!224 &224674911745332990
-RectTransform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1349870109716434}
-  m_LocalRotation: {x: -0, y: 0.000000014901161, z: -0.9900001, w: -0.14106631}
-  m_LocalPosition: {x: 0, y: 0, z: -6.1}
-  m_LocalScale: {x: 0.5, y: 0.17, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4191611342867116}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -329.587}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 294.2, y: 74.5}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224696437113958730
 RectTransform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1032287939324190}
-  m_LocalRotation: {x: -0, y: -0, z: -0.99998987, w: -0.004516363}
-  m_LocalPosition: {x: 0, y: 0, z: -6.131055}
+  m_LocalRotation: {x: -0, y: -0, z: -0.9999898, w: -0.004516323}
+  m_LocalPosition: {x: 0, y: 0, z: -6.1}
   m_LocalScale: {x: 0.5, y: 0.17, z: 1}
   m_Children: []
   m_Father: {fileID: 4191611342867116}
-  m_RootOrder: 14
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -360.518}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 263.18756, y: 114.08183}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!224 &224725063294609212
-RectTransform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1976872580015390}
-  m_LocalRotation: {x: -0, y: -0, z: -1, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -6.131055}
-  m_LocalScale: {x: 0.4506213, y: 0.08683864, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4191611342867116}
-  m_RootOrder: 21
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 219.98895, y: 174.88182}
+  m_AnchoredPosition: {x: 262.3, y: 174.3}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224734808959310750
@@ -8238,24 +8202,6 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 301.68756, y: 192.98181}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!224 &224797068741627272
-RectTransform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1845541146910372}
-  m_LocalRotation: {x: -0, y: -0, z: -0.9825529, w: 0.1859836}
-  m_LocalPosition: {x: 0, y: 0, z: -6.131274}
-  m_LocalScale: {x: 0.4506213, y: 0.08683864, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4191611342867116}
-  m_RootOrder: 26
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -291.931}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 288.4903, y: 154.98137}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224854579447459426
@@ -8294,22 +8240,22 @@ RectTransform:
   m_AnchoredPosition: {x: 376.6, y: 131.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!224 &224905785691391090
+--- !u!224 &224901768374708236
 RectTransform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1524647170558124}
-  m_LocalRotation: {x: -0, y: -0, z: -0.9183352, w: -0.3958036}
+  m_GameObject: {fileID: 1853449018044698}
+  m_LocalRotation: {x: -0, y: -0, z: -0.9183352, w: -0.39580363}
   m_LocalPosition: {x: 0, y: 0, z: -6.131055}
   m_LocalScale: {x: 0.5, y: 0.17, z: 1}
   m_Children: []
   m_Father: {fileID: 4191611342867116}
-  m_RootOrder: 25
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -226.63199}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 252.68756, y: 158.28181}
+  m_AnchoredPosition: {x: 256.98755, y: 95.08183}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224924729008734464
@@ -8364,5 +8310,23 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 109.988945, y: 144.08182}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224969932572727130
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1030929818691624}
+  m_LocalRotation: {x: -0, y: -0, z: -1, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -6.131055}
+  m_LocalScale: {x: 0.4506213, y: 0.08683864, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4191611342867116}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 219.98895, y: 174.88182}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
