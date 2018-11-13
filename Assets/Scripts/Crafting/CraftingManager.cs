@@ -13,6 +13,7 @@ namespace BeatRider
 		public Gem[] m_ReipesToStartWith;
 		public Gem[] m_allRecipes;
 		public Image[] m_pickedupGemImageLocations;
+		public Notification m_CraftingNotification;
 		[HideInInspector] public List<Gem> m_collectedGems;
 		[HideInInspector] public List<int> m_RecipesCompleated;
 		public int m_filterNumber = 2;
@@ -86,6 +87,12 @@ namespace BeatRider
 
 		public void UnlockChallenge (Gem gem)
 		{
+			Sprite icon = gem.m_unlockable.m_icon;
+			string notificationText = gem.name + " Discovered!";
+
+			if (m_CraftingNotification)
+				m_CraftingNotification.Notify(icon, notificationText);
+
 			m_recipesPendingcompletion.Add(gem);
 		}
 

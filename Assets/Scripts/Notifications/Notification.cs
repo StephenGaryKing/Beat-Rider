@@ -2,14 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Pixelplacement;
 
 public class Notification : MonoBehaviour {
 
-	Text m_notificationTextBox;
-	Text m_loggerTextBox;
-	ParticleSystemRenderer m_particleSystem;
+	public Text m_notificationTextBox;
+	public Text m_loggerTextBox;
+	public ParticleSystemRenderer m_particleSystem;
+	public Vector3 m_targetPosition;
+	public float m_animationTime = 1;
+	public TweenCurveHelper.CurveType m_curveType;
 
-	void Notify(Sprite img, string notificationText = null, string logText = null)
+	Vector3 m_startingPosition;
+	bool m_tweening = false;
+
+	private void Start()
+	{
+		m_startingPosition = (m_notificationTextBox.transform as RectTransform).position;
+		m_notificationTextBox.gameObject.SetActive(false);
+	}
+
+	public void Notify(Sprite img, string notificationText = null, string logText = null)
 	{
 		// make a new material for the particle emmiter
 		Material mat = new Material(Shader.Find("Particles/Additive"));
@@ -19,12 +32,30 @@ public class Notification : MonoBehaviour {
 		m_particleSystem.material = mat;
 		m_particleSystem.GetComponent<ParticleSystem>().Play();
 
-		// update notify text
-		if (notificationText != null)
+		// update/animate notify text
+		if (!m_tweening && notificationText != null)
+		{
 			m_notificationTextBox.text = notificationText;
+			AnimateNotifyText();
+		}
+			
 
 		// update log
 		if (logText != null)
 			m_loggerTextBox.text += logText + "\n";
+	}
+
+	void AnimateNotifyText()
+	{
+		m_notificationTextBox.gameObject.SetActive(true);
+		m_tweening= true;
+		Tween.AnchoredPosition(m_notificationTextBox.transform as RectTransform, m_targetPosition, m_animationTime, 0, TweenCurveHelper.GetCurve(m_curveType), Tween.LoopType.None, null, TweenEnd, false);
+	}
+
+	void TweenEnd()
+	{
+		m_notificationTextBox.gameObject.SetActive(false);
+		m_tweening = false;
+		(m_notificationTextBox.transform as RectTransform).position = m_startingPosition;
 	}
 }
