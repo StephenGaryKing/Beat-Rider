@@ -30,7 +30,8 @@ public class DotDotDotter : MonoBehaviour {
 		{
 			for (int i = 0; i <= m_stringToAdd.Length; i ++)
 			{
-				m_stringToDot.text = m_origionalString + m_stringToAdd.Substring(0, i);
+                if(m_stringToDot)
+				    m_stringToDot.text = m_origionalString + m_stringToAdd.Substring(0, i);
 				yield return new WaitForSeconds(m_timeBetweenDots);
 			}
 			yield return null;
