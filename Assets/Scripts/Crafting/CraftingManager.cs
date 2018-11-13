@@ -18,6 +18,7 @@ namespace BeatRider
 		public int m_filterNumber = 2;
 		UnlockableManager m_UnlockableManager;
 		List<Gem> m_filteredRecipes = new List<Gem>();
+		List<Gem> m_recipesPendingcompletion = new List<Gem>();
 
 		private void Start()
 		{
@@ -85,13 +86,21 @@ namespace BeatRider
 
 		public void UnlockChallenge (Gem gem)
 		{
-			int index = FindGemIndex(gem);
-			if (!m_RecipesCompleated.Contains(index))
+			m_recipesPendingcompletion.Add(gem);
+		}
+
+		public void CompletePendingChallenges()
+		{
+			foreach (Gem gem in m_recipesPendingcompletion)
 			{
-				m_RecipesCompleated.Add(index);
-				m_UnlockableManager.UnlockUnlockable(gem.m_unlockable);
+				int index = FindGemIndex(gem);
+				if (!m_RecipesCompleated.Contains(index))
+				{
+					m_RecipesCompleated.Add(index);
+					m_UnlockableManager.UnlockUnlockable(gem.m_unlockable);
+				}
+				AchievementManager.OnCraft("");
 			}
-			AchievementManager.OnCraft("");
 			SaveChallenges();
 		}
 
