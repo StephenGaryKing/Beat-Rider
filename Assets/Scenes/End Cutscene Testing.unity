@@ -319,7 +319,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &503649851
 AudioListener:
   m_ObjectHideFlags: 0
@@ -544,11 +544,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4191611342867116, guid: 589a5b9c7bafcfa40a64fbbb47891ee9, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -664.9137
+      value: -597
       objectReference: {fileID: 0}
     - target: {fileID: 4191611342867116, guid: 589a5b9c7bafcfa40a64fbbb47891ee9, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -267.39102
+      value: -209
       objectReference: {fileID: 0}
     - target: {fileID: 4191611342867116, guid: 589a5b9c7bafcfa40a64fbbb47891ee9, type: 2}
       propertyPath: m_LocalPosition.z
@@ -577,6 +577,18 @@ Prefab:
     - target: {fileID: 1650697702589734, guid: 589a5b9c7bafcfa40a64fbbb47891ee9, type: 2}
       propertyPath: m_Name
       value: Nodes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191611342867116, guid: 589a5b9c7bafcfa40a64fbbb47891ee9, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.8182698
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191611342867116, guid: 589a5b9c7bafcfa40a64fbbb47891ee9, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.8182703
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191611342867116, guid: 589a5b9c7bafcfa40a64fbbb47891ee9, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.8182703
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 589a5b9c7bafcfa40a64fbbb47891ee9, type: 2}
@@ -688,7 +700,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1626039808
 MonoBehaviour:
   m_ObjectHideFlags: 0
