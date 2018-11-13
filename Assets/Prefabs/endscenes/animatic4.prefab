@@ -187,6 +187,7 @@ GameObject:
   - component: {fileID: 4747213596268308}
   - component: {fileID: 95682662309033576}
   - component: {fileID: 82376231379571930}
+  - component: {fileID: 114971625852532896}
   m_Layer: 0
   m_Name: animatic4
   m_TagString: Untagged
@@ -558,6 +559,18 @@ MonoBehaviour:
 
 
     (Press any key to continue...)'
+--- !u!114 &114971625852532896
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1842506847576202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e642840cb60f6449911032461142e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_timeToWait: 5
 --- !u!124 &124004274205001294
 Behaviour:
   m_ObjectHideFlags: 1

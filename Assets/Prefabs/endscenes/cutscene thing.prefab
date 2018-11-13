@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 212597306444020790}
   - component: {fileID: 95993511371358524}
   - component: {fileID: 82233626505959702}
+  - component: {fileID: 114982447383691534}
   m_Layer: 0
   m_Name: cutscene thing
   m_TagString: Untagged
@@ -620,6 +621,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114982447383691534
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1072073202832808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e642840cb60f6449911032461142e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_timeToWait: 5
 --- !u!124 &124357634236261678
 Behaviour:
   m_ObjectHideFlags: 1

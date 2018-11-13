@@ -119,6 +119,7 @@ GameObject:
   - component: {fileID: 4835044837438232}
   - component: {fileID: 95439724305052936}
   - component: {fileID: 82614043813142302}
+  - component: {fileID: 114387566047381762}
   m_Layer: 0
   m_Name: animatic5
   m_TagString: Untagged
@@ -545,6 +546,18 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114387566047381762
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1543997265343370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e642840cb60f6449911032461142e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_timeToWait: 5
 --- !u!114 &114686456107660602
 MonoBehaviour:
   m_ObjectHideFlags: 1
