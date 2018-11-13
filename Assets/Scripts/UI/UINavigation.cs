@@ -55,16 +55,19 @@ public class UINavigation : MonoBehaviour {
 		// look through all the buttons to find the most suitable button
 		for(int i = 0; i < m_buttons.Length; i ++)
 		{
-			// find the dot product between the direction of travel and (the button attempting to travel to in the local space of the current button)
-			float dP = Vector2.Dot(((Vector2)m_buttons[i].transform.position - (Vector2)m_buttons[m_currentButton].transform.position).normalized, dir.normalized);
-			if (dP > bestDPSofar)
+			if (m_buttons[i].IsActive())
 			{
-				bestbuttonsSoFar.Clear();
-				bestbuttonsSoFar.Add(i);
-				bestDPSofar = dP;
+				// find the dot product between the direction of travel and (the button attempting to travel to in the local space of the current button)
+				float dP = Vector2.Dot(((Vector2)m_buttons[i].transform.position - (Vector2)m_buttons[m_currentButton].transform.position).normalized, dir.normalized);
+				if (dP > bestDPSofar)
+				{
+					bestbuttonsSoFar.Clear();
+					bestbuttonsSoFar.Add(i);
+					bestDPSofar = dP;
+				}
+				else if (dP == bestDPSofar)
+					bestbuttonsSoFar.Add(i);
 			}
-			else if (dP == bestDPSofar)
-				bestbuttonsSoFar.Add(i);
 		}
 		Debug.Log(bestbuttonsSoFar.Count + " buttons found with a DP of " + bestDPSofar);
 

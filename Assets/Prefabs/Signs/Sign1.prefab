@@ -37,6 +37,7 @@ GameObject:
   - component: {fileID: 33926164082979758}
   - component: {fileID: 23024399301870326}
   - component: {fileID: 114201700374862300}
+  - component: {fileID: 114429183884847542}
   m_Layer: 0
   m_Name: SIGN_01 (1)
   m_TagString: Untagged
@@ -135,3 +136,20 @@ MonoBehaviour:
   m_destinationBrightness: 2.5
   m_startingColour: {r: 0.36551738, g: 1, b: 0, a: 0}
   m_destinationColour: {r: 1, g: 0.33088237, b: 0.98154175, a: 0}
+--- !u!114 &114429183884847542
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1149535800861980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56726c61fea21e4589e1e4bb6a13eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_passToReactTo: DEFAULT
+  m_audioReactor: {fileID: 11400000, guid: a0beaf8230aec354dbc6026a1709b245, type: 2}
+  m_smoothing: 0.05
+  m_startingColour: {r: 0.3647059, g: 1, b: 0, a: 0}
+  m_endingColour: {r: 1, g: 0.32941177, b: 0.98039216, a: 0}
+  m_emissionMagnitude: 2

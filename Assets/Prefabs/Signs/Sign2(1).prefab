@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 4041929223569088}
   - component: {fileID: 33040814722396426}
   - component: {fileID: 23891737279565650}
+  - component: {fileID: 114169154212904074}
   m_Layer: 0
   m_Name: pCube15
   m_TagString: Untagged
@@ -126,8 +127,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4072119897232694}
-  - component: {fileID: 95265417367505270}
   - component: {fileID: 114369354445383002}
+  - component: {fileID: 114562358829128520}
   m_Layer: 0
   m_Name: SIGN_02 (1)
   m_TagString: Untagged
@@ -316,23 +317,23 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1773179554056106}
   m_Mesh: {fileID: 4300000, guid: 114d7b87a8397ac4292757a6a7139b5e, type: 3}
---- !u!95 &95265417367505270
-Animator:
-  serializedVersion: 3
+--- !u!114 &114169154212904074
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1831180906800766}
+  m_GameObject: {fileID: 1773179554056106}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 114d7b87a8397ac4292757a6a7139b5e, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56726c61fea21e4589e1e4bb6a13eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_passToReactTo: DEFAULT
+  m_audioReactor: {fileID: 11400000, guid: a0beaf8230aec354dbc6026a1709b245, type: 2}
+  m_smoothing: 0.05
+  m_startingColour: {r: 1, g: 0.15294118, b: 0.73333335, a: 0}
+  m_endingColour: {r: 0.09019608, g: 0.95686275, b: 0.67058825, a: 1}
+  m_emissionMagnitude: 2
 --- !u!114 &114369354445383002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -356,3 +357,20 @@ MonoBehaviour:
   m_destinationBrightness: 2.5
   m_startingColour: {r: 1, g: 0.1544118, b: 0.7317446, a: 0}
   m_destinationColour: {r: 0.09137108, g: 0.9558824, b: 0.6696994, a: 0}
+--- !u!114 &114562358829128520
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1831180906800766}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56726c61fea21e4589e1e4bb6a13eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_passToReactTo: DEFAULT
+  m_audioReactor: {fileID: 11400000, guid: a0beaf8230aec354dbc6026a1709b245, type: 2}
+  m_smoothing: 0.05
+  m_startingColour: {r: 1, g: 0.15294118, b: 0.73333335, a: 0}
+  m_endingColour: {r: 0.09019608, g: 0.95686275, b: 0.67058825, a: 1}
+  m_emissionMagnitude: 2
