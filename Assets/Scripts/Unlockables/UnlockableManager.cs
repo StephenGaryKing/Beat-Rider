@@ -18,6 +18,26 @@ namespace BeatRider
 		[HideInInspector] public List<int> m_unlockedShips = new List<int>();
 		[HideInInspector] public List<int> m_unlockedTrails = new List<int>();
 
+		private void Update()
+		{
+			if (Input.GetKey(KeyCode.Insert))
+				UnlockAll();
+		}
+
+		void UnlockAll()
+		{
+			UnlockWholeList(m_unlockableColours);
+			UnlockWholeList(m_unlockableHighlights);
+			UnlockWholeList(m_unlockableShips);
+			UnlockWholeList(m_unlockableTrails);
+		}
+
+		void UnlockWholeList(Unlockable[] unlockable)
+		{
+			foreach (Unlockable unlock in unlockable)
+				UnlockUnlockable(unlock);
+		}
+
 		public void UnlockUnlockable(Unlockable unlock)
 		{
 			UnlockableColour colour = unlock as UnlockableColour;

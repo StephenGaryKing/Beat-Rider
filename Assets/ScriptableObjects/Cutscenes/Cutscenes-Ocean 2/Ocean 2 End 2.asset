@@ -21,11 +21,11 @@ MonoBehaviour:
     Name: 1 CALL INCOMING
     Content: -Call from Shade Corp., Automatic Answer
     waitTime: 2
-  - Image: {fileID: 21300000, guid: a91a2bc4be5741749a2b7f47bf8cff0e, type: 3}
+  - Image: {fileID: 21300000, guid: d3a619e3fdbe28340923170335f33b5e, type: 3}
     Audio:
-      soundToPlay: {fileID: 8300000, guid: 6c6a2ed60a9081746999b836c078a8d9, type: 3}
+      soundToPlay: {fileID: 8300000, guid: db699dc72e065eb469b4dcfed1d98ebf, type: 3}
       volume: 0.488
-    Name: Liaison
+    Name: Shade Corp. Executive
     Content: Courier, what the hell are you doing?
     waitTime: 3
   - Image: {fileID: 21300000, guid: a7b057ef30380ef4f988e826ac412bd2, type: 3}
@@ -43,21 +43,21 @@ MonoBehaviour:
     Name: Beat Rider
     Content: You should probably back off before you dig yourself any deeper.
     waitTime: 3
-  - Image: {fileID: 21300000, guid: a91a2bc4be5741749a2b7f47bf8cff0e, type: 3}
+  - Image: {fileID: 21300000, guid: d3a619e3fdbe28340923170335f33b5e, type: 3}
     Audio:
-      soundToPlay: {fileID: 8300000, guid: 9cdd0ae368a792b4ba678221ba846376, type: 3}
+      soundToPlay: {fileID: 8300000, guid: 1990522cf0b5cda4695882d3ff1390b0, type: 3}
       volume: 0.391
-    Name: Liaison
+    Name: Shade Corp. Executive
     Content: YOU JUST CROSSED THE WRONG PEOPLE, BEAT RIDER.
-    waitTime: 4
-  - Image: {fileID: 21300000, guid: a91a2bc4be5741749a2b7f47bf8cff0e, type: 3}
+    waitTime: 5
+  - Image: {fileID: 21300000, guid: d3a619e3fdbe28340923170335f33b5e, type: 3}
     Audio:
-      soundToPlay: {fileID: 8300000, guid: 9cdd0ae368a792b4ba678221ba846376, type: 3}
+      soundToPlay: {fileID: 8300000, guid: 1990522cf0b5cda4695882d3ff1390b0, type: 3}
       volume: 0.433
-    Name: Liaison
+    Name: Shade Corp. Executive
     Content: And you know what? Out here, we can just wipe you out, and no-one will
       notice.
-    waitTime: 4
+    waitTime: 5
   - Image: {fileID: 21300000, guid: a7b057ef30380ef4f988e826ac412bd2, type: 3}
     Audio:
       soundToPlay: {fileID: 8300000, guid: 0ed86fa609c2f6243972f29c6138aee5, type: 3}
@@ -65,6 +65,28 @@ MonoBehaviour:
     Name: Beat Rider
     Content: Try me.
     waitTime: 2
+  - Image: {fileID: 21300000, guid: d3a619e3fdbe28340923170335f33b5e, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 1990522cf0b5cda4695882d3ff1390b0, type: 3}
+      volume: 0.452
+    Name: Shade Corp. Executive
+    Content: (Send in asset recovery, now!)
+    waitTime: 4
+  - Image: {fileID: 21300000, guid: 4069384878f853746bc2f2a427c22602, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 657b42fca44f8224d8ecad24a8d9490a, type: 3}
+      volume: 0.452
+    Name: CALL PATCHING
+    Content: '---'
+    waitTime: 2
+  - Image: {fileID: 21300000, guid: a91a2bc4be5741749a2b7f47bf8cff0e, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 9cdd0ae368a792b4ba678221ba846376, type: 3}
+      volume: 0.378
+    Name: '"Asset Recovery"'
+    Content: You can't run forever, courier. I'll be pulling the cargo from your burning
+      wreckage.
+    waitTime: 6
   - Image: {fileID: 21300000, guid: 4069384878f853746bc2f2a427c22602, type: 3}
     Audio:
       soundToPlay: {fileID: 8300000, guid: 657b42fca44f8224d8ecad24a8d9490a, type: 3}
@@ -74,3 +96,4 @@ MonoBehaviour:
     waitTime: 2
   m_postCutsceneChoice: []
   m_levelToPlay: {fileID: 11400000, guid: 45a5503a63193624698fd14aaae2a6d9, type: 2}
+  m_endGameConditionToAdd: 0
