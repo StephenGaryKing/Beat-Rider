@@ -33,9 +33,9 @@ namespace BeatRider
 			m_allRecipes = newAllRecipies.ToArray();
 
 			foreach (var unlock in m_ReipesToStartWith)
-			{
 				UnlockChallenge(unlock);
-			}
+
+			CompletePendingCrafts();
 
 			DisplayPickupList();
 		}
