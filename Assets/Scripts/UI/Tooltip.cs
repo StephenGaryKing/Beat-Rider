@@ -11,13 +11,13 @@ public class Tooltip : MonoBehaviour {
 
 	public void DisplayText()
 	{
-		m_textBox.gameObject.SetActive(true);
+		m_textBox.transform.parent.gameObject.SetActive(true);
 		m_textBox.text = m_text;
 	}
 
 	public void HideText()
 	{
-		m_textBox.gameObject.SetActive(true);
+		m_textBox.transform.parent.gameObject.SetActive(false);
 	}
 
 }

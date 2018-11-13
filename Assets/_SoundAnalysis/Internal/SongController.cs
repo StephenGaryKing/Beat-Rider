@@ -115,6 +115,11 @@ namespace MusicalGameplayMechanics
 
 		void Update()
 		{
+			if (s_returnToMenu)
+			{
+				s_returnToMenu = false;
+				ReturnToMenu();
+			}
 			if (Input.GetKeyDown(KeyCode.End))
 				_audioSource.Stop();
 			if (m_loadIcon != null)
@@ -191,6 +196,12 @@ namespace MusicalGameplayMechanics
 		public void StopSong(int num)
 		{
 			ActualStopSong((StopSongConditions)num);
+		}
+
+		static bool s_returnToMenu = false;
+		public static void ReturnToMenuStatic()
+		{
+			s_returnToMenu = true;
 		}
 
 		public void ActualStopSong(StopSongConditions condition)

@@ -13,13 +13,7 @@ namespace BeatRider
 			PlayAnimatic();
 		}
 
-		public override void Unlock()
-		{
-			base.Unlock();
-			PlayAnimatic();
-		}
-
-		void PlayAnimatic()
+		public void PlayAnimatic()
 		{
 			// Create the stage for the animatic to play on
 			Instantiate(m_animaticPrefab);

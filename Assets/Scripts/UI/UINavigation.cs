@@ -55,7 +55,7 @@ public class UINavigation : MonoBehaviour {
 		// look through all the buttons to find the most suitable button
 		for(int i = 0; i < m_buttons.Length; i ++)
 		{
-			if (m_buttons[i].IsActive())
+			if (m_buttons[i].IsActive() && m_buttons[i].interactable)
 			{
 				// find the dot product between the direction of travel and (the button attempting to travel to in the local space of the current button)
 				float dP = Vector2.Dot(((Vector2)m_buttons[i].transform.position - (Vector2)m_buttons[m_currentButton].transform.position).normalized, dir.normalized);
