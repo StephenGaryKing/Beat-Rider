@@ -162,6 +162,31 @@ namespace BeatRider
 			StartCoroutine(SetupLevelAsync());
 		}
 
+		private void Update()
+		{
+			if (s_levelHidden && (m_activeSceneryContainer.activeInHierarchy || m_inactiveSceneryContainer.activeInHierarchy))
+			{
+				m_activeSceneryContainer.SetActive(false);
+				m_inactiveSceneryContainer.SetActive(false);
+			}
+			if (!s_levelHidden && (!m_activeSceneryContainer.activeInHierarchy || !m_inactiveSceneryContainer.activeInHierarchy))
+			{
+				m_activeSceneryContainer.SetActive(true);
+				m_inactiveSceneryContainer.SetActive(true);
+			}
+		}
+
+		static bool s_levelHidden = false;
+		public static void HideLevel()
+		{
+			s_levelHidden = true;
+		}
+
+		public static void ShowLevel()
+		{
+			s_levelHidden = false;
+		}
+
 		LevelTemplate m_oldlevelTemplate;
 		private void LateUpdate()
 		{

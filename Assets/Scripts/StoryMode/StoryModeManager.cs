@@ -19,47 +19,46 @@ namespace BeatRider
 		{
 			foreach (FinalStoryNode node in m_FinalStoryNodes)
 			{
-				List<StoryNode> seenNodes = new List<StoryNode>();
-				StoryNode currentNode = node;
-				seenNodes.Add(currentNode);
-				while (currentNode != null)
+				if (node.m_cutsceneToPlay == cs)
 				{
-					if (currentNode.m_cutsceneToPlay == cs)
+					node.Unlock();
+					node.PlayAnimatic();
+					return;
+				}
+
+				else
+				{
+					StoryNode currentNode = node;
+					while (currentNode != null)
 					{
-						bool correctNode = true;
-						// build a list of past events in that line
-						List<EndGameCondition> conditions = new List<EndGameCondition>();
-						StoryNode nodeToCheck = currentNode;
-						while (nodeToCheck != null)
+						if (currentNode.m_cutsceneToPlay == cs)
 						{
-							if (nodeToCheck.m_EndGameCondition != EndGameCondition.NONE)
-								conditions.Add(nodeToCheck.m_EndGameCondition);
-							nodeToCheck = nodeToCheck.m_parent;
-						}
-						// if they match your current history
-						foreach (EndGameCondition con in conditions)
-							if (!m_conditionsCompleated.Contains(con))
-								correctNode = false;
-						// this is the correct node
-						if (correctNode)
-						{
-							currentNode.Unlock();
-							return;
-						}
-						else
-						{
-							currentNode = currentNode.m_parent;
-							if (!seenNodes.Contains(currentNode))
-								seenNodes.Add(currentNode);
-							else
+							bool correctNode = true;
+							// build a list of past events in that line
+							List<EndGameCondition> conditions = new List<EndGameCondition>();
+							StoryNode nodeToCheck = currentNode;
+							while (nodeToCheck != null)
 							{
-								Debug.LogError("Loop found on node " + currentNode.name);
+								if (nodeToCheck.m_EndGameCondition != EndGameCondition.NONE)
+									conditions.Add(nodeToCheck.m_EndGameCondition);
+								nodeToCheck = nodeToCheck.m_parent;
+							}
+							// if they match your current history
+							foreach (EndGameCondition con in conditions)
+								if (!m_conditionsCompleated.Contains(con))
+									correctNode = false;
+							// this is the correct node
+							if (correctNode)
+							{
+								currentNode.Unlock();
 								return;
 							}
+							else
+								currentNode = currentNode.m_parent;
 						}
+						else
+							currentNode = currentNode.m_parent;
 					}
-					else
-						currentNode = currentNode.m_parent;
 				}
 			}
 		}
