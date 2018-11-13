@@ -117,7 +117,8 @@ namespace BeatRider
 				StoryNode parent = m_FinalStoryNodes[i].m_parent;
 				for (int j = 0; j < data[i]; j ++)
 					parent = parent.m_parent;
-				parent.Unlock();
+                if (parent)
+				    parent.Unlock();
 			}
 		}
 
