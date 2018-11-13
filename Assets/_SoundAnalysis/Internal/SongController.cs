@@ -95,9 +95,11 @@ namespace MusicalGameplayMechanics
 		CutsceneManager m_cutsceneManager;
 		MenuMusicManager m_menuMusicManager;
 		StoryModeManager m_storyModeManager;
+		CraftingManager m_craftingManager;
 
 		void Start()
 		{
+			m_craftingManager = FindObjectOfType<CraftingManager>();
 			m_storyModeManager = FindObjectOfType<StoryModeManager>();
 			m_player = FindObjectOfType<PlayerCollision>();
 			m_scoreBoard = FindObjectOfType<ScoreBoardLogic>();
@@ -217,6 +219,7 @@ namespace MusicalGameplayMechanics
 
 		void EndOfSong()
 		{
+			m_craftingManager.CompletePendingCrafts();
 			m_levelGen.WipeObjects();
 			AchievementManager.OnTallyPickups("Final");
 			if (m_cutsceneToPlayAtEnd)
@@ -229,12 +232,14 @@ namespace MusicalGameplayMechanics
 
 		void PlayerDead()
 		{
+			m_craftingManager.ClearPendingCrafts();
 			m_levelGen.WipeObjects();
 			m_playerDeathMenuTransition.PlayTransitions();
 		}
 
 		void RestartSong()
 		{
+			m_craftingManager.ClearPendingCrafts();
 			m_levelGen.WipeObjects();
 			PlayAudio();
 			m_player.Revive();
@@ -242,6 +247,7 @@ namespace MusicalGameplayMechanics
 
 		void ReturnToMenu()
 		{
+			m_craftingManager.ClearPendingCrafts();
 			m_storyModeManager.ClearConditions();
 			m_levelGen.WipeObjects();
 			m_menuMusicManager.PlayRandomSong();

@@ -96,7 +96,7 @@ namespace BeatRider
 			m_recipesPendingcompletion.Add(gem);
 		}
 
-		public void CompletePendingChallenges()
+		public void CompletePendingCrafts()
 		{
 			foreach (Gem gem in m_recipesPendingcompletion)
 			{
@@ -109,6 +109,11 @@ namespace BeatRider
 				AchievementManager.OnCraft("");
 			}
 			SaveChallenges();
+		}
+
+		public void ClearPendingCrafts()
+		{
+			m_recipesPendingcompletion.Clear();
 		}
 
 		Gem CheckPickupCombination()
