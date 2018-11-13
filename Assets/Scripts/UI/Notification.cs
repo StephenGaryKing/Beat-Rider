@@ -10,27 +10,30 @@ public class Notification : MonoBehaviour {
 	public Text m_loggerTextBox;
 	public ParticleSystemRenderer m_particleSystem;
 	[Header("Notification Text Animation")]
-	public Vector3 m_targetPosition;
 	public float m_scale = 1;
 	public float m_animationTime = 1;
 	public TweenCurveHelper.CurveType m_curveType;
 
-	Vector3 m_startingPosition;
-	Vector3 m_startingScale;
+	Vector3 m_startingScale = Vector3.zero;
 	bool m_tweening = false;
 
 	private void Start()
 	{
-		m_startingScale = (m_notificationTextBox.transform as RectTransform).localScale;
-		m_startingPosition = (m_notificationTextBox.transform as RectTransform).position;
 		m_notificationTextBox.gameObject.SetActive(false);
+	}
+
+	private void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.PageUp))
+			Notify(null, "You Unlocked Test!");
 	}
 
 	public void Notify(Sprite img, string notificationText = null, string logText = null)
 	{
 		// make a new material for the particle emmiter
 		Material mat = new Material(Shader.Find("Particles/Additive"));
-		mat.mainTexture = img.texture;
+		if (img)
+			mat.mainTexture = img.texture;
 
 		// play the particles
 		m_particleSystem.material = mat;
@@ -52,15 +55,13 @@ public class Notification : MonoBehaviour {
 	{
 		m_notificationTextBox.gameObject.SetActive(true);
 		m_tweening= true;
-		Tween.AnchoredPosition(m_notificationTextBox.transform as RectTransform, m_targetPosition, m_animationTime, 0, TweenCurveHelper.GetCurve(m_curveType), Tween.LoopType.None, null, TweenEnd);
-		Tween.LocalScale(m_notificationTextBox.transform as RectTransform, Vector3.one * m_scale, m_animationTime, 0, TweenCurveHelper.GetCurve(m_curveType), Tween.LoopType.None, null, null);
+		Tween.LocalScale(m_notificationTextBox.transform as RectTransform, Vector3.one * m_scale, m_animationTime, 0, TweenCurveHelper.GetCurve(m_curveType), Tween.LoopType.None, null, TweenEnd);
 	}
 
 	void TweenEnd()
 	{
 		m_notificationTextBox.gameObject.SetActive(false);
 		m_tweening = false;
-		(m_notificationTextBox.transform as RectTransform).position = m_startingPosition;
 		(m_notificationTextBox.transform as RectTransform).localScale = m_startingScale;
 	}
 }
