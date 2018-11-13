@@ -18,7 +18,9 @@ public class FilterButton : MonoBehaviour {
 
 	public void DeActivate()
 	{
-		m_image.sprite = m_deSelectedImage;
+        if (!m_image)
+            m_image = GetComponent<Image>();
+        m_image.sprite = m_deSelectedImage;
 	}
 
 	public void Activate()
