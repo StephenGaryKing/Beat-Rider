@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4169502756661552}
   - component: {fileID: 33763043246115880}
   - component: {fileID: 23408789094287768}
-  - component: {fileID: 95316393396738938}
   - component: {fileID: 114767551306168752}
+  - component: {fileID: 114977945283683180}
   m_Layer: 0
   m_Name: SIGN_01 (1)
   m_TagString: Untagged
@@ -113,23 +113,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1931860641197068}
   m_Mesh: {fileID: 4300000, guid: 2f2671bb6a0a98e4fac382b0163b0d2b, type: 3}
---- !u!95 &95316393396738938
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1931860641197068}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 2f2671bb6a0a98e4fac382b0163b0d2b, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114767551306168752
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -153,3 +136,20 @@ MonoBehaviour:
   m_destinationBrightness: 2.5
   m_startingColour: {r: 0.4896555, g: 0, b: 1, a: 0}
   m_destinationColour: {r: 1, g: 0.88965523, b: 0, a: 0}
+--- !u!114 &114977945283683180
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1931860641197068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56726c61fea21e4589e1e4bb6a13eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_passToReactTo: DEFAULT
+  m_audioReactor: {fileID: 11400000, guid: a0beaf8230aec354dbc6026a1709b245, type: 2}
+  m_smoothing: 0.05
+  m_startingColour: {r: 0.49019608, g: 0, b: 1, a: 0}
+  m_endingColour: {r: 1, g: 0.8901961, b: 0, a: 0}
+  m_emissionMagnitude: 2

@@ -79,8 +79,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4975808235385226}
-  - component: {fileID: 95588733792082388}
   - component: {fileID: 114826969432030460}
+  - component: {fileID: 114018754550185764}
   m_Layer: 0
   m_Name: SIGN_06
   m_TagString: Untagged
@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 4055425772202902}
   - component: {fileID: 33798613744755252}
   - component: {fileID: 23742120382833196}
+  - component: {fileID: 114273982933633180}
   m_Layer: 0
   m_Name: pCube70
   m_TagString: Untagged
@@ -316,23 +317,40 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1795813418672220}
   m_Mesh: {fileID: 4300000, guid: 6f73d7845e27a9c48bccc6fc162c3237, type: 3}
---- !u!95 &95588733792082388
-Animator:
-  serializedVersion: 3
+--- !u!114 &114018754550185764
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1692152524760270}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56726c61fea21e4589e1e4bb6a13eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_passToReactTo: DEFAULT
+  m_audioReactor: {fileID: 11400000, guid: a0beaf8230aec354dbc6026a1709b245, type: 2}
+  m_smoothing: 0.05
+  m_startingColour: {r: 0.5058824, g: 0.7137255, b: 1, a: 0}
+  m_endingColour: {r: 1, g: 0.94509804, b: 0.49411765, a: 0}
+  m_emissionMagnitude: 2
+--- !u!114 &114273982933633180
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1795813418672220}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 6f73d7845e27a9c48bccc6fc162c3237, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56726c61fea21e4589e1e4bb6a13eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_passToReactTo: DEFAULT
+  m_audioReactor: {fileID: 11400000, guid: a0beaf8230aec354dbc6026a1709b245, type: 2}
+  m_smoothing: 0.05
+  m_startingColour: {r: 0.5058824, g: 0.7137255, b: 1, a: 0}
+  m_endingColour: {r: 1, g: 0.94509804, b: 0.49411765, a: 0}
+  m_emissionMagnitude: 2
 --- !u!114 &114826969432030460
 MonoBehaviour:
   m_ObjectHideFlags: 1
