@@ -13,11 +13,13 @@ namespace BeatRider
 		public Gem[] m_ReipesToStartWith;
 		public Gem[] m_allRecipes;
 		public Image[] m_pickedupGemImageLocations;
+		public Notification m_CraftingNotification;
 		[HideInInspector] public List<Gem> m_collectedGems;
 		[HideInInspector] public List<int> m_RecipesCompleated;
 		public int m_filterNumber = 2;
 		UnlockableManager m_UnlockableManager;
 		List<Gem> m_filteredRecipes = new List<Gem>();
+		List<Gem> m_recipesPendingcompletion = new List<Gem>();
 
 		private void Start()
 		{
@@ -85,14 +87,33 @@ namespace BeatRider
 
 		public void UnlockChallenge (Gem gem)
 		{
-			int index = FindGemIndex(gem);
-			if (!m_RecipesCompleated.Contains(index))
+			Sprite icon = gem.m_unlockable.m_icon;
+			string notificationText = gem.name + " Discovered!";
+
+			if (m_CraftingNotification)
+				m_CraftingNotification.Notify(icon, notificationText);
+
+			m_recipesPendingcompletion.Add(gem);
+		}
+
+		public void CompletePendingCrafts()
+		{
+			foreach (Gem gem in m_recipesPendingcompletion)
 			{
-				m_RecipesCompleated.Add(index);
-				m_UnlockableManager.UnlockUnlockable(gem.m_unlockable);
+				int index = FindGemIndex(gem);
+				if (!m_RecipesCompleated.Contains(index))
+				{
+					m_RecipesCompleated.Add(index);
+					m_UnlockableManager.UnlockUnlockable(gem.m_unlockable);
+				}
+				AchievementManager.OnCraft("");
 			}
-			AchievementManager.OnCraft("");
 			SaveChallenges();
+		}
+
+		public void ClearPendingCrafts()
+		{
+			m_recipesPendingcompletion.Clear();
 		}
 
 		Gem CheckPickupCombination()
