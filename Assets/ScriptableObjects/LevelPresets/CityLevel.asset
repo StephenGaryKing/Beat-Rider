@@ -17,7 +17,7 @@ MonoBehaviour:
   m_spawnHeightOffset: -150
   m_trackWidth: 55.94
   m_unitSize: 149.98
-  m_numOfSceneryLayers: 3
+  m_numOfSceneryLayers: 2
   m_sceneryElements:
   - m_prefab: {fileID: 1403617704442294, guid: 07340dd0ab4f5fa4a8b21cd441d062be, type: 2}
     spawnChanceWeight: 100
@@ -32,3 +32,7 @@ MonoBehaviour:
     spawnChanceWeight: 100
     randomScaleVariance: {x: 1, y: 1}
   m_travelTime: 9
+  m_customPostProcess: {fileID: 0}
+  m_fogColour: {r: 0, g: 0, b: 0, a: 1}
+  m_fogStart: -2
+  m_fogEnd: 600
