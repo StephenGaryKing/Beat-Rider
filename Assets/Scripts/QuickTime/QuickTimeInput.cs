@@ -71,7 +71,7 @@ namespace BeatRider
 
 		public IEnumerator LookForKeyPress(int index, GameObject note)
 		{
-			if (m_gameController.m_difficulty == Difficulty.EASY)
+			if (GameController.GetDifficulty() == Difficulty.EASY)
 			{
 				PickupNote(note);
 			}
@@ -85,7 +85,7 @@ namespace BeatRider
 					timer += Time.deltaTime;
 					foreach (var key in m_previouslyPressedKeys)
 					{
-						if (key.Key == ((m_gameController.m_difficulty == Difficulty.HARD) ? m_hardKeys[index].Key : m_meduimKey.Key))
+						if (key.Key == ((GameController.GetDifficulty() == Difficulty.HARD) ? m_hardKeys[index].Key : m_meduimKey.Key))
 						{
 							PickupNote(note);
 							m_previouslyPressedKeys.Remove(key.Key);

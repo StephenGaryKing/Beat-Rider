@@ -11,21 +11,26 @@ namespace BeatRider
 		[System.Serializable]
 		public class GameplayEvent : UnityEvent<string> { }
 
-		public string m_saveFileName = "AchievementProgress";
+        public string m_saveFileName = "AchievementProgress";
 
 		public static GameplayEvent onCraft = new GameplayEvent();
-		public static GameplayEvent onUnlock = new GameplayEvent();
 		public static GameplayEvent onLevelPercent = new GameplayEvent();
 		public static GameplayEvent onTallyPickups = new GameplayEvent();
 		public static GameplayEvent onCustomisation = new GameplayEvent();
-		public static GameplayEvent onCustomGameplayEvent = new GameplayEvent();
 
 		[HideInInspector] public Achievement[] m_achievements;
+        UnlockableManager m_unlockableManager;
 
 		private void Start()
 		{
+            m_unlockableManager = FindObjectOfType<UnlockableManager>();
 			m_achievements = GetComponents<Achievement>();
 		}
+
+        public void UnlockAchievement(Unlockable unlock)
+        {
+            m_unlockableManager.UnlockUnlockable(unlock);
+        }
 
 		public void SaveAchievements()
 		{
@@ -52,11 +57,6 @@ namespace BeatRider
 			onCraft.Invoke(val);
 		}
 
-		public static void OnUnlock(string val)
-		{
-			onUnlock.Invoke(val);
-		}
-
 		public static void OnCustomisation(string val)
 		{
 			onCustomisation.Invoke(val);
@@ -70,12 +70,6 @@ namespace BeatRider
 		public static void OnTallyPickups(string val)
 		{
 			onTallyPickups.Invoke(val);
-		}
-
-
-		public static void OnCustomGameplayEvent(string val)
-		{
-			onCustomGameplayEvent.Invoke(val);
 		}
 	}
 }

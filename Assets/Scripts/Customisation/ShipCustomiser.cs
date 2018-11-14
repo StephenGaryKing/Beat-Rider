@@ -24,6 +24,7 @@ public class ShipCustomiser : MonoBehaviour {
 	public void CustomiseShip(UnlockableShip ship)
 	{
 		m_body.GetComponent<MeshFilter>().mesh = ship.m_model;
+        m_body.GetComponent<Renderer>().material = ship.m_material;
 	}
 
 	public void CustomiseTrail(UnlockableTrail trail)

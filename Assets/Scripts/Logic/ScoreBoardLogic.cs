@@ -15,11 +15,13 @@ namespace BeatRider
 		string m_passToCountBeats;
 		int m_totalAmountOfNotes;
 		public bool m_displayAsPercentage = false;
+        LevelGenerator m_levelGen;
 
 		float m_scoreToAdd = 0;
 
 		private void Awake()
 		{
+            m_levelGen = FindObjectOfType<LevelGenerator>();
 			m_songController = FindObjectOfType<SongController>();
 			m_passToCountBeats = m_noteSpawner.m_passToReactTo;
 		}
@@ -55,12 +57,36 @@ namespace BeatRider
 								m_totalAmountOfNotes++;
 		}
 
+        float Percent(float minVal, float maxVal)
+        {
+            float percentage = (minVal / maxVal) * 100f;
+            if (float.IsNaN(percentage))
+                percentage = 0;
+            return percentage;
+        }
+
 		public float FindPercentageOfNotes()
 		{
-			float percentage = Mathf.Round(((float)m_score / m_totalAmountOfNotes) * 100f);
-			if (float.IsNaN(percentage))
-				percentage = 0;
-			return percentage;
-		}
+            float percent = 0;
+            switch (GameController.GetDifficulty())
+            {
+                case (Difficulty.EASY):
+                    percent = Percent(m_score, m_totalAmountOfNotes);
+                    percent = Percent(percent, m_levelGen.m_currentLevel.m_easyPercantage);
+                    break;
+                case (Difficulty.MEDUIM):
+                    percent = Percent(m_score, m_totalAmountOfNotes);
+                    percent = Percent(percent, m_levelGen.m_currentLevel.m_mediumPercantage);
+                    break;
+                case (Difficulty.HARD):
+                    percent = Percent(m_score, m_totalAmountOfNotes);
+                    percent = Percent(percent, m_levelGen.m_currentLevel.m_hardPercantage);
+                    break;
+            }
+
+            return Mathf.Round(percent);
+        }
+
+        
 	}
 }
