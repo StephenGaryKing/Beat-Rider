@@ -57,7 +57,7 @@ namespace BeatRider
 	public class LevelGenerator : MonoBehaviour
 	{
 		[Tooltip("A scriptable object that determines the layout of a level")]
-		public LevelTemplate m_levelTemplate;
+		public Level m_currentLevel;
 		
 		public ObjectSpawner[] m_objectSpawners;
 
@@ -78,20 +78,20 @@ namespace BeatRider
 
 		private void OnDrawGizmos()
 		{
-			if (m_levelTemplate.m_trackWidth > 0 && m_levelTemplate.m_unitSize > 0)
+			if (m_currentLevel.m_levelTemplate.m_trackWidth > 0 && m_currentLevel.m_levelTemplate.m_unitSize > 0)
 			{
-				float unitSize = m_levelTemplate.m_unitSize;
-				float halfTrackWidth = m_levelTemplate.m_trackWidth / 2;
+				float unitSize = m_currentLevel.m_levelTemplate.m_unitSize;
+				float halfTrackWidth = m_currentLevel.m_levelTemplate.m_trackWidth / 2;
 				Vector3 depth;
 
-				switch (m_levelTemplate.m_levelGenerationType)
+				switch (m_currentLevel.m_levelTemplate.m_levelGenerationType)
 				{
 					// if the level is a grid
 					case (LevelType.GRID):
 						// find the correct number of elements of each type
-						m_numberOfSceneryElements = (int)Mathf.Max(((transform.position.z / unitSize) + 2 * m_levelTemplate.m_numOfSceneryLayers) * 2, 0);
+						m_numberOfSceneryElements = (int)Mathf.Max(((transform.position.z / unitSize) + 2 * m_currentLevel.m_levelTemplate.m_numOfSceneryLayers) * 2, 0);
 
-						for (int i = 1; i <= m_levelTemplate.m_numOfSceneryLayers; i++)
+						for (int i = 1; i <= m_currentLevel.m_levelTemplate.m_numOfSceneryLayers; i++)
 						{
 							// draw the line of squares for the layer on either side of the track
 							depth = transform.position;
@@ -99,15 +99,15 @@ namespace BeatRider
 							{
 								// draw the scenery squares
 								Gizmos.color = Color.red;
-								Gizmos.DrawWireCube(depth + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.right * halfTrackWidth - Vector3.right * unitSize / 2 + Vector3.right * unitSize * i, new Vector3(unitSize, 0, unitSize));
-								Gizmos.DrawWireCube(depth + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.left * halfTrackWidth - Vector3.left * unitSize / 2 + Vector3.left * unitSize * i, new Vector3(unitSize, 0, unitSize));
+								Gizmos.DrawWireCube(depth + Vector3.up * m_currentLevel.m_levelTemplate.m_spawnHeightOffset + Vector3.right * halfTrackWidth - Vector3.right * unitSize / 2 + Vector3.right * unitSize * i, new Vector3(unitSize, 0, unitSize));
+								Gizmos.DrawWireCube(depth + Vector3.up * m_currentLevel.m_levelTemplate.m_spawnHeightOffset + Vector3.left * halfTrackWidth - Vector3.left * unitSize / 2 + Vector3.left * unitSize * i, new Vector3(unitSize, 0, unitSize));
 
-								depth.z -= m_levelTemplate.m_unitSize;
+								depth.z -= m_currentLevel.m_levelTemplate.m_unitSize;
 							}
 
 							// draw the track square
 							Gizmos.color = Color.green;
-							Gizmos.DrawWireCube(Vector3.up * m_levelTemplate.m_spawnHeightOffset + transform.position / 2, new Vector3(halfTrackWidth * 2, 0, transform.position.z));
+							Gizmos.DrawWireCube(Vector3.up * m_currentLevel.m_levelTemplate.m_spawnHeightOffset + transform.position / 2, new Vector3(halfTrackWidth * 2, 0, transform.position.z));
 						}
 						// draw the rough number of track pieces and scenery elemts to be spawned at any one point in time
 						GizmosUtils.DrawText(GUI.skin, m_numberOfSceneryElements.ToString(), transform.position + Vector3.forward * unitSize / 2 + Vector3.up * 50, Color.red, 20, 0.5f);
@@ -117,12 +117,12 @@ namespace BeatRider
 					case (LevelType.RANDOM):
 						// draw the line for the random spawning either side of the track
 						Gizmos.color = Color.red;
-						Gizmos.DrawWireCube(transform.position + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.right * unitSize / 2 + Vector3.right * halfTrackWidth, new Vector3(unitSize, 0, 0));
-						Gizmos.DrawWireCube(transform.position + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.left * unitSize / 2 + Vector3.left * halfTrackWidth, new Vector3(unitSize, 0, 0));
+						Gizmos.DrawWireCube(transform.position + Vector3.up * m_currentLevel.m_levelTemplate.m_spawnHeightOffset + Vector3.right * unitSize / 2 + Vector3.right * halfTrackWidth, new Vector3(unitSize, 0, 0));
+						Gizmos.DrawWireCube(transform.position + Vector3.up * m_currentLevel.m_levelTemplate.m_spawnHeightOffset + Vector3.left * unitSize / 2 + Vector3.left * halfTrackWidth, new Vector3(unitSize, 0, 0));
 
 						// draw the track square
 						Gizmos.color = Color.green;
-						Gizmos.DrawWireCube(Vector3.up * m_levelTemplate.m_spawnHeightOffset + transform.position / 2, new Vector3(halfTrackWidth * 2, 0, transform.position.z));
+						Gizmos.DrawWireCube(Vector3.up * m_currentLevel.m_levelTemplate.m_spawnHeightOffset + transform.position / 2, new Vector3(halfTrackWidth * 2, 0, transform.position.z));
 
 						// draw the rough number of track pieces and scenery elemts to be spawned at any one point in time
 						GizmosUtils.DrawText(GUI.skin, m_numberOfSceneryElements.ToString(), transform.position + Vector3.forward * unitSize / 2 + Vector3.up * 50, Color.red, 20, 0.5f);
@@ -132,7 +132,7 @@ namespace BeatRider
 					// If the level is Centered
 					case (LevelType.CENTERED):
 						// find the correct number of elements of each type
-						m_numberOfSceneryElements = (int)Mathf.Max(((transform.position.z / unitSize) + 2 * m_levelTemplate.m_numOfSceneryLayers), 0);
+						m_numberOfSceneryElements = (int)Mathf.Max(((transform.position.z / unitSize) + 2 * m_currentLevel.m_levelTemplate.m_numOfSceneryLayers), 0);
 
 						// draw the line of squares for the layer on either side of the track
 						depth = transform.position;
@@ -140,14 +140,14 @@ namespace BeatRider
 						{
 							// draw the scenery squares
 							Gizmos.color = Color.red;
-							Gizmos.DrawWireCube(depth + Vector3.up * m_levelTemplate.m_spawnHeightOffset, new Vector3(unitSize, 0, unitSize));
+							Gizmos.DrawWireCube(depth + Vector3.up * m_currentLevel.m_levelTemplate.m_spawnHeightOffset, new Vector3(unitSize, 0, unitSize));
 
-							depth.z -= m_levelTemplate.m_unitSize;
+							depth.z -= m_currentLevel.m_levelTemplate.m_unitSize;
 						}
 
 						// draw the track square
 						Gizmos.color = Color.green;
-						Gizmos.DrawWireCube(Vector3.up * m_levelTemplate.m_spawnHeightOffset + transform.position / 2, new Vector3(halfTrackWidth * 2, 0, transform.position.z));
+						Gizmos.DrawWireCube(Vector3.up * m_currentLevel.m_levelTemplate.m_spawnHeightOffset + transform.position / 2, new Vector3(halfTrackWidth * 2, 0, transform.position.z));
 
 						// draw the rough number of track pieces and scenery elemts to be spawned at any one point in time
 						GizmosUtils.DrawText(GUI.skin, m_numberOfSceneryElements.ToString(), transform.position + Vector3.forward * unitSize / 2 + Vector3.up * 50, Color.red, 20, 0.5f);
@@ -191,23 +191,23 @@ namespace BeatRider
 		private void LateUpdate()
 		{
 			if (!m_oldlevelTemplate)
-				m_oldlevelTemplate = m_levelTemplate;
-			if (m_oldlevelTemplate != m_levelTemplate)
+				m_oldlevelTemplate = m_currentLevel.m_levelTemplate;
+			if (m_oldlevelTemplate != m_currentLevel.m_levelTemplate)
 			{
-				ChangeLevel(m_levelTemplate);
-				m_oldlevelTemplate = m_levelTemplate;
+				ChangeLevel(m_currentLevel);
+				m_oldlevelTemplate = m_currentLevel.m_levelTemplate;
 			}
 		}
 
-		public void ChangeLevel(LevelTemplate newTemplate)
+		public void ChangeLevel(Level newlevel)
 		{
-			StartCoroutine(ChangeLevelAsync(newTemplate));
+			StartCoroutine(ChangeLevelAsync(newlevel));
 		}
 
-		IEnumerator ChangeLevelAsync(LevelTemplate newTemplate)
+		IEnumerator ChangeLevelAsync(Level newLevel)
 		{
 			Debug.Log("Change level Async");
-			m_levelTemplate = newTemplate;
+			m_currentLevel = newLevel;
 			StartCoroutine(ClearOldLevelAsync());
 			// wait till clear, setup new level
 			while (!c_levelClear)
@@ -220,32 +220,32 @@ namespace BeatRider
 		private void OnApplicationQuit()
 		{
 			// Disable custom post effect
-			if (m_levelTemplate.m_customPostProcess)
-				m_levelTemplate.m_customPostProcess.SetFloat("_IsEnabled", 0);
+			if (m_currentLevel.m_levelTemplate.m_customPostProcess)
+				m_currentLevel.m_levelTemplate.m_customPostProcess.SetFloat("_IsEnabled", 0);
 		}
 
 		IEnumerator SetupLevelAsync()
 		{
 			Debug.Log("Setting up level Async");
 			// Apply Fog
-			RenderSettings.fogColor = m_levelTemplate.m_fogColour;
-			RenderSettings.fogStartDistance = m_levelTemplate.m_fogStart;
-			RenderSettings.fogEndDistance = m_levelTemplate.m_fogEnd;
+			RenderSettings.fogColor = m_currentLevel.m_levelTemplate.m_fogColour;
+			RenderSettings.fogStartDistance = m_currentLevel.m_levelTemplate.m_fogStart;
+			RenderSettings.fogEndDistance = m_currentLevel.m_levelTemplate.m_fogEnd;
 
 			// Enable custom post effect
-			if (m_levelTemplate.m_customPostProcess)
-				m_levelTemplate.m_customPostProcess.SetFloat("_IsEnabled", 1);
+			if (m_currentLevel.m_levelTemplate.m_customPostProcess)
+				m_currentLevel.m_levelTemplate.m_customPostProcess.SetFloat("_IsEnabled", 1);
 
 			// place the ground plane
-			if (m_levelTemplate.m_groundPrefab)
+			if (m_currentLevel.m_levelTemplate.m_groundPrefab)
 			{
-				m_ground = Instantiate(m_levelTemplate.m_groundPrefab);
-				m_ground.transform.position = Vector3.zero + Vector3.up * m_levelTemplate.m_spawnHeightOffset;
+				m_ground = Instantiate(m_currentLevel.m_levelTemplate.m_groundPrefab);
+				m_ground.transform.position = Vector3.zero + Vector3.up * m_currentLevel.m_levelTemplate.m_spawnHeightOffset;
 			}
 
 			// find the speed of the ingame elements based on the distance to cover and the time to take
-			float sceneSpeed = transform.position.z / m_levelTemplate.m_travelTime;
-			float unitSize = m_levelTemplate.m_unitSize;
+			float sceneSpeed = transform.position.z / m_currentLevel.m_levelTemplate.m_travelTime;
+			float unitSize = m_currentLevel.m_levelTemplate.m_unitSize;
 			// update object spawners
 			foreach (var spawner in m_objectSpawners)
 			{
@@ -253,15 +253,15 @@ namespace BeatRider
 				for (int i = 0; i < spawner.m_spawningAreas.Length; i++)
 					spawner.m_spawningAreas[i].m_centerPosition.z = transform.position.z;
 				// Update object speeds
-				spawner.SetObjectSpeed(sceneSpeed, m_levelTemplate.m_travelTime);
+				spawner.SetObjectSpeed(sceneSpeed, m_currentLevel.m_levelTemplate.m_travelTime);
 			}
 
 			// correct the spawning interval
 			// find the correct number of elements of each type
-			switch (m_levelTemplate.m_levelGenerationType)
+			switch (m_currentLevel.m_levelTemplate.m_levelGenerationType)
 			{
 				case (LevelType.GRID):
-					m_numberOfSceneryElements = Mathf.Max(((int)Mathf.Max((transform.position.z / unitSize) + 2, 0) * m_levelTemplate.m_numOfSceneryLayers) * 2, 0);
+					m_numberOfSceneryElements = Mathf.Max(((int)Mathf.Max((transform.position.z / unitSize) + 2, 0) * m_currentLevel.m_levelTemplate.m_numOfSceneryLayers) * 2, 0);
 					m_spawnInterval = unitSize / sceneSpeed;
 					break;
 				case (LevelType.RANDOM):
@@ -286,10 +286,10 @@ namespace BeatRider
 				yield return null;
 
 			// spawn the whole level at once to avoid the cascade of scenery elements
-			switch (m_levelTemplate.m_levelGenerationType)
+			switch (m_currentLevel.m_levelTemplate.m_levelGenerationType)
 			{
 				case (LevelType.GRID):
-					for (int i = 0; i < m_numberOfSceneryElements / (m_levelTemplate.m_numOfSceneryLayers); i++)
+					for (int i = 0; i < m_numberOfSceneryElements / (m_currentLevel.m_levelTemplate.m_numOfSceneryLayers); i++)
 					{
 						CreateLayerOfLevel(i);
 						yield return null;
@@ -303,7 +303,7 @@ namespace BeatRider
 					}
 					break;
 				case (LevelType.CENTERED):
-					for (int i = 0; i < m_numberOfSceneryElements / (m_levelTemplate.m_numOfSceneryLayers); i++)
+					for (int i = 0; i < m_numberOfSceneryElements / (m_currentLevel.m_levelTemplate.m_numOfSceneryLayers); i++)
 					{ 
 						CreateLayerOfLevel(i);
 						yield return null;
@@ -344,11 +344,11 @@ namespace BeatRider
 			c_poolCreated = false;
 			//add the values together then pick a random value via roulette wheels selection
 			RouletteWheel wheel = new RouletteWheel();
-			wheel.Init(m_levelTemplate.m_sceneryElements);
+			wheel.Init(m_currentLevel.m_levelTemplate.m_sceneryElements);
 
 			float elementsMultiplier = 0;
 			// Give some wiggle room for spawning objects
-			switch (m_levelTemplate.m_levelGenerationType)
+			switch (m_currentLevel.m_levelTemplate.m_levelGenerationType)
 			{
 				case (LevelType.GRID):
 					elementsMultiplier = 16;
@@ -373,10 +373,10 @@ namespace BeatRider
 				go.name = element.m_prefab.name + " : " + i;
 				go.SetActive(false);
 				go.transform.parent = m_inactiveSceneryContainer.transform;
-				if (m_levelTemplate.m_levelGenerationType == LevelType.RANDOM)
+				if (m_currentLevel.m_levelTemplate.m_levelGenerationType == LevelType.RANDOM)
 					go.transform.localScale = Vector3.one * Random.Range(element.randomScaleVariance.x, element.randomScaleVariance.y);
 				else
-					go.transform.localScale = Vector3.one * m_levelTemplate.m_unitSize * Random.Range(element.randomScaleVariance.x, element.randomScaleVariance.y);
+					go.transform.localScale = Vector3.one * m_currentLevel.m_levelTemplate.m_unitSize * Random.Range(element.randomScaleVariance.x, element.randomScaleVariance.y);
 				go.transform.position = Vector3.zero;
 				SceneryModifier[] sm = go.GetComponents<SceneryModifier>();
 				if (sm.Length != 0)
@@ -453,11 +453,11 @@ namespace BeatRider
 		{
 			if (m_inactiveSceneryContainer)
 			{
-				if (m_levelTemplate.m_trackWidth > 0)
+				if (m_currentLevel.m_levelTemplate.m_trackWidth > 0)
 				{
 					// Make a layer of the level using the objects in the pools
-					float unitSize = m_levelTemplate.m_unitSize;
-					float halfTrackWidth = m_levelTemplate.m_trackWidth / 2;
+					float unitSize = m_currentLevel.m_levelTemplate.m_unitSize;
+					float halfTrackWidth = m_currentLevel.m_levelTemplate.m_trackWidth / 2;
 
 					GameObject layerContainer = new GameObject("Layer Container : " + Time.time + " : " + layerNum);
 					GameObject sceneryContainer = new GameObject("Scenery Container");
@@ -466,13 +466,13 @@ namespace BeatRider
 					int ran;
 					GameObject go;
 
-					switch (m_levelTemplate.m_levelGenerationType)
+					switch (m_currentLevel.m_levelTemplate.m_levelGenerationType)
 					{
 						case (LevelType.GRID):
 							//for each scenery layer, create a piece of scenery
 							if (m_inactiveSceneryElements.Count == 0)
 								Debug.LogError("Pool of grid scenery objects is empty! Tell Steve ASAP!");
-							for (int i = 1; i <= m_levelTemplate.m_numOfSceneryLayers; i++)
+							for (int i = 1; i <= m_currentLevel.m_levelTemplate.m_numOfSceneryLayers; i++)
 							{
 								// right side
 								ran = Random.Range(0, m_inactiveSceneryElements.Count);
@@ -480,7 +480,7 @@ namespace BeatRider
 								m_activeSceneryElements.Add(go);
 								m_inactiveSceneryElements.RemoveAt(ran);
 								go.transform.parent = sceneryContainer.transform;
-								go.transform.position = transform.position + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.back * (layerNum * unitSize) + Vector3.right * halfTrackWidth - Vector3.right * unitSize / 2 + Vector3.right * unitSize * i;
+								go.transform.position = transform.position + Vector3.up * m_currentLevel.m_levelTemplate.m_spawnHeightOffset + Vector3.back * (layerNum * unitSize) + Vector3.right * halfTrackWidth - Vector3.right * unitSize / 2 + Vector3.right * unitSize * i;
 								SceneryModifier[] smR = go.GetComponents<SceneryModifier>();
 								if (smR.Length != 0)
 								{
@@ -498,7 +498,7 @@ namespace BeatRider
 								m_activeSceneryElements.Add(go);
 								m_inactiveSceneryElements.RemoveAt(ran);
 								go.transform.parent = sceneryContainer.transform;
-								go.transform.position = transform.position + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.back * (layerNum * unitSize) + Vector3.left * halfTrackWidth - Vector3.left * unitSize / 2 + Vector3.left * unitSize * i;
+								go.transform.position = transform.position + Vector3.up * m_currentLevel.m_levelTemplate.m_spawnHeightOffset + Vector3.back * (layerNum * unitSize) + Vector3.left * halfTrackWidth - Vector3.left * unitSize / 2 + Vector3.left * unitSize * i;
 								SceneryModifier[] smL = go.GetComponents<SceneryModifier>();
 								if (smL.Length != 0)
 								{
@@ -518,8 +518,8 @@ namespace BeatRider
 						case (LevelType.RANDOM):
 							//spawn a block of object that will cover the next second that will
 
-							float spawnInterval = 0.1f / m_levelTemplate.m_numOfSceneryLayers;
-							float sceneSpeed = transform.position.z / m_levelTemplate.m_travelTime;
+							float spawnInterval = 0.1f / m_currentLevel.m_levelTemplate.m_numOfSceneryLayers;
+							float sceneSpeed = transform.position.z / m_currentLevel.m_levelTemplate.m_travelTime;
 							float newUnitSize = m_spawnInterval * sceneSpeed;
 							sceneryContainer.transform.position = transform.position + Vector3.back * (layerNum * newUnitSize);
 
@@ -527,7 +527,7 @@ namespace BeatRider
 							{
 								if (m_inactiveSceneryElements.Count == 0)
 									Debug.LogError("Pool of random scenery objects is empty! Tell Steve ASAP!");
-								for (int i = 1; i <= m_levelTemplate.m_numOfSceneryLayers; i++)
+								for (int i = 1; i <= m_currentLevel.m_levelTemplate.m_numOfSceneryLayers; i++)
 								{
 									// right side
 									ran = Random.Range(0, m_inactiveSceneryElements.Count);
@@ -535,7 +535,7 @@ namespace BeatRider
 									m_activeSceneryElements.Add(go);
 									m_inactiveSceneryElements.RemoveAt(ran);
 									go.transform.parent = sceneryContainer.transform;
-									go.transform.position = transform.position + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.back * (layerNum * newUnitSize) + Vector3.forward * (f * newUnitSize) + Vector3.right * halfTrackWidth + Vector3.right * Random.Range(0, unitSize);
+									go.transform.position = transform.position + Vector3.up * m_currentLevel.m_levelTemplate.m_spawnHeightOffset + Vector3.back * (layerNum * newUnitSize) + Vector3.forward * (f * newUnitSize) + Vector3.right * halfTrackWidth + Vector3.right * Random.Range(0, unitSize);
 									SceneryModifier[] smR = go.GetComponents<SceneryModifier>();
 									if (smR.Length != 0)
 									{
@@ -553,7 +553,7 @@ namespace BeatRider
 									m_activeSceneryElements.Add(go);
 									m_inactiveSceneryElements.RemoveAt(ran);
 									go.transform.parent = sceneryContainer.transform;
-									go.transform.position = transform.position + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.back * (layerNum * newUnitSize) + Vector3.forward * (f * newUnitSize) + Vector3.left * halfTrackWidth + Vector3.left * Random.Range(0, unitSize);
+									go.transform.position = transform.position + Vector3.up * m_currentLevel.m_levelTemplate.m_spawnHeightOffset + Vector3.back * (layerNum * newUnitSize) + Vector3.forward * (f * newUnitSize) + Vector3.left * halfTrackWidth + Vector3.left * Random.Range(0, unitSize);
 									SceneryModifier[] smL = go.GetComponents<SceneryModifier>();
 									if (smL.Length != 0)
 									{
@@ -583,7 +583,7 @@ namespace BeatRider
 							m_activeSceneryElements.Add(go);
 							m_inactiveSceneryElements.RemoveAt(ran);
 							go.transform.parent = sceneryContainer.transform;
-							go.transform.position = transform.position + Vector3.up * m_levelTemplate.m_spawnHeightOffset + Vector3.back * (layerNum * unitSize);
+							go.transform.position = transform.position + Vector3.up * m_currentLevel.m_levelTemplate.m_spawnHeightOffset + Vector3.back * (layerNum * unitSize);
 							SceneryModifier[] sm = go.GetComponents<SceneryModifier>();
 							if (sm.Length != 0)
 							{
@@ -604,7 +604,7 @@ namespace BeatRider
 					// add the lane movement component to the lane and set its variables (moving one object is cheeper than mooving all individualy)
 					LaneMovement lm = sceneryContainer.AddComponent<LaneMovement>();
 					//do some math to find the speed the scene must move
-					lm.m_unitsToMovePerSecond = transform.position.z / m_levelTemplate.m_travelTime;
+					lm.m_unitsToMovePerSecond = transform.position.z / m_currentLevel.m_levelTemplate.m_travelTime;
 					lm.m_levelGen = this;
 				}
 			}

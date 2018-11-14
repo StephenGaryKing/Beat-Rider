@@ -174,7 +174,7 @@ namespace BeatRider
 			if (cs.m_levelToPlay && cs.m_levelToPlay.m_song)
 			{
 				// change the level gen
-				m_levelgen.ChangeLevel(cs.m_levelToPlay.m_levelTemplate);
+				m_levelgen.ChangeLevel(cs.m_levelToPlay);
 				// if the song is not loading or analysing still
 				while (m_songController.m_bgThread != null)
 					yield return null;

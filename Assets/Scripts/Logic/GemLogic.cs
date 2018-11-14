@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MusicalGameplayMechanics;
 
 namespace BeatRider
 {
@@ -14,6 +15,12 @@ namespace BeatRider
 		{
 			m_manager = FindObjectOfType<CraftingManager>();
 			m_randomizer = GetComponentInChildren<GemTypeRandomizer>();
+		}
+
+		private void OnEnable()
+		{
+			if (!SongController.m_freeFlow)
+				gameObject.SetActive(false);
 		}
 
 		public void PickupGem()
