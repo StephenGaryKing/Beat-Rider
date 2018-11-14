@@ -10,11 +10,11 @@ public class Notification : MonoBehaviour {
 	public Text m_loggerTextBox;
 	public ParticleSystemRenderer m_particleSystem;
 	[Header("Notification Text Animation")]
-	public float m_scale = 1;
-	public float m_animationTime = 1;
+	public float m_targetscale = 1;
+    public float m_startingScale = 2;
+    public float m_animationTime = 1;
 	public TweenCurveHelper.CurveType m_curveType;
 
-	Vector3 m_startingScale = Vector3.zero;
 	bool m_tweening = false;
 
 	private void Start()
@@ -55,13 +55,13 @@ public class Notification : MonoBehaviour {
 	{
 		m_notificationTextBox.gameObject.SetActive(true);
 		m_tweening= true;
-		Tween.LocalScale(m_notificationTextBox.transform as RectTransform, Vector3.one * m_scale, m_animationTime, 0, TweenCurveHelper.GetCurve(m_curveType), Tween.LoopType.None, null, TweenEnd);
+        (m_notificationTextBox.transform as RectTransform).localScale = Vector3.one * m_startingScale;
+        Tween.LocalScale(m_notificationTextBox.transform as RectTransform, Vector3.one * m_targetscale, m_animationTime, 0, TweenCurveHelper.GetCurve(m_curveType), Tween.LoopType.None, null, TweenEnd);
 	}
 
 	void TweenEnd()
 	{
 		m_notificationTextBox.gameObject.SetActive(false);
 		m_tweening = false;
-		(m_notificationTextBox.transform as RectTransform).localScale = m_startingScale;
 	}
 }

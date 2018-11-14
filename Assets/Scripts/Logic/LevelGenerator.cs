@@ -190,18 +190,18 @@ namespace BeatRider
 		LevelTemplate m_oldlevelTemplate;
 		private void LateUpdate()
 		{
-			if (!m_oldlevelTemplate)
-				m_oldlevelTemplate = m_currentLevel.m_levelTemplate;
-			if (m_oldlevelTemplate != m_currentLevel.m_levelTemplate)
-			{
-				ChangeLevel(m_currentLevel);
-				m_oldlevelTemplate = m_currentLevel.m_levelTemplate;
-			}
+            if (!m_oldlevelTemplate)
+                m_oldlevelTemplate = m_currentLevel.m_levelTemplate;
+            if (m_oldlevelTemplate != m_currentLevel.m_levelTemplate)
+            {
+                ChangeLevel(m_currentLevel);
+                m_oldlevelTemplate = m_currentLevel.m_levelTemplate;
+            }
 		}
 
 		public void ChangeLevel(Level newlevel)
 		{
-			StartCoroutine(ChangeLevelAsync(newlevel));
+            StartCoroutine(ChangeLevelAsync(newlevel));
 		}
 
 		IEnumerator ChangeLevelAsync(Level newLevel)

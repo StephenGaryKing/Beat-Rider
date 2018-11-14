@@ -21,7 +21,8 @@ namespace MusicalGameplayMechanics
 		EndOfSong,
 		RestartSong,
 		PlayerDead,
-		ReturnToMenu
+		ReturnToMenu,
+        AutoWin
 	}
 
 	[System.Serializable]
@@ -126,6 +127,7 @@ namespace MusicalGameplayMechanics
 			}
 			if (Input.GetKeyDown(KeyCode.End))
 				_audioSource.Stop();
+
 			if (m_loadIcon != null)
 			{
 				if (m_spectralFluxSaver.m_loading)
@@ -228,6 +230,9 @@ namespace MusicalGameplayMechanics
 				case (StopSongConditions.ReturnToMenu):
 					ReturnToMenu();
 					break;
+                case (StopSongConditions.AutoWin):
+                    WinSong();
+                    break;
 			}
 			ResetValues();
 		}
@@ -250,6 +255,18 @@ namespace MusicalGameplayMechanics
 				m_LevelFailedMenuTransition.PlayTransitions();
 			}
 		}
+
+        void WinSong()
+        {
+            m_craftingManager.CompletePendingCrafts();
+            m_levelGen.WipeObjects();
+            AchievementManager.OnTallyPickups("Final");
+
+            if (m_cutsceneToPlayAtEnd)
+                m_cutsceneManager.PlayCutscene(m_cutsceneToPlayAtEnd);
+            else
+                ReturnToMenu();
+        }
 
 		bool PassedThisDifficulty(Level level)
 		{
