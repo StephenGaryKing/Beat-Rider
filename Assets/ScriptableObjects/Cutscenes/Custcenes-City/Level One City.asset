@@ -16,11 +16,11 @@ MonoBehaviour:
   m_conversation:
   - Image: {fileID: 21300000, guid: 4069384878f853746bc2f2a427c22602, type: 3}
     Audio:
-      soundToPlay: {fileID: 8300000, guid: db699dc72e065eb469b4dcfed1d98ebf, type: 3}
-      volume: 0.662
+      soundToPlay: {fileID: 8300000, guid: 1990522cf0b5cda4695882d3ff1390b0, type: 3}
+      volume: 0.502
     Name: '--------'
     Content: "One more assignment. With the payout, you\u2019ll be set for life."
-    waitTime: 6
+    waitTime: 5
   - Image: {fileID: 21300000, guid: a7b057ef30380ef4f988e826ac412bd2, type: 3}
     Audio:
       soundToPlay: {fileID: 8300000, guid: 0ed86fa609c2f6243972f29c6138aee5, type: 3}
@@ -66,4 +66,4 @@ MonoBehaviour:
     waitTime: 2
   m_postCutsceneChoice: []
   m_levelToPlay: {fileID: 11400000, guid: 55df3b5b567c8f744bd228abbc537d5b, type: 2}
-  m_nodeNumberToUnlock: 1
+  m_endGameConditionToAdd: 0
