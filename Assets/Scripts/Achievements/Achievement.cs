@@ -8,16 +8,22 @@ namespace BeatRider
 	[RequireComponent(typeof(AchievementManager))]
 	public abstract class Achievement : MonoBehaviour
 	{
-
-		[TextArea]
-		public string m_description;
+        public Unlockable m_unlockable;
+        [TextArea]
+        public string m_description;
 		public int m_targetValue;
 		public Sprite m_previewImage;
 		//[SerializeField]
 		protected int m_currentValue = 0;
 		protected bool m_complete = false;
+        AchievementManager m_achievementManager;
 
-		public int CurrentValue
+        private void Start()
+        {
+            m_achievementManager = GetComponent<AchievementManager>();
+        }
+
+        public int CurrentValue
 		{
 			get { return m_currentValue; }
 		}
@@ -36,8 +42,9 @@ namespace BeatRider
 			if (!m_complete)
 			{
 				m_complete = true;
-				//AchievementManager.SaveAchievements();
-			}
+                m_achievementManager.UnlockAchievement(m_unlockable);
+                //AchievementManager.SaveAchievements();
+            }
 		}
 	}
 }

@@ -65,7 +65,6 @@ namespace BeatRider
 			int index = FindUnlockedID(highlight, m_unlockableHighlights);
 			if (!m_unlockedHighlights.Contains(index))
 				m_unlockedHighlights.Add(index);
-			AchievementManager.OnUnlock(PartToCustomise.Colour.ToString());
 		}
 
 		public void UnlockShip(UnlockableShip ship)
@@ -73,7 +72,6 @@ namespace BeatRider
 			int index = FindUnlockedID(ship, m_unlockableShips);
 			if (!m_unlockedShips.Contains(index))
 				m_unlockedShips.Add(index);
-			AchievementManager.OnUnlock(PartToCustomise.Ship.ToString());
 		}
 
 		public void UnlockTrail(UnlockableTrail trail)
@@ -81,7 +79,6 @@ namespace BeatRider
 			int index = FindUnlockedID(trail, m_unlockableTrails);
 			if (!m_unlockedTrails.Contains(index))
 				m_unlockedTrails.Add(index);
-			AchievementManager.OnUnlock(PartToCustomise.Trail.ToString());
 		}
 
 		public void SaveUnlockables()

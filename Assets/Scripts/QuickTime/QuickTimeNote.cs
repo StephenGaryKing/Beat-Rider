@@ -25,16 +25,16 @@ namespace BeatRider
 
 		private void OnEnable()
 		{
-			if (m_quickTimeInput.m_gameController.m_difficulty == Difficulty.HARD)
+			if (GameController.GetDifficulty() == Difficulty.HARD)
 			{
 				m_val = Random.Range(0, m_quickTimeInput.m_hardKeys.Length);
 				m_ren.material.SetColor("_EmissionColor", m_quickTimeInput.m_hardKeys[m_val].NoteColour * m_immissionIntensity);
 			}
-			else if(m_quickTimeInput.m_gameController.m_difficulty == Difficulty.MEDUIM)
+			else if(GameController.GetDifficulty() == Difficulty.MEDUIM)
 			{
 				m_ren.material.SetColor("_EmissionColor", m_quickTimeInput.m_meduimKey.NoteColour * m_immissionIntensity);
 			}
-			else if (m_quickTimeInput.m_gameController.m_difficulty == Difficulty.EASY)
+			else if (GameController.GetDifficulty() == Difficulty.EASY)
 				m_ren.material.SetColor("_EmissionColor", m_defaultColour);
 		}
 
