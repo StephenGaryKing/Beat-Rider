@@ -9,6 +9,7 @@ namespace BeatRider
 		CraftingManager m_challengeManager;
 		[HideInInspector] public int m_gemIndexNumber;
 		Renderer m_ren;
+        bool m_manualySet = false;
 
 		// Use this for initialization
 		void Awake()
@@ -22,9 +23,16 @@ namespace BeatRider
 			return m_challengeManager.m_allRecipes[m_gemIndexNumber];
 		}
 
+        public void SetGemManualy(Gem gem)
+        {
+            m_gemIndexNumber = m_challengeManager.FindGemIndex(gem);
+            m_manualySet = true;
+        }
+
 		private void OnEnable()
 		{
-			Randomize();
+            if (!m_manualySet)
+			    Randomize();
 			ApplyMaterial();
 		}
 
