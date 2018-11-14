@@ -74,6 +74,7 @@ namespace MusicalGameplayMechanics
 		public Transform m_loadIcon;
 		public MenuTransition m_freeFlowMenuTransition;
 		public MenuTransition m_playerDeathMenuTransition;
+		public MenuTransition m_LevelFailedMenuTransition;
 
 		int m_numChannels;									// Amount of channels in the current song
 		int m_numTotalSamples;								// Total amount of samples in this song
@@ -96,9 +97,11 @@ namespace MusicalGameplayMechanics
 		MenuMusicManager m_menuMusicManager;
 		StoryModeManager m_storyModeManager;
 		CraftingManager m_craftingManager;
+		GameController m_gameController;
 
 		void Start()
 		{
+			m_gameController = FindObjectOfType<GameController>();
 			m_craftingManager = FindObjectOfType<CraftingManager>();
 			m_storyModeManager = FindObjectOfType<StoryModeManager>();
 			m_player = FindObjectOfType<PlayerCollision>();
@@ -233,12 +236,47 @@ namespace MusicalGameplayMechanics
 			m_craftingManager.CompletePendingCrafts();
 			m_levelGen.WipeObjects();
 			AchievementManager.OnTallyPickups("Final");
-			if (m_cutsceneToPlayAtEnd)
-				m_cutsceneManager.PlayCutscene(m_cutsceneToPlayAtEnd);
+
+			if (PassedThisDifficulty(m_levelGen.m_currentLevel))
+			{
+				if (m_cutsceneToPlayAtEnd)
+					m_cutsceneManager.PlayCutscene(m_cutsceneToPlayAtEnd);
+				else
+					ReturnToMenu();
+			}
 			else
 			{
-				ReturnToMenu();
+				m_LevelFailedMenuTransition.PlayTransitions();
 			}
+		}
+
+		bool PassedThisDifficulty(Level level)
+		{
+			//easy
+			if (m_gameController.m_difficulty == Difficulty.EASY)
+			{
+				if (m_scoreBoard.FindPercentageOfNotes() > level.m_easyPercantage)
+					return true;
+				else
+					return false;
+			}
+			//medium
+			if (m_gameController.m_difficulty == Difficulty.MEDUIM)
+			{
+				if (m_scoreBoard.FindPercentageOfNotes() > level.m_mediumPercantage)
+					return true;
+				else
+					return false;
+			}
+			//hard
+			if (m_gameController.m_difficulty == Difficulty.HARD)
+			{
+				if (m_scoreBoard.FindPercentageOfNotes() > level.m_hardPercantage)
+					return true;
+				else
+					return false;
+			}
+			return false;
 		}
 
 		void PlayerDead()

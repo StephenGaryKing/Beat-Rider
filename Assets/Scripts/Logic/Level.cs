@@ -10,5 +10,11 @@ namespace BeatRider
 		public LevelTemplate m_levelTemplate;
 		public AudioClip m_song;
 		public Cutscene m_endCutscene;
+		[Range(0, 100)]
+		public int m_easyPercantage = 50;
+		[Range(0, 100)]
+		public int m_mediumPercantage = 60;
+		[Range(0, 100)]
+		public int m_hardPercantage = 70;
 	}
 }
