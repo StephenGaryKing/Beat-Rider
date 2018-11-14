@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class UINavigation : MonoBehaviour {
@@ -81,6 +82,7 @@ public class UINavigation : MonoBehaviour {
 			int bestButtonSoFar = m_currentButton;
 			foreach (int btn in bestbuttonsSoFar)
 			{
+
 				float dist = Vector2.Distance(m_buttons[m_currentButton].transform.position, m_buttons[btn].transform.position);
 				if (dist < bestDistanceSoFar)
 				{
@@ -99,7 +101,7 @@ public class UINavigation : MonoBehaviour {
 		int i = 0;
 		foreach (Button btn in m_buttons)
 		{
-		/*	
+			/*
 			TextSizeChange tsc = btn.GetComponent<TextSizeChange>();
 			if (tsc)
 				tsc.RollOffText();
@@ -109,8 +111,14 @@ public class UINavigation : MonoBehaviour {
 					tsc.EnlargeText();
 			}
 			*/
+			Tooltip tt2 = m_buttons[m_currentButton].GetComponent<Tooltip>();
+			if (tt2)
+				tt2.HideText();
 			i++;
 		}
+		Tooltip tt = m_buttons[m_currentButton].GetComponent<Tooltip>();
+		if (tt)
+			tt.DisplayText();
 		m_buttons[m_currentButton].Select();
 		Debug.Log("selected button is " + m_buttons[m_currentButton].name);
 	}
