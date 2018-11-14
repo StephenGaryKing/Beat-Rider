@@ -50,7 +50,12 @@ namespace BeatRider
 				Unlock();
 			else
 				m_image.sprite = m_inactiveImage;
-		}
+            if (m_unlocked && !m_unlockedLastFrame)
+            {
+                Unlock();
+                m_unlockedLastFrame = true;
+            }
+        }
 
 		private void Update()
 		{

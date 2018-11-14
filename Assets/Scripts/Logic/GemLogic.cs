@@ -7,6 +7,7 @@ namespace BeatRider
 {
 	public class GemLogic : MonoBehaviour
 	{
+        public Gem m_manualySetGem;
 		CraftingManager m_manager;
 		GemTypeRandomizer m_randomizer;
 		
@@ -19,6 +20,8 @@ namespace BeatRider
 
 		private void OnEnable()
 		{
+            if (m_manualySetGem)
+                m_randomizer.SetGemManualy(m_manualySetGem);
 			if (!SongController.m_freeFlow)
 				gameObject.SetActive(false);
 		}

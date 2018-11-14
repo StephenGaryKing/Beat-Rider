@@ -19,7 +19,7 @@ public class GameController : MonoBehaviour {
     [SerializeField] GameObject m_playIcon;
     [SerializeField] GameObject m_pauseIcon;
 
-	public Difficulty m_difficulty;
+	static Difficulty m_difficulty;
 	
 	[EnumAction(typeof(Difficulty))]
 	public void ChangeDifficulty(int diff)
@@ -31,6 +31,11 @@ public class GameController : MonoBehaviour {
 	{
 		m_difficulty = diff;
 	}
+
+    public static Difficulty GetDifficulty()
+    {
+        return m_difficulty;
+    }
 
 	// Update is called once per frame
 	void Update () {

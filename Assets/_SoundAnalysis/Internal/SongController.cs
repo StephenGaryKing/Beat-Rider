@@ -21,7 +21,8 @@ namespace MusicalGameplayMechanics
 		EndOfSong,
 		RestartSong,
 		PlayerDead,
-		ReturnToMenu
+		ReturnToMenu,
+        AutoWin
 	}
 
 	[System.Serializable]
@@ -97,12 +98,11 @@ namespace MusicalGameplayMechanics
 		MenuMusicManager m_menuMusicManager;
 		StoryModeManager m_storyModeManager;
 		CraftingManager m_craftingManager;
-		GameController m_gameController;
+
 		public static bool m_freeFlow = false;
 
 		void Start()
 		{
-			m_gameController = FindObjectOfType<GameController>();
 			m_craftingManager = FindObjectOfType<CraftingManager>();
 			m_storyModeManager = FindObjectOfType<StoryModeManager>();
 			m_player = FindObjectOfType<PlayerCollision>();
@@ -124,8 +124,9 @@ namespace MusicalGameplayMechanics
 				s_returnToMenu = false;
 				ReturnToMenu();
 			}
-			if (Input.GetKeyDown(KeyCode.End))
-				_audioSource.Stop();
+            if (Input.GetKeyDown(KeyCode.End))
+                ActualStopSong(StopSongConditions.AutoWin);
+
 			if (m_loadIcon != null)
 			{
 				if (m_spectralFluxSaver.m_loading)
@@ -228,6 +229,9 @@ namespace MusicalGameplayMechanics
 				case (StopSongConditions.ReturnToMenu):
 					ReturnToMenu();
 					break;
+                case (StopSongConditions.AutoWin):
+                    WinSong();
+                    break;
 			}
 			ResetValues();
 		}
@@ -237,8 +241,10 @@ namespace MusicalGameplayMechanics
 			m_craftingManager.CompletePendingCrafts();
 			m_levelGen.WipeObjects();
 			AchievementManager.OnTallyPickups("Final");
+            AchievementManager.OnLevelPercent(m_scoreBoard.FindPercentageOfNotes() + ":" + m_levelGen.m_currentLevel.name + ":" + GameController.GetDifficulty());
 
-			if (PassedThisDifficulty(m_levelGen.m_currentLevel))
+
+            if (PassedThisDifficulty(m_levelGen.m_currentLevel))
 			{
 				if (m_cutsceneToPlayAtEnd)
 					m_cutsceneManager.PlayCutscene(m_cutsceneToPlayAtEnd);
@@ -251,10 +257,23 @@ namespace MusicalGameplayMechanics
 			}
 		}
 
+        void WinSong()
+        {
+            m_craftingManager.CompletePendingCrafts();
+            m_levelGen.WipeObjects();
+            AchievementManager.OnTallyPickups("Final");
+            AchievementManager.OnLevelPercent(m_scoreBoard.FindPercentageOfNotes() + ":" + m_levelGen.m_currentLevel.name + ":" + GameController.GetDifficulty());
+
+            if (m_cutsceneToPlayAtEnd)
+                m_cutsceneManager.PlayCutscene(m_cutsceneToPlayAtEnd);
+            else
+                ReturnToMenu();
+        }
+
 		bool PassedThisDifficulty(Level level)
 		{
 			//easy
-			if (m_gameController.m_difficulty == Difficulty.EASY)
+			if (GameController.GetDifficulty() == Difficulty.EASY)
 			{
 				if (m_scoreBoard.FindPercentageOfNotes() > level.m_easyPercantage)
 					return true;
@@ -262,7 +281,7 @@ namespace MusicalGameplayMechanics
 					return false;
 			}
 			//medium
-			if (m_gameController.m_difficulty == Difficulty.MEDUIM)
+			if (GameController.GetDifficulty() == Difficulty.MEDUIM)
 			{
 				if (m_scoreBoard.FindPercentageOfNotes() > level.m_mediumPercantage)
 					return true;
@@ -270,7 +289,7 @@ namespace MusicalGameplayMechanics
 					return false;
 			}
 			//hard
-			if (m_gameController.m_difficulty == Difficulty.HARD)
+			if (GameController.GetDifficulty() == Difficulty.HARD)
 			{
 				if (m_scoreBoard.FindPercentageOfNotes() > level.m_hardPercantage)
 					return true;

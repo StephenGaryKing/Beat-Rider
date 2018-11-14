@@ -6,4 +6,5 @@ using UnityEngine;
 public class UnlockableShip : Unlockable {
 
 	public Mesh m_model;
+    public Material m_material;
 }
