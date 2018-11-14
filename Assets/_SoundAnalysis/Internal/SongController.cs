@@ -98,6 +98,7 @@ namespace MusicalGameplayMechanics
 		StoryModeManager m_storyModeManager;
 		CraftingManager m_craftingManager;
 		GameController m_gameController;
+		public static bool m_freeFlow = false;
 
 		void Start()
 		{
@@ -296,6 +297,7 @@ namespace MusicalGameplayMechanics
 
 		void ReturnToMenu()
 		{
+			m_freeFlow = false;
 			m_craftingManager.ClearPendingCrafts();
 			m_storyModeManager.ClearConditions();
 			m_levelGen.WipeObjects();

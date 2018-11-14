@@ -11,6 +11,7 @@ public class SongSelectButton : MonoBehaviour {
 	public void Select()
 	{
 		m_selectionLoader.StartCoroutine(m_selectionLoader.SelectSong(m_filePath));
+		SongController.m_freeFlow = true;
 	}
 
 }
