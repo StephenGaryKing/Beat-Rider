@@ -241,7 +241,7 @@ namespace MusicalGameplayMechanics
 			m_craftingManager.CompletePendingCrafts();
 			m_levelGen.WipeObjects();
 			AchievementManager.OnTallyPickups("Final");
-            AchievementManager.OnLevelPercent(m_scoreBoard.FindPercentageOfNotes() + ":" + m_levelGen.m_currentLevel.name + ":" + GameController.GetDifficulty());
+            AchievementManager.OnLevelPercent(m_scoreBoard.FindPercentageOfNotes() + ":" + m_levelGen.m_currentLevel.name + ":" + GameController.GetDifficulty().ToString());
 
 
             if (PassedThisDifficulty(m_levelGen.m_currentLevel))
@@ -262,7 +262,7 @@ namespace MusicalGameplayMechanics
             m_craftingManager.CompletePendingCrafts();
             m_levelGen.WipeObjects();
             AchievementManager.OnTallyPickups("Final");
-            AchievementManager.OnLevelPercent(m_scoreBoard.FindPercentageOfNotes() + ":" + m_levelGen.m_currentLevel.name + ":" + GameController.GetDifficulty());
+            AchievementManager.OnLevelPercent(m_scoreBoard.FindPercentageOfNotes() + ":" + m_levelGen.m_currentLevel.name + ":" + GameController.GetDifficulty().ToString());
 
             if (m_cutsceneToPlayAtEnd)
                 m_cutsceneManager.PlayCutscene(m_cutsceneToPlayAtEnd);
@@ -602,7 +602,7 @@ namespace MusicalGameplayMechanics
 				}
 
 				Debug.Log("Combine Channels done");
-				Debug.Log(preProcessedSamples.Length);
+				//Debug.Log(preProcessedSamples.Length);
 
 				// Once we have our audio sample data prepared, we can execute an FFT to return the spectrum data over the time domain
 				int spectrumSampleSize = 1024;

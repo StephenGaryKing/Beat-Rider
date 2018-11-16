@@ -18,7 +18,7 @@ namespace BeatRider
 		protected bool m_complete = false;
         AchievementManager m_achievementManager;
 
-        private void Start()
+        private void Awake()
         {
             m_achievementManager = GetComponent<AchievementManager>();
         }
@@ -42,7 +42,8 @@ namespace BeatRider
 			if (!m_complete)
 			{
 				m_complete = true;
-                m_achievementManager.UnlockAchievement(m_unlockable);
+				if (m_unlockable)
+					m_achievementManager.UnlockAchievement(m_unlockable);
                 //AchievementManager.SaveAchievements();
             }
 		}
