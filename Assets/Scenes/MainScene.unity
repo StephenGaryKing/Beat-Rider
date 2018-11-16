@@ -716,7 +716,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1420601321}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.9999982
+  m_Size: 0.99999887
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1186,6 +1186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_tutorialGameObject: {fileID: 572475694}
+  m_pickups: []
 --- !u!1 &74303850
 GameObject:
   m_ObjectHideFlags: 0
@@ -1357,7 +1358,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 78016191}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1089977675}
+        m_MethodName: ChangeLevel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 55df3b5b567c8f744bd228abbc537d5b,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: BeatRider.Level, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &78016191
@@ -3118,7 +3131,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 355411981}
   m_HandleRect: {fileID: 355411980}
   m_Direction: 2
-  m_Value: 0.99997383
+  m_Value: 1
   m_Size: 0
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -3236,7 +3249,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 162176048}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1089977675}
+        m_MethodName: ChangeLevel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 0b9c377f47bfa664ca38829b08e2460c,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: BeatRider.Level, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &162176048
@@ -5726,16 +5751,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
-    - target: {fileID: 114763058145754864, guid: b705cf485b45e964083a98ba5ed96199,
-        type: 2}
-      propertyPath: m_particleSystem
-      value: 
-      objectReference: {fileID: 794401928}
     - target: {fileID: 223291842958850288, guid: b705cf485b45e964083a98ba5ed96199,
         type: 2}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 49763653}
+    - target: {fileID: 114763058145754864, guid: b705cf485b45e964083a98ba5ed96199,
+        type: 2}
+      propertyPath: m_particleSystem
+      value: 
+      objectReference: {fileID: 794401928}
     - target: {fileID: 114120008655638624, guid: b705cf485b45e964083a98ba5ed96199,
         type: 2}
       propertyPath: m_freeFlowMenuTransition
@@ -5746,36 +5771,6 @@ Prefab:
       propertyPath: m_playerDeathMenuTransition
       value: 
       objectReference: {fileID: 75990888}
-    - target: {fileID: 224020682441210560, guid: b705cf485b45e964083a98ba5ed96199,
-        type: 2}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224020682441210560, guid: b705cf485b45e964083a98ba5ed96199,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224020682441210560, guid: b705cf485b45e964083a98ba5ed96199,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 400
-      objectReference: {fileID: 0}
-    - target: {fileID: 114763058145754864, guid: b705cf485b45e964083a98ba5ed96199,
-        type: 2}
-      propertyPath: m_startingScale
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114763058145754864, guid: b705cf485b45e964083a98ba5ed96199,
-        type: 2}
-      propertyPath: m_targetscale
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114763058145754864, guid: b705cf485b45e964083a98ba5ed96199,
-        type: 2}
-      propertyPath: m_animationTime
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b705cf485b45e964083a98ba5ed96199, type: 2}
   m_IsPrefabParent: 0
@@ -6158,8 +6153,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 78016189}
-  - {fileID: 1157494409}
   - {fileID: 1123661031}
+  - {fileID: 1157494409}
   - {fileID: 162176046}
   - {fileID: 1408174393}
   m_Father: {fileID: 2080846917}
@@ -8800,7 +8795,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00039362907}
+  m_AnchoredPosition: {x: 0, y: 0.0005156994}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &735476963
@@ -12322,7 +12317,7 @@ RectTransform:
   m_Children:
   - {fileID: 1777649194}
   m_Father: {fileID: 433587878}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -12367,7 +12362,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1123661033}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1089977675}
+        m_MethodName: ChangeLevel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 28fd00a854b89a1409743048f0773728,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: BeatRider.Level, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1123661033
@@ -12649,7 +12656,7 @@ RectTransform:
   m_Children:
   - {fileID: 426465917}
   m_Father: {fileID: 433587878}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -12694,7 +12701,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1157494411}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1089977675}
+        m_MethodName: ChangeLevel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 7d193f0347a30f342a38caa7441a8d05,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: BeatRider.Level, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1157494411
@@ -15528,7 +15547,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1408174395}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1089977675}
+        m_MethodName: ChangeLevel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 322e77c04ab527649a05fd75dbe66962,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: BeatRider.Level, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1408174395
@@ -16321,7 +16352,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.001085043}
+  m_AnchoredPosition: {x: 0, y: 0.0004632473}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1457668266
@@ -16565,7 +16596,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00026671006, y: 0.00006890297}
+  m_AnchoredPosition: {x: -0.00026671006, y: 0.00046563148}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1502893441
