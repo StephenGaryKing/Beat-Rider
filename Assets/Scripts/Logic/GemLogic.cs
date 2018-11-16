@@ -21,6 +21,11 @@ namespace BeatRider
 
 		private void OnEnable()
 		{
+			if (!m_manager)
+				m_manager = FindObjectOfType<CraftingManager>();
+			if (!m_randomizer	)
+				m_randomizer = GetComponentInChildren<GemTypeRandomizer>();
+
 			if (!m_manualySetGem && !SongController.m_freeFlow)
 				gameObject.SetActive(false);
 			
