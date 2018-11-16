@@ -304,7 +304,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4330695232479886}
-  - component: {fileID: 114760368261951306}
   m_Layer: 0
   m_Name: FISH_03
   m_TagString: Untagged
@@ -486,6 +485,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4492527348650466}
   - component: {fileID: 114285293375033500}
+  - component: {fileID: 114237752387919568}
   m_Layer: 0
   m_Name: Fish
   m_TagString: Untagged
@@ -909,7 +909,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1851868283379792}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4330695232479886}
@@ -1186,6 +1186,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1933176937945532}
   m_Mesh: {fileID: 4300000, guid: 8a7320a96f5eeda43a8f09f92d23f759, type: 3}
+--- !u!114 &114237752387919568
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1851868283379792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a23d596df9127e24ab6c6ebbb5310400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114285293375033500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1199,14 +1210,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minHeight: 10
   maxHeight: -30
---- !u!114 &114760368261951306
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1625508417019068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a23d596df9127e24ab6c6ebbb5310400, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
