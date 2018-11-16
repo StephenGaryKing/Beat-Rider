@@ -7,6 +7,7 @@ namespace BeatRider
 {
 	public class LaneMovement : MonoBehaviour
 	{
+		public bool m_isTutorialObject;
 		public float m_unitsToMovePerSecond = 1;	// How fast to move
 		const float m_zValueToDie = -500;							// z depth to die at
 		[HideInInspector ] public LevelGenerator m_levelGen;        // level generator, used to return to pool when killed
@@ -25,7 +26,7 @@ namespace BeatRider
 			// if created without a level generator, just disable it
 			else
 			{
-				if (transform.position.z < m_zValueToDie)
+				if (!m_isTutorialObject && transform.position.z < m_zValueToDie)
 					gameObject.SetActive(false);
 			}
 		}
