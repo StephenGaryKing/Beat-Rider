@@ -138,7 +138,7 @@ public class CustomisationWindowNavigation : MonoBehaviour {
 					foreach (var index in m_unlockableManager.m_unlockedHighlights)
 					{
 						UnlockableColour col = go.GetComponent<CustomisationButton>().m_unlockable as UnlockableColour;
-						if (index == m_unlockableManager.FindUnlockedID(col, m_unlockableManager.m_unlockableColours))
+						if (index == m_unlockableManager.FindUnlockedID(col, m_unlockableManager.m_unlockableHighlights))
 							go.SetActive(true);
 					}
 					break;

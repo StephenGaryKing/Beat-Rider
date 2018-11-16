@@ -9,7 +9,6 @@ namespace BeatRider
 	/// </summary>
 	public class FinishLevelAchievement : Achievement
 	{
-		public float m_requiredPercentage;
         public Level m_requiredLevel;
         public Difficulty m_requiredDifficulty;
 
@@ -20,31 +19,53 @@ namespace BeatRider
 
 		protected override void OnEvent(string val)
 		{
-            string subStr1 = "";
-            string subStr2 = "";
+            string percent = "";
+            string level = "";
+			string difficulty = "";
             int index = 0;
-            foreach (char c in val)
-            {
-                if (c == ':')
-                {
-                    break;
-                }
-                else
-                    subStr1 += c;
-                index++;
-            }
-            subStr2 = val.Substring(index, val.Length-1);
+			// percent
+			for (int i = index; i < val.Length; i++)
+			{
+				if (val[index] == ':')
+				{
+					index++;
+					break;
+				}
+				else
+					percent += val[index];
+				index++;
+			}
+			// level
+			for (int i = index; i < val.Length; i++)
+			{
+				if (val[index] == ':')
+				{
+					index++;
+					break;
+				}
+				else
+					level += val[index];
+				index++;
+			}
+			// difficulty
+			for (int i = index; i < val.Length; i++)
+			{
+				if (val[index] == ':')
+				{
+					index++;
+					break;
+				}
+				else
+					difficulty += val[index];
+				index++;
+			}
 
-            Debug.Log("completed level " + subStr2 + " with " + subStr1);
+			Debug.Log( level + " VS " + m_requiredLevel.name + " : " + percent + " VS " + m_targetValue + ":" + difficulty + " VS " + m_requiredDifficulty.ToString());
 
-            if (subStr2 == m_requiredLevel.name)
-                if (int.Parse(subStr1) >= m_requiredPercentage)
-                    CheckFinalCondition();
-		}
-
-		void CheckFinalCondition()
-		{
-            Complete();
+			if (level == m_requiredLevel.name)
+				if (int.Parse(percent) >= m_targetValue)
+					if (difficulty == m_requiredDifficulty.ToString())
+						Complete();
 		}
 	}
 }
