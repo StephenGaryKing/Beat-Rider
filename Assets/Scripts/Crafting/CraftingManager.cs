@@ -93,7 +93,7 @@ namespace BeatRider
 			string notificationText = gem.name + " Discovered!";
 
 			if (m_CraftingNotification)
-				m_CraftingNotification.Notify(icon, notificationText);
+				m_CraftingNotification.Notify((gem.m_unlockable as UnlockableColour).m_colour, icon, notificationText);
 
 			m_recipesPendingcompletion.Add(gem);
 		}

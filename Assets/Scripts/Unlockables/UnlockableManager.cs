@@ -9,7 +9,7 @@ namespace BeatRider
 		public string m_saveFileName = "Unlockables";
 
 		public UnlockableColour[] m_unlockableColours;
-		public UnlockableColour[] m_unlockableHighlights;
+		public UnlockableHighlight[] m_unlockableHighlights;
 		public UnlockableShip[] m_unlockableShips;
 		public UnlockableTrail[] m_unlockableTrails;
 
@@ -44,6 +44,10 @@ namespace BeatRider
 			if (colour)
 				UnlockColour(colour);
 
+			UnlockableHighlight highlight = unlock as UnlockableHighlight;
+			if (highlight)
+				UnlockHighlight(highlight);
+
 			UnlockableShip ship = unlock as UnlockableShip;
 			if (ship)
 				UnlockShip(ship);
@@ -60,7 +64,7 @@ namespace BeatRider
 				m_unlockedColours.Add(index);
 		}
 
-		public void UnlockHighlight(UnlockableColour highlight)
+		public void UnlockHighlight(UnlockableHighlight highlight)
 		{
 			int index = FindUnlockedID(highlight, m_unlockableHighlights);
 			if (!m_unlockedHighlights.Contains(index))
