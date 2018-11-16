@@ -46,9 +46,10 @@ namespace BeatRider
 							// if they match your current history
 							if (conditions.Count != m_conditionsCompleated.Count)
 								correctNode = false;
-							foreach (EndGameCondition con in conditions)
-								if (!m_conditionsCompleated.Contains(con))
+							for (int i = 0; i < conditions.Count; i ++)
+								if (conditions[i] == m_conditionsCompleated[i])
 									correctNode = false;
+									
 							// this is the correct node
 							if (correctNode)
 							{

@@ -157,6 +157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4835747368448390}
   - component: {fileID: 114161522307993110}
+  - component: {fileID: 114082068723403444}
   m_Layer: 0
   m_Name: Fish_2
   m_TagString: Untagged
@@ -548,6 +549,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1267488785865334}
   m_Mesh: {fileID: 4300000, guid: 34aa1e829b301c74db8fecca23022adf, type: 3}
+--- !u!114 &114082068723403444
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1494273928673932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a23d596df9127e24ab6c6ebbb5310400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114161522307993110
 MonoBehaviour:
   m_ObjectHideFlags: 1
