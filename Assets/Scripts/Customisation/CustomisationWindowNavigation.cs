@@ -137,7 +137,7 @@ public class CustomisationWindowNavigation : MonoBehaviour {
 				case (PartToCustomise.Highlight):
 					foreach (var index in m_unlockableManager.m_unlockedHighlights)
 					{
-						UnlockableColour col = go.GetComponent<CustomisationButton>().m_unlockable as UnlockableColour;
+						UnlockableHighlight col = go.GetComponent<CustomisationButton>().m_unlockable as UnlockableHighlight;
 						if (index == m_unlockableManager.FindUnlockedID(col, m_unlockableManager.m_unlockableHighlights))
 							go.SetActive(true);
 					}
@@ -230,6 +230,7 @@ public class CustomisationWindowNavigation : MonoBehaviour {
 				btn.SetActive(false);
 
 		// show buttons
+		Debug.Log(m_menuItems[m_currentWindow].Title + " has " + m_menuItems[m_currentWindow].MenuItemGameObjects.Count + " objects");
 		UpdateInfo(m_menuItems[m_currentWindow]);
 
 		// position and scale the appropriate titles

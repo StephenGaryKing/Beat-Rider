@@ -25,15 +25,16 @@ public class Notification : MonoBehaviour {
 	private void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.PageUp))
-			Notify(null, "You Unlocked Test!");
+			Notify(Color.white, null, "You Unlocked Test!");
 	}
 
-	public void Notify(Sprite img, string notificationText = null, string logText = null)
+	public void Notify(Color col, Sprite img, string notificationText = null, string logText = null)
 	{
 		// make a new material for the particle emmiter
-		Material mat = new Material(Shader.Find("Particles/Additive"));
+		Material mat = new Material(m_particleSystem.material);
 		if (img)
 			mat.mainTexture = img.texture;
+		mat.color = col;
 
 		// play the particles
 		m_particleSystem.material = mat;

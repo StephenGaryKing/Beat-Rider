@@ -6,10 +6,13 @@ using UnityEngine;
 public enum EndGameCondition
 {
 	NONE,
-	DeathTrigger,
-	AnswerDenyPolice,
-	AidPolice,
-	NoGroup
+	Death,
+	NoDeath,
+	YesWife,
+	NoWife,
+	YesPolice,
+	NoPolice,
+	Executive
 }
 
 namespace BeatRider
