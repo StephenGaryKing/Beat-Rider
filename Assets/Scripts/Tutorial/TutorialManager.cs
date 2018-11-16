@@ -6,7 +6,7 @@ public class TutorialManager : MonoBehaviour {
 
 	public GameObject m_tutorialGameObject;
 
-	GameObject[] m_notes;       // must be replaced when reinitilized
+	public GameObject[] m_pickups;
 
 	private void Start()
 	{
@@ -17,7 +17,7 @@ public class TutorialManager : MonoBehaviour {
 	{
 		m_tutorialGameObject.SetActive(true);
 		m_tutorialGameObject.transform.position = Vector3.zero;
-		foreach (GameObject n in m_notes)
+		foreach (GameObject n in m_pickups)
 			n.SetActive(true);
 	}
 
