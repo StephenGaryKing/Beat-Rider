@@ -53,6 +53,8 @@ namespace BeatRider
 			saveFile.Load(m_saveFileName);
 
 			m_RecipesCompleated = saveFile.m_numbers[0].list;
+			foreach (var recipe in m_RecipesCompleated)
+				UnlockChallenge(m_allRecipes[recipe]);
 		}
 
 		public void Filter(int filter)

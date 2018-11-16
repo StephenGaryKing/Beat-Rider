@@ -26,6 +26,7 @@ namespace BeatRider
         public int CurrentValue
 		{
 			get { return m_currentValue; }
+			set { m_currentValue = CurrentValue; }
 		}
 
 		protected void Increment(int val = 1)
