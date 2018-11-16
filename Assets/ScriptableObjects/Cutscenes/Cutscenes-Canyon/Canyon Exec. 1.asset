@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98c2dbea8b6767a4ea3d8fb903a452f9, type: 3}
+  m_Name: Canyon Exec.
+  m_EditorClassIdentifier: 
+  m_cameraTagToUse: Cutscene Cam
+  m_preCutsceneChoice: []
+  m_conversation:
+  - Image: {fileID: 21300000, guid: 4069384878f853746bc2f2a427c22602, type: 3}
+    Audio:
+      soundToPlay: {fileID: 0}
+      volume: 0
+    Name: CALL ACCEPTED
+    Content: '---'
+    waitTime: 2
+  - Image: {fileID: 21300000, guid: d3a619e3fdbe28340923170335f33b5e, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: db699dc72e065eb469b4dcfed1d98ebf, type: 3}
+      volume: 0.409
+    Name: Shade Corp. Executive
+    Content: Beat Rider, we have a problem.
+    waitTime: 2
+  - Image: {fileID: 21300000, guid: a7b057ef30380ef4f988e826ac412bd2, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 67ea6e0c0a6351f45979c43f2782c48a, type: 3}
+      volume: 0.488
+    Name: Beat Rider
+    Content: You haven't given me the dropsite yet, What's the hold up?
+    waitTime: 3
+  - Image: {fileID: 21300000, guid: d3a619e3fdbe28340923170335f33b5e, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 1990522cf0b5cda4695882d3ff1390b0, type: 3}
+      volume: 0.446
+    Name: Shade Corp. Executive
+    Content: We're concerned that a "third party" is tracing you. If such is the case,
+      we need to get them off your trail.
+    waitTime: 4
+  - Image: {fileID: 21300000, guid: a7b057ef30380ef4f988e826ac412bd2, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 0ed86fa609c2f6243972f29c6138aee5, type: 3}
+      volume: 0.488
+    Name: Beat Rider
+    Content: Well, that's a pain then.
+    waitTime: 2
+  - Image: {fileID: 21300000, guid: d3a619e3fdbe28340923170335f33b5e, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 1990522cf0b5cda4695882d3ff1390b0, type: 3}
+      volume: 0.488
+    Name: Shade Corp. Executive
+    Content: Nightshade National Park is just ahead, and travelling at foliage level
+      should keep your location off anyone's radar.
+    waitTime: 4
+  - Image: {fileID: 21300000, guid: d3a619e3fdbe28340923170335f33b5e, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: db699dc72e065eb469b4dcfed1d98ebf, type: 3}
+      volume: 0.482
+    Name: Shade Corp. Executive
+    Content: We're sure you'll manage.
+    waitTime: 2
+  - Image: {fileID: 21300000, guid: a7b057ef30380ef4f988e826ac412bd2, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 67ea6e0c0a6351f45979c43f2782c48a, type: 3}
+      volume: 0.543
+    Name: Beat Rider
+    Content: Call back when you have a new dropsite organised, then. I wouldn't mind
+      getting home before midnight.
+    waitTime: 5
+  - Image: {fileID: 21300000, guid: 4069384878f853746bc2f2a427c22602, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 657b42fca44f8224d8ecad24a8d9490a, type: 3}
+      volume: 0.513
+    Name: END CALL
+    Content: CALL HAS BEEN TERMINATED
+    waitTime: 2
+  m_postCutsceneChoice: []
+  m_levelToPlay: {fileID: 11400000, guid: 7d193f0347a30f342a38caa7441a8d05, type: 2}
+  m_nodeNumberToUnlock: 4
