@@ -10,6 +10,7 @@ namespace BeatRider
         public Gem m_manualySetGem;
 		CraftingManager m_manager;
 		GemTypeRandomizer m_randomizer;
+
 		
 		// Use this for initialization
 		void Start()
@@ -20,10 +21,11 @@ namespace BeatRider
 
 		private void OnEnable()
 		{
-            if (m_manualySetGem)
-                m_randomizer.SetGemManualy(m_manualySetGem);
-			if (!SongController.m_freeFlow)
+			if (!m_manualySetGem && !SongController.m_freeFlow)
 				gameObject.SetActive(false);
+			
+			if (m_manualySetGem) 
+				m_randomizer.SetGemManualy (m_manualySetGem);
 		}
 
 		public void PickupGem()

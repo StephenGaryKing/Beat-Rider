@@ -25,11 +25,13 @@ namespace BeatRider
 		{
             m_unlockableManager = FindObjectOfType<UnlockableManager>();
 			m_achievements = GetComponents<Achievement>();
+			LoadAchievements();
 		}
 
         public void UnlockAchievement(Unlockable unlock)
         {
             m_unlockableManager.UnlockUnlockable(unlock);
+			SaveAchievements();
         }
 
 		public void SaveAchievements()
@@ -37,9 +39,7 @@ namespace BeatRider
 			List<int> m_data = new List<int>();
 			// get all the achievements on this object and serialize them
 			foreach (Achievement a in m_achievements)
-			{
 				m_data.Add(a.CurrentValue);
-			}
 			SaveFile saver = new SaveFile();
 			saver.AddList(m_data);
 			saver.Save(m_saveFileName);
@@ -50,6 +50,10 @@ namespace BeatRider
 			// deserialize the saved data and apply it to the achievements on this object
 			SaveFile loader = new SaveFile();
 			loader.Load(m_saveFileName);
+			List<int> data = loader.m_numbers[0].list;
+
+			for (int i = 0; i < data.Count; i ++)
+				m_achievements[i].CurrentValue = data[i];
 		}
 
 		public static void OnCraft(string val)

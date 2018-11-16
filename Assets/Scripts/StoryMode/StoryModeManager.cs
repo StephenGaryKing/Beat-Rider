@@ -6,7 +6,7 @@ namespace BeatRider
 {
 	public class StoryModeManager : MonoBehaviour
 	{
-		List<EndGameCondition> m_conditionsCompleated = new List<EndGameCondition>();
+		[SerializeField] List<EndGameCondition> m_conditionsCompleated = new List<EndGameCondition>();
 		public string m_saveFileName = "LevelProgression";
 		public FinalStoryNode[] m_FinalStoryNodes;
 
@@ -44,6 +44,8 @@ namespace BeatRider
 								nodeToCheck = nodeToCheck.m_parent;
 							}
 							// if they match your current history
+							if (conditions.Count != m_conditionsCompleated.Count)
+								correctNode = false;
 							foreach (EndGameCondition con in conditions)
 								if (!m_conditionsCompleated.Contains(con))
 									correctNode = false;
