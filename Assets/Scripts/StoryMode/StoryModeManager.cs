@@ -6,7 +6,7 @@ namespace BeatRider
 {
 	public class StoryModeManager : MonoBehaviour
 	{
-		List<EndGameCondition> m_conditionsCompleated = new List<EndGameCondition>();
+		[SerializeField] List<EndGameCondition> m_conditionsCompleated = new List<EndGameCondition>();
 		public string m_saveFileName = "LevelProgression";
 		public FinalStoryNode[] m_FinalStoryNodes;
 
