@@ -47,7 +47,7 @@ namespace BeatRider
 							if (conditions.Count != m_conditionsCompleated.Count)
 								correctNode = false;
 							for (int i = 0; i < conditions.Count; i ++)
-								if (conditions[i] == m_conditionsCompleated[i])
+								if (conditions[i] != m_conditionsCompleated[i])
 									correctNode = false;
 									
 							// this is the correct node
@@ -128,8 +128,7 @@ namespace BeatRider
 		{
 			if (condition == EndGameCondition.NONE)
 				return;
-			if (!m_conditionsCompleated.Contains(condition))
-				m_conditionsCompleated.Add(condition);
+			m_conditionsCompleated.Add(condition);
 		}
 
 		public void InitializeConditions(StoryNode node)
