@@ -732,7 +732,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1420601321}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99999905
+  m_Size: 0.99999887
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1053,6 +1053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b76652be11dcfe4ca829c6f5466c00b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_conditionsCompleated: 
   m_saveFileName: LevelProgression
   m_FinalStoryNodes:
   - {fileID: 1817118403}
@@ -3147,7 +3148,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 355411981}
   m_HandleRect: {fileID: 355411980}
   m_Direction: 2
-  m_Value: 0.9999719
+  m_Value: 1
   m_Size: 0
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -5166,7 +5167,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1083806488}
   m_HandleRect: {fileID: 1083806487}
   m_Direction: 2
-  m_Value: 0.9999988
+  m_Value: 0.9999989
   m_Size: 0
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -8827,7 +8828,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00069880486}
+  m_AnchoredPosition: {x: 0, y: 0.0005156994}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &735476963
@@ -9071,6 +9072,20 @@ MonoBehaviour:
   - ObjectToToggleEnabled: {fileID: 0}
     ObjectToAnimate:
       Obj: {fileID: 1483734599}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 1, y: 1, z: 1}
+      Time: 0
+      CurveType: 0
+  - ObjectToToggleEnabled: {fileID: 997024247}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 1, y: 1, z: 1}
+      Time: 0
+      CurveType: 0
+  - ObjectToToggleEnabled: {fileID: 926538574}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
       TargetPosition: {x: 0, y: 0, z: 0}
       TargetScale: {x: 1, y: 1, z: 1}
       Time: 0
@@ -11211,6 +11226,11 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 72e22daf25562464d98370c2e10fa6ab, type: 3}
   m_PrefabInternal: {fileID: 209323186}
+--- !u!1 &926538574 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1414302680937926, guid: b1ecdeb2236dbf9409c47a59b4343ed0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1452460351}
 --- !u!1 &942018674
 GameObject:
   m_ObjectHideFlags: 0
@@ -11426,6 +11446,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 612814665}
   m_GameObject: {fileID: 987305898}
   m_Mesh: {fileID: 4300000, guid: 0257ce57172b70f418d9bfb0286e662d, type: 3}
+--- !u!1 &997024247 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1908324614143562, guid: b1ecdeb2236dbf9409c47a59b4343ed0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1452460351}
 --- !u!1 &1019436828
 GameObject:
   m_ObjectHideFlags: 0
@@ -16029,6 +16054,7 @@ RectTransform:
   - {fileID: 716761718}
   - {fileID: 2051095825}
   - {fileID: 1807570949}
+  - {fileID: 1583724547}
   m_Father: {fileID: 1363702395}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16485,7 +16511,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.0010812283}
+  m_AnchoredPosition: {x: 0, y: 0.00069594383}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1457668266
@@ -16729,7 +16755,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00026671006, y: 0.0006182194}
+  m_AnchoredPosition: {x: -0.00026671006, y: 0.0010149479}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1502893441
@@ -17892,6 +17918,91 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!1 &1583724545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1668421082010820, guid: c5fd2927e1a12c1488c8ac3006dcde37,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1583724547}
+  - component: {fileID: 1583724546}
+  m_Layer: 0
+  m_Name: TutorialMenuNav
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1583724546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114501422594353548, guid: c5fd2927e1a12c1488c8ac3006dcde37,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1583724545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ab34897e65ec248bf1c01542651a0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_outTransitions:
+  - ObjectToToggleEnabled: {fileID: 0}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 0, y: 0, z: 0}
+      Time: 0
+      CurveType: 0
+  m_inTransitions:
+  - ObjectToToggleEnabled: {fileID: 716761717}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 0, y: 0, z: 0}
+      Time: 0
+      CurveType: 0
+  - ObjectToToggleEnabled: {fileID: 2057423453}
+    ObjectToAnimate:
+      Obj: {fileID: 1483734599}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 1, y: 1, z: 1}
+      Time: 0
+      CurveType: 0
+  - ObjectToToggleEnabled: {fileID: 997024247}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 1, y: 1, z: 1}
+      Time: 0
+      CurveType: 0
+  - ObjectToToggleEnabled: {fileID: 926538574}
+    ObjectToAnimate:
+      Obj: {fileID: 0}
+      TargetPosition: {x: 0, y: 0, z: 0}
+      TargetScale: {x: 1, y: 1, z: 1}
+      Time: 0
+      CurveType: 0
+--- !u!224 &1583724547
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 224326734008609698, guid: c5fd2927e1a12c1488c8ac3006dcde37,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1583724545}
+  m_LocalRotation: {x: 0.1823677, y: -0, z: -0, w: 0.9832305}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0004637562}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1437363855}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -960.0001, y: -497.00104}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1 &1587863906
 GameObject:
   m_ObjectHideFlags: 0
@@ -20219,7 +20330,7 @@ Prefab:
     - target: {fileID: 114544719039471822, guid: 33cefd27a6206014bbaa0738c092085a,
         type: 2}
       propertyPath: onPause.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4697839282486714, guid: 33cefd27a6206014bbaa0738c092085a, type: 2}
       propertyPath: m_LocalPosition.x
@@ -20281,7 +20392,7 @@ Prefab:
         type: 2}
       propertyPath: onPause.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1802138838}
+      objectReference: {fileID: 1583724546}
     - target: {fileID: 114544719039471822, guid: 33cefd27a6206014bbaa0738c092085a,
         type: 2}
       propertyPath: onPause.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -20370,7 +20481,34 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: -0.13999999
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114544719039471822, guid: 33cefd27a6206014bbaa0738c092085a,
+        type: 2}
+      propertyPath: onPause.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114544719039471822, guid: 33cefd27a6206014bbaa0738c092085a,
+        type: 2}
+      propertyPath: onPause.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114544719039471822, guid: 33cefd27a6206014bbaa0738c092085a,
+        type: 2}
+      propertyPath: onPause.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1366554906}
+    - target: {fileID: 114544719039471822, guid: 33cefd27a6206014bbaa0738c092085a,
+        type: 2}
+      propertyPath: onPause.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: ResetValues
+      objectReference: {fileID: 0}
+    - target: {fileID: 114544719039471822, guid: 33cefd27a6206014bbaa0738c092085a,
+        type: 2}
+      propertyPath: onPause.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114345813968518366, guid: 33cefd27a6206014bbaa0738c092085a, type: 2}
+    - {fileID: 114697122940952678, guid: 33cefd27a6206014bbaa0738c092085a, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 33cefd27a6206014bbaa0738c092085a, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1747478211 stripped
@@ -21151,45 +21289,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca9e6f31eaf6f84439bbd0b4d17a53b6, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1802138836 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1042748263816648, guid: 33cefd27a6206014bbaa0738c092085a,
-    type: 2}
-  m_PrefabInternal: {fileID: 1741461860}
---- !u!114 &1802138838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1802138836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69ab34897e65ec248bf1c01542651a0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_outTransitions:
-  - ObjectToToggleEnabled: {fileID: 0}
-    ObjectToAnimate:
-      Obj: {fileID: 0}
-      TargetPosition: {x: 0, y: 0, z: 0}
-      TargetScale: {x: 0, y: 0, z: 0}
-      Time: 0
-      CurveType: 0
-  m_inTransitions:
-  - ObjectToToggleEnabled: {fileID: 716761717}
-    ObjectToAnimate:
-      Obj: {fileID: 0}
-      TargetPosition: {x: 0, y: 0, z: 0}
-      TargetScale: {x: 0, y: 0, z: 0}
-      Time: 0
-      CurveType: 0
-  - ObjectToToggleEnabled: {fileID: 2057423453}
-    ObjectToAnimate:
-      Obj: {fileID: 1483734599}
-      TargetPosition: {x: 0, y: 0, z: 0}
-      TargetScale: {x: 1, y: 1, z: 1}
-      Time: 0
-      CurveType: 0
 --- !u!1001 &1803084358
 Prefab:
   m_ObjectHideFlags: 0
