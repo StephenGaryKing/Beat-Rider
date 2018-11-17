@@ -16,7 +16,6 @@ public class RandomizeColour : MonoBehaviour {
 
 	void OnEnable () {
 		Color col = new Color (Random.Range (0f, 100f) / 100f, Random.Range (0f, 100f) / 100f, Random.Range (0f, 100f) / 100f, 1f);
-		Debug.Log (col);
 		if (m_ren)
 			m_ren.material.color = col;
 	}

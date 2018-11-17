@@ -193,7 +193,7 @@ namespace MusicalGameplayMechanics
 			}
 			else
 			{
-				Debug.Log(string.Format("Not ready yet.  At spectral flux sample size of {0} growing to {1}", m_spectralFluxSamples.Count, m_thresholdWindowSize));
+				//Debug.Log(string.Format("Not ready yet.  At spectral flux sample size of {0} growing to {1}", m_spectralFluxSamples.Count, m_thresholdWindowSize));
 			}
 		}
 

@@ -50,10 +50,13 @@ namespace BeatRider
 			// deserialize the saved data and apply it to the achievements on this object
 			SaveFile loader = new SaveFile();
 			loader.Load(m_saveFileName);
-			List<int> data = loader.m_numbers[0].list;
+			if (loader.m_numbers.Count > 0)
+			{ 
+				List<int> data = loader.m_numbers[0].list;
 
-			for (int i = 0; i < data.Count; i ++)
-				m_achievements[i].CurrentValue = data[i];
+				for (int i = 0; i < data.Count; i++)
+					m_achievements[i].CurrentValue = data[i];
+			}
 		}
 
 		public static void OnCraft(string val)

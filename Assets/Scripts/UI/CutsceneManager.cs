@@ -127,6 +127,7 @@ namespace BeatRider
 
 		public IEnumerator StartCutscene(Cutscene cs)
 		{
+			//Debug.LogError("Playing cutscene " + cs.name);
 			if (cs.m_endGameConditionToAdd != EndGameCondition.NONE)
 				m_storyModeManager.AddCondition(cs.m_endGameConditionToAdd);
 

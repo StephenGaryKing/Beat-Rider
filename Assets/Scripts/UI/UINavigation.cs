@@ -120,6 +120,6 @@ public class UINavigation : MonoBehaviour {
 		if (tt)
 			tt.DisplayText();
 		m_buttons[m_currentButton].Select();
-		Debug.Log("selected button is " + m_buttons[m_currentButton].name);
+		//Debug.Log("selected button is " + m_buttons[m_currentButton].name);
 	}
 }

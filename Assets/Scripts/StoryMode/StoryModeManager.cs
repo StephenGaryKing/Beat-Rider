@@ -9,6 +9,7 @@ namespace BeatRider
 		[SerializeField] List<EndGameCondition> m_conditionsCompleated = new List<EndGameCondition>();
 		public string m_saveFileName = "LevelProgression";
 		public FinalStoryNode[] m_FinalStoryNodes;
+		public bool m_debugMode = false;
 
 		private void Start()
 		{
@@ -19,51 +20,99 @@ namespace BeatRider
 		{
 			foreach (FinalStoryNode node in m_FinalStoryNodes)
 			{
-				if (node.m_cutsceneToPlay == cs)
+				if (node.m_cutsceneToPlay != null && node.m_cutsceneToPlay.name == cs.name)
 				{
-					node.Unlock();
-					node.PlayAnimatic();
-					return;
+					if (CheckConditions(GetConditions(node)))
+					{
+						node.Unlock();
+						node.PlayAnimatic();
+						return;
+					}
+					else
+					{
+						if (m_debugMode)
+						{
+							Debug.LogError("Cutscene named " + cs.name + " tried to play but couldn't due to the conditions provided");
+							Debug.LogError(LogList("conditions to check", GetConditions(node)));
+							Debug.LogError(LogList("compleated conditions", m_conditionsCompleated));
+						}
+					}
 				}
 
-				else
+				StoryNode currentNode = node.m_parent;
+				while (currentNode != null)
 				{
-					StoryNode currentNode = node;
-					while (currentNode != null)
+					if (currentNode.m_cutsceneToPlay != null && currentNode.m_cutsceneToPlay.name == cs.name)
 					{
-						if (currentNode.m_cutsceneToPlay == cs)
+						if (m_debugMode)
+							Debug.LogError(currentNode.name);
+						if (CheckConditions(GetConditions(currentNode)))
 						{
-							bool correctNode = true;
-							// build a list of past events in that line
-							List<EndGameCondition> conditions = new List<EndGameCondition>();
-							StoryNode nodeToCheck = currentNode;
-							while (nodeToCheck != null)
-							{
-								if (nodeToCheck.m_EndGameCondition != EndGameCondition.NONE)
-									conditions.Add(nodeToCheck.m_EndGameCondition);
-								nodeToCheck = nodeToCheck.m_parent;
-							}
-							// if they match your current history
-							if (conditions.Count != m_conditionsCompleated.Count)
-								correctNode = false;
-							for (int i = 0; i < conditions.Count; i ++)
-								if (conditions[i] != m_conditionsCompleated[i])
-									correctNode = false;
-									
+							if (m_debugMode)
+								Debug.LogError("Unlocking  " + currentNode.name);
+							Debug.Log("Unlocking  " + currentNode.name);
 							// this is the correct node
-							if (correctNode)
-							{
-								currentNode.Unlock();
-								return;
-							}
-							else
-								currentNode = currentNode.m_parent;
+							currentNode.Unlock();
+							return;
 						}
 						else
 							currentNode = currentNode.m_parent;
 					}
+					else
+						currentNode = currentNode.m_parent;
 				}
 			}
+		}
+
+		// Build a list of past events in that line
+		List<EndGameCondition> GetConditions(StoryNode startingNode)
+		{
+			StoryNode nodeToCheck = startingNode;
+			List<EndGameCondition> conditions = new List<EndGameCondition>();
+			while (nodeToCheck != null)
+			{
+				if (nodeToCheck.m_EndGameCondition != EndGameCondition.NONE)
+				{
+					//Debug.LogError("node " + nodeToCheck.name + " added " + nodeToCheck.m_EndGameCondition + " using cutscene " + nodeToCheck.m_cutsceneToPlay.name);
+					conditions.Add(nodeToCheck.m_EndGameCondition);
+				}
+				nodeToCheck = nodeToCheck.m_parent;
+				//if (nodeToCheck)
+					//Debug.LogError("now at node " + nodeToCheck.name);
+			}
+			return conditions;
+		}
+
+		// Check the list (which is backwards due to data gathering technique) against our current list
+		bool CheckConditions(List<EndGameCondition> conditions)
+		{
+			if (conditions.Count != m_conditionsCompleated.Count)
+			{
+				if (m_debugMode)
+					Debug.LogError("Node was rejected due to it having " + conditions.Count + " conditions vs the requested " + m_conditionsCompleated.Count + " conditions");
+				return false;
+			}
+			//LogList("conditions to check", conditions);
+			//LogList("compleated conditions", m_conditionsCompleated);
+			for (int i = 0; i < m_conditionsCompleated.Count; i ++)
+			{
+				int invertedIndex = (m_conditionsCompleated.Count - 1) - i;
+				if (m_conditionsCompleated[i] != conditions[invertedIndex])
+				{
+					if (m_debugMode)
+						Debug.LogError("Node was rejected due to wrong condition " + LogList("conditions to check", conditions) + " VS " + LogList("compleated conditions", m_conditionsCompleated));
+					return false;
+				}
+			}
+			return true;
+		}
+
+		string LogList(string name, List<EndGameCondition> list)
+		{
+			string log = "";
+			foreach (EndGameCondition con in list)
+				log += con.ToString() + " : ";
+			return (name + " : " + log);
 		}
 
 		public void SaveProgress()
@@ -126,21 +175,26 @@ namespace BeatRider
 
 		public void AddCondition(EndGameCondition condition)
 		{
-			if (condition == EndGameCondition.NONE)
+			if (condition == EndGameCondition.NONE || m_conditionsCompleated.Contains(condition))
 				return;
 			m_conditionsCompleated.Add(condition);
+			if (m_debugMode)
+				Debug.Log("Added condition " + condition.ToString());
 		}
 
 		public void InitializeConditions(StoryNode node)
 		{
+			List<EndGameCondition> conditions = new List<EndGameCondition>();
 			m_conditionsCompleated.Clear();
-			AddCondition(node.m_EndGameCondition);
-			StoryNode parent = node.m_parent;
-			while(parent != null)
+			StoryNode nodeToCheck = node;
+			while(nodeToCheck != null)
 			{
-				AddCondition(parent.m_EndGameCondition);
-				parent = parent.m_parent;
+				if (nodeToCheck.m_EndGameCondition != EndGameCondition.NONE)
+					conditions.Add(nodeToCheck.m_EndGameCondition);
+				nodeToCheck = nodeToCheck.m_parent;
 			}
+			for(int i = conditions.Count-1; i >= 0; i--)
+				AddCondition(conditions[i]);
 		}
 
 		public void ClearConditions()
