@@ -22,6 +22,7 @@ namespace BeatRider
 	[System.Serializable]
 	public class SaveFile
 	{
+		const string fileExtention = ".save";
 		public List<ListOrganizer> m_numbers = new List<ListOrganizer>();
 
 		public void AddList(List<int> list)
@@ -31,15 +32,15 @@ namespace BeatRider
 
 		public void Save(string filename)
 		{
-			string filepath = Path.Combine(Application.streamingAssetsPath, filename + ".json");
+			string filepath = Path.Combine(Application.streamingAssetsPath, filename + fileExtention);
 			File.Create(filepath).Close();
 			string dataAsJson = JsonUtility.ToJson(this, true);
 			File.WriteAllText(filepath, dataAsJson);
 		}
 
-		public void Load(string filename)
+		public bool Load(string filename)
 		{
-			string filepath = Path.Combine(Application.streamingAssetsPath, filename + ".json");
+			string filepath = Path.Combine(Application.streamingAssetsPath, filename + fileExtention);
 			if (File.Exists(filepath))
 			{
 				m_numbers.Clear();
@@ -50,11 +51,20 @@ namespace BeatRider
 				// set the appropriate variables
 				foreach(ListOrganizer list in loadedData.m_numbers)
 					AddList(list.list);
+				return true;
 			}
 			else
 			{
 				Debug.LogError("file at " + filepath + " not found");
+				return false;
 			}
-		}						
+		}
+
+		public void Delete(string filename)
+		{
+			string filepath = Path.Combine(Application.streamingAssetsPath, filename + fileExtention);
+			if (File.Exists(filepath))
+				File.Delete(filepath);
+		}
 	}
 }

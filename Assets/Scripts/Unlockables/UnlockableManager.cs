@@ -6,8 +6,6 @@ namespace BeatRider
 {
 	public class UnlockableManager : MonoBehaviour
 	{
-		public string m_saveFileName = "Unlockables";
-
 		public UnlockableColour[] m_unlockableColours;
 		public UnlockableHighlight[] m_unlockableHighlights;
 		public UnlockableShip[] m_unlockableShips;
@@ -30,6 +28,14 @@ namespace BeatRider
 			UnlockWholeList(m_unlockableHighlights);
 			UnlockWholeList(m_unlockableShips);
 			UnlockWholeList(m_unlockableTrails);
+		}
+
+		public void LockAll()
+		{
+			m_unlockedColours.Clear();
+			m_unlockedHighlights.Clear();
+			m_unlockedShips.Clear();
+			m_unlockedTrails.Clear();
 		}
 
 		void UnlockWholeList(Unlockable[] unlockable)
@@ -56,6 +62,7 @@ namespace BeatRider
 			if (trail)
 				UnlockTrail(trail);
 		}
+
 
 		public void UnlockColour(UnlockableColour colour)
 		{
@@ -92,18 +99,6 @@ namespace BeatRider
 			saveFile.AddList(m_unlockedHighlights);
 			saveFile.AddList(m_unlockedShips);
 			saveFile.AddList(m_unlockedTrails);
-			saveFile.Save(m_saveFileName);
-		}
-
-		public void LoadUnlockables()
-		{
-			SaveFile saveFile = new SaveFile();
-			saveFile.Load(m_saveFileName);
-
-			m_unlockedColours = saveFile.m_numbers[0].list;
-			m_unlockedHighlights = saveFile.m_numbers[1].list;
-			m_unlockedShips = saveFile.m_numbers[2].list;
-			m_unlockedTrails = saveFile.m_numbers[3].list;
 		}
 
 		public int FindUnlockedID<T>(T unlockable, T[] arrayToSearch)

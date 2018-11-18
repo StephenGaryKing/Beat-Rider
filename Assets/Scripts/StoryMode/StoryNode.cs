@@ -72,12 +72,20 @@ namespace BeatRider
 			m_button.interactable = true;
 			UpdateUI();
 			if (m_storyModeManager)
-			{
-				m_storyModeManager.SaveProgress();
 				m_storyModeManager.AddCondition(m_EndGameCondition);
-			}
 			if (m_parent)
 				m_parent.Unlock();
+		}
+
+		public virtual void Lock()
+		{
+			if (m_parent)
+			{
+				m_unlocked = false;
+				m_button.interactable = false;
+				UpdateUI();
+				m_parent.Lock();
+			}
 		}
 
 		public void UpdateUI()
