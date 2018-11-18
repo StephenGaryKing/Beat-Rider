@@ -36,7 +36,6 @@ GameObject:
   - component: {fileID: 4385830446831726}
   - component: {fileID: 33030133254242880}
   - component: {fileID: 23852421406260486}
-  - component: {fileID: 95861844678245726}
   m_Layer: 0
   m_Name: UPDATEDTREE
   m_TagString: Untagged
@@ -112,20 +111,3 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1523409780059966}
   m_Mesh: {fileID: 4300000, guid: bf46ee6ea08a4cd4ca88b60fbe0b1f55, type: 3}
---- !u!95 &95861844678245726
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1523409780059966}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: bf46ee6ea08a4cd4ca88b60fbe0b1f55, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1

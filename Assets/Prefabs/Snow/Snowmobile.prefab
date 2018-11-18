@@ -169,7 +169,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4994936600854692}
-  - component: {fileID: 95613858098799626}
   m_Layer: 0
   m_Name: SNOWMOBILE
   m_TagString: Untagged
@@ -605,20 +604,3 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1982542670247084}
   m_Mesh: {fileID: 4300000, guid: 4e39c8d1368d5bb4db708b7bbbd373aa, type: 3}
---- !u!95 &95613858098799626
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1639887550804016}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 4e39c8d1368d5bb4db708b7bbbd373aa, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1

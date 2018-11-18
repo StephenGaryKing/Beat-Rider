@@ -66,7 +66,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4092146778899386}
-  - component: {fileID: 95672106646134908}
   m_Layer: 0
   m_Name: IGLOO
   m_TagString: Untagged
@@ -489,20 +488,3 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1158875596187000}
   m_Mesh: {fileID: 4300000, guid: f1aa5fe5c8cbc4f45800421d81849f2a, type: 3}
---- !u!95 &95672106646134908
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1172613824596012}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: f1aa5fe5c8cbc4f45800421d81849f2a, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1

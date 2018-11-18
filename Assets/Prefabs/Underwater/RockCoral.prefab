@@ -1439,6 +1439,7 @@ GameObject:
   - component: {fileID: 4815434167368748}
   - component: {fileID: 33709591409409758}
   - component: {fileID: 23744197293802756}
+  - component: {fileID: 114645801195491260}
   m_Layer: 0
   m_Name: polySurface17
   m_TagString: Untagged
@@ -4575,6 +4576,23 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1645385489887670}
   m_Mesh: {fileID: 4300000, guid: d617ec5f03c062d4983a732f38e8643a, type: 3}
+--- !u!114 &114645801195491260
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1645385489887670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56726c61fea21e4589e1e4bb6a13eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_passToReactTo: DEFAULT
+  m_audioReactor: {fileID: 0}
+  m_smoothing: 0.03
+  m_startingColour: {r: 0, g: 1, b: 0.006896496, a: 1}
+  m_endingColour: {r: 0, g: 0.5862069, b: 1, a: 1}
+  m_emissionMagnitude: 2
 --- !u!212 &212013377898924860
 SpriteRenderer:
   m_ObjectHideFlags: 1
