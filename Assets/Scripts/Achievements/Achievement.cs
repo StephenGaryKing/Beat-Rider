@@ -53,5 +53,11 @@ namespace BeatRider
 					m_achievementManager.UnlockAchievement(m_unlockable);
             }
 		}
+
+		public void Revert()
+		{
+			m_currentValue = 0;
+			m_complete = false;
+		}
 	}
 }

@@ -77,6 +77,18 @@ namespace BeatRider
 			}
 		}
 
+		public void DeleteSaveData()
+		{
+			SaveFile DeleteFile = new SaveFile();
+			DeleteFile.Delete(m_saveFileName);
+
+			// reset data
+			foreach (var achievement in m_achievements)
+				achievement.Revert();
+			m_unlockableManager.LockAll();
+			LoadAchievements();
+		}
+
 		public static void OnCraft(string val)
 		{
 			onCraft.Invoke(val);

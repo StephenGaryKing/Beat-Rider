@@ -181,6 +181,20 @@ namespace BeatRider
 			}
 		}
 
+		public void DeleteSaveData()
+		{
+			SaveFile DeleteFile = new SaveFile();
+			DeleteFile.Delete(m_saveFileName);
+
+			// reset data
+			foreach (FinalStoryNode node in m_FinalStoryNodes)
+			{
+				node.Lock();
+				m_conditionsCompleated.Clear();
+			}
+			LoadProgress();
+		}
+
 		public void AddCondition(EndGameCondition condition)
 		{
 			if (condition == EndGameCondition.NONE || m_conditionsCompleated.Contains(condition))

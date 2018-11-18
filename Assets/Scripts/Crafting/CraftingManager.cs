@@ -16,7 +16,7 @@ namespace BeatRider
 		public Notification m_CraftingNotification;
 		[HideInInspector] public List<Gem> m_collectedGems;
 		[HideInInspector] public List<int> m_RecipesCompleated;
-		public int m_filterNumber = 2;
+		[HideInInspector] public int m_filterNumber = 2;
 		UnlockableManager m_UnlockableManager;
 		List<Gem> m_filteredRecipes = new List<Gem>();
 		List<Gem> m_recipesPendingcompletion = new List<Gem>();
@@ -61,6 +61,16 @@ namespace BeatRider
 				CompletePendingCrafts();
 				SaveChallenges();
 			}
+		}
+
+		public void DeleteSaveData()
+		{
+			SaveFile DeleteFile = new SaveFile();
+			DeleteFile.Delete(m_saveFileName);
+
+			// reset data
+			m_RecipesCompleated.Clear();
+			LoadChallenges();
 		}
 
 		public void Filter(int filter)

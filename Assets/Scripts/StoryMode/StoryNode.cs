@@ -77,6 +77,17 @@ namespace BeatRider
 				m_parent.Unlock();
 		}
 
+		public virtual void Lock()
+		{
+			if (m_parent)
+			{
+				m_unlocked = false;
+				m_button.interactable = false;
+				UpdateUI();
+				m_parent.Lock();
+			}
+		}
+
 		public void UpdateUI()
 		{
 			m_image.sprite = m_activeImage;
