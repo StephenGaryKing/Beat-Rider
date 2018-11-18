@@ -32,29 +32,35 @@ namespace BeatRider
 
 			m_allRecipes = newAllRecipies.ToArray();
 
-			foreach (var unlock in m_ReipesToStartWith)
-				UnlockChallenge(unlock);
-
-			CompletePendingCrafts();
-
+			LoadChallenges();
 			DisplayPickupList();
 		}
 
-		public void SaveChallenges()
+		void SaveChallenges()
 		{
 			SaveFile saveFile = new SaveFile();
 			saveFile.AddList(m_RecipesCompleated);
 			saveFile.Save(m_saveFileName);
 		}
 
-		public void LoadChallenges()
+		void LoadChallenges()
 		{
-			SaveFile saveFile = new SaveFile();
-			saveFile.Load(m_saveFileName);
-
-			m_RecipesCompleated = saveFile.m_numbers[0].list;
-			foreach (var recipe in m_RecipesCompleated)
-				UnlockChallenge(m_allRecipes[recipe]);
+			SaveFile loadFile = new SaveFile();
+			if (loadFile.Load(m_saveFileName))
+			{
+				List<int> recipesCompleated = loadFile.m_numbers[0].list;
+				foreach (var recipe in recipesCompleated)
+					UnlockChallenge(m_allRecipes[recipe]);
+				CompletePendingCrafts();
+			}
+			else
+			{
+				Debug.LogError("generating file now");
+				foreach (var recipe in m_ReipesToStartWith)
+					UnlockChallenge(recipe);
+				CompletePendingCrafts();
+				SaveChallenges();
+			}
 		}
 
 		public void Filter(int filter)

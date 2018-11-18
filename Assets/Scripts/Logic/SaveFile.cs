@@ -37,7 +37,7 @@ namespace BeatRider
 			File.WriteAllText(filepath, dataAsJson);
 		}
 
-		public void Load(string filename)
+		public bool Load(string filename)
 		{
 			string filepath = Path.Combine(Application.streamingAssetsPath, filename + ".json");
 			if (File.Exists(filepath))
@@ -50,10 +50,12 @@ namespace BeatRider
 				// set the appropriate variables
 				foreach(ListOrganizer list in loadedData.m_numbers)
 					AddList(list.list);
+				return true;
 			}
 			else
 			{
 				Debug.LogError("file at " + filepath + " not found");
+				return false;
 			}
 		}						
 	}

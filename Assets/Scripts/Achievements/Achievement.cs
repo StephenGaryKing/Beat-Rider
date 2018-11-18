@@ -29,6 +29,12 @@ namespace BeatRider
 			set { m_currentValue = CurrentValue; }
 		}
 
+		public bool Completed
+		{
+			get { return m_complete; }
+			set { if (Completed) Complete(); }
+		}
+
 		protected void Increment(int val = 1)
 		{
 			m_currentValue += val;
@@ -38,14 +44,13 @@ namespace BeatRider
 
 		protected abstract void OnEvent(string val);
 
-		protected void Complete()
+		public void Complete()
 		{
 			if (!m_complete)
 			{
 				m_complete = true;
 				if (m_unlockable)
 					m_achievementManager.UnlockAchievement(m_unlockable);
-                //AchievementManager.SaveAchievements();
             }
 		}
 	}

@@ -34,28 +34,46 @@ namespace BeatRider
 			SaveAchievements();
         }
 
-		public void SaveAchievements()
+		void SaveAchievements()
 		{
-			List<int> m_data = new List<int>();
-			// get all the achievements on this object and serialize them
+			List<int> value = new List<int>();
+			// get all the achievements on this object and serialize their value
 			foreach (Achievement a in m_achievements)
-				m_data.Add(a.CurrentValue);
+				value.Add(a.CurrentValue);
+
+			List<int> compleated = new List<int>();
+			// get all the achievements on this object and serialize their value
+			foreach (Achievement a in m_achievements)
+				compleated.Add((a.Completed)? 1:0);
+
 			SaveFile saver = new SaveFile();
-			saver.AddList(m_data);
+			saver.AddList(value);
+			saver.AddList(compleated);
 			saver.Save(m_saveFileName);
 		}
 
-		public void LoadAchievements()
+		void LoadAchievements()
 		{
 			// deserialize the saved data and apply it to the achievements on this object
 			SaveFile loader = new SaveFile();
-			loader.Load(m_saveFileName);
-			if (loader.m_numbers.Count > 0)
-			{ 
-				List<int> data = loader.m_numbers[0].list;
+			if (loader.Load(m_saveFileName))
+			{
+				if (loader.m_numbers.Count > 0)
+				{
+					List<int> value = loader.m_numbers[0].list;
+					for (int i = 0; i < value.Count; i++)
+						m_achievements[i].CurrentValue = value[i];
 
-				for (int i = 0; i < data.Count; i++)
-					m_achievements[i].CurrentValue = data[i];
+					List<int> compleated = loader.m_numbers[1].list;
+					for (int i = 0; i < compleated.Count; i++)
+						if (compleated[i] == 1)
+							m_achievements[i].Complete();
+				}
+			}
+			else
+			{
+				Debug.LogError("generating file now");
+				SaveAchievements();
 			}
 		}
 
