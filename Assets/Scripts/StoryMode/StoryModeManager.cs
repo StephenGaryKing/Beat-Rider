@@ -16,6 +16,16 @@ namespace BeatRider
 			LoadProgress();
 		}
 
+		private void Update()
+		{
+			if (Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Home))
+			{
+				Debug.LogError("Unlocking The Whole Story");
+				foreach (StoryNode node in m_FinalStoryNodes)
+					UnlockNode(node.m_cutsceneToPlay);
+			}
+		}
+
 		public void UnlockNode(Cutscene cs)
 		{
 			foreach (FinalStoryNode node in m_FinalStoryNodes)
@@ -24,15 +34,18 @@ namespace BeatRider
 				{
 					if (CheckConditions(GetConditions(node)))
 					{
+						if (m_debugMode)
+							Debug.LogError(node.name + " was unlocked");
 						node.Unlock();
 						node.PlayAnimatic();
+						SaveProgress();
 						return;
 					}
 					else
 					{
 						if (m_debugMode)
 						{
-							Debug.LogError("Cutscene named " + cs.name + " tried to play but couldn't due to the conditions provided");
+							Debug.LogError("Final cutscene named " + cs.name + " tried to play but couldn't due to the conditions provided");
 							Debug.LogError(LogList("conditions to check", GetConditions(node)));
 							Debug.LogError(LogList("compleated conditions", m_conditionsCompleated));
 						}
@@ -49,8 +62,8 @@ namespace BeatRider
 						if (CheckConditions(GetConditions(currentNode)))
 						{
 							if (m_debugMode)
-								Debug.LogError("Unlocking  " + currentNode.name);
-							Debug.Log("Unlocking  " + currentNode.name);
+								Debug.LogError(currentNode.name + " was unlocked");
+							Debug.Log(currentNode.name + " was unlocked");
 							// this is the correct node
 							currentNode.Unlock();
 							SaveProgress();
@@ -100,8 +113,8 @@ namespace BeatRider
 				int invertedIndex = (m_conditionsCompleated.Count - 1) - i;
 				if (m_conditionsCompleated[i] != conditions[invertedIndex])
 				{
-					if (m_debugMode)
-						Debug.LogError("Node was rejected due to wrong condition " + LogList("conditions to check", conditions) + " VS " + LogList("compleated conditions", m_conditionsCompleated));
+					//if (m_debugMode)
+						//Debug.LogError("Node was rejected due to wrong condition " + LogList("conditions to check", conditions) + " VS " + LogList("compleated conditions", m_conditionsCompleated));
 					return false;
 				}
 			}
