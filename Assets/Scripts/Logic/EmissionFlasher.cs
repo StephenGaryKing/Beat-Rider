@@ -45,8 +45,9 @@ namespace BeatRider
 					continue;
 				if (!pass.runtimeData[index].isPeak)
 					continue;
-				if (m_audioReactor.ConditionsAreMet(pass.runtimeData[index]))
-					Flash();
+				if (m_audioReactor)
+					if (m_audioReactor.ConditionsAreMet(pass.runtimeData[index]))
+						Flash();
 			}
 		}
 
