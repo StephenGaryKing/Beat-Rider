@@ -30,6 +30,8 @@ namespace BeatRider
 
         public void UnlockAchievement(Unlockable unlock)
         {
+            if (!m_unlockableManager)
+                m_unlockableManager = FindObjectOfType<UnlockableManager>();
             m_unlockableManager.UnlockUnlockable(unlock);
 			SaveAchievements();
         }

@@ -125,7 +125,7 @@ namespace BeatRider
 
 		public void UnlockChallenge (Gem gem)
 		{
-			Sprite icon = gem.m_unlockable.m_icon;
+            Sprite icon = gem.m_unlockable.m_icon;
 			string notificationText = gem.name + " Discovered!";
 
 			if (m_CraftingNotification)

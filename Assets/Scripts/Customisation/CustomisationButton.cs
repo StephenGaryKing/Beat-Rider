@@ -33,7 +33,7 @@ namespace BeatRider
 			Image image = GetComponent<Image>();
             if (m_unlockable.m_icon)
 			    image.sprite = m_unlockable.m_icon;
-			if (m_partToCustomise == PartToCustomise.Colour || m_partToCustomise == PartToCustomise.Highlight)
+			if (m_partToCustomise == PartToCustomise.Colour)
 				image.color = (m_unlockable as UnlockableColour).m_colour;
 		}
 
