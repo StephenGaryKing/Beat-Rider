@@ -85,8 +85,15 @@ namespace BeatRider
 					timer += Time.deltaTime;
 					foreach (var key in m_previouslyPressedKeys)
 					{
-						if (key.Key == ((GameController.GetDifficulty() == Difficulty.HARD) ? m_hardKeys[index].Key : m_meduimKey.Key))
+						KeyCode k = new KeyCode();
+						if (GameController.GetDifficulty() == Difficulty.HARD)
+							k = m_hardKeys[index].Key;
+						if (GameController.GetDifficulty() == Difficulty.MEDUIM)
+							k = m_meduimKey.Key;
+
+						if (key.Key == k)
 						{
+							//Debug.Log("pickup note");
 							PickupNote(note);
 							m_previouslyPressedKeys.Remove(key.Key);
 							keyFound = true;
