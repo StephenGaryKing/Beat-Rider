@@ -2966,6 +2966,7 @@ MonoBehaviour:
   m_shakeFrequency: 0.05
   m_waitTime: 0.2
   m_relaxTime: 0.5
+  m_tutorialMode: 0
 --- !u!114 &151741027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3256,8 +3257,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 355411981}
   m_HandleRect: {fileID: 355411980}
   m_Direction: 2
-  m_Value: 0.99997634
-  m_Size: 0
+  m_Value: 1
+  m_Size: 0.9999991
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5189,8 +5190,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1083806488}
   m_HandleRect: {fileID: 1083806487}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 0.9999994
+  m_Value: 0.99999905
+  m_Size: 0
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5815,7 +5816,7 @@ Prefab:
         type: 2}
       propertyPath: m_particleSystem
       value: 
-      objectReference: {fileID: 1594815699}
+      objectReference: {fileID: 779255047}
     - target: {fileID: 114120008655638624, guid: b705cf485b45e964083a98ba5ed96199,
         type: 2}
       propertyPath: m_freeFlowMenuTransition
@@ -5920,6 +5921,11 @@ Prefab:
       propertyPath: m_AnchoredPosition.x
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 114120008655638624, guid: b705cf485b45e964083a98ba5ed96199,
+        type: 2}
+      propertyPath: m_LevelFailedMenuTransition
+      value: 
+      objectReference: {fileID: 819607899}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b705cf485b45e964083a98ba5ed96199, type: 2}
   m_IsPrefabParent: 0
@@ -8630,7 +8636,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.0006072521}
+  m_AnchoredPosition: {x: 0, y: 0.00039362907}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &735476963
@@ -9313,6 +9319,11 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 776182533}
+--- !u!199 &779255047 stripped
+ParticleSystemRenderer:
+  m_PrefabParentObject: {fileID: 199853354201762608, guid: b705cf485b45e964083a98ba5ed96199,
+    type: 2}
+  m_PrefabInternal: {fileID: 419588555}
 --- !u!1 &780208267
 GameObject:
   m_ObjectHideFlags: 0
@@ -10955,7 +10966,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -960, y: -497.00107}
+  m_AnchoredPosition: {x: -0.000061035156, y: -4649.841}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &819607899
@@ -11801,6 +11812,7 @@ MonoBehaviour:
   m_shakeFrequency: 0.05
   m_waitTime: 0.2
   m_relaxTime: 0.5
+  m_tutorialMode: 0
 --- !u!114 &987305902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14847,7 +14859,7 @@ Prefab:
       objectReference: {fileID: 49763653}
     - target: {fileID: 1117645909537706, guid: 70b8349c1d52c2549a56f089809df789, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224074534919680210, guid: 70b8349c1d52c2549a56f089809df789,
         type: 2}
@@ -15178,48 +15190,6 @@ MonoBehaviour:
   m_description: Craft 5 ship neons
   m_targetValue: 5
   m_previewImage: {fileID: 21300000, guid: f00f140988ef17a45b8c5085a691a21e, type: 3}
---- !u!1001 &1300658729
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4433595116101682, guid: e1d55130d1c6a6b4285f8db68f600f13, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 4433595116101682, guid: e1d55130d1c6a6b4285f8db68f600f13, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 4.777
-      objectReference: {fileID: 0}
-    - target: {fileID: 4433595116101682, guid: e1d55130d1c6a6b4285f8db68f600f13, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -6.346
-      objectReference: {fileID: 0}
-    - target: {fileID: 4433595116101682, guid: e1d55130d1c6a6b4285f8db68f600f13, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4433595116101682, guid: e1d55130d1c6a6b4285f8db68f600f13, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4433595116101682, guid: e1d55130d1c6a6b4285f8db68f600f13, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4433595116101682, guid: e1d55130d1c6a6b4285f8db68f600f13, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4433595116101682, guid: e1d55130d1c6a6b4285f8db68f600f13, type: 2}
-      propertyPath: m_RootOrder
-      value: 28
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: e1d55130d1c6a6b4285f8db68f600f13, type: 2}
-  m_IsPrefabParent: 0
 --- !u!4 &1301319038 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 72e22daf25562464d98370c2e10fa6ab, type: 3}
@@ -16347,7 +16317,7 @@ MonoBehaviour:
         m_MethodName: ChangeLevel
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 322e77c04ab527649a05fd75dbe66962,
+          m_ObjectArgument: {fileID: 11400000, guid: 2a0b77fd753f7c04b91aed72590c3cfb,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: BeatRider.Level, Assembly-CSharp
           m_IntArgument: 0
@@ -17153,7 +17123,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.001298666}
+  m_AnchoredPosition: {x: 0, y: 0.0005624294}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1457668266
@@ -17397,7 +17367,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00026671006, y: 0.00009942055}
+  m_AnchoredPosition: {x: -0.00026671006, y: 0.00022149086}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1502893441
@@ -18931,11 +18901,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224229909248467192, guid: 9e60856e4ec100c4f989708d5bf39baf,
     type: 2}
   m_PrefabInternal: {fileID: 1115589360}
---- !u!199 &1594815699 stripped
-ParticleSystemRenderer:
-  m_PrefabParentObject: {fileID: 199606735904213930, guid: e1d55130d1c6a6b4285f8db68f600f13,
-    type: 2}
-  m_PrefabInternal: {fileID: 1300658729}
 --- !u!4 &1607580423 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4008711552051394, guid: a29f395333a87f54d999ebad46a2c8b5,
