@@ -957,7 +957,7 @@ MonoBehaviour:
   - {fileID: 114658674102096998}
   - {fileID: 114256562060857156}
   m_NormalColour: {r: 0.24313726, g: 0, b: 1, a: 1}
-  m_selectedColour: {r: 0.7137255, g: 0.3372549, b: 0.84705883, a: 1}
+  m_selectedColour: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &114242490659467074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1350,7 +1350,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_textBox: {fileID: 114534003623202070}
-  m_text: Medium
+  m_text: "MEDIUM: \nPress the spacebar in time with the beats. Recommended for veteran
+    couriers."
 --- !u!114 &114500376777535942
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1443,10 +1444,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: c16ac61f9e5bb9443978f91de6142ba4, type: 3}
-    m_FontSize: 50
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 5
+    m_MinSize: 0
     m_MaxSize: 100
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -1586,7 +1587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_textBox: {fileID: 114534003623202070}
-  m_text: 'Easy difficulty:  just hit the beats!'
+  m_text: "EASY: \nJust hit those beats."
 --- !u!114 &114640360425434364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2346,7 +2347,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_textBox: {fileID: 114534003623202070}
-  m_text: Hard
+  m_text: "HARD: \nPress the correct button in time with the correct colour beats.
+    For true Beat Riders only."
 --- !u!114 &114911855711861520
 MonoBehaviour:
   m_ObjectHideFlags: 1
