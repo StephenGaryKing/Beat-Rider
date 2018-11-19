@@ -35,10 +35,9 @@ namespace BeatRider
 			LoadChallenges();
 			DisplayPickupList();
 		}
-
 		private void Update()
 		{
-			if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.Insert))
+			if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Keypad1))
 			{
 				Debug.LogError("Crafting everything");
 				CraftAll();
@@ -117,7 +116,11 @@ namespace BeatRider
 			DisplayPickupList();
 			Gem gemToUnlock = CheckPickupCombination();
 			if (gemToUnlock)
+			{
 				UnlockChallenge(gemToUnlock);
+				m_collectedGems.Clear();
+				DisplayPickupList();
+			}
 		}
 
 		public void UnlockChallenge (Gem gem)
