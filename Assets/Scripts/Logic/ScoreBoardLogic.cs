@@ -8,6 +8,8 @@ namespace BeatRider
 {
 	public class ScoreBoardLogic : MonoBehaviour
 	{
+		public Color m_winColour = Color.green;
+		public Color m_noWinColour = Color.yellow;
 		[HideInInspector] public int m_score = 0;
 		public Text m_scoreText = null;
 		SongController m_songController;
@@ -31,7 +33,14 @@ namespace BeatRider
             if (!m_songController)
                 m_songController = FindObjectOfType<SongController>();
 			if (m_displayAsPercentage)
-				m_scoreText.text = FindPercentageOfNotes().ToString() + "%";
+			{
+				float percent = FindPercentageOfNotes();
+				if (percent >= 100)
+					m_scoreText.color = m_winColour;
+				else
+					m_scoreText.color = m_noWinColour;
+				m_scoreText.text = percent.ToString() + "%";
+			}
 			else
 				m_scoreText.text = m_score.ToString() + "/" + m_totalAmountOfNotes.ToString();
 		}
