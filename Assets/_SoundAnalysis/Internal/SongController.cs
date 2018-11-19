@@ -124,7 +124,7 @@ namespace MusicalGameplayMechanics
 				s_returnToMenu = false;
 				ReturnToMenu();
 			}
-            if (Input.GetKeyDown(KeyCode.End))
+            if (m_songIsBeingPlayed && Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.End))
                 ActualStopSong(StopSongConditions.AutoWin);
 
 			if (m_loadIcon != null)
