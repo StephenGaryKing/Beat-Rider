@@ -73,8 +73,7 @@ namespace BeatRider
 					newRecipe.Ingredients = new Image[recipe.m_recipe.GemsToPickup.Length];
 					for (int i = 0; i < newRecipe.Ingredients.Length; i++)
 					{
-                        GameObject ingr = new GameObject("Ingredient " + i + 1, typeof(RectTransform), typeof(Image));
-                        newRecipe.Ingredients[i] = Instantiate(ingr, newRecipe.Root.transform).GetComponent<Image>();
+						newRecipe.Ingredients[i] = Instantiate(new GameObject("Ingredient " + i + 1, typeof(RectTransform), typeof(Image)), newRecipe.Root.transform).GetComponent<Image>();
 						newRecipe.Ingredients[i].rectTransform.parent = newRecipe.Root.transform;
 						newRecipe.Ingredients[i].sprite = m_defaultGem;
 						// create plus
@@ -87,8 +86,7 @@ namespace BeatRider
 					Instantiate(m_equalsSignPrefab, newRecipe.Root.transform);
 
 					// create product display
-					GameObject prod = new GameObject("Product", typeof(RectTransform), typeof(Image));
-					newRecipe.Product = Instantiate(prod, newRecipe.Root.transform).GetComponent<Image>();
+					newRecipe.Product = Instantiate(new GameObject("Product", typeof(RectTransform), typeof(Image)), newRecipe.Root.transform).GetComponent<Image>();
 					newRecipe.Product.sprite = recipe.m_unlockable.m_icon;
 					UnlockableColour caster = recipe.m_unlockable as UnlockableColour;
 					if (caster)
@@ -114,26 +112,24 @@ namespace BeatRider
 
 		void UpdateRecipes()
 		{
-			// look for each recipe in the manager to decide to show the recipe or not
-			foreach (int num in m_craftingManager.m_RecipesCompleated)
+			foreach (RecipeUI ui in m_recipeUIs)
 			{
-				Gem gem = m_craftingManager.m_allRecipes[num];
-				foreach (RecipeUI ui in m_recipeUIs)
+				// look at ingredients
+				for (int i = 0; i < ui.Recipe.m_recipe.GemsToPickup.Length; i++)
 				{
-					// look at ingredients
-					for (int i = 0; i < ui.Recipe.m_recipe.GemsToPickup.Length; i++)
+					//Debug.Log(m_craftingManager.FindGemIndex(ui.Recipe.m_recipe.GemsToPickup[i]) + " :: " + num);
+					// if the ingredient has been unlocked, show it, else, show the grey version
+					if (m_craftingManager.m_RecipesCompleated.Contains(m_craftingManager.FindGemIndex(ui.Recipe.m_recipe.GemsToPickup[i])))
 					{
-						//Debug.Log(m_craftingManager.FindGemIndex(ui.Recipe.m_recipe.GemsToPickup[i]) + " :: " + num);
-						// if the ingredient has been unlocked, show it, else, show the grey version
-						if (m_craftingManager.FindGemIndex(ui.Recipe.m_recipe.GemsToPickup[i]) == num)
-						{
-							ui.Ingredients[i].sprite = ui.Recipe.m_recipe.GemsToPickup[i].m_unlockable.m_icon;
-							UnlockableColour caster = ui.Recipe.m_recipe.GemsToPickup[i].m_unlockable as UnlockableColour;
-							if (caster)
-								ui.Ingredients[i].color = caster.m_colour;
-						}
-						else
-							ui.Ingredients[i].sprite = m_unknownGem;
+						ui.Ingredients[i].sprite = ui.Recipe.m_recipe.GemsToPickup[i].m_unlockable.m_icon;
+						UnlockableColour caster = ui.Recipe.m_recipe.GemsToPickup[i].m_unlockable as UnlockableColour;
+						if (caster)
+							ui.Ingredients[i].color = caster.m_colour;
+					}
+					else
+					{
+						ui.Ingredients[i].sprite = m_unknownGem;
+						ui.Ingredients[i].color = Color.white;
 					}
 				}
 			}
@@ -144,6 +140,8 @@ namespace BeatRider
 				if (ui.Recipe.m_recipe.GemsToPickup.Length == m_craftingManager.m_filterNumber)
 					ui.Root.SetActive(true);
 				else
+					ui.Root.SetActive(false);
+				if (m_craftingManager.m_RecipesCompleated.Contains(m_craftingManager.FindGemIndex(ui.Recipe)))
 					ui.Root.SetActive(false);
 			}
 		}

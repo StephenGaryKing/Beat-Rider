@@ -18,11 +18,11 @@ namespace BeatRider
 
 		private void Update()
 		{
-			if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Home))
+			if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Keypad2))
 			{
 				Debug.LogError("Unlocking The Whole Story");
 				foreach (StoryNode node in m_FinalStoryNodes)
-					UnlockNode(node.m_cutsceneToPlay);
+					node.Unlock();
 			}
 		}
 
