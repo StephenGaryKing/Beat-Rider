@@ -27,8 +27,6 @@ GameObject:
   - component: {fileID: 114895411604563972}
   - component: {fileID: 114711780715135974}
   - component: {fileID: 114137453646008476}
-  - component: {fileID: 114898282771160562}
-  - component: {fileID: 114563821038018664}
   m_Layer: 0
   m_Name: ChallengeManager
   m_TagString: Untagged
@@ -64,7 +62,7 @@ MonoBehaviour:
   m_description: 'STORY UNLOCK:
 
     Finish Level 5 (Blizzard) on Medium'
-  m_targetValue: 1
+  m_targetValue: 100
   m_previewImage: {fileID: 21300000, guid: 60b8ead4faf991a45acdb68e8f6d7a49, type: 3}
   m_requiredLevel: {fileID: 11400000, guid: 2a0b77fd753f7c04b91aed72590c3cfb, type: 2}
   m_requiredDifficulty: 1
@@ -113,27 +111,8 @@ MonoBehaviour:
   m_description: 'BEAT RIDER
 
     Collect 200 Beats'
-  m_targetValue: 200
+  m_targetValue: 300
   m_previewImage: {fileID: 21300000, guid: f3a325a7c2b97d944bdb2dcf15883323, type: 3}
-  m_pickupTag: Note
-  m_lessThanOrEqualTo: 0
---- !u!114 &114563821038018664
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1951817512352024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 767b0124e7fbfe747ae3925a6a60e3cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_unlockable: {fileID: 11400000, guid: bbe1f2bd5e6b50342829d8bdfbd77176, type: 2}
-  m_description: 'DEFAULT TRAIL:
-
-    You''ve already got this.'
-  m_targetValue: 1
-  m_previewImage: {fileID: 21300000, guid: d58260aaeab015642b7190d8ae45ed03, type: 3}
   m_pickupTag: Note
   m_lessThanOrEqualTo: 0
 --- !u!114 &114572897036071294
@@ -186,7 +165,7 @@ MonoBehaviour:
   m_description: 'STORY UNLOCK:
 
     Finish Level 5 (Blizzard) on Hard'
-  m_targetValue: 1
+  m_targetValue: 100
   m_previewImage: {fileID: 21300000, guid: 8ae36617baadefe4baea3de526ec5075, type: 3}
   m_requiredLevel: {fileID: 11400000, guid: 2a0b77fd753f7c04b91aed72590c3cfb, type: 2}
   m_requiredDifficulty: 2
@@ -205,26 +184,7 @@ MonoBehaviour:
   m_description: 'STORY UNLOCK:
 
     Finish Level 5 on (Blizzard) Easy'
-  m_targetValue: 1
+  m_targetValue: 100
   m_previewImage: {fileID: 21300000, guid: 3a14ca908af3df047a7bc45f0398fcc9, type: 3}
-  m_requiredLevel: {fileID: 11400000, guid: 2a0b77fd753f7c04b91aed72590c3cfb, type: 2}
+  m_requiredLevel: {fileID: 11400000, guid: 55df3b5b567c8f744bd228abbc537d5b, type: 2}
   m_requiredDifficulty: 0
---- !u!114 &114898282771160562
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1951817512352024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 767b0124e7fbfe747ae3925a6a60e3cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_unlockable: {fileID: 11400000, guid: bbe1f2bd5e6b50342829d8bdfbd77176, type: 2}
-  m_description: 'SPORE FILTER:
-
-    Finish Level 3 (Forest) on Easy'
-  m_targetValue: 1
-  m_previewImage: {fileID: 21300000, guid: 9780930acd4c4e849931f7b2d5486d31, type: 3}
-  m_pickupTag: Note
-  m_lessThanOrEqualTo: 0
