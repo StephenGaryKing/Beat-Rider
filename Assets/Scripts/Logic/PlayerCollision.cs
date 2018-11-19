@@ -96,7 +96,7 @@ namespace BeatRider
 				}
 				else
 				{
-					if (ol.m_tutorialMode)
+					if (!ol.m_tutorialMode)
 					{
 						Die();
 						m_songController.ActualStopSong(StopSongConditions.PlayerDead);
