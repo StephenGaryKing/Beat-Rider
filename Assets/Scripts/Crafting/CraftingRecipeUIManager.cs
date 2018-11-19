@@ -35,7 +35,8 @@ namespace BeatRider
 			if (!m_craftingManager)
 				Debug.LogError("Add a Crafting Manager to the Game Controller");
 			PopulateRecipes(m_craftingManager.m_allRecipes);
-			Filter(m_filterButtons[0]);
+            if (m_filterButtons.Length > 0)
+			    Filter(m_filterButtons[0]);
 		}
 
 		public void Filter(FilterButton button)
@@ -110,7 +111,7 @@ namespace BeatRider
 			Filter(m_lastFilterUsed);
 		}
 
-		void UpdateRecipes()
+		public void UpdateRecipes()
 		{
 			foreach (RecipeUI ui in m_recipeUIs)
 			{
