@@ -38,7 +38,7 @@ namespace BeatRider
 
 		private void Update()
 		{
-			if (Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKey(KeyCode.Insert))
+			if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.Insert))
 			{
 				Debug.LogError("Crafting everything");
 				CraftAll();

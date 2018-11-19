@@ -18,7 +18,7 @@ namespace BeatRider
 
 		private void Update()
 		{
-			if (Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Home))
+			if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Home))
 			{
 				Debug.LogError("Unlocking The Whole Story");
 				foreach (StoryNode node in m_FinalStoryNodes)
