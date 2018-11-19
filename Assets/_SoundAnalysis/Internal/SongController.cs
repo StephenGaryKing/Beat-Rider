@@ -124,8 +124,11 @@ namespace MusicalGameplayMechanics
 				s_returnToMenu = false;
 				ReturnToMenu();
 			}
-            if (m_songIsBeingPlayed && Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.End))
-                ActualStopSong(StopSongConditions.AutoWin);
+			if (m_songIsBeingPlayed && Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.End))
+			{
+				Debug.LogError("Auto Winning Level");
+				ActualStopSong(StopSongConditions.AutoWin);
+			}
 
 			if (m_loadIcon != null)
 			{
