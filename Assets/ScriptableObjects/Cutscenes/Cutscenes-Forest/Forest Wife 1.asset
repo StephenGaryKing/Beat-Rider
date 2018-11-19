@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98c2dbea8b6767a4ea3d8fb903a452f9, type: 3}
+  m_Name: Forest Wife 1
+  m_EditorClassIdentifier: 
+  m_cameraTagToUse: Cutscene Cam
+  m_preCutsceneChoice: []
+  m_conversation:
+  - Image: {fileID: 21300000, guid: 4069384878f853746bc2f2a427c22602, type: 3}
+    Audio:
+      soundToPlay: {fileID: 0}
+      volume: 0
+    Name: CALL ACCEPTED
+    Content: '---'
+    waitTime: 2
+  - Image: {fileID: 21300000, guid: cffd952504d001845a00fe65ecd747a7, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: c5b9f24662867dd4d84881dfd4502e89, type: 3}
+      volume: 0.458
+    Name: Wife
+    Content: "...hello? Oh great, you actually answered. I\u2019m concerned being
+      home alone right now."
+    waitTime: 3
+  - Image: {fileID: 21300000, guid: a7b057ef30380ef4f988e826ac412bd2, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 67ea6e0c0a6351f45979c43f2782c48a, type: 3}
+      volume: 0.488
+    Name: Beat Rider
+    Content: Is anything up? I still have a bit longer to go.
+    waitTime: 2
+  - Image: {fileID: 21300000, guid: cffd952504d001845a00fe65ecd747a7, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: c5b9f24662867dd4d84881dfd4502e89, type: 3}
+      volume: 0.458
+    Name: Wife
+    Content: I keep thinking I hear someone moving around the apartment. Mainly outside
+      on the balcony.
+    waitTime: 4
+  - Image: {fileID: 21300000, guid: cffd952504d001845a00fe65ecd747a7, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 7ae3de55ad50df845b37f4ab3971ae3f, type: 3}
+      volume: 0.458
+    Name: Wife
+    Content: "It\u2019s probably nothing...but please get back soon."
+    waitTime: 3
+  - Image: {fileID: 21300000, guid: a7b057ef30380ef4f988e826ac412bd2, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 67ea6e0c0a6351f45979c43f2782c48a, type: 3}
+      volume: 0.47
+    Name: Beat Rider
+    Content: "I\u2019ll cut off the company if they keep pushing things. Keep the
+      doors locked. Something isn\u2019t right here."
+    waitTime: 3
+  - Image: {fileID: 21300000, guid: 4069384878f853746bc2f2a427c22602, type: 3}
+    Audio:
+      soundToPlay: {fileID: 8300000, guid: 657b42fca44f8224d8ecad24a8d9490a, type: 3}
+      volume: 0.379
+    Name: END CALL
+    Content: CALL HAS BEEN TERMINATED
+    waitTime: 2
+  m_postCutsceneChoice: []
+  m_levelToPlay: {fileID: 11400000, guid: de9ea1c8c8836c24a9a28cae36164353, type: 2}
+  m_endGameConditionToAdd: 3

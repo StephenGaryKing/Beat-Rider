@@ -33,44 +33,42 @@ MonoBehaviour:
       soundToPlay: {fileID: 8300000, guid: 67ea6e0c0a6351f45979c43f2782c48a, type: 3}
       volume: 0.482
     Name: Beat Rider
-    Content: I don't know what you have me handling, but I'm not going to prison over
-      it.
+    Content: Who have you sent to my apartment, and what is going on?
     waitTime: 4
   - Image: {fileID: 21300000, guid: a7b057ef30380ef4f988e826ac412bd2, type: 3}
     Audio:
-      soundToPlay: {fileID: 8300000, guid: 67ea6e0c0a6351f45979c43f2782c48a, type: 3}
+      soundToPlay: {fileID: 8300000, guid: 0ed86fa609c2f6243972f29c6138aee5, type: 3}
       volume: 0.421
     Name: Beat Rider
-    Content: You should probably back off before you dig yourself any deeper.
+    Content: You're pushing my trust.
     waitTime: 3
   - Image: {fileID: 21300000, guid: d3a619e3fdbe28340923170335f33b5e, type: 3}
     Audio:
       soundToPlay: {fileID: 8300000, guid: 1990522cf0b5cda4695882d3ff1390b0, type: 3}
       volume: 0.391
     Name: Shade Corp. Executive
-    Content: YOU JUST CROSSED THE WRONG PEOPLE, BEAT RIDER.
+    Content: What are you going on about, we haven't sent anyone to your apartment...
     waitTime: 5
   - Image: {fileID: 21300000, guid: d3a619e3fdbe28340923170335f33b5e, type: 3}
     Audio:
       soundToPlay: {fileID: 8300000, guid: 1990522cf0b5cda4695882d3ff1390b0, type: 3}
       volume: 0.433
     Name: Shade Corp. Executive
-    Content: And you know what? Out here, we can just wipe you out, and no-one will
-      notice.
+    Content: '...damn it, you got HYPSEC agents onto us!'
     waitTime: 5
   - Image: {fileID: 21300000, guid: a7b057ef30380ef4f988e826ac412bd2, type: 3}
     Audio:
-      soundToPlay: {fileID: 8300000, guid: 0ed86fa609c2f6243972f29c6138aee5, type: 3}
+      soundToPlay: {fileID: 8300000, guid: 67ea6e0c0a6351f45979c43f2782c48a, type: 3}
       volume: 0.366
     Name: Beat Rider
-    Content: Try me.
-    waitTime: 2
+    Content: Seriously? You have me carrying contraband?!
+    waitTime: 4
   - Image: {fileID: 21300000, guid: d3a619e3fdbe28340923170335f33b5e, type: 3}
     Audio:
       soundToPlay: {fileID: 8300000, guid: 1990522cf0b5cda4695882d3ff1390b0, type: 3}
       volume: 0.452
     Name: Shade Corp. Executive
-    Content: (Send in asset recovery, now!)
+    Content: (Send in asset recovery, now! Take down his ship if you have to!)
     waitTime: 4
   - Image: {fileID: 21300000, guid: 4069384878f853746bc2f2a427c22602, type: 3}
     Audio:
@@ -84,8 +82,7 @@ MonoBehaviour:
       soundToPlay: {fileID: 8300000, guid: 9cdd0ae368a792b4ba678221ba846376, type: 3}
       volume: 0.378
     Name: '"Asset Recovery"'
-    Content: You can't run forever, courier. I'll be pulling the cargo from your burning
-      wreckage.
+    Content: You might as well make this easy for me, courier. Don't try and run.
     waitTime: 6
   - Image: {fileID: 21300000, guid: 4069384878f853746bc2f2a427c22602, type: 3}
     Audio:
@@ -95,5 +92,5 @@ MonoBehaviour:
     Content: Connection has been lost.
     waitTime: 2
   m_postCutsceneChoice: []
-  m_levelToPlay: {fileID: 11400000, guid: faa92b3f42546d84f9f492b96870e8af, type: 2}
+  m_levelToPlay: {fileID: 11400000, guid: 2a0b77fd753f7c04b91aed72590c3cfb, type: 2}
   m_endGameConditionToAdd: 0

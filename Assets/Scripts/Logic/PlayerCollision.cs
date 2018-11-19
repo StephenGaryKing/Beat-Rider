@@ -8,6 +8,7 @@ namespace BeatRider
 	[RequireComponent(typeof(PlayerSoundEffects))]
 	public class PlayerCollision : MonoBehaviour
 	{
+		public Transform m_sheild;
 		[SerializeField] float m_maxScoreMultiplier = 30;
 		public float m_maxZoomAmount = 6.43f;
 		[SerializeField] float m_FOVSmoothing = 0.1f;
@@ -76,21 +77,30 @@ namespace BeatRider
 					if (m_playerSoundEffects.m_boost.soundToPlay)
 						m_playerSoundEffects.m_soundManager.PlaySound(m_playerSoundEffects.m_boost);
 					AchievementManager.OnTallyPickups(other.tag);
+					if (m_sheild)
+						m_sheild.gameObject.SetActive(true);
 					return;
 				}
 
 			if (other.CompareTag("Obstacle"))
 			{
+				ObstacleLogic ol = other.GetComponent<ObstacleLogic>();
+
+				if (m_sheild)
+					m_sheild.gameObject.SetActive(false);
+
 				if (m_targetFOV > m_minFOV)
 				{
 					m_targetFOV = m_minFOV;
-					ObstacleLogic ol = other.GetComponent<ObstacleLogic>();
 					m_floatingCamera.StartCoroutine(m_floatingCamera.Shake(ol.m_shakeMagnitude, ol.m_shakeFrequency, ol.m_waitTime, ol.m_relaxTime));
 				}
 				else
 				{
-					Die();
-					m_songController.ActualStopSong(StopSongConditions.PlayerDead);
+					if (ol.m_tutorialMode)
+					{
+						Die();
+						m_songController.ActualStopSong(StopSongConditions.PlayerDead);
+					}
 				}
 				if (m_playerSoundEffects.m_hitObstical.soundToPlay)
 					m_playerSoundEffects.m_soundManager.PlaySound(m_playerSoundEffects.m_hitObstical);
