@@ -36,6 +36,23 @@ namespace BeatRider
 			DisplayPickupList();
 		}
 
+		private void Update()
+		{
+			if (Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKey(KeyCode.Insert))
+			{
+				Debug.LogError("Crafting everything");
+				CraftAll();
+				m_UnlockableManager.UnlockAll();
+			}
+		}
+
+		void CraftAll()
+		{
+			foreach (Gem g in m_allRecipes)
+				UnlockChallenge(g);
+			CompletePendingCrafts();
+		}
+
 		void SaveChallenges()
 		{
 			SaveFile saveFile = new SaveFile();
