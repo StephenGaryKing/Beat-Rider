@@ -18,7 +18,7 @@ namespace BeatRider
 
 		public void UnlockAll()
 		{
-			Debug.LogError("Unlocking everything");
+			Debug.LogError("Unlocking All Unlockables");
 			UnlockWholeList(m_unlockableColours);
 			UnlockWholeList(m_unlockableHighlights);
 			UnlockWholeList(m_unlockableShips);
