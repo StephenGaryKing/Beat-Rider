@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour {
     [SerializeField] GameObject m_pauseMenu;
     [SerializeField] GameObject m_playIcon;
     [SerializeField] GameObject m_pauseIcon;
+	bool m_unpauseLocked = false;
 
 	static Difficulty m_difficulty;
 	
@@ -54,13 +55,26 @@ public class GameController : MonoBehaviour {
 		// Play the game from a paused state
         else if (Input.GetKeyDown(KeyCode.Escape) && songcontroller.m_paused == true)
         {
-            songcontroller.UnPause();
-            if (!songcontroller.m_paused)
-            {
-                ReturnToGame();
-            }
+			if (!m_unpauseLocked)
+			{
+				songcontroller.UnPause();
+				if (!songcontroller.m_paused)
+				{
+					ReturnToGame();
+				}
+			}
         }
     }
+
+	public void LockPauseMenu()
+	{
+		m_unpauseLocked = true;
+	}
+
+	public void UnlockPauseMenu()
+	{
+		m_unpauseLocked = false;
+	}
 
 	/// <summary>
 	/// Un-pause the game

@@ -8,6 +8,7 @@ public class ObstacleLogic : MonoBehaviour {
 	public float m_shakeFrequency = 0.1f;
 	public float m_waitTime = 1;
 	public float m_relaxTime = 1;
+	public bool m_tutorialMode = false;
 
 	private void OnTriggerEnter(Collider other)
 	{
