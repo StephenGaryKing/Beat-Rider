@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114895411604563972}
   - component: {fileID: 114711780715135974}
   - component: {fileID: 114137453646008476}
+  - component: {fileID: 114436177591430536}
   m_Layer: 0
   m_Name: ChallengeManager
   m_TagString: Untagged
@@ -96,6 +97,23 @@ MonoBehaviour:
     Craft 5 Ship Neons'
   m_targetValue: 5
   m_previewImage: {fileID: 21300000, guid: f00f140988ef17a45b8c5085a691a21e, type: 3}
+--- !u!114 &114436177591430536
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1951817512352024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93668bbe75e3d014faca491f0c865c7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_unlockable: {fileID: 11400000, guid: 5b16c896b69246a46b39f87af53359e8, type: 2}
+  m_description: 'DEBUG:
+
+    Spore Trail'
+  m_targetValue: 1
+  m_previewImage: {fileID: 0}
 --- !u!114 &114559379514818090
 MonoBehaviour:
   m_ObjectHideFlags: 1
