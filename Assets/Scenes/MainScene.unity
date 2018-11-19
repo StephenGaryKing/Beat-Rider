@@ -792,8 +792,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1420601322}
   m_HandleRect: {fileID: 1420601321}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 0.9999986
+  m_Value: 1
+  m_Size: 0.9999985
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8640,7 +8640,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00046992302}
+  m_AnchoredPosition: {x: 0, y: 0.00040888786}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &735476963
@@ -10880,6 +10880,12 @@ Prefab:
       propertyPath: m_outTransitions.Array.data[3].ObjectToToggleEnabled
       value: 
       objectReference: {fileID: 1087774451}
+    - target: {fileID: 114762501815702924, guid: a51203891a7402f498af012f4f2e6959,
+        type: 2}
+      propertyPath: m_cutsceneToPlay
+      value: 
+      objectReference: {fileID: 11400000, guid: 62aa55e5cf53dfb4c89052b38e2d088d,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a51203891a7402f498af012f4f2e6959, type: 2}
   m_IsPrefabParent: 0
@@ -13077,7 +13083,7 @@ MonoBehaviour:
         m_MethodName: ChangeLevel
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: a56a53e92f6a1404ebd2ef5e60b11eb1,
+          m_ObjectArgument: {fileID: 11400000, guid: 8b4326539ea8500468df6c51bb1a001e,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: BeatRider.Level, Assembly-CSharp
           m_IntArgument: 0
@@ -15085,115 +15091,6 @@ RectTransform:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 72e22daf25562464d98370c2e10fa6ab, type: 3}
   m_PrefabInternal: {fileID: 520651417}
---- !u!1 &1295278108
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1295278111}
-  - component: {fileID: 1295278110}
-  - component: {fileID: 1295278109}
-  - component: {fileID: 1295278113}
-  - component: {fileID: 1295278112}
-  - component: {fileID: 1295278114}
-  m_Layer: 0
-  m_Name: ChallengeManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1295278109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1295278108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93668bbe75e3d014faca491f0c865c7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_unlockable: {fileID: 0}
-  m_description: Craft 5 ship colours
-  m_targetValue: 5
-  m_previewImage: {fileID: 21300000, guid: f00f140988ef17a45b8c5085a691a21e, type: 3}
---- !u!114 &1295278110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1295278108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f578243daa2c1834fb064f860c342aac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_saveFileName: AchievementProgress
-  m_achievements: []
---- !u!4 &1295278111
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1295278108}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.17344904, y: 4.6378093, z: -7.719163}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 27
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1295278112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1295278108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 767b0124e7fbfe747ae3925a6a60e3cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_unlockable: {fileID: 0}
-  m_description: Collect 200 notes
-  m_targetValue: 200
-  m_previewImage: {fileID: 0}
-  m_pickupTag: Note
-  m_lessThanOrEqualTo: 0
---- !u!114 &1295278113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1295278108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79ed1bcee51ff2848a982a5f430acf6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_unlockable: {fileID: 0}
-  m_description: Customise the ship body
-  m_targetValue: 1
-  m_previewImage: {fileID: 0}
-  m_partType: 2
---- !u!114 &1295278114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1295278108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93668bbe75e3d014faca491f0c865c7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_unlockable: {fileID: 0}
-  m_description: Craft 5 ship neons
-  m_targetValue: 5
-  m_previewImage: {fileID: 21300000, guid: f00f140988ef17a45b8c5085a691a21e, type: 3}
 --- !u!4 &1301319038 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 72e22daf25562464d98370c2e10fa6ab, type: 3}
@@ -16321,7 +16218,7 @@ MonoBehaviour:
         m_MethodName: ChangeLevel
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: bab54693f6da6c84e855a7f958b3893e,
+          m_ObjectArgument: {fileID: 11400000, guid: e123b38f5cd9c324daa6d0f8c4059275,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: BeatRider.Level, Assembly-CSharp
           m_IntArgument: 0
@@ -17127,7 +17024,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.001260519}
+  m_AnchoredPosition: {x: 0, y: 0.0011041164}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1457668266
@@ -17371,7 +17268,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00026671006, y: 0.0010607243}
+  m_AnchoredPosition: {x: -0.00026671006, y: 0.00034356117}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1502893441
@@ -21924,6 +21821,52 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224424239662884832, guid: 70b8349c1d52c2549a56f089809df789,
     type: 2}
   m_PrefabInternal: {fileID: 1227964967}
+--- !u!1001 &1884116501
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4550519669347656, guid: 1f4e118d6ac6b1242bec22318f0508e8, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.17344904
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550519669347656, guid: 1f4e118d6ac6b1242bec22318f0508e8, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4.6378093
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550519669347656, guid: 1f4e118d6ac6b1242bec22318f0508e8, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -7.719163
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550519669347656, guid: 1f4e118d6ac6b1242bec22318f0508e8, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550519669347656, guid: 1f4e118d6ac6b1242bec22318f0508e8, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550519669347656, guid: 1f4e118d6ac6b1242bec22318f0508e8, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550519669347656, guid: 1f4e118d6ac6b1242bec22318f0508e8, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550519669347656, guid: 1f4e118d6ac6b1242bec22318f0508e8, type: 2}
+      propertyPath: m_RootOrder
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 1951817512352024, guid: 1f4e118d6ac6b1242bec22318f0508e8, type: 2}
+      propertyPath: m_Name
+      value: ChallengeManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 1f4e118d6ac6b1242bec22318f0508e8, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1887898339
 GameObject:
   m_ObjectHideFlags: 0
