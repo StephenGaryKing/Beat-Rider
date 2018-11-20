@@ -311,7 +311,8 @@ namespace MusicalGameplayMechanics
 
 		void RestartSong()
 		{
-			m_craftingManager.ClearPendingCrafts();
+            m_player.GetComponent<PlayerCollision>().TurnOffSheild();
+            m_craftingManager.ClearPendingCrafts();
 			m_levelGen.WipeObjects();
 			PlayAudio();
 			m_player.Revive();
@@ -319,6 +320,7 @@ namespace MusicalGameplayMechanics
 
 		void ReturnToMenu()
 		{
+            m_player.GetComponent<PlayerCollision>().TurnOffSheild();
 			m_freeFlow = false;
 			m_craftingManager.ClearPendingCrafts();
 			m_storyModeManager.ClearConditions();

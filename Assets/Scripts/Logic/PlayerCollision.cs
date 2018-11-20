@@ -59,6 +59,11 @@ namespace BeatRider
 
 		}
 
+        public void TurnOffSheild()
+        {
+            m_sheild.gameObject.SetActive(false);
+        }
+
 		public void ResetSpeed()
 		{
 			m_targetFOV = m_minFOV;

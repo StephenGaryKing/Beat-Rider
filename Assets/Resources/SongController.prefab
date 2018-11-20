@@ -640,7 +640,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1349456322892396}
   m_LocalRotation: {x: -1, y: -0, z: -0, w: 0}
-  m_LocalPosition: {x: 590, y: 137, z: 188}
+  m_LocalPosition: {x: 590, y: 137, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224872190855731202}
@@ -1598,6 +1598,9 @@ MonoBehaviour:
   m_startingScale: 0.5
   m_animationTime: 2
   m_curveType: 12
+  m_notifySound:
+    soundToPlay: {fileID: 8300000, guid: 980d000d766d57d48a61e190ce66a679, type: 3}
+    volume: 0.321
 --- !u!114 &114781252339719944
 MonoBehaviour:
   m_ObjectHideFlags: 1
