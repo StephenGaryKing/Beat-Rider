@@ -203,9 +203,9 @@ public class CustomisationWindowNavigation : MonoBehaviour {
 		titles[3].transform.localPosition = m_templateTitle.transform.localPosition + Vector3.right * m_offsetDistance;
 		titles[3].transform.localScale = m_offsetScale;
 
-		titles[4].transform.localPosition = m_templateTitle.transform.localPosition + Vector3.right * m_offsetDistance * 1.5f;
-		titles[4].transform.localScale = Vector3.zero;
-	}
+		titles[4].transform.localPosition = m_templateTitle.transform.localPosition + Vector3.left * m_offsetDistance;
+		titles[4].transform.localScale = m_offsetScale;
+    }
 
 	void UpdateWindows()
 	{
