@@ -15,6 +15,7 @@ public class PlayerSoundEffects : MonoBehaviour {
 	public Sound m_boost;
 	public Sound m_pickupNote;
 	public Sound m_hitObstical;
+    public Sound m_gemPickup;
 
 	[HideInInspector] public SoundManager m_soundManager;
 

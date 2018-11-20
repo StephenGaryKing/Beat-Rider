@@ -117,6 +117,7 @@ namespace BeatRider
 					gl.PickupGem();
 				other.gameObject.SetActive(false);
 				AchievementManager.OnTallyPickups(other.tag);
+                m_playerSoundEffects.m_soundManager.PlaySound(m_playerSoundEffects.m_gemPickup);
 			}
 		}
 	}

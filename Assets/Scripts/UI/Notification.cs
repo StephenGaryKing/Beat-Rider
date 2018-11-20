@@ -14,11 +14,14 @@ public class Notification : MonoBehaviour {
     public float m_startingScale = 2;
     public float m_animationTime = 1;
 	public TweenCurveHelper.CurveType m_curveType;
+    public Sound m_notifySound;
+    SoundManager m_soundManager;
 
 	bool m_tweening = false;
 
 	private void Start()
 	{
+        m_soundManager = FindObjectOfType<SoundManager>();
 		m_notificationTextBox.gameObject.SetActive(false);
 	}
 
@@ -30,6 +33,11 @@ public class Notification : MonoBehaviour {
 
 	public void Notify(Color col, Sprite img, string notificationText = null, string logText = null)
 	{
+        if (!m_soundManager)
+            m_soundManager = FindObjectOfType<SoundManager>();
+        if (m_notifySound.soundToPlay)
+            m_soundManager.PlaySound(m_notifySound);
+
 		// make a new material for the particle emmiter
 		Material mat = new Material(m_particleSystem.material);
 		if (img)

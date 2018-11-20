@@ -13,13 +13,13 @@ namespace BeatRider
 
 		private void Start()
 		{
-			LevelGenerator.HideLevel();
+            LevelGenerator.HideLevel();
 		}
 
 		// Update is called once per frame
 		void Update() {
 			m_timer += Time.deltaTime;
-			if (FetchKey())
+			if (FetchKey() && m_timer >= m_timeToWait)
 			{
 				SongController.ReturnToMenuStatic();
 				LevelGenerator.ShowLevel();
