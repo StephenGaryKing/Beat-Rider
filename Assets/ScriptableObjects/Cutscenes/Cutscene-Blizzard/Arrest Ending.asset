@@ -13,6 +13,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_cameraTagToUse: 
   m_preCutsceneChoice: []
-  m_conversation: []
+  m_conversation:
+  - Image: {fileID: 0}
+    Audio:
+      soundToPlay: {fileID: 0}
+      volume: 0
+    Name: 
+    Content: 
+    waitTime: 0.1
   m_postCutsceneChoice: []
   m_levelToPlay: {fileID: 0}
+  m_endGameConditionToAdd: 0
