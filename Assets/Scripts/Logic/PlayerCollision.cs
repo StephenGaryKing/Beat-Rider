@@ -19,6 +19,7 @@ namespace BeatRider
 		FloatingCameraLogic m_floatingCamera;
 		[SerializeField] float m_ambientSpeedDegradation = 0.1f;
 		[HideInInspector] public Vector3 m_startingCameraPos;
+        bool m_invincible = false;
 
 		PlayerSoundEffects m_playerSoundEffects;
 		QuickTimeInput m_quickTime;
@@ -41,8 +42,14 @@ namespace BeatRider
 			if (m_targetFOV > m_minFOV)
 				m_targetFOV -= m_ambientSpeedDegradation;
 		}
-		
-		void Die()
+
+        private void Update()
+        {
+            if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.KeypadPeriod))
+                m_invincible = !m_invincible;
+        }
+
+        void Die()
 		{
 
 		}
@@ -96,7 +103,7 @@ namespace BeatRider
 				}
 				else
 				{
-					if (!ol.m_tutorialMode)
+					if (!ol.m_tutorialMode && !m_invincible)
 					{
 						Die();
 						m_songController.ActualStopSong(StopSongConditions.PlayerDead);
