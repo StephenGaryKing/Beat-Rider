@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Blizzard
   m_EditorClassIdentifier: 
   m_levelGenerationType: 1
-  m_groundPrefab: {fileID: 1859034733271936, guid: 17a770c98eec75c4c972eec1e306e630,
+  m_groundPrefab: {fileID: 1581564553897942, guid: e3996f598a1d44a4cbaf0122e82d3355,
     type: 2}
   m_spawnHeightOffset: -10
   m_trackWidth: 50
@@ -32,7 +32,7 @@ MonoBehaviour:
     spawnChanceWeight: 1
     randomScaleVariance: {x: 6, y: 5}
   - m_prefab: {fileID: 1213903599575632, guid: e2db6c0aa2c3da94dbe4021efa56d84c, type: 2}
-    spawnChanceWeight: 5
+    spawnChanceWeight: 10
     randomScaleVariance: {x: 15, y: 10}
   - m_prefab: {fileID: 1218831409143436, guid: 0339e0393aaf7c64789a9cb983974d74, type: 2}
     spawnChanceWeight: 1
@@ -41,7 +41,7 @@ MonoBehaviour:
     spawnChanceWeight: 1
     randomScaleVariance: {x: 2, y: 2}
   - m_prefab: {fileID: 1381700508634090, guid: c27ea4a72d7f089459e83ddb0b13e368, type: 2}
-    spawnChanceWeight: 5
+    spawnChanceWeight: 10
     randomScaleVariance: {x: 5, y: 5}
   m_travelTime: 6
   m_customPostProcess: {fileID: 0}

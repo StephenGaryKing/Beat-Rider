@@ -2035,7 +2035,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1036044419641388}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.31, y: -3.0840077, z: 5.60936}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children:
   - {fileID: 4728054598315654}
@@ -5736,7 +5736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f80ecd40f20d41449599bb28c68790e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_percentageOfSnapPointsToUse: 0.5
+  m_percentageOfSnapPointsToUse: 0.2
   m_snapPoints:
   - {fileID: 4650736765301954}
   - {fileID: 4685660126775680}
@@ -5770,6 +5770,7 @@ MonoBehaviour:
   - {fileID: 4508943584584822}
   m_snapablePrefabs:
   - {fileID: 1222149248271752, guid: c7305a64d04260b44a1a4606d1841131, type: 2}
+  - {fileID: 1948879993649926, guid: d13c7319866968e40a4edcb0f27639c2, type: 2}
 --- !u!114 &114859331548782440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5781,7 +5782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f80ecd40f20d41449599bb28c68790e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_percentageOfSnapPointsToUse: 0.5
+  m_percentageOfSnapPointsToUse: 0.05
   m_snapPoints:
   - {fileID: 4905621457620220}
   - {fileID: 4983606764921952}
