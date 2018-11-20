@@ -287,7 +287,7 @@ public class CustomisationWindowNavigation : MonoBehaviour {
 			m_menuItems[m_currentWindow].RecipeButton.transform.position = m_RecipeButtonLocation.position;
 			m_menuItems[m_currentWindow].RecipeButton.gameObject.SetActive(true);
 		}
-		UpdateWindows();
+		SnapUpdateWindows();
 	}
 
 	public void GotoPreviousWindow()
@@ -301,7 +301,7 @@ public class CustomisationWindowNavigation : MonoBehaviour {
 			m_menuItems[m_currentWindow].RecipeButton.transform.position = m_RecipeButtonLocation.position;
 			m_menuItems[m_currentWindow].RecipeButton.gameObject.SetActive(true);
 		}
-		UpdateWindows();
+        SnapUpdateWindows();
 	}
 	
 }

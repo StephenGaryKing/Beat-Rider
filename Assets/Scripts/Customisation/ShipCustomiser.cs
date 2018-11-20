@@ -16,7 +16,7 @@ public class ShipCustomiser : MonoBehaviour {
 		m_body.material.color = colour.m_colour;
 	}
 
-	public void CustomiseHighlights(UnlockableColour highlight)
+	public void CustomiseHighlights(UnlockableHighlight highlight)
 	{
 		m_body.material.SetColor("_EmissionColor", highlight.m_colour * m_highlightBrightness);
 	}
@@ -29,6 +29,6 @@ public class ShipCustomiser : MonoBehaviour {
 
 	public void CustomiseTrail(UnlockableTrail trail)
 	{
-		m_trail = trail.m_particle;
+        
 	}
 }

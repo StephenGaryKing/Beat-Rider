@@ -35,7 +35,9 @@ namespace BeatRider
 			    image.sprite = m_unlockable.m_icon;
 			if (m_partToCustomise == PartToCustomise.Colour)
 				image.color = (m_unlockable as UnlockableColour).m_colour;
-		}
+            if (m_partToCustomise == PartToCustomise.Highlight)
+                image.color = (m_unlockable as UnlockableHighlight).m_colour;
+        }
 
 		public void ApplyCustomisation()
 		{
@@ -45,7 +47,7 @@ namespace BeatRider
 					m_shipCustomiser.CustomiseColour(m_unlockable as UnlockableColour);
 					break;
 				case (PartToCustomise.Highlight):
-					m_shipCustomiser.CustomiseHighlights(m_unlockable as UnlockableColour);
+					m_shipCustomiser.CustomiseHighlights(m_unlockable as UnlockableHighlight);
 					break;
 				case (PartToCustomise.Ship):
 					m_shipCustomiser.CustomiseShip(m_unlockable as UnlockableShip);
