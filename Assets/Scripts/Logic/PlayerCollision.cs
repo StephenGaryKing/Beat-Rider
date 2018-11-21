@@ -41,7 +41,9 @@ namespace BeatRider
 		{
 			if (m_targetFOV > m_minFOV)
 				m_targetFOV -= m_ambientSpeedDegradation;
-		}
+            if (m_targetFOV <= m_minFOV)
+                m_sheild.gameObject.SetActive(false);
+        }
 
         private void Update()
         {
