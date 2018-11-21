@@ -23,7 +23,8 @@ namespace BeatRider
 				Debug.LogError("Unlocking The Whole Story");
 				foreach (StoryNode node in m_FinalStoryNodes)
 					node.Unlock();
-			}
+                SaveProgress();
+            }
 		}
 
 		public void UnlockNode(Cutscene cs)
@@ -180,8 +181,8 @@ namespace BeatRider
 				// look through nodes and apply tally of unlocked steps
 				for (int i = 0; i < m_FinalStoryNodes.Length; i++)
 				{
-					StoryNode parent = m_FinalStoryNodes[i].m_parent;
-					for (int j = 1; j < data[i]; j++)
+					StoryNode parent = m_FinalStoryNodes[i];
+					for (int j = 0; j < data[i]; j++)
 						parent = parent.m_parent;
 					if (parent)
 						parent.Unlock();

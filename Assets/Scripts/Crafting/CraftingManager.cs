@@ -81,12 +81,12 @@ namespace BeatRider
 
 		public void DeleteSaveData()
 		{
-			SaveFile DeleteFile = new SaveFile();
+            m_RecipesCompleated.Clear();
+            SaveFile DeleteFile = new SaveFile();
 			DeleteFile.Delete(m_saveFileName);
-
-			// reset data
-			m_RecipesCompleated.Clear();
-			LoadChallenges();
+            // reset data
+            ClearPendingCrafts();
+            LoadChallenges();
 		}
 
 		public void Filter(int filter)
@@ -146,6 +146,7 @@ namespace BeatRider
 				}
 				AchievementManager.OnCraft("");
 			}
+            m_recipesPendingcompletion.Clear();
 			SaveChallenges();
 		}
 
@@ -153,6 +154,12 @@ namespace BeatRider
 		{
 			m_recipesPendingcompletion.Clear();
 		}
+
+        public void ClearGemsPickedUp()
+        {
+            m_collectedGems.Clear();
+            DisplayPickupList();
+        }
 
 		Gem CheckPickupCombination()
 		{
