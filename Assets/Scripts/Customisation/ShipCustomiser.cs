@@ -39,6 +39,7 @@ public class ShipCustomiser : MonoBehaviour {
 	{
         Color tempColour = m_body.material.color;
         Color tempHighlight = m_body.material.GetColor("_EmissionColor");
+        tempHighlight /= m_highlightBrightness;
 
         m_body.GetComponent<MeshFilter>().mesh = ship.m_model;
         m_body.GetComponent<Renderer>().material = ship.m_material;
