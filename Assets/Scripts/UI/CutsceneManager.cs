@@ -27,7 +27,12 @@ namespace BeatRider
 
 		List<GameObject> m_choices = new List<GameObject>();
 
-		private void Start()
+
+        // Controller navigation variables
+        [SerializeField] private UIButtonManager m_buttonManager = null;
+        private List<UIButton> m_callboxButtons = new List<UIButton>();
+
+        private void Start()
 		{
 			if (!m_choiceButtonTemplate)
 				Debug.LogError("Add a template for the choice button (used in CutsceneManager)");
@@ -37,15 +42,19 @@ namespace BeatRider
 			m_soundManager = FindObjectOfType<SoundManager>();
 			m_songController = FindObjectOfType<SongController>();
 			m_storyModeManager = FindObjectOfType<StoryModeManager>();
-		}
+            
+            // Checks for null references, later it will be upgraded to error message
+            if (!m_buttonManager)
+                Debug.Log("UI Button Manager has not been allocated in Song Selection Loader");
+        }
 
-		/// <summary>
-		/// Plays the cutscene specified
-		/// </summary>
-		/// <param name="cutscene">
-		/// Cutscene to play
-		/// </param>
-		public void PlayCutscene(Cutscene cutscene)
+        /// <summary>
+        /// Plays the cutscene specified
+        /// </summary>
+        /// <param name="cutscene">
+        /// Cutscene to play
+        /// </param>
+        public void PlayCutscene(Cutscene cutscene)
 		{
 			m_backgroundMusicSource = m_soundManager.PlaySound(m_backgroundMusic);
 			MoveCamera(cutscene, true);
@@ -60,6 +69,11 @@ namespace BeatRider
 			foreach (GameObject choice in m_choices)
 				Destroy(choice);
 			m_choices.Clear();
+            m_buttonManager.buttons.Clear();
+
+            // Clears callbox button list
+            m_callboxButtons.Clear();
+
 			m_speachBubbleNumber = 0;
 			StartCoroutine(StartCutscene(cs));
 		}
@@ -75,6 +89,14 @@ namespace BeatRider
 			{
 				GameObject go = Instantiate(m_choiceButtonTemplate.gameObject, m_choiceButtonTemplate.transform.parent);
 				Button btn = go.GetComponent<Button>();
+
+                // Adds a UI button for each callbox button
+                UIButton uiButton = null;
+                uiButton = go.AddComponent<UIButton>();
+
+                // Adds a reference to the new button
+                m_callboxButtons.Add(uiButton);
+
 				btn.image.sprite = c.Image;
 
 				if (c.CutsceneToPlay != null)
@@ -86,8 +108,23 @@ namespace BeatRider
 
 				go.SetActive(true);
 				m_choices.Add(go);
-			}
-			return true;
+
+                //Adds UI button to UI button manager
+                m_buttonManager.buttons.Add(uiButton);
+            }
+
+            // Adds navigation to callbox buttons once they are all instantiated
+            for (int i = 0; i < m_callboxButtons.Count; i++)
+            {
+                if (i - 1 >= 0)
+                    m_callboxButtons[i].leftBtn = m_callboxButtons[i - 1];
+                if (i + 1 < m_callboxButtons.Count)
+                    m_callboxButtons[i].rightBtn = m_callboxButtons[i + 1];
+            }
+
+            m_buttonManager.SelectButton(m_buttonManager.buttons[0]);
+
+            return true;
 		}
 
 		public void MoveCamera(Cutscene cutscene, bool moveIn)

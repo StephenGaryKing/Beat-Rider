@@ -40,12 +40,14 @@ public class UINavigation : MonoBehaviour {
 
 	void Move(Vector2 dir)
 	{
+        /*
 		int btn = FindBtnInDir(dir);
 		if (btn != -1)
 		{
 			m_currentButton = btn;
 			UpdateButtons();
 		}
+        */
 	}
 
 	int FindBtnInDir(Vector2 dir)
