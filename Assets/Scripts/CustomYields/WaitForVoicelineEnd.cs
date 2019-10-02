@@ -21,7 +21,7 @@ namespace BeatRider
 		{
 			get
 			{
-				if (totalTime - timeLeft > 0.1 && Input.GetKeyDown(skip))
+				if (totalTime - timeLeft > 0.1 && (Input.GetKeyDown(skip)||Input.GetButtonDown("Skip")))
 					return false;
 				timeLeft -= Time.deltaTime;
 				return timeLeft > 0;

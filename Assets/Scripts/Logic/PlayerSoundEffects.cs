@@ -6,8 +6,10 @@ using UnityEngine;
 public struct Sound
 {
 	public AudioClip soundToPlay;
-	[Range(0, 1)]
+	[HideInInspector] [Range(0, 1)]
 	public float volume;
+    [Range(0, 1)]
+    public float maxVolumeRatio;
 }
 
 public class PlayerSoundEffects : MonoBehaviour {
@@ -23,4 +25,12 @@ public class PlayerSoundEffects : MonoBehaviour {
 	void Start () {
 		m_soundManager = FindObjectOfType<SoundManager>();
 	}
+
+    public void SetPlayerSoundVolume(float volume)
+    {
+        m_boost.volume = volume * m_boost.maxVolumeRatio;
+        m_pickupNote.volume = volume * m_pickupNote.maxVolumeRatio;
+        m_hitObstical.volume = volume * m_hitObstical.maxVolumeRatio;
+        m_gemPickup.volume = volume * m_gemPickup.maxVolumeRatio;
+    }
 }
