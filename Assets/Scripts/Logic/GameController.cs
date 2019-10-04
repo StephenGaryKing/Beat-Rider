@@ -38,10 +38,10 @@ public class GameController : MonoBehaviour {
         return m_difficulty;
     }
 
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update() {
         CursorControl();
-        if(Input.GetKeyDown(KeyCode.Escape) && songcontroller.m_paused == false)
+        if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Pause")) && songcontroller.m_paused == false)
         {
             songcontroller.Pause();
             if (songcontroller.m_paused)
@@ -53,7 +53,7 @@ public class GameController : MonoBehaviour {
             }
         }
 		// Play the game from a paused state
-        else if (Input.GetKeyDown(KeyCode.Escape) && songcontroller.m_paused == true)
+        else if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Pause")) && songcontroller.m_paused == true)
         {
 			if (!m_unpauseLocked)
 			{

@@ -66,12 +66,12 @@ public class UIButtonManager : MonoBehaviour {
         //decide on an overall direction
         if (Mathf.Abs(right) > Mathf.Abs(up))
         {
-            if (right > 0)
+            if (right > 0 && currentButton && currentButton.rightBtn)
             {
                 //Right
                 selectedButton = currentButton.rightBtn;
             }
-            if (right < 0)
+            if (right < 0 && currentButton && currentButton.leftBtn)
             {
                 //Left
                 selectedButton = currentButton.leftBtn;
@@ -79,12 +79,12 @@ public class UIButtonManager : MonoBehaviour {
         }
         else
         {
-            if (up > 0)
+            if (up > 0 && currentButton && currentButton.upBtn)
             {
                 //Up
                 selectedButton = currentButton.upBtn;
             }
-            if (up < 0)
+            if (up < 0 && currentButton && currentButton.downBtn)
             {
                 //Down
                 selectedButton = currentButton.downBtn;
@@ -96,7 +96,7 @@ public class UIButtonManager : MonoBehaviour {
             SelectButton(selectedButton);
         }
 
-        yield return new WaitForSeconds(moveDelay);
+        yield return new WaitForSecondsRealtime(moveDelay);
         movingButton = null;
     }
 }

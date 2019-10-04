@@ -29,12 +29,8 @@ namespace BeatRider
 
 		bool FetchKey()
 		{
-			int e = System.Enum.GetNames(typeof(KeyCode)).Length;
-			for (int i = 0; i < e; i++)
-			{
-				if (Input.GetKey((KeyCode)i))
-					return true;
-			}
+            if (Input.anyKeyDown)
+                return true;
 			return false;
 		}
 	}
