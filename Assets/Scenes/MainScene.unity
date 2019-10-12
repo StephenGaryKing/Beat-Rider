@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -853,7 +853,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1420601321}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.9999985
+  m_Size: 0.99999636
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1150,8 +1150,8 @@ MonoBehaviour:
   m_defaultFileLocation: Songs
   m_songs: []
   m_songSelectButton: {fileID: 1387793684}
-  m_buttonManager: {fileID: 0}
-  m_citySelectUI: {fileID: 0}
+  m_buttonManager: {fileID: 1457668268}
+  m_citySelectUI: {fileID: 78016193}
 --- !u!114 &72358952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1447,6 +1447,7 @@ GameObject:
   - component: {fileID: 78016192}
   - component: {fileID: 78016191}
   - component: {fileID: 78016190}
+  - component: {fileID: 78016193}
   m_Layer: 0
   m_Name: CitySelect Button
   m_TagString: Untagged
@@ -1558,6 +1559,21 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 78016188}
+--- !u!114 &78016193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 78016188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f09bc33a18e25c4d9737fc77a1239b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upBtn: {fileID: 0}
+  downBtn: {fileID: 162176050}
+  leftBtn: {fileID: 0}
+  rightBtn: {fileID: 1123661035}
 --- !u!114 &83015452 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114183750752262382, guid: 9e60856e4ec100c4f989708d5bf39baf,
@@ -3353,8 +3369,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 355411981}
   m_HandleRect: {fileID: 355411980}
   m_Direction: 2
-  m_Value: 0.99997634
-  m_Size: 0
+  m_Value: 0
+  m_Size: 0.99999714
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3407,6 +3423,7 @@ GameObject:
   - component: {fileID: 162176049}
   - component: {fileID: 162176048}
   - component: {fileID: 162176047}
+  - component: {fileID: 162176050}
   m_Layer: 0
   m_Name: UnderwaterSelect Button
   m_TagString: Untagged
@@ -3518,6 +3535,21 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 162176045}
+--- !u!114 &162176050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 162176045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f09bc33a18e25c4d9737fc77a1239b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upBtn: {fileID: 78016193}
+  downBtn: {fileID: 0}
+  leftBtn: {fileID: 0}
+  rightBtn: {fileID: 162176050}
 --- !u!1 &193001558
 GameObject:
   m_ObjectHideFlags: 0
@@ -5222,7 +5254,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1083806488}
   m_HandleRect: {fileID: 1083806487}
   m_Direction: 2
-  m_Value: 0.9999984
+  m_Value: 0.9999983
   m_Size: 0
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -8659,7 +8691,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00046277046}
+  m_AnchoredPosition: {x: 0, y: 0.0017750263}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &735476963
@@ -18575,6 +18607,7 @@ GameObject:
   - component: {fileID: 1123661034}
   - component: {fileID: 1123661033}
   - component: {fileID: 1123661032}
+  - component: {fileID: 1123661035}
   m_Layer: 0
   m_Name: CanyonSelect Button
   m_TagString: Untagged
@@ -18686,6 +18719,21 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1123661030}
+--- !u!114 &1123661035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1123661030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f09bc33a18e25c4d9737fc77a1239b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upBtn: {fileID: 0}
+  downBtn: {fileID: 1408174397}
+  leftBtn: {fileID: 78016193}
+  rightBtn: {fileID: 1157494413}
 --- !u!1 &1124150507
 GameObject:
   m_ObjectHideFlags: 0
@@ -18913,6 +18961,7 @@ GameObject:
   - component: {fileID: 1157494412}
   - component: {fileID: 1157494411}
   - component: {fileID: 1157494410}
+  - component: {fileID: 1157494413}
   m_Layer: 0
   m_Name: ForestSelect Button
   m_TagString: Untagged
@@ -19024,6 +19073,21 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1157494408}
+--- !u!114 &1157494413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1157494408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f09bc33a18e25c4d9737fc77a1239b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upBtn: {fileID: 0}
+  downBtn: {fileID: 0}
+  leftBtn: {fileID: 1123661035}
+  rightBtn: {fileID: 0}
 --- !u!4 &1161969519 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4186148200555214, guid: 61e3600e5e8642b43b79094b4ab8ce5c,
@@ -21794,6 +21858,7 @@ GameObject:
   - component: {fileID: 1408174396}
   - component: {fileID: 1408174395}
   - component: {fileID: 1408174394}
+  - component: {fileID: 1408174397}
   m_Layer: 0
   m_Name: BlizzardSelect Button
   m_TagString: Untagged
@@ -21905,6 +21970,21 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1408174392}
+--- !u!114 &1408174397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1408174392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f09bc33a18e25c4d9737fc77a1239b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upBtn: {fileID: 1408174397}
+  downBtn: {fileID: 0}
+  leftBtn: {fileID: 162176050}
+  rightBtn: {fileID: 0}
 --- !u!1001 &1409475370
 Prefab:
   m_ObjectHideFlags: 0
@@ -22736,6 +22816,7 @@ GameObject:
   - component: {fileID: 1457668265}
   - component: {fileID: 1457668267}
   - component: {fileID: 1457668266}
+  - component: {fileID: 1457668268}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -22760,7 +22841,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.0012028217}
+  m_AnchoredPosition: {x: 0, y: 0.0015079975}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1457668266
@@ -22800,6 +22881,19 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 0
+--- !u!114 &1457668268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1457668264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0d61edf0839720459a644399e65c85e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttons: []
+  moveDelay: 0.5
 --- !u!1001 &1460916171
 Prefab:
   m_ObjectHideFlags: 0
@@ -23043,7 +23137,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00026671006, y: 0.00024151802}
+  m_AnchoredPosition: {x: -0.00026671006, y: 0.00007367134}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1502893441

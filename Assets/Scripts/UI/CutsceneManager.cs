@@ -42,10 +42,19 @@ namespace BeatRider
 			m_soundManager = FindObjectOfType<SoundManager>();
 			m_songController = FindObjectOfType<SongController>();
 			m_storyModeManager = FindObjectOfType<StoryModeManager>();
-            
-            // Checks for null references, later it will be upgraded to error message
-            if (!m_buttonManager)
-                Debug.Log("UI Button Manager has not been allocated in Song Selection Loader");
+
+            // This part is used to show error dialog messages if there are parts of the script that have not been initialised properly
+#if UNITY_EDITOR
+            if (UnityEditor.EditorApplication.isPlaying)
+            {
+                if (!m_buttonManager)
+                {
+                    UnityEditor.EditorUtility.DisplayDialog("Error", "Cutscene Manager script does not have a button manager", "Exit");
+                    UnityEditor.EditorApplication.isPlaying = false;
+                }
+            }
+
+#endif
         }
 
         /// <summary>

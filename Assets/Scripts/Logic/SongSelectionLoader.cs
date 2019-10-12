@@ -37,14 +37,33 @@ public class SongSelectionLoader : MonoBehaviour {
 		m_defaultFileLocation = Application.dataPath + "/" + m_defaultFileLocation;
 		RefreshFiles(m_defaultFileLocation);
 
-        // Checks for null references, later it will be upgraded to error message
-        if (!m_buttonManager)
-            Debug.Log("UI Button Manager has not been allocated in Song Selection Loader");
-        if (!m_citySelectUI)
-            Debug.Log("City Select Button has not been allocated in Song Selection Loader");
+        //// Checks for null references, later it will be upgraded to error message
+        //if (!m_buttonManager)
+        //    Debug.Log("UI Button Manager has not been allocated in Song Selection Loader");
+        //if (!m_citySelectUI)
+        //    Debug.Log("City Select Button has not been allocated in Song Selection Loader");
+
+
+        // This part is used to show error dialog messages if there are parts of the script that have not been initialised properly
+#if UNITY_EDITOR
+        if (UnityEditor.EditorApplication.isPlaying)
+        {
+            if (!m_buttonManager)
+            {
+                UnityEditor.EditorUtility.DisplayDialog("Error", "Song Selection Loader script does not have a button manager", "Exit");
+                UnityEditor.EditorApplication.isPlaying = false;
+            }
+            if (!m_citySelectUI)
+            {
+                UnityEditor.EditorUtility.DisplayDialog("Error", "Song Selection Loader script does not have a city select UI", "Exit");
+                UnityEditor.EditorApplication.isPlaying = false;
+            }
+        }
+
+#endif
     }
-	
-	public void RefreshFiles(string fileLocation)
+
+    public void RefreshFiles(string fileLocation)
 	{
 		m_songs.Clear();
 		DirectoryInfo dir = new DirectoryInfo(fileLocation);
