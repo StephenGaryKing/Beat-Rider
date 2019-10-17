@@ -35,6 +35,7 @@ public class UIButtonManager : MonoBehaviour {
     private void OnDisable()
     {
         StopAllCoroutines();
+        movingButton = null;
     }
 
     public void SelectButton(UIButton btn)
