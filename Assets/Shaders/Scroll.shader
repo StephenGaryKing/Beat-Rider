@@ -3,6 +3,7 @@
 		_Color ("Color", Color) = (1,1,1,1)
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}
 		_ScrollSpeed("Scroll Speed", float) = 1.0
+		_ScrollSpeedX("Scroll Speed X", float) = 0.0
 		_EmissionColor("Color", Color) = (0,0,0)
 		_EmissionAmount("Emission Amount", float) = 1.0
 		_EmissionMap("Emission Texture", 2D) = "white" {}
@@ -38,6 +39,7 @@
 		half _EmissionAmount;
 		half _Metallic;
 		half _ScrollSpeed;
+		half _ScrollSpeedX;
 		fixed4 _Color;
 
 		// Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
@@ -47,7 +49,7 @@
 		void surf (Input IN, inout SurfaceOutputStandard o) {
 			// Albedo comes from a texture tinted by color
 			float2 samplePosMod;
-			samplePosMod.x = 0.0;
+			samplePosMod.x = _Time * _ScrollSpeedX;
 			samplePosMod.y = _Time * _ScrollSpeed;
 			fixed4 c = tex2D (_MainTex, IN.uv_MainTex + samplePosMod) * _Color;
 			o.Albedo = c.rgb;
