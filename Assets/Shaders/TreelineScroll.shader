@@ -1,6 +1,7 @@
 ﻿Shader "Treeline Scroll" {
 	Properties {
 		_Color ("Color", Color) = (1,1,1,1)
+		_ColorIntensity("Color Intensity", float) = 1.0
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}
 		_ScrollSpeed("Scroll Speed", float) = 1.0
 		_ScrollSpeedX("Scroll Speed X", float) = 0.0
@@ -34,6 +35,7 @@
 
 		half _Glossiness;
 		half _Metallic;
+		half _ColorIntensity;
 		fixed3 _Specular;
 		fixed4 _Color;
 		half _ScrollSpeed;
@@ -52,7 +54,7 @@
 			float2 samplePosMod;
 			samplePosMod.x = _Time * _ScrollSpeedX;
 			samplePosMod.y = _Time * _ScrollSpeed;
-			fixed4 c = tex2D (_MainTex, IN.uv_MainTex + samplePosMod) * _Color;
+			fixed4 c = tex2D (_MainTex, IN.uv_MainTex + samplePosMod) * _Color * _ColorIntensity;
 			o.Albedo = c.rgb;
 			o.Specular = _Specular;
 			o.Smoothness = _Glossiness;
