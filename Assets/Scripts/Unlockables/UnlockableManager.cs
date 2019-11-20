@@ -27,7 +27,19 @@ namespace BeatRider
 
 		public void LockAll()
 		{
-			m_unlockedColours.Clear();
+            foreach (int listNumber in m_unlockedColours)
+                m_unlockableColours[listNumber].unlocked = false;
+
+            foreach (int listNumber in m_unlockedHighlights)
+                m_unlockableHighlights[listNumber].unlocked = false;
+
+            foreach (int listNumber in m_unlockedShips)
+                m_unlockableShips[listNumber].unlocked = false;
+
+            foreach (int listNumber in m_unlockedTrails)
+                m_unlockableTrails[listNumber].unlocked = false;
+
+            m_unlockedColours.Clear();
 			m_unlockedHighlights.Clear();
 			m_unlockedShips.Clear();
 			m_unlockedTrails.Clear();
@@ -62,32 +74,45 @@ namespace BeatRider
 		public void UnlockColour(UnlockableColour colour)
 		{
 			int index = FindUnlockedID(colour, m_unlockableColours);
-			if (!m_unlockedColours.Contains(index))
-				m_unlockedColours.Add(index);
-		}
+            if (!m_unlockedColours.Contains(index))
+            {
+                m_unlockedColours.Add(index);
+                m_unlockableColours[index].unlocked = true;
+            }
+        }
 
 		public void UnlockHighlight(UnlockableHighlight highlight)
 		{
 			int index = FindUnlockedID(highlight, m_unlockableHighlights);
 			if (!m_unlockedHighlights.Contains(index))
-				m_unlockedHighlights.Add(index);
-		}
+            {
+                m_unlockedHighlights.Add(index);
+                m_unlockableHighlights[index].unlocked = true;
+            }
 
-		public void UnlockShip(UnlockableShip ship)
+        }
+
+        public void UnlockShip(UnlockableShip ship)
 		{
 			int index = FindUnlockedID(ship, m_unlockableShips);
-			if (!m_unlockedShips.Contains(index))
-				m_unlockedShips.Add(index);
-		}
+            if (!m_unlockedShips.Contains(index))
+            {
+                m_unlockedShips.Add(index);
+                m_unlockableShips[index].unlocked = true;
+            }
+        }
 
 		public void UnlockTrail(UnlockableTrail trail)
 		{
 			int index = FindUnlockedID(trail, m_unlockableTrails);
 			if (!m_unlockedTrails.Contains(index))
-				m_unlockedTrails.Add(index);
-		}
+            {
+                m_unlockedTrails.Add(index);
+                m_unlockableTrails[index].unlocked = true;
+            }
+        }
 
-		public void SaveUnlockables()
+        public void SaveUnlockables()
 		{
 			SaveFile saveFile = new SaveFile();
 			saveFile.AddList(m_unlockedColours);
