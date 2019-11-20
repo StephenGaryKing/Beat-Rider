@@ -14,4 +14,5 @@ public class Unlockable : ScriptableObject {
 
 	public Rarity m_rarity;
 	public Sprite m_icon;
+    public int price;
 }
