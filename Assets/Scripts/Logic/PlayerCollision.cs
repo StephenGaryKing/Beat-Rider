@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using MusicalGameplayMechanics;
+using UnityEngine.UI;
 
 namespace BeatRider
 {
@@ -25,6 +26,13 @@ namespace BeatRider
 		QuickTimeInput m_quickTime;
 
 		SongController m_songController;
+
+        public int totalNotes = 0;
+        public int totalGemDust = 0;
+        [SerializeField] private Text m_notesText = null;
+        [SerializeField] private Text m_percentageText = null;
+        [SerializeField] private Text m_gemDustText = null;
+
 
 		// Use this for initialization
 		void Start()
@@ -79,7 +87,9 @@ namespace BeatRider
 				// get the number off the gem
 				int val = other.GetComponent<QuickTimeNote>().Val;
 				m_quickTime.StartCoroutine(m_quickTime.LookForKeyPress(val, other.gameObject));
-				
+
+                totalNotes++;
+
 				return;
 			}
 
@@ -132,6 +142,7 @@ namespace BeatRider
 				other.gameObject.SetActive(false);
 				AchievementManager.OnTallyPickups(other.tag);
                 m_playerSoundEffects.m_soundManager.PlaySound(m_playerSoundEffects.m_gemPickup);
+                totalGemDust++;
 			}
 		}
 	}
