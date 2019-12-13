@@ -42,7 +42,7 @@ public class Turntable : MonoBehaviour {
 
     // Money variables
     [SerializeField] private int m_initialGemDust = 10;
-    private int m_currentGemDust = 0;
+    public int m_currentGemDust = 0;
 
     // Use this for initialization
     void Start () {

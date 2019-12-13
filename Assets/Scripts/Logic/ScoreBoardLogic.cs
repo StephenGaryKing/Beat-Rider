@@ -15,7 +15,7 @@ namespace BeatRider
 		SongController m_songController;
 		public ObjectSpawner m_noteSpawner;
 		string m_passToCountBeats;
-		int m_totalAmountOfNotes;
+        [HideInInspector] public int m_totalAmountOfNotes;
 		public bool m_displayAsPercentage = false;
         LevelGenerator m_levelGen;
 

@@ -101,6 +101,8 @@ namespace MusicalGameplayMechanics
 
 		public static bool m_freeFlow = false;
 
+        [SerializeField] private CompletionCanvas m_canvas = null; 
+
 		void Start()
 		{
 			m_craftingManager = FindObjectOfType<CraftingManager>();
@@ -115,6 +117,7 @@ namespace MusicalGameplayMechanics
 			_audioSource = GetComponent<AudioSource>();
 			_audioSource.minDistance = 0.3f;
 			m_menuMusicManager = FindObjectOfType<MenuMusicManager>();
+            m_canvas = FindObjectOfType<CompletionCanvas>();
 		}
 
 		void Update()
@@ -249,10 +252,17 @@ namespace MusicalGameplayMechanics
 
             if (PassedThisDifficulty(m_levelGen.m_currentLevel))
 			{
-				if (m_cutsceneToPlayAtEnd)
-					m_cutsceneManager.PlayCutscene(m_cutsceneToPlayAtEnd);
-				else
-					ReturnToMenu();
+                if (m_cutsceneToPlayAtEnd)
+                    m_cutsceneManager.PlayCutscene(m_cutsceneToPlayAtEnd);
+                else
+                {
+                    if (m_canvas)
+                        m_canvas.GameComplete(m_scoreBoard.m_score, m_scoreBoard.m_totalAmountOfNotes);
+                    else
+                        ReturnToMenu();
+                }
+                // Call completion canvas instead of return to menu
+                // Make ScoreBoardLogic pass the percentage data to completion canvas
 			}
 			else
 			{
@@ -318,7 +328,7 @@ namespace MusicalGameplayMechanics
 			m_player.Revive();
 		}
 
-		void ReturnToMenu()
+		public void ReturnToMenu()
 		{
             m_player.GetComponent<PlayerCollision>().TurnOffSheild();
 			m_freeFlow = false;
