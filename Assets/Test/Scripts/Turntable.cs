@@ -37,6 +37,7 @@ public class Turntable : MonoBehaviour {
     [SerializeField] private GameObject m_neonBuyGameObject = null;
 
     [SerializeField] private Text m_gemDustText = null;
+    [SerializeField] private string m_saveFileName = "Shop";
 
     private int m_selectedPrice = 0;
 
@@ -73,7 +74,7 @@ public class Turntable : MonoBehaviour {
 
         //m_textComponent.text = m_unlockableShips[m_currentShipNumber].price.ToString();
 
-        m_currentGemDust = m_initialGemDust;
+        LoadDust();
 
         m_shipPriceText.text = m_unlockableManager.m_unlockableShips[m_currentShipNumber].price.ToString();
 
@@ -88,6 +89,37 @@ public class Turntable : MonoBehaviour {
         //if (m_cameraObject)
         //    m
     }
+
+    void LoadDust()
+    {
+        SaveFile loadFile = new SaveFile();
+
+        if (loadFile.Load(m_saveFileName))
+        {
+            List<int> data = new List<int>();
+            if (loadFile.m_numbers.Count > 0)
+            {
+                data = loadFile.m_numbers[0].list;
+                m_currentGemDust = data[0];
+            }
+        }
+        else
+        {
+            m_currentGemDust = m_initialGemDust;
+            SaveDust();
+        }
+    }
+    void SaveDust()
+    {
+        List<int> data = new List<int>();
+
+        data.Add(m_currentGemDust);
+
+        SaveFile save = new SaveFile();
+        save.AddList(data);
+        save.Save(m_saveFileName);
+    }
+
 
     // Update is called once per frame
     void Update () {
@@ -227,6 +259,7 @@ public class Turntable : MonoBehaviour {
                 break;
         }
         m_gemDustText.text = "Current Gem Dust: " + m_currentGemDust;
+        SaveDust();
     }
 
     public void ApplyTriggered()
