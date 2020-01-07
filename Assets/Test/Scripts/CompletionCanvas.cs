@@ -13,10 +13,11 @@ public class CompletionCanvas : MonoBehaviour {
     [SerializeField] private Turntable m_shop = null;
 
     private SongController m_controller = null;
-    private PlayerCollision m_player = null;
+    [SerializeField] private PlayerCollision m_player = null;
 	// Use this for initialization
 	void Start () {
-        m_player = FindObjectOfType<PlayerCollision>();
+        if (!m_player)
+            m_player = FindObjectOfType<PlayerCollision>();
 	}
 	
 	// Update is called once per frame
@@ -30,20 +31,26 @@ public class CompletionCanvas : MonoBehaviour {
         if (m_player)
         {
             gemDust = m_player.totalGemDust;
+            Debug.Log("Gem Dust is: " + gemDust + ". Player Gem Dust is: " + m_player.totalGemDust);
             m_player.totalGemDust = 0;
         }
+        else
+            Debug.Log("Player not found");
+
         if (controller)
             m_controller = controller;
 
+        float percentage = ((float)notesHit / (float) totalNotes) * 100f;
 
         m_notesHitText.text = "Notes Hit: " + notesHit;
-        m_percentageText.text = "Percentage: " + Mathf.Round(notesHit/totalNotes);
+        m_percentageText.text = "Percentage: " + percentage.ToString("0");
         m_gemDustText.text = "Gem Dust: " + gemDust;
         m_shop.m_currentGemDust += gemDust;
     }
 
     public void MainMenu()
     {
+        gameObject.SetActive(false);
         m_controller.ReturnToMenu();
     }
 }

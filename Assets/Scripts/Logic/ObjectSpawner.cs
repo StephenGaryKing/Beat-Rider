@@ -15,6 +15,8 @@ namespace BeatRider
 		int m_previousSpawnPosition = 1;
 
 		ScoreBoardLogic m_scoreBoardLogic;
+        [SerializeField] private bool m_isNoteSpawner = false;
+        public int totalNotes = 0;
 
 		public override void Awake()
 		{
@@ -52,7 +54,14 @@ namespace BeatRider
 				}
 		}
 
-		void CreatePool()
+        //private void Update()
+        //{
+        //    if (Input.GetButtonDown("Spawn Number"))
+        //        Debug.Log("Number of spawns: " + totalNotes);
+        //}
+
+
+        void CreatePool()
 		{
 			GameObject m_pooler = new GameObject("Pooler");
 			m_pooler.transform.parent = transform;
@@ -138,7 +147,8 @@ namespace BeatRider
 								m_objectLists[i][j].transform.rotation = Quaternion.identity;
 								m_objectLists[i][j].gameObject.SetActive(true);
 								numberOfSpawns++;
-
+                                if (m_isNoteSpawner)
+                                    totalNotes++;
 								i = m_prefabsToSpawn.Count;
 							}
 						}

@@ -117,7 +117,8 @@ namespace MusicalGameplayMechanics
 			_audioSource = GetComponent<AudioSource>();
 			_audioSource.minDistance = 0.3f;
 			m_menuMusicManager = FindObjectOfType<MenuMusicManager>();
-            m_canvas = FindObjectOfType<CompletionCanvas>();
+            if (!m_canvas)
+                m_canvas = FindObjectOfType<CompletionCanvas>();
 		}
 
 		void Update()
@@ -257,7 +258,10 @@ namespace MusicalGameplayMechanics
                 else
                 {
                     if (m_canvas)
+                    {
+                        m_canvas.gameObject.SetActive(true);
                         m_canvas.GameComplete(m_scoreBoard.m_score, m_scoreBoard.m_totalAmountOfNotes);
+                    }
                     else
                         ReturnToMenu();
                 }

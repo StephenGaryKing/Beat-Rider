@@ -14,4 +14,5 @@ public class Gem : ScriptableObject {
 	public Recipe m_recipe;
 	public Unlockable m_unlockable;
 	public Material m_material;
+    public int dustValue = 1;
 }

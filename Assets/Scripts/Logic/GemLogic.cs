@@ -33,9 +33,11 @@ namespace BeatRider
 				m_randomizer.SetGemManualy (m_manualySetGem);
 		}
 
-		public void PickupGem()
+		public Gem PickupGem()
 		{
-			m_manager.PickupGem(m_randomizer.GetGem());
+            Gem gemReference = m_randomizer.GetGem();
+            m_manager.PickupGem(gemReference);
+            return gemReference;
 		}
 	}
 }

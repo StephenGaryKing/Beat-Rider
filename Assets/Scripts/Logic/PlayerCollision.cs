@@ -137,12 +137,15 @@ namespace BeatRider
 			if (other.CompareTag("Gem"))
 			{
 				GemLogic gl = other.GetComponent<GemLogic>();
-				if (gl)
-					gl.PickupGem();
+                if (gl)
+                {
+                    Gem gem = gl.PickupGem();
+                    totalGemDust += gem.dustValue;
+                }
 				other.gameObject.SetActive(false);
 				AchievementManager.OnTallyPickups(other.tag);
                 m_playerSoundEffects.m_soundManager.PlaySound(m_playerSoundEffects.m_gemPickup);
-                totalGemDust++;
+                //totalGemDust++;
 			}
 		}
 	}
