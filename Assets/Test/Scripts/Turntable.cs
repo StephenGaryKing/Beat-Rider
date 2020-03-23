@@ -24,17 +24,21 @@ public class Turntable : MonoBehaviour {
     [SerializeField] private Image m_colourImage = null;
     [SerializeField] private Image m_neonImage = null;
 
+    // Currently Selected
     private Color m_selectedColour = Color.white;
     private Color m_selectedNeon = Color.white;
     private UnlockableShip m_selectedShip = null;
 
-    [SerializeField] private Text m_shipPriceText = null;
     [SerializeField] private Text m_colourPriceText = null;
     [SerializeField] private Text m_neonPriceText = null;
+    [SerializeField] private Text m_shipPriceText = null;
 
-    [SerializeField] private GameObject m_shipBuyGameObject = null;
     [SerializeField] private GameObject m_colourBuyGameObject = null;
     [SerializeField] private GameObject m_neonBuyGameObject = null;
+    [SerializeField] private GameObject m_shipBuyGameObject = null;
+
+    [SerializeField] private GameObject m_applyGameObject = null;
+    private ShipCustomiser m_shipCustomiser = null;
 
     [SerializeField] private Text m_gemDustText = null;
     [SerializeField] private string m_saveFileName = "Shop";
@@ -43,7 +47,7 @@ public class Turntable : MonoBehaviour {
 
     // Money variables
     [SerializeField] private int m_initialGemDust = 10;
-    public int m_currentGemDust = 0;
+    [HideInInspector] public int m_currentGemDust = 0;
 
     // Use this for initialization
     void Start () {
@@ -51,6 +55,7 @@ public class Turntable : MonoBehaviour {
             m_previewPrefab.AddComponent<ShipPreview>();
 
         m_unlockableManager = FindObjectOfType<UnlockableManager>();
+        m_shipCustomiser = FindObjectOfType<ShipCustomiser>();
 
         // Checks for null references and message developer
         //NullChecker();
@@ -74,7 +79,7 @@ public class Turntable : MonoBehaviour {
 
         //m_textComponent.text = m_unlockableShips[m_currentShipNumber].price.ToString();
 
-        LoadDust();
+        //LoadDust();
 
         m_shipPriceText.text = m_unlockableManager.m_unlockableShips[m_currentShipNumber].price.ToString();
 
@@ -85,6 +90,13 @@ public class Turntable : MonoBehaviour {
 
         m_neonImage.color = m_unlockableManager.m_unlockableHighlights[m_currentNeonNumber].m_colour;
 
+        //// This is to turn off the Apply button at the start but issue would be if the item is not unlocked yet
+        //m_colourBuyGameObject.SetActive(!m_unlockableManager.m_unlockableColours[m_currentColourNumber].unlocked);
+        //m_neonBuyGameObject.SetActive(!m_unlockableManager.m_unlockableHighlights[m_currentNeonNumber].unlocked);
+        //m_shipBuyGameObject.SetActive(!m_unlockableManager.m_unlockableShips[m_currentShipNumber].unlocked);
+        PriceDisplay("Colour");
+        PriceDisplay("Neon");
+        PriceDisplay("Ship");
 
         //if (m_cameraObject)
         //    m
@@ -100,7 +112,7 @@ public class Turntable : MonoBehaviour {
             if (loadFile.m_numbers.Count > 0)
             {
                 data = loadFile.m_numbers[0].list;
-                m_currentGemDust = data[0];
+                m_currentGemDust += data[0];
             }
         }
         else
@@ -123,8 +135,21 @@ public class Turntable : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-		// Create a dynamic spawner
-	}
+        // Create a dynamic spawner
+
+        if (!m_applyGameObject)
+            return;
+        if (m_unlockableManager.m_unlockableColours[m_currentColourNumber].unlocked &&
+            m_unlockableManager.m_unlockableHighlights[m_currentNeonNumber].unlocked &&
+            m_unlockableManager.m_unlockableShips[m_currentShipNumber].unlocked)
+        {
+            m_applyGameObject.SetActive(true);
+        }
+        else
+        {
+            m_applyGameObject.SetActive(false);
+        }
+    }
 
     public void TurnLeft(string unlockableType)
     {
@@ -180,7 +205,7 @@ public class Turntable : MonoBehaviour {
         Debug.Log(degBetweenShips);
         //if (m_unlockableManager.)
     }
-
+                                  
     private void PriceDisplay(string unlockableType)
     {
         switch (unlockableType)
@@ -231,6 +256,7 @@ public class Turntable : MonoBehaviour {
                 {
                     m_currentGemDust -= m_unlockableManager.m_unlockableColours[m_currentColourNumber].price;
                     m_unlockableManager.UnlockColour(m_unlockableManager.m_unlockableColours[m_currentColourNumber]);
+                    m_colourBuyGameObject.SetActive(false);
                 }
                 break;
             case ("Neon"):
@@ -243,6 +269,7 @@ public class Turntable : MonoBehaviour {
                 {
                     m_currentGemDust -= m_unlockableManager.m_unlockableHighlights[m_currentNeonNumber].price;
                     m_unlockableManager.UnlockHighlight(m_unlockableManager.m_unlockableHighlights[m_currentNeonNumber]);
+                    m_neonBuyGameObject.SetActive(false);
                 }
                 break;
             case ("Ship"):
@@ -255,6 +282,7 @@ public class Turntable : MonoBehaviour {
                 {
                     m_currentGemDust -= m_unlockableManager.m_unlockableShips[m_currentShipNumber].price;
                     m_unlockableManager.UnlockShip(m_unlockableManager.m_unlockableShips[m_currentShipNumber]);
+                    m_shipBuyGameObject.SetActive(false);
                 }
                 break;
         }
@@ -264,7 +292,9 @@ public class Turntable : MonoBehaviour {
 
     public void ApplyTriggered()
     {
-
+        m_shipCustomiser.CustomiseColour(m_unlockableManager.m_unlockableColours[m_currentColourNumber]);
+        m_shipCustomiser.CustomiseHighlights(m_unlockableManager.m_unlockableHighlights[m_currentNeonNumber]);
+        m_shipCustomiser.CustomiseShip(m_unlockableManager.m_unlockableShips[m_currentShipNumber]);
     }
 
 

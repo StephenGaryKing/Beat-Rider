@@ -260,7 +260,7 @@ namespace MusicalGameplayMechanics
                     if (m_canvas)
                     {
                         m_canvas.gameObject.SetActive(true);
-                        m_canvas.GameComplete(m_scoreBoard.m_score, m_scoreBoard.m_totalAmountOfNotes);
+                        m_canvas.GameComplete(m_scoreBoard.m_score, m_scoreBoard.m_totalAmountOfNotes, this);
                     }
                     else
                         ReturnToMenu();
