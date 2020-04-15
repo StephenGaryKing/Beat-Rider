@@ -67,12 +67,12 @@ public class UIButtonManager : MonoBehaviour {
         //decide on an overall direction
         if (Mathf.Abs(right) > Mathf.Abs(up))
         {
-            if (right > 0 && currentButton && currentButton.rightBtn)
+            if (right > 0 && currentButton && currentButton.rightBtn && currentButton.rightBtn.gameObject.activeSelf)
             {
                 //Right
                 selectedButton = currentButton.rightBtn;
             }
-            if (right < 0 && currentButton && currentButton.leftBtn)
+            if (right < 0 && currentButton && currentButton.leftBtn && currentButton.leftBtn.gameObject.activeSelf)
             {
                 //Left
                 selectedButton = currentButton.leftBtn;
@@ -80,17 +80,20 @@ public class UIButtonManager : MonoBehaviour {
         }
         else
         {
-            if (up > 0 && currentButton && currentButton.upBtn)
+            if (up > 0 && currentButton && currentButton.upBtn && currentButton.upBtn.gameObject.activeSelf)
             {
                 //Up
                 selectedButton = currentButton.upBtn;
             }
-            if (up < 0 && currentButton && currentButton.downBtn)
+            if (up < 0 && currentButton && currentButton.downBtn && currentButton.downBtn.gameObject.activeSelf)
             {
                 //Down
                 selectedButton = currentButton.downBtn;
             }
         }
+
+        //if (!selectedButton.gameObject.activeSelf)
+        //    selectedButton = null;
 
         if (selectedButton != null)
         {

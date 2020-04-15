@@ -38,7 +38,7 @@ public class Turntable : MonoBehaviour {
     [SerializeField] private GameObject m_shipBuyGameObject = null;
 
     [SerializeField] private GameObject m_applyGameObject = null;
-    private ShipCustomiser m_shipCustomiser = null;
+    [SerializeField] private List<ShipCustomiser> m_shipCustomiserList = new List<ShipCustomiser>();
 
     [SerializeField] private Text m_gemDustText = null;
     [SerializeField] private string m_saveFileName = "Shop";
@@ -55,7 +55,7 @@ public class Turntable : MonoBehaviour {
             m_previewPrefab.AddComponent<ShipPreview>();
 
         m_unlockableManager = FindObjectOfType<UnlockableManager>();
-        m_shipCustomiser = FindObjectOfType<ShipCustomiser>();
+        //ShipCustomiser[] m_shipCustomiser = Find<ShipCustomiser>();
 
         // Checks for null references and message developer
         //NullChecker();
@@ -70,7 +70,8 @@ public class Turntable : MonoBehaviour {
         {
             GameObject shipInstance = Instantiate(m_previewPrefab, transform.position + new Vector3(Mathf.Sin(radians * i), 0f, Mathf.Cos(radians * i)) * m_spawnDistance, Quaternion.identity, transform);
             shipInstance.GetComponent<MeshFilter>().mesh = ship.m_model;
-            Material matInstance = shipInstance.GetComponent<Renderer>().material = ship.m_material;
+            Material matInstance = shipInstance.GetComponent<Renderer>().material = Instantiate(ship.m_material);
+            //Material matInstance = Material.Instantiate(ship.m_material);
             matInstance.SetColor("_EmissionColor", m_unselectedColour);
             i++;
         }
@@ -292,9 +293,13 @@ public class Turntable : MonoBehaviour {
 
     public void ApplyTriggered()
     {
-        m_shipCustomiser.CustomiseColour(m_unlockableManager.m_unlockableColours[m_currentColourNumber]);
-        m_shipCustomiser.CustomiseHighlights(m_unlockableManager.m_unlockableHighlights[m_currentNeonNumber]);
-        m_shipCustomiser.CustomiseShip(m_unlockableManager.m_unlockableShips[m_currentShipNumber]);
+        foreach (ShipCustomiser customiser in m_shipCustomiserList)
+        {
+            customiser.CustomiseColour(m_unlockableManager.m_unlockableColours[m_currentColourNumber]);
+            customiser.CustomiseHighlights(m_unlockableManager.m_unlockableHighlights[m_currentNeonNumber]);
+            customiser.CustomiseShip(m_unlockableManager.m_unlockableShips[m_currentShipNumber]);
+        }
+        //Instantiate(m_unlockableShips[m_currentShipNumber]
     }
 
 
@@ -318,6 +323,11 @@ public class Turntable : MonoBehaviour {
             if (!m_unlockableManager)
             {
                 UnityEditor.EditorUtility.DisplayDialog("Error", "Turntable script can't find Unlockable Manager script in the scene. Make sure you have one", "Exit");
+                stopApplication = true;
+            }
+            if (m_shipCustomiserList.Count <= 0)
+            {
+                UnityEditor.EditorUtility.DisplayDialog("Error", "Turntable script's ship customiser list is empty. Make sure you have at least one", "Exit");
                 stopApplication = true;
             }
             //if (!m_buyButton)
