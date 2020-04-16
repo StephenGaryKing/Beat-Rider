@@ -41,18 +41,18 @@ public class Turntable : MonoBehaviour {
     [SerializeField] private List<ShipCustomiser> m_shipCustomiserList = new List<ShipCustomiser>();
 
     [SerializeField] private Text m_gemDustText = null;
-    [SerializeField] private string m_saveFileName = "Shop";
 
     private int m_selectedPrice = 0;
+    //[HideInInspector] public int m_shopManager.m_currentGemDust = 0;
+    [SerializeField] private ShopManager m_shopManager = null;
 
-    // Money variables
-    [SerializeField] private int m_initialGemDust = 10;
-    [HideInInspector] public int m_currentGemDust = 0;
 
     // Use this for initialization
     void Start () {
         if (!m_previewPrefab.GetComponent<ShipPreview>())
             m_previewPrefab.AddComponent<ShipPreview>();
+        if (!m_shopManager)
+            m_shopManager = FindObjectOfType<ShopManager>();
 
         m_unlockableManager = FindObjectOfType<UnlockableManager>();
         //ShipCustomiser[] m_shipCustomiser = Find<ShipCustomiser>();
@@ -84,9 +84,6 @@ public class Turntable : MonoBehaviour {
 
         m_shipPriceText.text = m_unlockableManager.m_unlockableShips[m_currentShipNumber].price.ToString();
 
-        m_gemDustText.text = "Current Gem Dust: " + m_currentGemDust;
-
-
         m_colourImage.color = m_unlockableManager.m_unlockableColours[m_currentColourNumber].m_colour;
 
         m_neonImage.color = m_unlockableManager.m_unlockableHighlights[m_currentNeonNumber].m_colour;
@@ -102,37 +99,6 @@ public class Turntable : MonoBehaviour {
         //if (m_cameraObject)
         //    m
     }
-
-    void LoadDust()
-    {
-        SaveFile loadFile = new SaveFile();
-
-        if (loadFile.Load(m_saveFileName))
-        {
-            List<int> data = new List<int>();
-            if (loadFile.m_numbers.Count > 0)
-            {
-                data = loadFile.m_numbers[0].list;
-                m_currentGemDust += data[0];
-            }
-        }
-        else
-        {
-            m_currentGemDust = m_initialGemDust;
-            SaveDust();
-        }
-    }
-    void SaveDust()
-    {
-        List<int> data = new List<int>();
-
-        data.Add(m_currentGemDust);
-
-        SaveFile save = new SaveFile();
-        save.AddList(data);
-        save.Save(m_saveFileName);
-    }
-
 
     // Update is called once per frame
     void Update () {
@@ -150,6 +116,8 @@ public class Turntable : MonoBehaviour {
         {
             m_applyGameObject.SetActive(false);
         }
+        m_gemDustText.text = "Current Gem Dust: " + m_shopManager.m_currentGemDust;
+
     }
 
     public void TurnLeft(string unlockableType)
@@ -248,47 +216,47 @@ public class Turntable : MonoBehaviour {
         switch (unlockableType)
         {
             case ("Colour"):
-                if (m_currentGemDust < m_unlockableManager.m_unlockableColours[m_currentColourNumber].price)
+                if (m_shopManager.m_currentGemDust < m_unlockableManager.m_unlockableColours[m_currentColourNumber].price)
                 {
                     InsufficientFund();
                     return;
                 }
                 else
                 {
-                    m_currentGemDust -= m_unlockableManager.m_unlockableColours[m_currentColourNumber].price;
+                    m_shopManager.m_currentGemDust -= m_unlockableManager.m_unlockableColours[m_currentColourNumber].price;
                     m_unlockableManager.UnlockColour(m_unlockableManager.m_unlockableColours[m_currentColourNumber]);
                     m_colourBuyGameObject.SetActive(false);
                 }
                 break;
             case ("Neon"):
-                if (m_currentGemDust < m_unlockableManager.m_unlockableHighlights[m_currentNeonNumber].price)
+                if (m_shopManager.m_currentGemDust < m_unlockableManager.m_unlockableHighlights[m_currentNeonNumber].price)
                 {
                     InsufficientFund();
                     return;
                 }
                 else
                 {
-                    m_currentGemDust -= m_unlockableManager.m_unlockableHighlights[m_currentNeonNumber].price;
+                    m_shopManager.m_currentGemDust -= m_unlockableManager.m_unlockableHighlights[m_currentNeonNumber].price;
                     m_unlockableManager.UnlockHighlight(m_unlockableManager.m_unlockableHighlights[m_currentNeonNumber]);
                     m_neonBuyGameObject.SetActive(false);
                 }
                 break;
             case ("Ship"):
-                if (m_currentGemDust < m_unlockableManager.m_unlockableShips[m_currentShipNumber].price)
+                if (m_shopManager.m_currentGemDust < m_unlockableManager.m_unlockableShips[m_currentShipNumber].price)
                 {
                     InsufficientFund();
                     return;
                 }
                 else
                 {
-                    m_currentGemDust -= m_unlockableManager.m_unlockableShips[m_currentShipNumber].price;
+                    m_shopManager.m_currentGemDust -= m_unlockableManager.m_unlockableShips[m_currentShipNumber].price;
                     m_unlockableManager.UnlockShip(m_unlockableManager.m_unlockableShips[m_currentShipNumber]);
                     m_shipBuyGameObject.SetActive(false);
                 }
                 break;
         }
-        m_gemDustText.text = "Current Gem Dust: " + m_currentGemDust;
-        SaveDust();
+        m_gemDustText.text = "Current Gem Dust: " + m_shopManager.m_currentGemDust;
+        //SaveDust();
     }
 
     public void ApplyTriggered()

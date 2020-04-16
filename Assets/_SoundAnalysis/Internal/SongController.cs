@@ -101,7 +101,8 @@ namespace MusicalGameplayMechanics
 
 		public static bool m_freeFlow = false;
 
-        [SerializeField] private CompletionCanvas m_canvas = null; 
+        [SerializeField] private CompletionCanvas m_canvas = null;
+        [SerializeField] private ShopManager m_shopManager = null;
 
 		void Start()
 		{
@@ -119,6 +120,8 @@ namespace MusicalGameplayMechanics
 			m_menuMusicManager = FindObjectOfType<MenuMusicManager>();
             if (!m_canvas)
                 m_canvas = FindObjectOfType<CompletionCanvas>();
+            if (!m_shopManager)
+                m_shopManager = FindObjectOfType<ShopManager>();
 		}
 
 		void Update()
@@ -259,6 +262,8 @@ namespace MusicalGameplayMechanics
                 {
                     if (m_canvas)
                     {
+                        //m_shopManager.m_currentGemDust += m_player.runGemDust;
+                        //m_player.runGemDust = 0;
                         m_canvas.gameObject.SetActive(true);
                         m_canvas.GameComplete(m_scoreBoard.m_score, m_scoreBoard.m_totalAmountOfNotes, this);
                     }
@@ -330,6 +335,7 @@ namespace MusicalGameplayMechanics
 			m_levelGen.WipeObjects();
 			PlayAudio();
 			m_player.Revive();
+            m_player.runGemDust = 0;
 		}
 
 		public void ReturnToMenu()
