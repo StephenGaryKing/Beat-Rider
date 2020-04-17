@@ -28,10 +28,11 @@ namespace BeatRider
 		SongController m_songController;
 
         public int totalNotes = 0;
-        public int totalGemDust = 0;
+        public int runGemDust = 0;
         [SerializeField] private Text m_notesText = null;
         [SerializeField] private Text m_percentageText = null;
         [SerializeField] private Text m_gemDustText = null;
+        [SerializeField] private ShopManager m_shopManager = null;
 
 
 		// Use this for initialization
@@ -43,6 +44,8 @@ namespace BeatRider
 			m_startingCameraPos = Camera.main.transform.position;
 			m_floatingCamera = FindObjectOfType<FloatingCameraLogic>();
 			m_playerSoundEffects = GetComponent<PlayerSoundEffects>();
+            if (!m_shopManager)
+                m_shopManager = FindObjectOfType<ShopManager>();
 		}
 
 		private void FixedUpdate()
@@ -140,7 +143,8 @@ namespace BeatRider
                 if (gl)
                 {
                     Gem gem = gl.PickupGem();
-                    totalGemDust += gem.dustValue;
+                    runGemDust += gem.dustValue;
+                    m_shopManager.m_currentGemDust += gem.dustValue;
                 }
 				other.gameObject.SetActive(false);
 				AchievementManager.OnTallyPickups(other.tag);

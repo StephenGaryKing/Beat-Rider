@@ -49,7 +49,7 @@ public class UIButtonManager : MonoBehaviour {
 
     IEnumerator ChangeButton(Vector2 dir)
     {
-        Debug.Log("Move " + dir);
+        //Debug.Log("Move " + dir);
         int i = 0;
         foreach (UIButton btn in buttons)
         {
