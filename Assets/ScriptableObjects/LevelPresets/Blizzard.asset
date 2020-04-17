@@ -43,8 +43,20 @@ MonoBehaviour:
   - m_prefab: {fileID: 1381700508634090, guid: c27ea4a72d7f089459e83ddb0b13e368, type: 2}
     spawnChanceWeight: 10
     randomScaleVariance: {x: 5, y: 5}
-  m_travelTime: 6
+  - m_prefab: {fileID: 1256658158386316, guid: 6e9dfb93acb6e8f40a7dde3350dc928a, type: 2}
+    spawnChanceWeight: 10
+    randomScaleVariance: {x: 5, y: 5}
+  - m_prefab: {fileID: 1375841294853722, guid: f98ed2406c2394f468f1b7f2cdbd6524, type: 2}
+    spawnChanceWeight: 10
+    randomScaleVariance: {x: 5, y: 5}
+  - m_prefab: {fileID: 1692049750935472, guid: c561cbe421d6817459669fa7e591d760, type: 2}
+    spawnChanceWeight: 10
+    randomScaleVariance: {x: 5, y: 5}
+  - m_prefab: {fileID: 1473049013698902, guid: f4c42f4d30747fe41af4b6bc01a8d33e, type: 2}
+    spawnChanceWeight: 10
+    randomScaleVariance: {x: 5, y: 5}
+  m_travelTime: 6.5
   m_customPostProcess: {fileID: 0}
-  m_fogColour: {r: 0.6985294, g: 0.6985294, b: 0.6985294, a: 1}
+  m_fogColour: {r: 0.60294116, g: 0.60294116, b: 0.60294116, a: 1}
   m_fogStart: -400
   m_fogEnd: 200
