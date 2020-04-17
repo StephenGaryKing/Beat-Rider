@@ -63,6 +63,11 @@ public class SongSelectionLoader : MonoBehaviour {
 #endif
     }
 
+    public void RefreshFilesFromDefault()
+    {
+        RefreshFiles(m_defaultFileLocation);
+    }
+
     public void RefreshFiles(string fileLocation)
 	{
 		m_songs.Clear();
