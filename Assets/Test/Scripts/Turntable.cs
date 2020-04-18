@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using BeatRider;
+using Pixelplacement;
 
 public class Turntable : MonoBehaviour {
 
@@ -10,6 +11,8 @@ public class Turntable : MonoBehaviour {
     [SerializeField] private GameObject m_previewPrefab = null;
     [SerializeField] private float m_spawnDistance = 5;
     private float degBetweenShips = 0;
+    [SerializeField] private float m_rotateTime = 0.23f;
+    [SerializeField] private TweenCurveHelper.CurveType CurveType;
     //[SerializeField] private GameObject m_cameraObject = null;
 
     private UnlockableManager m_unlockableManager = null;
@@ -73,6 +76,7 @@ public class Turntable : MonoBehaviour {
             Material matInstance = shipInstance.GetComponent<Renderer>().material = Instantiate(ship.m_material);
             //Material matInstance = Material.Instantiate(ship.m_material);
             matInstance.SetColor("_EmissionColor", m_unselectedColour);
+            matInstance.mainTexture = null;
             i++;
         }
 
@@ -138,7 +142,8 @@ public class Turntable : MonoBehaviour {
                 break;
             case ("Ship"):
                 //Debug.Log(degBetweenShips);
-                gameObject.transform.Rotate(0, degBetweenShips, 0);
+                //gameObject.transform.Rotate(0, degBetweenShips, 0);
+                Tween.LocalRotation(transform, transform.localEulerAngles + new Vector3(0, degBetweenShips, 0), m_rotateTime, 0, TweenCurveHelper.GetCurve(CurveType), Tween.LoopType.None, null, null, false);
                 m_currentShipNumber--;
                 if (m_currentShipNumber < 0)
                     m_currentShipNumber = m_unlockableManager.m_unlockableShips.Length - 1;
@@ -164,7 +169,8 @@ public class Turntable : MonoBehaviour {
                 break;
             case ("Ship"):
                 //Debug.Log(degBetweenShips);
-                gameObject.transform.Rotate(0, -degBetweenShips, 0);
+                //gameObject.transform.Rotate(0, -degBetweenShips, 0);
+                Tween.LocalRotation(transform, transform.localEulerAngles + new Vector3(0, -degBetweenShips, 0), m_rotateTime, 0, TweenCurveHelper.GetCurve(CurveType), Tween.LoopType.None, null, null, false);
                 m_currentShipNumber++;
                 if (m_currentShipNumber > m_unlockableManager.m_unlockableShips.Length - 1)
                     m_currentShipNumber = 0;
@@ -174,6 +180,7 @@ public class Turntable : MonoBehaviour {
         Debug.Log(degBetweenShips);
         //if (m_unlockableManager.)
     }
+
                                   
     private void PriceDisplay(string unlockableType)
     {
