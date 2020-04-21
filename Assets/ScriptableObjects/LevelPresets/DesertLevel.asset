@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c220bbb9323f11478c9c4b2a4c61331, type: 3}
+  m_Name: DesertLevel
+  m_EditorClassIdentifier: 
+  m_levelGenerationType: 1
+  m_groundPrefab: {fileID: 1196708968115192, guid: ea85354d6db2d7d4ca859e6d3e9062d9,
+    type: 2}
+  m_spawnHeightOffset: -5
+  m_trackWidth: 95
+  m_unitSize: 200
+  m_numOfSceneryLayers: 1
+  m_sceneryElements:
+  - m_prefab: {fileID: 1915550590769402, guid: 43b69db7d05cd904b9b5d7d0b947b466, type: 2}
+    spawnChanceWeight: 3
+    randomScaleVariance: {x: 1, y: 1}
+  - m_prefab: {fileID: 1762332303879342, guid: e4c47f7bdb2a088438953251e83c2715, type: 2}
+    spawnChanceWeight: 3
+    randomScaleVariance: {x: 1, y: 1}
+  - m_prefab: {fileID: 1230128048834018, guid: cae5b2cf58d893a4ab9a4eed5fb76c76, type: 2}
+    spawnChanceWeight: 10
+    randomScaleVariance: {x: 1, y: 1}
+  - m_prefab: {fileID: 1801407151450278, guid: 06f39ab321c0fbf4182694967c9a15f5, type: 2}
+    spawnChanceWeight: 10
+    randomScaleVariance: {x: 1, y: 1}
+  - m_prefab: {fileID: 1396011712909212, guid: 9721c42f37fb5384495f7b88f29ffe29, type: 2}
+    spawnChanceWeight: 10
+    randomScaleVariance: {x: 1, y: 1}
+  - m_prefab: {fileID: 1501787237637172, guid: 2253a521de605a14abc2e1895a4e5950, type: 2}
+    spawnChanceWeight: 3
+    randomScaleVariance: {x: 1, y: 1}
+  - m_prefab: {fileID: 1224440163446194, guid: c3963f6abcb303a489cd51ddbfcb2c99, type: 2}
+    spawnChanceWeight: 3
+    randomScaleVariance: {x: 1, y: 1}
+  - m_prefab: {fileID: 1930277606480046, guid: c19c5f6a139ef1d4d9d8745e7483d9d1, type: 2}
+    spawnChanceWeight: 3
+    randomScaleVariance: {x: 5, y: 10}
+  - m_prefab: {fileID: 1797778256301064, guid: b843689efd2779542a5d2258b5f9ec70, type: 2}
+    spawnChanceWeight: 3
+    randomScaleVariance: {x: 5, y: 10}
+  - m_prefab: {fileID: 1483442227450752, guid: 0e5b83f37112c764da9cb8e71f444668, type: 2}
+    spawnChanceWeight: 3
+    randomScaleVariance: {x: 1, y: 1}
+  m_travelTime: 6
+  m_customPostProcess: {fileID: 0}
+  m_fogColour: {r: 0.9852941, g: 0.7504181, b: 0.5071367, a: 1}
+  m_fogStart: 10
+  m_fogEnd: 600
