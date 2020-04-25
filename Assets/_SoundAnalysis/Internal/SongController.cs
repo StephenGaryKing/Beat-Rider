@@ -473,7 +473,7 @@ namespace MusicalGameplayMechanics
 
 		public void OpenSoundFileByName(string filePath)
 		{
-			string file = Application.dataPath + "/Songs/" + filePath + ".wav";	
+			string file = Application.dataPath + "/StreamingAssets/Songs/" + filePath + ".wav";	
 			StartCoroutine(LoadFile(file));
 		}
 
