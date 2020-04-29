@@ -97,7 +97,7 @@ public class OpenFiles : MonoBehaviour {
     void CopyFile()
     {
         //UnityEditor.FileUtil.CopyFileOrDirectory(path, "Assets/Songs/" + fileName);
-        string targetPath = UnityEngine.Application.dataPath + "/Songs";
+        string targetPath = UnityEngine.Application.dataPath + "/StreamingAssets/Songs/";
         string destFile = System.IO.Path.Combine(targetPath, fileName);
 
         System.IO.File.Copy(path, destFile, true);
