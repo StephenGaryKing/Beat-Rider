@@ -18,6 +18,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 0}
       volume: 0
+      maxVolumeRatio: 0
     Name: CALL ACCEPTED
     Content: '---'
     waitTime: 2
@@ -25,6 +26,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 67ea6e0c0a6351f45979c43f2782c48a, type: 3}
       volume: 0.446
+      maxVolumeRatio: 0
     Name: Beat Rider
     Content: I'm going to be home much later than planned, it seems.
     waitTime: 4
@@ -32,6 +34,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: c5b9f24662867dd4d84881dfd4502e89, type: 3}
       volume: 0.446
+      maxVolumeRatio: 0
     Name: Wife
     Content: Urgh... ok, we can put off going out for your retirement dinner for tomorrow
       night.
@@ -40,6 +43,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: c5b9f24662867dd4d84881dfd4502e89, type: 3}
       volume: 0.507
+      maxVolumeRatio: 0
     Name: Wife
     Content: Grab something for us both when you finally get off.
     waitTime: 3
@@ -47,6 +51,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 67ea6e0c0a6351f45979c43f2782c48a, type: 3}
       volume: 0.464
+      maxVolumeRatio: 0
     Name: Beat Rider
     Content: By the way, I'm not sure if this mission is legitimate... something just
       feels off about it. Can you call back later?
@@ -55,6 +60,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: c5b9f24662867dd4d84881dfd4502e89, type: 3}
       volume: 0.421
+      maxVolumeRatio: 0
     Name: Wife
     Content: No prob. Hey, maybe with that bonus payout, we can eat out somewhere
       fancy in the upper city, maybe...?
@@ -63,18 +69,28 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 0ed86fa609c2f6243972f29c6138aee5, type: 3}
       volume: 0.452
+      maxVolumeRatio: 0
     Name: Beat Rider
     Content: Maybe. I'll have time to figure it out later.
     waitTime: 3
   - Image: {fileID: 21300000, guid: 4069384878f853746bc2f2a427c22602, type: 3}
     Audio:
+      soundToPlay: {fileID: 8300000, guid: db699dc72e065eb469b4dcfed1d98ebf, type: 3}
+      volume: 0.458
+      maxVolumeRatio: 0
+    Name: Beat Rider
+    Content: Looks like I'm entering...a tunnel?
+    waitTime: 2
+  - Image: {fileID: 21300000, guid: 4069384878f853746bc2f2a427c22602, type: 3}
+    Audio:
       soundToPlay: {fileID: 8300000, guid: 657b42fca44f8224d8ecad24a8d9490a, type: 3}
       volume: 0.458
+      maxVolumeRatio: 0
     Name: END CALL
     Content: CALL HAS BEEN TERMINATED
     waitTime: 2
   m_postCutsceneChoice:
   - Image: {fileID: 21300000, guid: 316260414d36bbb4794d1d9d03143910, type: 3}
     CutsceneToPlay: {fileID: 11400000, guid: b6ac34b9936030243a991728b576f5cb, type: 2}
-  m_levelToPlay: {fileID: 11400000, guid: 28fd00a854b89a1409743048f0773728, type: 2}
+  m_levelToPlay: {fileID: 11400000, guid: 7e358f94bcba45a41a58bc59a65d5522, type: 2}
   m_endGameConditionToAdd: 1
