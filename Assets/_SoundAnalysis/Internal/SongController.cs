@@ -22,7 +22,8 @@ namespace MusicalGameplayMechanics
 		RestartSong,
 		PlayerDead,
 		ReturnToMenu,
-        AutoWin
+        AutoWin,
+        InvalidSong
 	}
 
 	[System.Serializable]
@@ -101,6 +102,8 @@ namespace MusicalGameplayMechanics
 
 		public static bool m_freeFlow = false;
 
+        [SerializeField] private int m_minNoteLimit = 10;
+        [SerializeField] private MenuTransition m_invalidAudioMenuTransition = null;
         [SerializeField] private CompletionCanvas m_canvas = null;
         [SerializeField] private ShopManager m_shopManager = null;
 
@@ -131,6 +134,11 @@ namespace MusicalGameplayMechanics
 				s_returnToMenu = false;
 				ReturnToMenu();
 			}
+            if (m_songIsBeingPlayed && m_scoreBoard.m_totalAmountOfNotes < m_minNoteLimit && m_invalidAudioMenuTransition)
+            {
+                ActualStopSong(StopSongConditions.InvalidSong);
+            }
+
 			if (m_songIsBeingPlayed && Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Keypad0))
 			{
 				Debug.LogError("Auto Winning Level");
@@ -227,7 +235,10 @@ namespace MusicalGameplayMechanics
 			m_songIsBeingPlayed = false;
 			switch (condition)
 			{
-				case (StopSongConditions.EndOfSong):
+                case (StopSongConditions.InvalidSong):
+                    InvalidSongSelected();
+                    break;
+                case (StopSongConditions.EndOfSong):
 					EndOfSong();
 					break;
 				case (StopSongConditions.PlayerDead):
@@ -245,6 +256,18 @@ namespace MusicalGameplayMechanics
 			}
 			ResetValues();
 		}
+
+        void InvalidSongSelected()
+        {
+            if (m_invalidAudioMenuTransition)
+            {
+                m_craftingManager.ClearPendingCrafts();
+                m_levelGen.WipeObjects();
+                m_invalidAudioMenuTransition.PlayTransitions();
+            }
+            else
+                Debug.LogError("Invalid Canvas not set on song controller script");
+        }
 
 		void EndOfSong()
 		{

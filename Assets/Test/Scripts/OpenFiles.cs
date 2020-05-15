@@ -18,6 +18,8 @@ public class OpenFiles : MonoBehaviour {
     private SongSelectionLoader loader = null;
     string path = null;
     string documentPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyMusic);
+    string musicFolder = null;
+
     //Button fileLocatorButton = null;
 
     //public event ClickEventHandler Clicked;
@@ -32,10 +34,20 @@ public class OpenFiles : MonoBehaviour {
         }
     }
 
+    private void Awake()
+    {
+        musicFolder = UnityEngine.Application.dataPath + "/StreamingAssets/Songs/";
+        if (!Directory.Exists(musicFolder))
+            Directory.CreateDirectory(musicFolder);
+        else
+            Debug.Log("music folder exist");
+    }
 
     private void Start()
     {
+
         loader = FindObjectOfType<SongSelectionLoader>();
+        string targetPath = UnityEngine.Application.dataPath + "/StreamingAssets/Songs/";
     }
 
     public void OpenFolder()
@@ -97,8 +109,7 @@ public class OpenFiles : MonoBehaviour {
     void CopyFile()
     {
         //UnityEditor.FileUtil.CopyFileOrDirectory(path, "Assets/Songs/" + fileName);
-        string targetPath = UnityEngine.Application.dataPath + "/StreamingAssets/Songs/";
-        string destFile = System.IO.Path.Combine(targetPath, fileName);
+        string destFile = System.IO.Path.Combine(musicFolder, fileName);
 
         System.IO.File.Copy(path, destFile, true);
 

@@ -12,6 +12,7 @@ public class Turntable : MonoBehaviour {
     [SerializeField] private float m_spawnDistance = 5;
     private float degBetweenShips = 0;
     [SerializeField] private float m_rotateTime = 0.23f;
+    private float m_rotateCooldown = 0;
     [SerializeField] private TweenCurveHelper.CurveType CurveType;
     //[SerializeField] private GameObject m_cameraObject = null;
 
@@ -107,6 +108,10 @@ public class Turntable : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         // Create a dynamic spawner
+        m_gemDustText.text = "Current Gem Dust: " + m_shopManager.m_currentGemDust;
+
+        if (m_rotateCooldown > 0)
+            m_rotateCooldown -= Time.deltaTime;
 
         if (!m_applyGameObject)
             return;
@@ -120,8 +125,6 @@ public class Turntable : MonoBehaviour {
         {
             m_applyGameObject.SetActive(false);
         }
-        m_gemDustText.text = "Current Gem Dust: " + m_shopManager.m_currentGemDust;
-
     }
 
     public void TurnLeft(string unlockableType)
@@ -141,9 +144,14 @@ public class Turntable : MonoBehaviour {
                 PriceDisplay("Neon");
                 break;
             case ("Ship"):
+                if (m_rotateCooldown > 0)
+                    break;
+
                 //Debug.Log(degBetweenShips);
+                m_rotateCooldown = m_rotateTime + 0.1f;
                 //gameObject.transform.Rotate(0, degBetweenShips, 0);
-                Tween.LocalRotation(transform, transform.localEulerAngles + new Vector3(0, degBetweenShips, 0), m_rotateTime, 0, TweenCurveHelper.GetCurve(CurveType), Tween.LoopType.None, null, null, false);
+                //Tween.LocalRotation(transform, transform.localEulerAngles + new Vector3(0, degBetweenShips, 0), m_rotateTime, 0, TweenCurveHelper.GetCurve(CurveType), Tween.LoopType.None, null, null, false);
+                Tween.Rotate(transform, new Vector3(0, degBetweenShips, 0), Space.Self, m_rotateTime, 0, TweenCurveHelper.GetCurve(CurveType), Tween.LoopType.None, null, null, false);
                 m_currentShipNumber--;
                 if (m_currentShipNumber < 0)
                     m_currentShipNumber = m_unlockableManager.m_unlockableShips.Length - 1;
@@ -168,9 +176,14 @@ public class Turntable : MonoBehaviour {
                 PriceDisplay("Neon");
                 break;
             case ("Ship"):
+                if (m_rotateCooldown > 0)
+                    break;
+
                 //Debug.Log(degBetweenShips);
                 //gameObject.transform.Rotate(0, -degBetweenShips, 0);
-                Tween.LocalRotation(transform, transform.localEulerAngles + new Vector3(0, -degBetweenShips, 0), m_rotateTime, 0, TweenCurveHelper.GetCurve(CurveType), Tween.LoopType.None, null, null, false);
+                m_rotateCooldown = m_rotateTime + 0.1f;
+                //Tween.LocalRotation(transform, transform.localEulerAngles + new Vector3(0, -degBetweenShips, 0), m_rotateTime, 0, TweenCurveHelper.GetCurve(CurveType), Tween.LoopType.None, null, null, false);
+                Tween.Rotate(transform, new Vector3(0, -degBetweenShips, 0), Space.Self, m_rotateTime, 0, TweenCurveHelper.GetCurve(CurveType), Tween.LoopType.None, null, null, false);
                 m_currentShipNumber++;
                 if (m_currentShipNumber > m_unlockableManager.m_unlockableShips.Length - 1)
                     m_currentShipNumber = 0;
