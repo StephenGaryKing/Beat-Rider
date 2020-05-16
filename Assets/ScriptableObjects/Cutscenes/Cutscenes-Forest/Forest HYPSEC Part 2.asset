@@ -18,6 +18,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 67ea6e0c0a6351f45979c43f2782c48a, type: 3}
       volume: 0.519
+      maxVolumeRatio: 0
     Name: Beat Rider
     Content: Fine, I'm in. What do you need me to do?
     waitTime: 3
@@ -25,17 +26,19 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: c37c381d5d83d1544b8d5cac40cbef61, type: 3}
       volume: 0.484
+      maxVolumeRatio: 0
     Name: HYPSEC Officer
-    Content: Get as far away from your employer's outposts as possible, to limit reprisal.
-      An escort force is on the way, but it'll be a while.
+    Content: You'll have to run through the superhighway to lose any potential pursuers,
+      and give us time to send escorts. We're counting on you.
     waitTime: 6
   - Image: {fileID: 21300000, guid: 4069384878f853746bc2f2a427c22602, type: 3}
     Audio:
       soundToPlay: {fileID: 8300000, guid: 657b42fca44f8224d8ecad24a8d9490a, type: 3}
       volume: 0.443
+      maxVolumeRatio: 0
     Name: END CALL
     Content: CALL HAS BEEN TERMINATED
     waitTime: 3
   m_postCutsceneChoice: []
-  m_levelToPlay: {fileID: 11400000, guid: d757b972f75b41049b0ad9cc467c1b43, type: 2}
+  m_levelToPlay: {fileID: 11400000, guid: 1f2ec7d120623f6409ab89bb1551e346, type: 2}
   m_endGameConditionToAdd: 5
