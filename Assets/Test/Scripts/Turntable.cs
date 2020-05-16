@@ -343,6 +343,12 @@ public class Turntable : MonoBehaviour {
     }
     private void InsufficientFund()
     {
+        if (m_insufficientGemCanvas)
+        {
+            m_insufficientGemCanvas.SetActive(true);
+            return;
+        }
+
         // This part is used to show error dialog messages if there are parts of the script that have not been initialised properly
 #if UNITY_EDITOR
         if (UnityEditor.EditorApplication.isPlaying)
@@ -351,8 +357,6 @@ public class Turntable : MonoBehaviour {
         }
 
 #endif
-        if (m_insufficientGemCanvas)
-            m_insufficientGemCanvas.SetActive(true);
     }
 
 }
