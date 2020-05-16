@@ -49,6 +49,7 @@ public class Turntable : MonoBehaviour {
     private int m_selectedPrice = 0;
     //[HideInInspector] public int m_shopManager.m_currentGemDust = 0;
     [SerializeField] private ShopManager m_shopManager = null;
+    [SerializeField] private GameObject m_insufficientGemCanvas = null;
 
 
     // Use this for initialization
@@ -350,6 +351,8 @@ public class Turntable : MonoBehaviour {
         }
 
 #endif
+        if (m_insufficientGemCanvas)
+            m_insufficientGemCanvas.SetActive(true);
     }
 
 }
