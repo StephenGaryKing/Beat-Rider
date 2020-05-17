@@ -17,6 +17,8 @@ namespace BeatRider
 		public GameObject m_prefab;
 		public float spawnChanceWeight;
 		public Vector2 randomScaleVariance = Vector2.one;
+        public bool randomRotation = false;
+        public Vector2 randomRotationVariance = Vector2.zero;
 	}
 
 	[CreateAssetMenu(fileName = "LevelTemplate", menuName = "Beat Rider/LevelTemplate", order = 1)]

@@ -378,7 +378,12 @@ namespace BeatRider
 				else
 					go.transform.localScale = Vector3.one * m_currentLevel.m_levelTemplate.m_unitSize * Random.Range(element.randomScaleVariance.x, element.randomScaleVariance.y);
 				go.transform.position = Vector3.zero;
-				SceneryModifier[] sm = go.GetComponents<SceneryModifier>();
+                if (element.randomRotation)
+                {
+                    float yValue = Random.Range(element.randomRotationVariance.x, element.randomRotationVariance.y);
+                    go.transform.Rotate(0, yValue, 0);
+                }
+                SceneryModifier[] sm = go.GetComponents<SceneryModifier>();
 				if (sm.Length != 0)
 				{
 					foreach (var mod in sm)
