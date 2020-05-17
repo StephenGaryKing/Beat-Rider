@@ -129,8 +129,6 @@ GameObject:
   - component: {fileID: 114880165130541552}
   - component: {fileID: 114567397056675076}
   - component: {fileID: 114465318436648526}
-  - component: {fileID: 114840793102640758}
-  - component: {fileID: 114489712413502154}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1143,32 +1141,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_tollerance: 1
   m_hardKeys:
-  - Key: 0
-    NoteColour: {r: 0, g: 0, b: 1, a: 1}
-  - Key: 0
-    NoteColour: {r: 0, g: 0, b: 1, a: 1}
-  - Key: 0
-    NoteColour: {r: 0, g: 0, b: 1, a: 1}
-  - Key: 0
-    NoteColour: {r: 0, g: 0, b: 1, a: 1}
+  - Key: 108
+    NoteColour: {r: 0, g: 1, b: 1, a: 1}
+  - Key: 107
+    NoteColour: {r: 1, g: 0, b: 0, a: 1}
+  - Key: 106
+    NoteColour: {r: 0, g: 1, b: 0, a: 1}
+  - Key: 104
+    NoteColour: {r: 1, g: 1, b: 0, a: 1}
   m_meduimKey:
     Key: 32
     NoteColour: {r: 0, g: 0, b: 1, a: 1}
   m_gameController: {fileID: 0}
---- !u!114 &114489712413502154
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1394093755142130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b52726ae875c63c4e9da1f3bb2c05c1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_trail: {fileID: 0}
-  m_body: {fileID: 23027081202301900}
-  m_highlightBrightness: 4
 --- !u!114 &114542694182628518
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1214,30 +1198,20 @@ MonoBehaviour:
   m_boost:
     soundToPlay: {fileID: 8300000, guid: bca3019ee8dc3834899b98d9b4ca5395, type: 3}
     volume: 1
+    maxVolumeRatio: 1
   m_pickupNote:
     soundToPlay: {fileID: 8300000, guid: 2621fcd13f59eb84095b9eb0be3aa125, type: 3}
     volume: 0.2
+    maxVolumeRatio: 0.2
   m_hitObstical:
     soundToPlay: {fileID: 8300000, guid: 5c08e616c791e6f4081e884dee6f15e3, type: 3}
     volume: 0.557
+    maxVolumeRatio: 0.557
   m_gemPickup:
     soundToPlay: {fileID: 8300000, guid: ce86d6d737a86754491e1cc707bee2aa, type: 3}
     volume: 0.37
+    maxVolumeRatio: 0.37
   m_soundManager: {fileID: 0}
---- !u!114 &114840793102640758
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1394093755142130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b52726ae875c63c4e9da1f3bb2c05c1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_trail: {fileID: 0}
-  m_body: {fileID: 23027081202301900}
-  m_highlightBrightness: 4
 --- !u!114 &114880165130541552
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1259,6 +1233,12 @@ MonoBehaviour:
   m_FOVAmount: 0
   m_ambientSpeedDegradation: 0.1
   m_startingCameraPos: {x: 0, y: 4.84, z: -8.12}
+  totalNotes: 0
+  runGemDust: 0
+  m_notesText: {fileID: 0}
+  m_percentageText: {fileID: 0}
+  m_gemDustText: {fileID: 0}
+  m_shopManager: {fileID: 0}
 --- !u!198 &198440989190235008
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -1676,7 +1656,7 @@ ParticleSystem:
     startRotation:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1.5707963
       minScalar: 0
       maxCurve:
         serializedVersion: 2
