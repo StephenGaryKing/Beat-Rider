@@ -1170,6 +1170,7 @@ GameObject:
   - component: {fileID: 72358957}
   - component: {fileID: 72358958}
   - component: {fileID: 72358959}
+  - component: {fileID: 72358960}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1431,6 +1432,36 @@ MonoBehaviour:
   m_saveFileName: Shop
   m_initialGemDust: 10
   m_currentGemDust: 0
+--- !u!114 &72358960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 72358948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce6407f444303a84c87573ec539b3ac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneButtons:
+  - sceneType: 0
+    button: {fileID: 1123661030}
+  - sceneType: 1
+    button: {fileID: 1157494408}
+  - sceneType: 2
+    button: {fileID: 162176045}
+  - sceneType: 3
+    button: {fileID: 1408174392}
+  - sceneType: 4
+    button: {fileID: 520304851}
+  - sceneType: 5
+    button: {fileID: 595201133}
+  - sceneType: 6
+    button: {fileID: 1895289795}
+  - sceneType: 7
+    button: {fileID: 1887247682}
+  - sceneType: 8
+    button: {fileID: 2050947441}
 --- !u!1 &74303850
 GameObject:
   m_ObjectHideFlags: 0
@@ -3428,8 +3459,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 355411981}
   m_HandleRect: {fileID: 355411980}
   m_Direction: 2
-  m_Value: 0.99997634
-  m_Size: 0
+  m_Value: 1
+  m_Size: 0.9999978
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -28446,7 +28477,7 @@ Prefab:
     - target: {fileID: 224288930717438444, guid: b1ecdeb2236dbf9409c47a59b4343ed0,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b1ecdeb2236dbf9409c47a59b4343ed0, type: 2}
@@ -28492,7 +28523,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.0012245178}
+  m_AnchoredPosition: {x: 0, y: -0.00018310547}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1457668266
