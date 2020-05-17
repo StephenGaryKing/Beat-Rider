@@ -106,5 +106,9 @@ public class SceneryManager : MonoBehaviour {
         save.Save(m_saveFileName);
     }
 
+    private void OnApplicationQuit()
+    {
+        SaveSceneButtons();
+    }
 
 }
