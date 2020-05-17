@@ -11,6 +11,7 @@ public class UnlockingScenes : MonoBehaviour {
     private void OnEnable()
     {
         sceneManager = FindObjectOfType<SceneryManager>();
-        sceneManager.ActivateButton(sceneToUnlock);
+        if (sceneManager != null)
+            sceneManager.ActivateButton(sceneToUnlock);
     }
 }
