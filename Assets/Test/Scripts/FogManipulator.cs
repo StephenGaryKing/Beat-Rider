@@ -25,7 +25,7 @@ public class FogManipulator : MonoBehaviour {
         RenderSettings.fog = enableFog;
         if (skybox)
             RenderSettings.skybox = skybox;
-        currentCamera = Camera.current;
+        currentCamera = Camera.main;
         if (currentCamera)
             currentCamera.clearFlags = CameraClearFlags.Skybox;
     }

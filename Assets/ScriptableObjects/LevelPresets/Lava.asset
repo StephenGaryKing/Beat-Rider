@@ -17,41 +17,20 @@ MonoBehaviour:
   m_spawnHeightOffset: -5
   m_trackWidth: 35
   m_unitSize: 200
-  m_numOfSceneryLayers: 2
+  m_numOfSceneryLayers: 1
   m_sceneryElements:
   - m_prefab: {fileID: 1333633684922606, guid: 0edd461a93879474280301c7496c3048, type: 2}
-    spawnChanceWeight: 5
+    spawnChanceWeight: 0.3
     randomScaleVariance: {x: 1, y: 1}
-  - m_prefab: {fileID: 1091003107821158, guid: 9986d60f10188984ba5c35990368d574, type: 2}
-    spawnChanceWeight: 5
+  - m_prefab: {fileID: 1963329029881666, guid: 9e41b2c6ae6ab584b86e978cc153d056, type: 2}
+    spawnChanceWeight: 0.3
     randomScaleVariance: {x: 1, y: 1}
-  - m_prefab: {fileID: 1920949030811800, guid: 6646f8beeff73a947adc9f1a21935ba6, type: 2}
-    spawnChanceWeight: 5
+  - m_prefab: {fileID: 1786943138009382, guid: 3aa11bfa362951a408d019bb3ffacbc6, type: 2}
+    spawnChanceWeight: 0.3
     randomScaleVariance: {x: 1, y: 1}
-  - m_prefab: {fileID: 1256658158386316, guid: 6e9dfb93acb6e8f40a7dde3350dc928a, type: 2}
-    spawnChanceWeight: 0.2
-    randomScaleVariance: {x: 5, y: 5}
-  - m_prefab: {fileID: 1375841294853722, guid: f98ed2406c2394f468f1b7f2cdbd6524, type: 2}
-    spawnChanceWeight: 0.2
-    randomScaleVariance: {x: 5, y: 5}
-  - m_prefab: {fileID: 1692049750935472, guid: c561cbe421d6817459669fa7e591d760, type: 2}
-    spawnChanceWeight: 0.2
-    randomScaleVariance: {x: 5, y: 5}
-  - m_prefab: {fileID: 1473049013698902, guid: f4c42f4d30747fe41af4b6bc01a8d33e, type: 2}
-    spawnChanceWeight: 0.2
-    randomScaleVariance: {x: 5, y: 5}
-  - m_prefab: {fileID: 1969862125669590, guid: ab0eaae551adf7c45aafdbf908001508, type: 2}
-    spawnChanceWeight: 0.2
-    randomScaleVariance: {x: 5, y: 5}
-  - m_prefab: {fileID: 1440501858801964, guid: c592cea7084a2004db28c01418c418be, type: 2}
-    spawnChanceWeight: 0.2
-    randomScaleVariance: {x: 5, y: 5}
-  - m_prefab: {fileID: 1413875125647120, guid: fcd1d6e03e0dd2444be7936890748f92, type: 2}
-    spawnChanceWeight: 0.05
-    randomScaleVariance: {x: 5, y: 5}
-  - m_prefab: {fileID: 1208616027082542, guid: 98806377d19f18a4d86d3d0eb2700a26, type: 2}
-    spawnChanceWeight: 0.2
-    randomScaleVariance: {x: 5, y: 5}
+  - m_prefab: {fileID: 1780136395727734, guid: 254a92473426cac4986bcfaa6302f63f, type: 2}
+    spawnChanceWeight: 0.3
+    randomScaleVariance: {x: 1, y: 1}
   m_travelTime: 6
   m_customPostProcess: {fileID: 0}
   m_fogColour: {r: 0, g: 0, b: 0, a: 1}
