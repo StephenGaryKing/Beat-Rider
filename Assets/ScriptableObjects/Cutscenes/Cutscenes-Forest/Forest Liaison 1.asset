@@ -18,6 +18,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 0}
       volume: 0
+      maxVolumeRatio: 0
     Name: CALL ACCEPTED
     Content: '---'
     waitTime: 2
@@ -25,6 +26,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 67ea6e0c0a6351f45979c43f2782c48a, type: 3}
       volume: 0.44
+      maxVolumeRatio: 0
     Name: Beat Rider
     Content: You aren't my normal contact. What's going on?
     waitTime: 3
@@ -32,6 +34,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 9cdd0ae368a792b4ba678221ba846376, type: 3}
       volume: 0.476
+      maxVolumeRatio: 0
     Name: Liaison
     Content: Things have gotten out of control, and handling of your mission has been
       transferred.
@@ -40,6 +43,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 0ed86fa609c2f6243972f29c6138aee5, type: 3}
       volume: 0.415
+      maxVolumeRatio: 0
     Name: Beat Rider
     Content: Whatever. Am I in the clear yet?
     waitTime: 3
@@ -47,21 +51,25 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 9cdd0ae368a792b4ba678221ba846376, type: 3}
       volume: 0.44
+      maxVolumeRatio: 0
     Name: Liaison
-    Content: "Unfortunately, no. Someone\u2019s still on your tail. We\u2019re going
-      to need to run you over the ocean to throw them off completely."
+    Content: "Unfortunately, no. Someone\u2019s still on your tail. You're going to
+      have to reach international territory."
     waitTime: 4
   - Image: {fileID: 21300000, guid: a91a2bc4be5741749a2b7f47bf8cff0e, type: 3}
     Audio:
       soundToPlay: {fileID: 8300000, guid: 6c6a2ed60a9081746999b836c078a8d9, type: 3}
       volume: 0.452
+      maxVolumeRatio: 0
     Name: Liaison
-    Content: "Maybe dip under completely so you don\u2019t ping their RADAR."
+    Content: Head straight up, until they can't follow any further. They know their
+      limits.
     waitTime: 3
   - Image: {fileID: 21300000, guid: a7b057ef30380ef4f988e826ac412bd2, type: 3}
     Audio:
       soundToPlay: {fileID: 8300000, guid: 67ea6e0c0a6351f45979c43f2782c48a, type: 3}
       volume: 0.446
+      maxVolumeRatio: 0
     Name: Beat Rider
     Content: "This is getting ridiculous. I\u2019m going to need some real answers
       on what I\u2019m carrying."
@@ -70,6 +78,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 9cdd0ae368a792b4ba678221ba846376, type: 3}
       volume: 0.464
+      maxVolumeRatio: 0
     Name: Liaison
     Content: "You\u2019ll be properly debriefed once the package is back in corporate\u2019s
       hands. Sorry for the difficulties, Beat Rider."
@@ -78,9 +87,10 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 657b42fca44f8224d8ecad24a8d9490a, type: 3}
       volume: 0.452
+      maxVolumeRatio: 0
     Name: END CALL
     Content: CALL HAS BEEN TERMINATED
     waitTime: 2
   m_postCutsceneChoice: []
-  m_levelToPlay: {fileID: 11400000, guid: 0b9c377f47bfa664ca38829b08e2460c, type: 2}
+  m_levelToPlay: {fileID: 11400000, guid: 6854b724f5874eb42a9faa67a47d3596, type: 2}
   m_endGameConditionToAdd: 6

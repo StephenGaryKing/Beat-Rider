@@ -18,6 +18,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 9ca3d07456d6c43499ec63d814b505f2, type: 3}
       volume: 0.446
+      maxVolumeRatio: 0
     Name: 1 CALL INCOMING
     Content: -Call from Shade Corp., Automatic Answer
     waitTime: 2
@@ -25,6 +26,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: db699dc72e065eb469b4dcfed1d98ebf, type: 3}
       volume: 0.488
+      maxVolumeRatio: 0
     Name: Shade Corp. Executive
     Content: Courier, what the hell are you doing?
     waitTime: 3
@@ -32,6 +34,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 67ea6e0c0a6351f45979c43f2782c48a, type: 3}
       volume: 0.482
+      maxVolumeRatio: 0
     Name: Beat Rider
     Content: I don't know what you have me handling, but I'm not going to prison over
       it.
@@ -40,6 +43,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 67ea6e0c0a6351f45979c43f2782c48a, type: 3}
       volume: 0.421
+      maxVolumeRatio: 0
     Name: Beat Rider
     Content: You should probably back off before you dig yourself any deeper.
     waitTime: 3
@@ -47,6 +51,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 1990522cf0b5cda4695882d3ff1390b0, type: 3}
       volume: 0.391
+      maxVolumeRatio: 0
     Name: Shade Corp. Executive
     Content: YOU JUST CROSSED THE WRONG PEOPLE, BEAT RIDER.
     waitTime: 5
@@ -54,6 +59,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 1990522cf0b5cda4695882d3ff1390b0, type: 3}
       volume: 0.433
+      maxVolumeRatio: 0
     Name: Shade Corp. Executive
     Content: And you know what? Out here, we can just wipe you out, and no-one will
       notice.
@@ -62,6 +68,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 0ed86fa609c2f6243972f29c6138aee5, type: 3}
       volume: 0.366
+      maxVolumeRatio: 0
     Name: Beat Rider
     Content: Try me.
     waitTime: 2
@@ -69,6 +76,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 1990522cf0b5cda4695882d3ff1390b0, type: 3}
       volume: 0.452
+      maxVolumeRatio: 0
     Name: Shade Corp. Executive
     Content: (Send in asset recovery, now!)
     waitTime: 4
@@ -76,6 +84,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 657b42fca44f8224d8ecad24a8d9490a, type: 3}
       volume: 0.452
+      maxVolumeRatio: 0
     Name: CALL PATCHING
     Content: '---'
     waitTime: 2
@@ -83,6 +92,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 9cdd0ae368a792b4ba678221ba846376, type: 3}
       volume: 0.378
+      maxVolumeRatio: 0
     Name: '"Asset Recovery"'
     Content: You can't run forever, courier. I'll be pulling the cargo from your burning
       wreckage.
@@ -91,9 +101,10 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 657b42fca44f8224d8ecad24a8d9490a, type: 3}
       volume: 0.452
+      maxVolumeRatio: 0
     Name: END CALL
     Content: Connection has been lost.
     waitTime: 2
   m_postCutsceneChoice: []
-  m_levelToPlay: {fileID: 11400000, guid: 2a0b77fd753f7c04b91aed72590c3cfb, type: 2}
+  m_levelToPlay: {fileID: 11400000, guid: 6340d1e565fb36f4f894f33a5d302f3a, type: 2}
   m_endGameConditionToAdd: 0

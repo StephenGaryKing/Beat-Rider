@@ -18,6 +18,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 0ed86fa609c2f6243972f29c6138aee5, type: 3}
       volume: 0.438
+      maxVolumeRatio: 0
     Name: Beat Rider
     Content: Why should I trust you either? I'm keeping the package.
     waitTime: 3
@@ -25,6 +26,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 423c8fffa8db9a74d8fedfc251ef2205, type: 3}
       volume: 0.484
+      maxVolumeRatio: 0
     Name: HYPSEC Officer
     Content: You're on the wrong side of the law now, courier. We'll catch up again
       soon.
@@ -33,11 +35,12 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 657b42fca44f8224d8ecad24a8d9490a, type: 3}
       volume: 0.466
+      maxVolumeRatio: 0
     Name: END CALL
     Content: CALL HAS BEEN TERMINATED
     waitTime: 2
   m_postCutsceneChoice:
   - Image: {fileID: 21300000, guid: 316260414d36bbb4794d1d9d03143910, type: 3}
     CutsceneToPlay: {fileID: 11400000, guid: f5a30022ef0adf44db2a8fb7aca08b3b, type: 2}
-  m_levelToPlay: {fileID: 11400000, guid: 0b9c377f47bfa664ca38829b08e2460c, type: 2}
+  m_levelToPlay: {fileID: 11400000, guid: 5a2ee99a732e86240a6289f0ee13e621, type: 2}
   m_endGameConditionToAdd: 6
