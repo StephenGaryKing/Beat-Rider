@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4307255823493544}
+  - component: {fileID: 114131866241676538}
   m_Layer: 0
   m_Name: DESERTFLOOR
   m_TagString: Untagged
@@ -184,6 +185,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1374424184963810}
   m_Mesh: {fileID: 4300000, guid: 9f0998aeb0558f8428319d8789e97236, type: 3}
+--- !u!114 &114131866241676538
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1196708968115192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b7293cf33193e543a7f2aa6ccc6e9eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToUnlock: 5
+  sceneManager: {fileID: 0}
 --- !u!114 &114920366980893444
 MonoBehaviour:
   m_ObjectHideFlags: 1

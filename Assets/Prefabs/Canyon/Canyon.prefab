@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 4813858934161894}
   - component: {fileID: 114859331548782440}
   - component: {fileID: 114053098935372058}
+  - component: {fileID: 114075004267646798}
   m_Layer: 0
   m_Name: Canyon
   m_TagString: Untagged
@@ -5771,6 +5772,19 @@ MonoBehaviour:
   m_snapablePrefabs:
   - {fileID: 1222149248271752, guid: c7305a64d04260b44a1a4606d1841131, type: 2}
   - {fileID: 1948879993649926, guid: d13c7319866968e40a4edcb0f27639c2, type: 2}
+--- !u!114 &114075004267646798
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1036044419641388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b7293cf33193e543a7f2aa6ccc6e9eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToUnlock: 0
+  sceneManager: {fileID: 0}
 --- !u!114 &114859331548782440
 MonoBehaviour:
   m_ObjectHideFlags: 1

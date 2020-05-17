@@ -398,6 +398,7 @@ GameObject:
   - component: {fileID: 114616292071992330}
   - component: {fileID: 114831155877609872}
   - component: {fileID: 114091425064791108}
+  - component: {fileID: 114821872164377496}
   m_Layer: 0
   m_Name: SewereModel
   m_TagString: Untagged
@@ -3958,6 +3959,19 @@ MonoBehaviour:
   - {fileID: 4685319717671942}
   m_snapablePrefabs:
   - {fileID: 1502305245952820, guid: d9d28f89f146f814cbc9da9474d2ab7e, type: 2}
+--- !u!114 &114821872164377496
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1428379885402784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b7293cf33193e543a7f2aa6ccc6e9eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToUnlock: 4
+  sceneManager: {fileID: 0}
 --- !u!114 &114831155877609872
 MonoBehaviour:
   m_ObjectHideFlags: 1
