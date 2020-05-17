@@ -3428,8 +3428,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 355411981}
   m_HandleRect: {fileID: 355411980}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 0.9999782
+  m_Size: 0
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7506,7 +7506,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: b38fa7beeb77cd143b1ecb2503fbe944, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0b507b1384ce5fb4fafc914b46f7280b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -17001,7 +17001,7 @@ Prefab:
     - target: {fileID: 114026436628089992, guid: a51203891a7402f498af012f4f2e6959,
         type: 2}
       propertyPath: m_infoText
-      value: 'LEVEL 5 (VOLCANIC RUNOFF)
+      value: 'LEVEL 5 (HIGH NOON DESERT)
 
         Beat Rider confronts his shady employers.'
       objectReference: {fileID: 0}
@@ -17011,6 +17011,74 @@ Prefab:
       value: 'LEVEL 4 (OBEY HIGHWAY)
 
         Beat Rider sides with the law...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114857209315964680, guid: a51203891a7402f498af012f4f2e6959,
+        type: 2}
+      propertyPath: m_infoText
+      value: 'LEVEL 4 (OBEY HIGHWAY)
+
+        Beat Rider sides with the law...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114508015942674464, guid: a51203891a7402f498af012f4f2e6959,
+        type: 2}
+      propertyPath: m_infoText
+      value: 'LEVEL 5 (HIGH NOON DESERT)
+
+        Beat Rider confronts his shady employers.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114881817175042054, guid: a51203891a7402f498af012f4f2e6959,
+        type: 2}
+      propertyPath: m_infoText
+      value: 'LEVEL 4 (???)
+
+        Beat Rider remains a loyal employee...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114613748093984594, guid: a51203891a7402f498af012f4f2e6959,
+        type: 2}
+      propertyPath: m_infoText
+      value: 'LEVEL 4 (???)
+
+        Beat Rider remains a loyal employee...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114102792904404892, guid: a51203891a7402f498af012f4f2e6959,
+        type: 2}
+      propertyPath: m_infoText
+      value: 'LEVEL 4 (DEEP SPACE)
+
+        Beat Rider hides from the law''s reach...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114023370059790270, guid: a51203891a7402f498af012f4f2e6959,
+        type: 2}
+      propertyPath: m_infoText
+      value: 'LEVEL 4 (DEEP SPACE)
+
+        Beat Rider hides from the law''s reach...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114023370059790270, guid: a51203891a7402f498af012f4f2e6959,
+        type: 2}
+      propertyPath: m_cutsceneToPlay
+      value: 
+      objectReference: {fileID: 11400000, guid: f5a30022ef0adf44db2a8fb7aca08b3b,
+        type: 2}
+    - target: {fileID: 114102792904404892, guid: a51203891a7402f498af012f4f2e6959,
+        type: 2}
+      propertyPath: m_cutsceneToPlay
+      value: 
+      objectReference: {fileID: 11400000, guid: f5a30022ef0adf44db2a8fb7aca08b3b,
+        type: 2}
+    - target: {fileID: 114155198930844084, guid: a51203891a7402f498af012f4f2e6959,
+        type: 2}
+      propertyPath: m_infoText
+      value: 'LEVEL 5 (VOLCANIC RUNOFF)
+
+        Beat Rider confronts his shady employers.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114762501815702924, guid: a51203891a7402f498af012f4f2e6959,
+        type: 2}
+      propertyPath: m_infoText
+      value: 'LEVEL 5 (VOLCANIC RUNOFF)
+
+        Beat Rider confronts his shady employers.'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a51203891a7402f498af012f4f2e6959, type: 2}
@@ -17563,7 +17631,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 404324377}
   m_HandleRect: {fileID: 404324376}
   m_Direction: 2
-  m_Value: 0.9999978
+  m_Value: 0.9999981
   m_Size: 0.50239223
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -28378,7 +28446,7 @@ Prefab:
     - target: {fileID: 224288930717438444, guid: b1ecdeb2236dbf9409c47a59b4343ed0,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -45
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b1ecdeb2236dbf9409c47a59b4343ed0, type: 2}
@@ -28424,7 +28492,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000667572}
+  m_AnchoredPosition: {x: 0, y: 0.0011520386}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1457668266

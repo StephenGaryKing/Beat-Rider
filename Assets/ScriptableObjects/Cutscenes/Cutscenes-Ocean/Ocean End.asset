@@ -18,6 +18,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 9ca3d07456d6c43499ec63d814b505f2, type: 3}
       volume: 0.47
+      maxVolumeRatio: 0
     Name: 1 CALL INCOMING
     Content: -Call from Shade Corp., Automatic Answer
     waitTime: 2
@@ -25,14 +26,16 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 9cdd0ae368a792b4ba678221ba846376, type: 3}
       volume: 0.47
+      maxVolumeRatio: 0
     Name: Liaison
-    Content: "You\u2019ve reached optimal distance. Chance of being tailed now is
-      extremely low."
+    Content: I need you to come to a landing near Antarctica. It's the most secure
+      we can get.
     waitTime: 4
   - Image: {fileID: 21300000, guid: a7b057ef30380ef4f988e826ac412bd2, type: 3}
     Audio:
       soundToPlay: {fileID: 8300000, guid: 0ed86fa609c2f6243972f29c6138aee5, type: 3}
       volume: 0.44
+      maxVolumeRatio: 0
     Name: Beat Rider
     Content: Finally. Practically out in the middle of nowhere.
     waitTime: 3
@@ -40,6 +43,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 9cdd0ae368a792b4ba678221ba846376, type: 3}
       volume: 0.403
+      maxVolumeRatio: 0
     Name: Liaison
     Content: Begin broadcasting your co-ordinates and we'll locate you to manually
       collect the package.
@@ -48,6 +52,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: fb0deece855df824085ba5de26fbf620, type: 3}
       volume: 0.208
+      maxVolumeRatio: 0
     Name: SHADE CO. BROADCAST SYSTEMS
     Content: SENDING CO-ORDINATES [-65.736, 135.188, . . . . . . . . . ]
     waitTime: 8
@@ -55,6 +60,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 6c6a2ed60a9081746999b836c078a8d9, type: 3}
       volume: 0.403
+      maxVolumeRatio: 0
     Name: Liaison
     Content: Ok, beam it over, quickly.
     waitTime: 4
@@ -62,6 +68,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 67ea6e0c0a6351f45979c43f2782c48a, type: 3}
       volume: 0.385
+      maxVolumeRatio: 0
     Name: Beat Rider
     Content: Delivery secured. So, how is my payment going to be handled...
     waitTime: 4
@@ -69,6 +76,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: fb0deece855df824085ba5de26fbf620, type: 3}
       volume: 0.49
+      maxVolumeRatio: 0
     Name: B-34T Synthship Settings
     Content: 'WARNING: INCOMING MISSILES DETECTED'
     waitTime: 3
@@ -76,6 +84,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 0ed86fa609c2f6243972f29c6138aee5, type: 3}
       volume: 0.415
+      maxVolumeRatio: 0
     Name: Beat Rider
     Content: What the...
     waitTime: 2
@@ -83,6 +92,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 657b42fca44f8224d8ecad24a8d9490a, type: 3}
       volume: 0.354
+      maxVolumeRatio: 0
     Name: SHADE CORP.
     Content: Call patching...
     waitTime: 2
@@ -90,6 +100,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 1990522cf0b5cda4695882d3ff1390b0, type: 3}
       volume: 0.433
+      maxVolumeRatio: 0
     Name: Shade Corp. Executive
     Content: You're finished, Beat Rider. We can't just let you slip away after this.
     waitTime: 4
@@ -97,6 +108,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 0ed86fa609c2f6243972f29c6138aee5, type: 3}
       volume: 0.409
+      maxVolumeRatio: 0
     Name: Beat Rider
     Content: What the {BLEEP} !? We had a deal!
     waitTime: 3
@@ -104,6 +116,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 1990522cf0b5cda4695882d3ff1390b0, type: 3}
       volume: 0.458
+      maxVolumeRatio: 0
     Name: Shade Corp. Executive
     Content: It's better for our budget to tie up loose ends like this. Plus, if you
       went any deeper into the mission, information getting out would hurt our public
@@ -113,6 +126,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: db699dc72e065eb469b4dcfed1d98ebf, type: 3}
       volume: 0.366
+      maxVolumeRatio: 0
     Name: Shade Corp. Executive
     Content: Please understand.
     waitTime: 2
@@ -120,6 +134,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 6c6a2ed60a9081746999b836c078a8d9, type: 3}
       volume: 0.379
+      maxVolumeRatio: 0
     Name: '"Asset Recovery"'
     Content: Happy retirement, Beat Rider. We'll be sending our best...
     waitTime: 5
@@ -127,6 +142,7 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: 657b42fca44f8224d8ecad24a8d9490a, type: 3}
       volume: 0.433
+      maxVolumeRatio: 0
     Name: END CALL
     Content: Connection lost.
     waitTime: 3
