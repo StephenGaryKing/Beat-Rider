@@ -18,25 +18,35 @@ public enum ScenesList
     None
 }
 
+[System.Serializable]
+public struct SceneButton
+{
+    public ScenesList sceneType;
+    public GameObject button;
+}
+
+
 public class SceneryManager : MonoBehaviour {
-    public Dictionary<ScenesList, GameObject> sceneButtons = new Dictionary<ScenesList, GameObject>();
+    public List<SceneButton> sceneButtons = new List<SceneButton>();
 
     private void Start()
     {
-        foreach(KeyValuePair<ScenesList, GameObject> entry in sceneButtons)
+        foreach(SceneButton entry in sceneButtons)
         {
-            entry.Value.GetComponent<Image>().color = Color.gray;
-            entry.Value.GetComponent<Button>().enabled = false;
+            entry.button.GetComponent<Image>().color = Color.gray;
+            entry.button.GetComponent<Button>().enabled = false;
         }
     }
 
     public void ActivateButton(ScenesList sceneToUnlock)
     {
-        if (sceneButtons.ContainsKey(sceneToUnlock))
+        foreach(SceneButton buttonStruct in sceneButtons)
         {
-            GameObject go = sceneButtons[sceneToUnlock];
-            go.GetComponent<Image>().color = Color.white;
-            go.GetComponent<Button>().enabled = true;
+            if (buttonStruct.sceneType == sceneToUnlock)
+            {
+                buttonStruct.button.GetComponent<Image>().color = Color.white;
+                buttonStruct.button.GetComponent<Button>().enabled = true;
+            }
         }
     }
 
