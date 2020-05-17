@@ -20,17 +20,20 @@ MonoBehaviour:
   m_numOfSceneryLayers: 1
   m_sceneryElements:
   - m_prefab: {fileID: 1333633684922606, guid: 0edd461a93879474280301c7496c3048, type: 2}
-    spawnChanceWeight: 0.3
+    spawnChanceWeight: 0.25
     randomScaleVariance: {x: 1, y: 1}
-  - m_prefab: {fileID: 1963329029881666, guid: 9e41b2c6ae6ab584b86e978cc153d056, type: 2}
-    spawnChanceWeight: 0.3
+    randomRotation: 1
+    randomRotationVariance: {x: 0, y: 360}
+  - m_prefab: {fileID: 1281979946309086, guid: 8711b4e4edb1a1d42aff4f98d194e183, type: 2}
+    spawnChanceWeight: 0.5
     randomScaleVariance: {x: 1, y: 1}
-  - m_prefab: {fileID: 1786943138009382, guid: 3aa11bfa362951a408d019bb3ffacbc6, type: 2}
-    spawnChanceWeight: 0.3
+    randomRotation: 0
+    randomRotationVariance: {x: 0, y: 0}
+  - m_prefab: {fileID: 1341801379918554, guid: 3da3a193f3a95e44292fa6ff1960e295, type: 2}
+    spawnChanceWeight: 0.4
     randomScaleVariance: {x: 1, y: 1}
-  - m_prefab: {fileID: 1780136395727734, guid: 254a92473426cac4986bcfaa6302f63f, type: 2}
-    spawnChanceWeight: 0.3
-    randomScaleVariance: {x: 1, y: 1}
+    randomRotation: 1
+    randomRotationVariance: {x: 0, y: 360}
   m_travelTime: 6
   m_customPostProcess: {fileID: 0}
   m_fogColour: {r: 0, g: 0, b: 0, a: 1}

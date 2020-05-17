@@ -18,10 +18,11 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: e738c00a746a07245b8ef0a98e3839fc, type: 3}
       volume: 0.449
+      maxVolumeRatio: 0
     Name: SHADE CORP. TRAINING AGENT
-    Content: Acquire gems for Shade Co. and you'll receive access to premium employee-only
-      paint jobs and customisations.
+    Content: Acquire gems for Shade Co. and you'll receive Gem Dust which can gain
+      you access to premium employee-only paint jobs and customisations.
     waitTime: 0
   m_postCutsceneChoice: []
   m_levelToPlay: {fileID: 0}
-  m_nodeNumberToUnlock: 0
+  m_endGameConditionToAdd: 0

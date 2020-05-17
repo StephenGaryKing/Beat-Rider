@@ -18,10 +18,12 @@ MonoBehaviour:
     Audio:
       soundToPlay: {fileID: 8300000, guid: e738c00a746a07245b8ef0a98e3839fc, type: 3}
       volume: 0.449
+      maxVolumeRatio: 0
     Name: SHADE CORP. TRAINING AGENT
     Content: The left and right buttons let you navigate the track. If you prefer,
-      you can change movement to fixed lanes in the Options menu.
+      you can change movement to free movement in the Options menu. Press Spcaebar
+      to Continue
     waitTime: 0
   m_postCutsceneChoice: []
   m_levelToPlay: {fileID: 0}
-  m_nodeToUnlock: {fileID: 0}
+  m_endGameConditionToAdd: 0
