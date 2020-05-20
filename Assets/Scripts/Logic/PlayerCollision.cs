@@ -34,6 +34,9 @@ namespace BeatRider
         [SerializeField] private Text m_gemDustText = null;
         [SerializeField] private ShopManager m_shopManager = null;
 
+        // Combo Counter
+        [SerializeField] private Text m_comboText = null;
+        public int m_comboCounter = 0;
 
 		// Use this for initialization
 		void Start()
@@ -64,7 +67,7 @@ namespace BeatRider
 
         void Die()
 		{
-
+            ResetComboCounter();
 		}
 
 		public void Revive()
@@ -92,7 +95,9 @@ namespace BeatRider
 				m_quickTime.StartCoroutine(m_quickTime.LookForKeyPress(val, other.gameObject));
 
                 totalNotes++;
-
+                m_comboCounter++;
+                if (m_comboText)
+                    m_comboText.text = "Combo: " + m_comboCounter;
 				return;
 			}
 
@@ -134,7 +139,10 @@ namespace BeatRider
 				other.gameObject.SetActive(false);
 
 				AchievementManager.OnTallyPickups(other.tag);
-				return;
+                m_comboCounter = 0;
+                if (m_comboText)
+                    m_comboText.text = "Combo: " + m_comboCounter;
+                return;
 			}
 
 			if (other.CompareTag("Gem"))
@@ -152,5 +160,12 @@ namespace BeatRider
                 //totalGemDust++;
 			}
 		}
-	}
+
+        public void ResetComboCounter()
+        {
+            m_comboCounter = 0;
+            if (m_comboText)
+                m_comboText.text = "Combo: " + m_comboCounter;
+        }
+    }
 }

@@ -20,10 +20,12 @@ namespace BeatRider
 		UnlockableManager m_UnlockableManager;
 		List<Gem> m_filteredRecipes = new List<Gem>();
 		List<Gem> m_recipesPendingcompletion = new List<Gem>();
+        public SceneryManager m_sceneryManager = null;
 
 		private void Start()
 		{
 			m_UnlockableManager = FindObjectOfType<UnlockableManager>();
+            m_sceneryManager = FindObjectOfType<SceneryManager>();
 			List<Gem> newAllRecipies = new List<Gem>(m_allRecipes);
 
 			foreach (Gem recipe in m_ReipesToStartWith)
@@ -42,6 +44,7 @@ namespace BeatRider
 				Debug.LogError("Crafting everything");
 				CraftAll();
 				m_UnlockableManager.UnlockAll();
+                m_sceneryManager.ActivateAllButtions();
 			}
 		}
 

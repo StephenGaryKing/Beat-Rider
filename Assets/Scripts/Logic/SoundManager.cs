@@ -7,13 +7,17 @@ public class SoundManager : MonoBehaviour {
 
 	public float m_audioClipVolume = 0.5f;
 
-	public AudioSource PlaySound(Sound sound)
+    private void Start()
+    {
+    }
+
+    public AudioSource PlaySound(Sound sound)
 	{
 		if (sound.soundToPlay != null)
 		{
 			AudioSource source = gameObject.AddComponent<AudioSource>();
 			source.clip = sound.soundToPlay;
-			source.volume = sound.volume;
+			source.volume = sound.volume * sound.maxVolumeRatio * m_audioClipVolume;
 			source.Play();
 			Destroy(source, sound.soundToPlay.length);
 			return source;

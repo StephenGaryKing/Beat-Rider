@@ -52,7 +52,18 @@ public class SceneryManager : MonoBehaviour {
                 buttonStruct.button.GetComponent<Image>().color = Color.white;
                 buttonStruct.button.GetComponent<Button>().enabled = true;
                 buttonStruct.isActivated = true;
+                return;
             }
+        }
+    }
+
+    public void ActivateAllButtions()
+    {
+        foreach (SceneButton buttonStruct in sceneButtons)
+        {
+            buttonStruct.button.GetComponent<Image>().color = Color.white;
+            buttonStruct.button.GetComponent<Button>().enabled = true;
+            buttonStruct.isActivated = true;
         }
     }
 
