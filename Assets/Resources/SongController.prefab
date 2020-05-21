@@ -142,7 +142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1340298240157670
 GameObject:
   m_ObjectHideFlags: 1
@@ -727,7 +727,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -866,6 +866,10 @@ MonoBehaviour:
     minFreq: 0
     maxFreq: 363
   m_cutsceneToPlayAtEnd: {fileID: 0}
+  m_minNoteLimit: 50
+  m_invalidAudioMenuTransition: {fileID: 0}
+  m_canvas: {fileID: 0}
+  m_shopManager: {fileID: 0}
 --- !u!114 &114122420244196488
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1395,11 +1399,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: c16ac61f9e5bb9443978f91de6142ba4, type: 3}
-    m_FontSize: 80
+    m_Font: {fileID: 12800000, guid: 2adcd552019cd444ba3430c6a2232568, type: 3}
+    m_FontSize: 55
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 5
     m_MaxSize: 80
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -1601,6 +1605,7 @@ MonoBehaviour:
   m_notifySound:
     soundToPlay: {fileID: 8300000, guid: 980d000d766d57d48a61e190ce66a679, type: 3}
     volume: 0.321
+    maxVolumeRatio: 0.5
 --- !u!114 &114781252339719944
 MonoBehaviour:
   m_ObjectHideFlags: 1

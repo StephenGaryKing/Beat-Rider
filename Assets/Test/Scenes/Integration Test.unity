@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.14047071, g: 0.10219029, b: 0.10658192, a: 1}
+  m_IndirectSpecularColor: {r: 0.14032656, g: 0.10219405, b: 0.10689329, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1346,6 +1346,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 970f74f76560a09418e663677e3547da, type: 2}
   - {fileID: 11400000, guid: 9838cc229a39fed4882f466e466508d1, type: 2}
   - {fileID: 11400000, guid: 338440605320c8c4680a190c9680a064, type: 2}
+  - {fileID: 11400000, guid: 745a598f1c2f10b44b27898cf4b3cfb7, type: 2}
+  - {fileID: 11400000, guid: 8bb249a539625c64b992f9dc2d975c3c, type: 2}
+  - {fileID: 11400000, guid: 17e776fa55fb6954cb62d5f83036417d, type: 2}
+  - {fileID: 11400000, guid: 82f3df016a452264ba13a46337b3feac, type: 2}
   m_unlockableTrails:
   - {fileID: 11400000, guid: bbe1f2bd5e6b50342829d8bdfbd77176, type: 2}
   m_unlockedColours: 
@@ -3550,7 +3554,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 355411980}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.9999991
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6405,51 +6409,16 @@ Prefab:
       propertyPath: m_LevelFailedMenuTransition
       value: 
       objectReference: {fileID: 819607899}
-    - target: {fileID: 82867937500815918, guid: b705cf485b45e964083a98ba5ed96199,
-        type: 2}
-      propertyPath: spreadCustomCurve.m_RotationOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114120008655638624, guid: b705cf485b45e964083a98ba5ed96199,
-        type: 2}
-      propertyPath: m_canvas
-      value: 
-      objectReference: {fileID: 986749784}
-    - target: {fileID: 114120008655638624, guid: b705cf485b45e964083a98ba5ed96199,
-        type: 2}
-      propertyPath: m_invalidCanvas
-      value: 
-      objectReference: {fileID: 1375935974}
     - target: {fileID: 114120008655638624, guid: b705cf485b45e964083a98ba5ed96199,
         type: 2}
       propertyPath: m_invalidAudioMenuTransition
       value: 
       objectReference: {fileID: 669201476}
-    - target: {fileID: 114564668962263904, guid: b705cf485b45e964083a98ba5ed96199,
-        type: 2}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: 2adcd552019cd444ba3430c6a2232568,
-        type: 3}
-    - target: {fileID: 114564668962263904, guid: b705cf485b45e964083a98ba5ed96199,
-        type: 2}
-      propertyPath: m_FontData.m_FontSize
-      value: 55
-      objectReference: {fileID: 0}
-    - target: {fileID: 114564668962263904, guid: b705cf485b45e964083a98ba5ed96199,
-        type: 2}
-      propertyPath: m_FontData.m_MinSize
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1314610307230028, guid: b705cf485b45e964083a98ba5ed96199, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 114120008655638624, guid: b705cf485b45e964083a98ba5ed96199,
         type: 2}
-      propertyPath: m_minNoteLimit
-      value: 50
-      objectReference: {fileID: 0}
+      propertyPath: m_canvas
+      value: 
+      objectReference: {fileID: 986749784}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b705cf485b45e964083a98ba5ed96199, type: 2}
   m_IsPrefabParent: 0
@@ -17767,7 +17736,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 404324377}
   m_HandleRect: {fileID: 404324376}
   m_Direction: 2
-  m_Value: 0.9999978
+  m_Value: 0.9999981
   m_Size: 0.50239223
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -28697,7 +28666,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000079870224}
+  m_AnchoredPosition: {x: 0, y: 0.00027823448}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1457668266
