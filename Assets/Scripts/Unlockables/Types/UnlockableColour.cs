@@ -6,4 +6,5 @@ using UnityEngine;
 public class UnlockableColour : Unlockable {
 
 	public Color m_colour = Color.white;
+    public bool m_isMetallic = false;
 }
