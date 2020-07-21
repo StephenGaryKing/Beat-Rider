@@ -40,11 +40,13 @@ public class ShipCustomiser : MonoBehaviour {
         {
             if (!m_currentShip)
             {
-                Debug.Log("Current Ship not set up");
+                m_body.material.SetFloat("_Metallic", 0.5f);
+                m_body.material.SetFloat("_Glossiness", 1f);
             }
             else
             {
                 m_body.material.SetTexture("_MetallicGlossMap", m_currentShip.m_metallicTexture);
+                m_body.material.SetFloat("_Metallic", 0.5f);
                 m_body.material.SetFloat("_Glossiness", 1f);
             }
         }
@@ -87,6 +89,7 @@ public class ShipCustomiser : MonoBehaviour {
         else
         {
             m_body.material.SetTexture("_MetallicGlossMap", ship.m_metallicTexture);
+            m_body.material.SetFloat("_Metallic", metallicValue);
             m_body.material.SetFloat("_Glossiness", smoothnessValue);
         }
     }
