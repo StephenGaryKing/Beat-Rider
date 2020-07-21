@@ -44,7 +44,7 @@ public class ShipCustomiser : MonoBehaviour {
             }
             else
             {
-                m_body.material.SetTexture("_MetallicGlossMap", m_currentShip.m_texture);
+                m_body.material.SetTexture("_MetallicGlossMap", m_currentShip.m_metallicTexture);
                 m_body.material.SetFloat("_Glossiness", 1f);
             }
         }
@@ -86,7 +86,7 @@ public class ShipCustomiser : MonoBehaviour {
         }
         else
         {
-            m_body.material.SetTexture("_MetallicGlossMap", ship.m_texture);
+            m_body.material.SetTexture("_MetallicGlossMap", ship.m_metallicTexture);
             m_body.material.SetFloat("_Glossiness", smoothnessValue);
         }
     }

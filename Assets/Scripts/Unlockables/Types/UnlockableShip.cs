@@ -7,5 +7,5 @@ public class UnlockableShip : Unlockable {
 
 	public Mesh m_model;
     public Material m_material;
-    public Texture m_texture;
+    public Texture m_metallicTexture;
 }

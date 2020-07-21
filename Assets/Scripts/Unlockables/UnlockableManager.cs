@@ -16,7 +16,15 @@ namespace BeatRider
 		[HideInInspector] public List<int> m_unlockedShips = new List<int>();
 		[HideInInspector] public List<int> m_unlockedTrails = new List<int>();
 
-		public void UnlockAll()
+        private void Start()
+        {
+            foreach(UnlockableShip ship in m_unlockableShips)
+            {
+                ship.m_metallicTexture = ship.m_material.GetTexture("_MetallicGlossMap");
+            }
+        }
+
+        public void UnlockAll()
 		{
 			Debug.LogError("Unlocking All Unlockables");
 			UnlockWholeList(m_unlockableColours);
