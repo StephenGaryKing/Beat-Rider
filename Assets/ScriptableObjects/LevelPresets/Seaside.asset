@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c220bbb9323f11478c9c4b2a4c61331, type: 3}
+  m_Name: Seaside
+  m_EditorClassIdentifier: 
+  m_levelGenerationType: 0
+  m_groundPrefab: {fileID: 0}
+  m_spawnHeightOffset: -5
+  m_trackWidth: 55.94
+  m_unitSize: 149.98
+  m_numOfSceneryLayers: 2
+  m_sceneryElements:
+  - m_prefab: {fileID: 1651894705766380, guid: 145aa779d7c93a94b80d93cc1fdbb05a, type: 2}
+    spawnChanceWeight: 100
+    randomScaleVariance: {x: 1, y: 1}
+    randomRotation: 0
+    randomRotationVariance: {x: 0, y: 0}
+  - m_prefab: {fileID: 1193022739033098, guid: d1807ea8322c19c4ba79296185bbc90a, type: 2}
+    spawnChanceWeight: 100
+    randomScaleVariance: {x: 1, y: 1}
+    randomRotation: 0
+    randomRotationVariance: {x: 0, y: 0}
+  m_travelTime: 2
+  m_customPostProcess: {fileID: 0}
+  m_fogColour: {r: 0.9264706, g: 0.20436849, b: 0.66750985, a: 1}
+  m_fogStart: -2
+  m_fogEnd: 600
