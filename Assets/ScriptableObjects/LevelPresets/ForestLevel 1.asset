@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c220bbb9323f11478c9c4b2a4c61331, type: 3}
+  m_Name: ForestLevel 1
+  m_EditorClassIdentifier: 
+  m_levelGenerationType: 1
+  m_groundPrefab: {fileID: 1866900193989758, guid: e4b0329926a941a42b4f0a18f53c2037,
+    type: 2}
+  m_spawnHeightOffset: -30
+  m_trackWidth: 40
+  m_unitSize: 200
+  m_numOfSceneryLayers: 5
+  m_sceneryElements:
+  - m_prefab: {fileID: 1805990141138574, guid: d239d467f07bb5e4ebcdece6efd06d28, type: 2}
+    spawnChanceWeight: 10
+    randomScaleVariance: {x: 10, y: 7}
+    randomRotation: 0
+    randomRotationVariance: {x: 0, y: 0}
+  - m_prefab: {fileID: 1805990141138574, guid: d239d467f07bb5e4ebcdece6efd06d28, type: 2}
+    spawnChanceWeight: 10
+    randomScaleVariance: {x: 20, y: 15}
+    randomRotation: 0
+    randomRotationVariance: {x: 0, y: 0}
+  - m_prefab: {fileID: 1361281495349364, guid: b06a5e24d5dc163418e4c22b1570907c, type: 2}
+    spawnChanceWeight: 10
+    randomScaleVariance: {x: 10, y: 5}
+    randomRotation: 0
+    randomRotationVariance: {x: 0, y: 0}
+  - m_prefab: {fileID: 1323061763212610, guid: 51d5af634051a494ead09d68863f1707, type: 2}
+    spawnChanceWeight: 200
+    randomScaleVariance: {x: 0.5, y: 1}
+    randomRotation: 0
+    randomRotationVariance: {x: 0, y: 0}
+  - m_prefab: {fileID: 1765301824894802, guid: 77f1ee28f28b10c4198209d42a18494a, type: 2}
+    spawnChanceWeight: 5
+    randomScaleVariance: {x: 0.5, y: 1}
+    randomRotation: 0
+    randomRotationVariance: {x: 0, y: 0}
+  m_travelTime: 7
+  m_customPostProcess: {fileID: 0}
+  m_fogColour: {r: 0, g: 0, b: 0, a: 1}
+  m_fogStart: -2
+  m_fogEnd: 600

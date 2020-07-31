@@ -11,25 +11,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c220bbb9323f11478c9c4b2a4c61331, type: 3}
   m_Name: Seaside
   m_EditorClassIdentifier: 
-  m_levelGenerationType: 0
-  m_groundPrefab: {fileID: 0}
-  m_spawnHeightOffset: -5
+  m_levelGenerationType: 2
+  m_groundPrefab: {fileID: 1365361099035386, guid: a29f395333a87f54d999ebad46a2c8b5,
+    type: 2}
+  m_spawnHeightOffset: -4
   m_trackWidth: 55.94
-  m_unitSize: 149.98
-  m_numOfSceneryLayers: 2
+  m_unitSize: 5
+  m_numOfSceneryLayers: 5
   m_sceneryElements:
   - m_prefab: {fileID: 1651894705766380, guid: 145aa779d7c93a94b80d93cc1fdbb05a, type: 2}
-    spawnChanceWeight: 100
+    spawnChanceWeight: 2
     randomScaleVariance: {x: 1, y: 1}
     randomRotation: 0
     randomRotationVariance: {x: 0, y: 0}
   - m_prefab: {fileID: 1193022739033098, guid: d1807ea8322c19c4ba79296185bbc90a, type: 2}
-    spawnChanceWeight: 100
+    spawnChanceWeight: 2
     randomScaleVariance: {x: 1, y: 1}
     randomRotation: 0
     randomRotationVariance: {x: 0, y: 0}
-  m_travelTime: 2
+  - m_prefab: {fileID: 1805990141138574, guid: d239d467f07bb5e4ebcdece6efd06d28, type: 2}
+    spawnChanceWeight: 3
+    randomScaleVariance: {x: 1, y: 1}
+    randomRotation: 1
+    randomRotationVariance: {x: 20, y: 0}
+  - m_prefab: {fileID: 1216279890257370, guid: 446ff603e297a63478c27045ca58a4f8, type: 2}
+    spawnChanceWeight: 1
+    randomScaleVariance: {x: 1, y: 1}
+    randomRotation: 0
+    randomRotationVariance: {x: 0, y: 0}
+  - m_prefab: {fileID: 1310867337305970, guid: 44de5828d79b480459ae201f94967fc8, type: 2}
+    spawnChanceWeight: 1.05
+    randomScaleVariance: {x: 1, y: 1}
+    randomRotation: 0
+    randomRotationVariance: {x: 0, y: 0}
+  m_travelTime: 20
   m_customPostProcess: {fileID: 0}
   m_fogColour: {r: 0.9264706, g: 0.20436849, b: 0.66750985, a: 1}
-  m_fogStart: -2
-  m_fogEnd: 600
+  m_fogStart: 100
+  m_fogEnd: 1000

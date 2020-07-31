@@ -36,6 +36,7 @@ GameObject:
   - component: {fileID: 4328695993193852}
   - component: {fileID: 33468905104602230}
   - component: {fileID: 23397778459148422}
+  - component: {fileID: 114968073445758604}
   m_Layer: 0
   m_Name: pCube6
   m_TagString: Untagged
@@ -111,3 +112,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1233467641589706}
   m_Mesh: {fileID: 4300000, guid: a28f5a23abd63d2428d2fc660c001a42, type: 3}
+--- !u!114 &114968073445758604
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1233467641589706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56726c61fea21e4589e1e4bb6a13eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_passToReactTo: DEFAULT
+  m_audioReactor: {fileID: 11400000, guid: a0beaf8230aec354dbc6026a1709b245, type: 2}
+  m_smoothing: 0.05
+  m_startingColour: {r: 0.3647059, g: 1, b: 0, a: 0}
+  m_endingColour: {r: 1, g: 0.32941177, b: 0.98039216, a: 0}
+  m_emissionMagnitude: 2
