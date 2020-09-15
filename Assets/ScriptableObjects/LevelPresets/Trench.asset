@@ -21,6 +21,13 @@ MonoBehaviour:
   - m_prefab: {fileID: 1352216117049314, guid: 0bb3ed4a42f5904428298e4b1633809b, type: 2}
     spawnChanceWeight: 100
     randomScaleVariance: {x: 1, y: 1}
+    randomRotation: 0
+    randomRotationVariance: {x: 0, y: 0}
+  - m_prefab: {fileID: 1132188053250752, guid: b607672786929ac4c9d0bd7c6811a118, type: 2}
+    spawnChanceWeight: 20
+    randomScaleVariance: {x: 1, y: 1}
+    randomRotation: 0
+    randomRotationVariance: {x: 0, y: 0}
   m_travelTime: 2
   m_customPostProcess: {fileID: 0}
   m_fogColour: {r: 0, g: 0, b: 0, a: 1}
