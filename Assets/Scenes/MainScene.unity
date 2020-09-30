@@ -709,7 +709,9 @@ GameObject:
   - component: {fileID: 49763651}
   - component: {fileID: 49763655}
   - component: {fileID: 49763656}
+  - component: {fileID: 49763659}
   - component: {fileID: 49763658}
+  - component: {fileID: 49763657}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -807,6 +809,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: 62e9a6d758b66d44589c7216ef683b8d, type: 2}
+--- !u!328 &49763657
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 49763650}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 32900000, guid: 52d63a2eb55128c498456280a99c2990, type: 3}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 49763653}
+  m_TargetTexture: {fileID: 0}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: _MainTex
+  m_RenderMode: 4
+  m_AspectRatio: 2
+  m_DataSource: 0
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 0
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
+  m_Url: 
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
+  m_PlayOnAwake: 1
+  m_SkipOnDrop: 1
+  m_Looping: 1
+  m_WaitForFirstFrame: 1
+  m_FrameReadyEventEnabled: 0
 --- !u!114 &49763658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -822,6 +857,19 @@ MonoBehaviour:
   - {fileID: 2100000, guid: a09f466f908745a4b862fd7f87dd34a2, type: 2}
   - {fileID: 2100000, guid: b2884af5cb251f742887775c01b9fb5c, type: 2}
   - {fileID: 2100000, guid: 50b4d3fde1de80b4f96e740e6d640b5f, type: 2}
+--- !u!114 &49763659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 49763650}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6ed554b23b541d4ea9201bf78a3e238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shader: {fileID: 4800000, guid: 0a3c04d411f83614ab285ced492c8fcb, type: 3}
+  VHSClip: {fileID: 32900000, guid: 52d63a2eb55128c498456280a99c2990, type: 3}
 --- !u!1 &51052109
 GameObject:
   m_ObjectHideFlags: 0
@@ -3799,7 +3847,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 355411980}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99999887
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7133,7 +7181,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000022808752, y: 0.002929449}
+  m_AnchoredPosition: {x: 0.000022808752, y: 0.0006711483}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &433587879
@@ -18335,7 +18383,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 404324377}
   m_HandleRect: {fileID: 404324376}
   m_Direction: 2
-  m_Value: 0.9999949
+  m_Value: 0.9999978
   m_Size: 0.50239223
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -24659,6 +24707,12 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114394650194655990, guid: 9a253a2c9de27ee458bef6fc9cddf4de,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c04f886263fbaed419ae66e86d3eb8e5,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a253a2c9de27ee458bef6fc9cddf4de, type: 2}
   m_IsPrefabParent: 0
@@ -29490,7 +29544,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.0010552406}
+  m_AnchoredPosition: {x: 0, y: 0.0010700226}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1457668266
