@@ -5390,8 +5390,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 355411981}
   m_HandleRect: {fileID: 355411980}
   m_Direction: 2
-  m_Value: 0.9999745
-  m_Size: 0
+  m_Value: 1
+  m_Size: 0.9999996
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -9091,7 +9091,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000022808752, y: 0.0006711483}
+  m_AnchoredPosition: {x: -0.000038226404, y: 0.0006711483}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &433587879
@@ -20981,7 +20981,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 404324377}
   m_HandleRect: {fileID: 404324376}
   m_Direction: 2
-  m_Value: 0.9999975
+  m_Value: 0.9999974
   m_Size: 0.5023922
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -32150,7 +32150,7 @@ Prefab:
     - target: {fileID: 224288930717438444, guid: b1ecdeb2236dbf9409c47a59b4343ed0,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b1ecdeb2236dbf9409c47a59b4343ed0, type: 2}
@@ -32196,7 +32196,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.0010814667}
+  m_AnchoredPosition: {x: 0, y: -0.00011634827}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1457668266
@@ -34911,6 +34911,7 @@ GameObject:
   - component: {fileID: 1644168757}
   - component: {fileID: 1644168756}
   - component: {fileID: 1644168755}
+  - component: {fileID: 1644168760}
   m_Layer: 0
   m_Name: Go to store
   m_TagString: Untagged
@@ -35022,8 +35023,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 32527309}
-        m_MethodName: 
+      - m_Target: {fileID: 1644168760}
+        m_MethodName: URLOpenB
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -35032,7 +35033,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 1
       - m_Target: {fileID: 1644168755}
         m_MethodName: PlayTransitions
         m_Mode: 1
@@ -35090,6 +35091,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1644168753}
+--- !u!114 &1644168760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1644168753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 537421318612188449ad538e580422b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1645259187 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1615868092968628, guid: 33cefd27a6206014bbaa0738c092085a,
@@ -37793,6 +37805,7 @@ GameObject:
   - component: {fileID: 1862735690}
   - component: {fileID: 1862735689}
   - component: {fileID: 1862735688}
+  - component: {fileID: 1862735693}
   m_Layer: 0
   m_Name: Go to survey
   m_TagString: Untagged
@@ -37904,8 +37917,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 32527309}
-        m_MethodName: 
+      - m_Target: {fileID: 1862735693}
+        m_MethodName: URLOpenA
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -37914,7 +37927,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 2
       - m_Target: {fileID: 1862735688}
         m_MethodName: PlayTransitions
         m_Mode: 1
@@ -37972,6 +37985,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1862735686}
+--- !u!114 &1862735693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1862735686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 537421318612188449ad538e580422b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1864637974
 GameObject:
   m_ObjectHideFlags: 0
