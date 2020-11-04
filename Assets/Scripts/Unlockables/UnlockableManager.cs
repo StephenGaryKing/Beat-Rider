@@ -16,12 +16,17 @@ namespace BeatRider
 		[HideInInspector] public List<int> m_unlockedShips = new List<int>();
 		[HideInInspector] public List<int> m_unlockedTrails = new List<int>();
 
+        int numberOfClassicPaints = 0;
+        [SerializeField] private int maxClassicPaints = 8;
+        bool classpaintsAchieved = false;
+
         private void Start()
         {
             foreach(UnlockableShip ship in m_unlockableShips)
             {
                 ship.m_metallicTexture = ship.m_material.GetTexture("_MetallicGlossMap");
             }
+            Steamworks.SteamUserStats.GetStat("classicpaintsCollected", out numberOfClassicPaints);
         }
 
         public void UnlockAll()
@@ -86,6 +91,16 @@ namespace BeatRider
             {
                 m_unlockedColours.Add(index);
                 m_unlockableColours[index].unlocked = true;
+                if (m_unlockableColours[index].m_isMetallic == false)
+                {
+                    numberOfClassicPaints++;
+                    Steamworks.SteamUserStats.SetStat("classicpaintsCollected", numberOfClassicPaints);
+                    Steamworks.SteamUserStats.StoreStats();
+                }
+                if (numberOfClassicPaints >= maxClassicPaints)
+                {
+                    Steamworks.SteamUserStats.SetAchievement("classicpaintsAchievement");
+                }
             }
         }
 
