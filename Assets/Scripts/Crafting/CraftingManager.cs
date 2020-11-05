@@ -131,10 +131,10 @@ namespace BeatRider
             Sprite icon = gem.m_unlockable.m_icon;
 			string notificationText = gem.name + " Discovered!";
 
-			if (m_CraftingNotification)
-				m_CraftingNotification.Notify((gem.m_unlockable as UnlockableColour).m_colour, null, notificationText);
+            //if (m_CraftingNotification)
+            //    m_CraftingNotification.Notify((gem.m_unlockable as UnlockableColour).m_colour, null, notificationText);
 
-			m_recipesPendingcompletion.Add(gem);
+            m_recipesPendingcompletion.Add(gem);
 		}
 
 		public void CompletePendingCrafts()
